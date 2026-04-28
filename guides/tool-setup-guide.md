@@ -17,8 +17,8 @@ Follow the steps in this order:
 1. Install VS Code.
 2. Install the essential VS Code extensions.
 3. Configure formatting in VS Code.
-4. Create a GitHub account.
-5. Install and configure Git.
+4. Check that you have a GitHub account.
+5. Install Git.
 6. Install and configure GitHub Desktop.
 7. Install Node.js and npm.
 8. Check your browser and Developer Tools.
@@ -143,7 +143,7 @@ If it does not format:
 
 ---
 
-## 4. Create a GitHub Account
+## 4. Check Your GitHub Account
 
 GitHub is where we store and share code online.
 
@@ -230,7 +230,7 @@ Then:
 1. Open GitHub Desktop.
 2. Sign in to **GitHub.com** in your browser and return to GitHub Desktop when asked.
 3. Open **Settings** on macOS or **Options** on Windows.
-4. Open the **Git** section and set your name and email.
+4. Open the **Git** section and check that your name and email are correct.
 5. Open the **Integrations** section and choose **Visual Studio Code** as your external editor.
 
 Make sure you complete this step in GitHub Desktop before making your first commit.
@@ -388,7 +388,7 @@ GitHub Desktop will create a `project-template` folder inside the location you c
 In GitHub Desktop:
 
 1. Choose **Repository** -> **Open in Visual Studio Code**.
-2. In VS Code, open `index.html`.
+2. In VS Code, find `index.html` in the file list on the left.
 3. Right-click `index.html`.
 4. Select **Open with Live Server**.
 
