@@ -16,11 +16,12 @@ By the end of the day, you should have a working React project, one interactive 
 
 ### Preparation
 
-- Bring a laptop.
-- Make sure you have access to Figma.
-- Make sure you have a code editor installed.
-- Be ready to set up or check your local React development environment.
-- Think about an existing company, service, place or physical experience you might want to work with during the course.
+- Fill out this short survey as soon as possible so the course can be tailored to the group:
+  https://forms.gle/k91iZgkRqByqyUYX8
+- Install the required tools by following this guide:
+  https://github.com/cederdorff/figma-to-react/blob/main/guides/tool-setup-guide.md
+- This elective requires a basic understanding of HTML, CSS and JavaScript. If you are not yet fully comfortable with these, please get started with this self-study guide as soon as possible:
+  https://www.notion.so/Self-study-with-CodeDex-io-350bc239db1180af9beacc9a801f863a
 
 ### Agenda
 
