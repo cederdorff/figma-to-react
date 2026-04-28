@@ -147,7 +147,9 @@ If it does not format:
 
 GitHub is where we store and share code online.
 
-Create a free account:
+If you already have a GitHub account, you can skip this step.
+
+If you do not have one, create a free account:
 
 [Create a GitHub account](https://github.com/)
 
@@ -163,7 +165,7 @@ Recommendations:
 
 Git tracks changes in your code. VS Code and GitHub Desktop both work better when Git is installed correctly.
 
-Install Git before GitHub Desktop. This avoids many `Git not found` problems later.
+Install Git before GitHub Desktop. This avoids many `Git not found` problems later and makes Git available in VS Code and the terminal.
 
 Use the steps for your operating system.
 
@@ -197,12 +199,6 @@ xcode-select --install
 
 This installs Apple's Command Line Tools, which include Git.
 
-If macOS says the tools are already installed, check Git with:
-
-```bash
-git --version
-```
-
 ### Verify Git
 
 Open Terminal, PowerShell or Command Prompt and run:
@@ -219,23 +215,6 @@ git version 2.xx.x
 
 Your exact version number may be different.
 
-### Configure Git
-
-Set your name and email:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
-```
-
-Check your settings:
-
-```bash
-git config --global --list
-```
-
-Use the same email address as your GitHub account if possible.
-
 ---
 
 ## 6. Install GitHub Desktop
@@ -249,9 +228,12 @@ Download and install GitHub Desktop:
 Then:
 
 1. Open GitHub Desktop.
-2. Sign in to **GitHub.com**.
-3. Confirm your name and email.
-4. Choose VS Code as your external editor if asked.
+2. Sign in to **GitHub.com** in your browser and return to GitHub Desktop when asked.
+3. Open **Settings** on macOS or **Options** on Windows.
+4. Open the **Git** section and set your name and email.
+5. Open the **Integrations** section and choose **Visual Studio Code** as your external editor.
+
+Make sure you complete this step in GitHub Desktop before making your first commit.
 
 GitHub Desktop is useful for common Git tasks:
 
@@ -265,17 +247,17 @@ GitHub Desktop is useful for common Git tasks:
 
 ## 7. Install Node.js and npm
 
-Node.js lets us run JavaScript tools outside the browser.
+Node.js lets us run JavaScript tools outside the browser. npm is included when you install Node.js.
 
-npm is installed together with Node.js and is used to install project packages.
+For this course, the simplest option is to use the official installer.
 
-Download Node.js:
+Download Node.js from:
 
 [Download Node.js](https://nodejs.org/en/download/)
 
-Choose the **LTS** version.
+On the download page, click the green **installer** button for the **LTS** version and run it.
 
-LTS means Long Term Support. It is the stable version recommended for most users.
+You can ignore the `nvm` instructions shown at the top of the page.
 
 After installing, restart your terminal.
 
@@ -295,7 +277,7 @@ vxx.x.x
 x.x.x
 ```
 
-The exact numbers depend on the current LTS version. The important part is that both commands return a version number.
+The exact numbers may be different. The important part is that both commands return a version number.
 
 If `node` or `npm` is not found:
 
