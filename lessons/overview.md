@@ -63,8 +63,9 @@ Possible examples:
 | **11-05-2026** | [From Components to Composition](11-05-2026-components-composition.md) | Component structure for evaluating MCP/AI output        | Transition from design to programming                | A small component system and one composed screen |
 | **20-05-2026** | [Figma to React with MCP](20-05-2026-figma-react-mcp.md) | Using MCP/AI to create and improve a React prototype    | Emerging tech, prototype testing, UX/UI              | A React prototype generated from a Figma design and improved manually |
 | **26-05-2026** | [Touch Gestures as Interface](26-05-2026-touch-gestures-interface.md) | Pointer, touch, drag and swipe as meaningful input     | Alternative interfaces, interactive experiences      | One touch or pointer gesture interaction         |
-| **01-06-2026** | [Motion as UX Feedback](01-06-2026-motion-ux-feedback.md) | Motion as feedback, meaning and flow                   | UX/UI, interaction quality                           | An animated prototype flow                       |
-| **09-06-2026** | [Experimental Gesture Interfaces](09-06-2026-experimental-gesture-interfaces.md) | Camera input, hand gestures and embodied interaction   | Emerging technologies, alternative interfaces        | An experimental gesture prototype or concept test |
+| **29-05-2026** | [Motion as UX Feedback](29-05-2026-motion-ux-feedback.md) | Motion as feedback, meaning and flow                   | UX/UI, interaction quality                           | An animated prototype flow                       |
+| **01-06-2026** | [Experimental Gesture Interfaces](01-06-2026-experimental-gesture-interfaces.md) | Camera input, hand gestures and embodied interaction   | Emerging technologies, alternative interfaces        | An experimental gesture prototype or concept test |
+| **09-06-2026** | [Buffer Day - Exam Project](09-06-2026-buffer-exam-project.md) | Flexible support day for follow-up or exam-project work | Project development, feedback, consolidation         | Progress on project work or targeted support     |
 
 ---
 
