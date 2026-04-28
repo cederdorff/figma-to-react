@@ -354,7 +354,7 @@ node --version
 npm --version
 ```
 
-Each command should return a version number.
+Each command should return a version number. If one of them does not work, go back and fix that tool before continuing.
 
 ### 9.2 Clone a Test Project
 
@@ -371,26 +371,28 @@ https://github.com/cederdorff/project-template
 4. Choose a local folder for your code projects.
 5. Click **Clone**.
 
-Recommended project folder examples:
+Recommended local folder examples:
 
 ```bash
-/Users/your-name/Developer/project-template
+/Users/your-name/Developer
 ```
 
 ```txt
-C:\Users\your-name\Developer\project-template
+C:\Users\your-name\Developer
 ```
+
+GitHub Desktop will create a `project-template` folder inside the location you choose.
 
 ### 9.3 Open the Project in VS Code
 
 In GitHub Desktop:
 
-1. Click **Open in Visual Studio Code**.
+1. Choose **Repository** -> **Open in Visual Studio Code**.
 2. In VS Code, open `index.html`.
 3. Right-click `index.html`.
 4. Select **Open with Live Server**.
 
-The project should open in your browser.
+The project should open in your browser and show a page with the heading `Project Template`.
 
 ### 9.4 Open Developer Tools
 
@@ -398,7 +400,12 @@ In the browser:
 
 1. Open Developer Tools.
 2. Go to the **Console** tab.
-3. Check whether there are messages, warnings or errors.
+3. Confirm that you can see this message:
+
+```txt
+initApp: app.js is running 🎉
+```
+
 4. Right-click an element on the page and choose **Inspect**.
 
 If this works, your basic setup is ready.
@@ -415,9 +422,9 @@ Before the course starts, check that you have:
 - Live Server installed.
 - Format On Save enabled.
 - Git installed.
-- Git configured with your name and email.
 - A GitHub account.
 - GitHub Desktop installed and signed in.
+- Your name and email set in GitHub Desktop.
 - Node.js installed.
 - npm installed.
 - A browser with Developer Tools.
