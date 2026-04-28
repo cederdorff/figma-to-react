@@ -8,6 +8,8 @@
 
 You will get a shared technical foundation and make React feel usable rather than intimidating. React is framed as a tool for building interactive prototypes and as the language you need in order to understand MCP/AI-generated output later in the block.
 
+The broader goal is to begin understanding how a Figma design becomes React code. Later in the course, we will use MCP and AI-assisted workflows to help with that translation, but first we will build the basic understanding ourselves.
+
 Focus question:
 
 > How do we turn a visual interface into interactive components?
@@ -25,40 +27,32 @@ By the end of the day, you should have a working React project, one interactive 
 
 ### Agenda
 
-- Welcome, introductions and course framing
-  - You will get introduced to the course structure, the overall theme and the expected way of working.
-  - We will connect the elective to interactive design, development, prototyping and emerging technologies.
-- What is an interactive prototype?
-  - We will discuss the difference between a visual mockup and an interactive prototype.
-  - You will look at how technology can add a digital layer to an existing company, service, place or physical experience.
-- Tool setup
-  - Set up or check VS Code, Node, Vite and Browser DevTools.
-  - Create a React project and make sure it runs locally.
-  - Understand the basic project structure you will use during the course.
-- React basics
-  - Work with components, JSX, props, `useState` and event handlers.
-  - See how a visual UI becomes interactive through state and user actions.
-- Reading a React file
-  - Identify imports, component functions, returned JSX, CSS/classes, data and state.
-  - Practice reading code so MCP/AI-generated output becomes easier to understand later.
-- Guided exercise: build one small interactive component
-  - Build a small UI component with one meaningful interaction.
-  - Possible examples: selected product card, museum object, booking option, event card, expand/collapse profile card, tabs or mini onboarding stepper.
-- Case brainstorm
-  - Start thinking about an existing company, service, physical location or user situation you might work with.
-  - Identify where an interactive digital layer could create value.
-- Share-out and reflection
-  - Share what you built and what you found difficult.
-  - Reflect on how React can work as a prototyping material.
+1. **Welcome and introductions**
+   - We will get to know each other, the course, and the overall way we will work in the elective.
+2. **Course framing and alternative UI/UX**
+   - We will look at examples of alternative interfaces and interactive experiences.
+   - We will break them down together and ask: how could we actually build this?
+3. **Tool setup**
+   - We will set up or check the tools needed for the course.
+   - The goal is to make sure everyone can work locally with the same basic setup.
+4. **Introduction to React**
+   - We will start with why React is useful in this course.
+   - We will connect React to the move from Figma designs to interactive code.
+   - We will frame React as the foundation you need before we later bring MCP and AI into the workflow.
+5. **React basics**
+   - We will work with components, JSX, props, `useState` and event handlers.
+   - We will begin turning visual interface ideas into simple interactive UI.
+6. **Thanks for today**
+   - We will wrap up the day and answer final questions.
+   - We will also talk about what to do on the workday after this lesson.
 
 ### Materials
 
-- Course slides or course framing notes
-- React/Vite setup guide
-- Starter repo or setup commands
-- Simple Figma design, screenshot or UI reference
-- Example interactive component
-- Browser DevTools
-- Optional GitHub/deployment guide
+- **Slides**
+  - Will be available
+- **Exercises**
+  - Will be available
+- **Other links**
+  - Will be available
 
 ---
