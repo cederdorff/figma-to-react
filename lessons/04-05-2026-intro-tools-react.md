@@ -6,15 +6,15 @@
 
 ### Purpose of The Day
 
-You will get a shared technical foundation and make React feel usable rather than intimidating. React is framed as a tool for building interactive prototypes and as the language you need in order to understand MCP/AI-generated output later in the block.
+The purpose of today is to create a shared starting point for the course. We will get to know each other, frame the elective, look at examples of alternative UI/UX, and make sure everyone has the basic tools installed and working.
 
-The broader goal is to begin understanding how a Figma design becomes React code. Later in the course, we will use MCP and AI-assisted workflows to help with that translation, but first we will build the basic understanding ourselves.
+We will also begin building the bridge from Figma to React by asking how a visual interface can become interactive code. Later in the course, we will use MCP and AI-assisted workflows to support that process, but today the focus is on understanding the basics first.
 
 Focus question:
 
 > How do we turn a visual interface into interactive components?
 
-By the end of the day, you should have a working React project, one interactive component and a basic understanding of how to read a React component file.
+By the end of the day, you should have the required tools installed, a clearer sense of the course direction, and a first understanding of why React matters in the move from design to code.
 
 ### Preparation
 
