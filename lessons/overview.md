@@ -16,6 +16,20 @@ The first three RACE sessions focus on React fundamentals and design-to-code thi
 
 ---
 
+## What Does It Really Mean?
+
+In this elective, you will learn how to turn interface designs into working interactive prototypes. We begin with Figma and React: how a visual design becomes components, props, state, layout and interaction.
+
+We will also explore how MCP and AI-assisted workflows can help translate, inspect and scaffold code from Figma designs. The goal is not to let AI replace your understanding, but to help you work faster while still being able to evaluate, refactor and improve the result.
+
+From there, we move beyond traditional screen-based interfaces and explore alternative ways of interacting with digital experiences. This includes touch gestures, motion feedback and alternative input methods such as camera-based or gesture-controlled interaction.
+
+You will work with real contexts, such as an existing company, product, service, event, museum, store or public space, and develop a prototype that adds a meaningful digital layer to the user experience.
+
+The course is not only about copying a design into code or trying new technology because it looks impressive. It is about understanding how design and programming work together, choosing the right technology for a concept, testing your prototype, and being able to explain your design and development choices.
+
+---
+
 ## Gesture & Motion Block Goal
 
 By the end of the Gesture & Motion block, you should be able to design and prototype interactions where input, motion and feedback work together.
