@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figma to React: Intro, Tools & React</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+
+    <style>
+      :root {
+        --r-main-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --r-heading-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --r-heading-text-transform: none;
+        --r-heading-letter-spacing: 0;
+        --r-main-color: #172026;
+        --r-heading-color: #111827;
+        --r-link-color: #2563eb;
+        --r-selection-background-color: #dbeafe;
+        --r-background-color: #f8fafc;
+      }
+
+      .reveal {
+        font-size: 34px;
+      }
+
+      .reveal h1,
+      .reveal h2 {
+        line-height: 1.04;
+        font-weight: 780;
+      }
+
+      .reveal h1 {
+        font-size: 2.25em;
+      }
+
+      .reveal h2 {
+        font-size: 1.8em;
+      }
+
+      .reveal p,
+      .reveal li {
+        line-height: 1.35;
+      }
+
+      .reveal ul {
+        display: inline-block;
+      }
+
+      .reveal li + li {
+        margin-top: 0.28em;
+      }
+
+      .reveal code {
+        font-size: 0.78em;
+      }
+
+      .reveal pre {
+        width: 90%;
+        box-shadow: none;
+        border-radius: 8px;
+      }
+
+      .eyebrow {
+        color: #475569;
+        font-size: 0.72em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: #475569;
+        font-size: 0.85em;
+      }
+
+      .statement {
+        font-size: 1.25em;
+        font-weight: 720;
+        line-height: 1.2;
+      }
+
+      .steps {
+        align-items: center;
+        display: grid;
+        gap: 0.35em;
+        justify-items: center;
+        margin-top: 0.6em;
+      }
+
+      .step {
+        background: #e0f2fe;
+        border: 2px solid #bae6fd;
+        border-radius: 8px;
+        color: #075985;
+        font-weight: 720;
+        padding: 0.22em 0.55em;
+      }
+
+      .two-column {
+        display: grid;
+        gap: 1.2em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        text-align: left;
+      }
+
+      .two-column h3 {
+        color: #334155;
+        font-size: 0.85em;
+        margin-bottom: 0.35em;
+      }
+
+      .question {
+        color: #1e3a8a;
+        font-size: 1.12em;
+        font-weight: 720;
+        line-height: 1.25;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <p class="eyebrow">Interactive Design and Development</p>
+          <h1>Figma to React:<br />Intro, Tools & React</h1>
+          <p class="subtitle">04-05-2026</p>
+          <aside class="notes">
+            Welcome them into the course as a practical design and development space. The first lesson should feel like a shared beginning, not a technical test.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Today</h2>
+          <ul>
+            <li>Get to know the course and each other</li>
+            <li>Translate the curriculum into something practical</li>
+            <li>Look at alternative interfaces and interactive experiences</li>
+            <li>Set up the basic tools</li>
+            <li>Begin the bridge from Figma to React</li>
+            <li>Build small interactive UI pieces with React</li>
+          </ul>
+          <aside class="notes">
+            Keep the promise simple. Today is about orientation, confidence and first contact with React as a prototyping material.
+          </aside>
+        </section>
+
+        <section>
+          <h2>The Course in One Sentence</h2>
+          <p class="statement">We turn visual interface ideas into working interactive prototypes.</p>
+          <div class="steps">
+            <div class="step">Design becomes structure</div>
+            <div class="step">Structure becomes code</div>
+            <div class="step">Code becomes interaction</div>
+          </div>
+          <aside class="notes">
+            This is the short version students should remember. It also prepares them for the full course progression.
+          </aside>
+        </section>
+
+        <section>
+          <h2>What Does the Curriculum Really Mean?</h2>
+          <p>This elective is about how design and programming work together.</p>
+          <p>You will explore how technologies can be used to create interactive experiences, alternative interfaces and meaningful digital layers for real contexts.</p>
+          <aside class="notes">
+            Avoid reading the formal curriculum aloud. Use this as the student-facing translation.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Course Progression</h2>
+          <div class="steps">
+            <div class="step">Design</div>
+            <div class="step">Components</div>
+            <div class="step">Interactive prototype</div>
+            <div class="step">Touch gesture</div>
+            <div class="step">Motion feedback</div>
+            <div class="step">Experimental gesture interfaces</div>
+          </div>
+          <aside class="notes">
+            Point out that the course starts with fundamentals before moving toward gestures, motion and experimental input. The technical skills build toward concept work.
+          </aside>
+        </section>
+
+        <section>
+          <h2>The Recurring Case</h2>
+          <p>Choose a real context:</p>
+          <ul>
+            <li>Company</li>
+            <li>Service</li>
+            <li>Product</li>
+            <li>Event</li>
+            <li>Museum</li>
+            <li>Store</li>
+            <li>Venue</li>
+            <li>Public space</li>
+          </ul>
+          <p>Develop a prototype that adds a meaningful digital layer to the experience.</p>
+          <aside class="notes">
+            This helps students move away from random app ideas. The prototype should belong to a situation, audience and concept.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Not Just a Screen</h2>
+          <p>A Figma frame is one moment.</p>
+          <p>A React prototype can show what happens:</p>
+          <ul>
+            <li>before</li>
+            <li>during</li>
+            <li>after</li>
+            <li>when something goes wrong</li>
+            <li>when the user makes a choice</li>
+          </ul>
+          <aside class="notes">
+            This is a key bridge. Design files often show static moments. Interactive prototypes need states, feedback and flow.
+          </aside>
+        </section>
+
+        <section>
+          <h2>What Is an Alternative Interface?</h2>
+          <p>An interface does not have to be only buttons, menus and pages.</p>
+          <p>It can also use:</p>
+          <ul>
+            <li>touch</li>
+            <li>drag</li>
+            <li>swipe</li>
+            <li>long press</li>
+            <li>movement</li>
+            <li>camera input</li>
+            <li>hand gestures</li>
+            <li>motion feedback</li>
+          </ul>
+          <aside class="notes">
+            Ask students where they have met interfaces that felt different from a normal website or app. Keep it broad and accessible.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Discussion</h2>
+          <p class="question">Think of an interface you remember.</p>
+          <p>What made it interactive?</p>
+          <p>Was it useful, playful, confusing or surprising?</p>
+          <p>How could we build something like it?</p>
+          <aside class="notes">
+            Let students answer before showing technical explanations. The goal is to make them observe interaction quality, not just visual style.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Design to Code</h2>
+          <p>When we move from Figma to React, we ask:</p>
+          <ul>
+            <li>What are the repeated UI elements?</li>
+            <li>What should become a component?</li>
+            <li>What can change?</li>
+            <li>What should the user be able to do?</li>
+            <li>What feedback should the interface give?</li>
+          </ul>
+          <aside class="notes">
+            This prepares the mental model for components, props, state and events.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Figma Decisions Become React Decisions</h2>
+          <div class="two-column">
+            <div>
+              <h3>Figma</h3>
+              <ul>
+                <li>frames</li>
+                <li>components</li>
+                <li>variants</li>
+                <li>layout</li>
+                <li>styles</li>
+                <li>prototype links</li>
+              </ul>
+            </div>
+            <div>
+              <h3>React</h3>
+              <ul>
+                <li>components</li>
+                <li>props</li>
+                <li>state</li>
+                <li>CSS</li>
+                <li>event handlers</li>
+                <li>user flows</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            Do not over-explain yet. This slide is a map students can return to later.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Where MCP and AI Fit</h2>
+          <p>MCP and AI can help us inspect, translate and scaffold from Figma.</p>
+          <p>But we still need to understand:</p>
+          <ul>
+            <li>what the code does</li>
+            <li>what should be refactored</li>
+            <li>what interaction is missing</li>
+            <li>whether the prototype supports the concept</li>
+          </ul>
+          <aside class="notes">
+            Set expectations early. AI assistance is part of the workflow later, but React understanding is what lets students judge and improve the output.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Why React?</h2>
+          <p>React helps us build interfaces as pieces that can change.</p>
+          <p>It is useful for prototypes because it gives us:</p>
+          <ul>
+            <li>components</li>
+            <li>reusable structure</li>
+            <li>state</li>
+            <li>event handling</li>
+            <li>interactive flows</li>
+          </ul>
+          <aside class="notes">
+            Frame React as a prototyping material, not as full production engineering.
+          </aside>
+        </section>
+
+        <section>
+          <h2>React Mental Model</h2>
+          <p>A component is a piece of interface.</p>
+          <p>Props are information passed into that piece.</p>
+          <p>State is information that can change.</p>
+          <p>Events are things the user does.</p>
+          <aside class="notes">
+            Keep this slide visible when live coding. It gives students four words to hang onto.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Component</h2>
+          <p>A component is a reusable interface piece.</p>
+          <p>Examples:</p>
+          <ul>
+            <li>button</li>
+            <li>card</li>
+            <li>navigation</li>
+            <li>filter</li>
+            <li>modal</li>
+            <li>product item</li>
+          </ul>
+          <aside class="notes">
+            Connect this to Figma components. Students already understand repeated visual patterns.
+          </aside>
+        </section>
+
+        <section>
+          <h2>JSX</h2>
+          <p>JSX lets us write interface structure inside React.</p>
+          <p>It looks like HTML, but it belongs inside JavaScript.</p>
+          <pre><code class="language-jsx">function Button() {
+  return &lt;button&gt;Save&lt;/button&gt;;
+}</code></pre>
+          <aside class="notes">
+            Make the first example tiny. The point is recognition, not mastery.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Props</h2>
+          <p>Props let the same component show different content.</p>
+          <pre><code class="language-jsx">function Button({ label }) {
+  return &lt;button&gt;{label}&lt;/button&gt;;
+}</code></pre>
+          <pre><code class="language-jsx">&lt;Button label="Save" /&gt;
+&lt;Button label="Cancel" /&gt;</code></pre>
+          <aside class="notes">
+            Compare props to component properties or text overrides in Figma.
+          </aside>
+        </section>
+
+        <section>
+          <h2>State</h2>
+          <p>State is what the interface remembers right now.</p>
+          <p>Examples:</p>
+          <ul>
+            <li>selected item</li>
+            <li>open or closed</li>
+            <li>active step</li>
+            <li>liked or not liked</li>
+            <li>loading, success or error</li>
+          </ul>
+          <aside class="notes">
+            This is where students start seeing why code can express more than a static design.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Event Handlers</h2>
+          <p>Events connect user actions to changes in the interface.</p>
+          <pre><code class="language-jsx">function LikeButton() {
+  const [liked, setLiked] = useState(false);
+
+  return (
+    &lt;button onClick={() =&gt; setLiked(!liked)}&gt;
+      {liked ? "Liked" : "Like"}
+    &lt;/button&gt;
+  );
+}</code></pre>
+          <aside class="notes">
+            This can be the first live-code pattern. A tiny state change is enough.
+          </aside>
+        </section>
+
+        <section>
+          <h2>First Build</h2>
+          <p>Build a small interactive UI element.</p>
+          <p>It should include:</p>
+          <ul>
+            <li>one component</li>
+            <li>one prop</li>
+            <li>one state value</li>
+            <li>one user action</li>
+          </ul>
+          <p>Examples: like button, expandable card, selected filter, simple tab switcher.</p>
+          <aside class="notes">
+            Let students choose from the examples. Choice makes the exercise feel less like typing practice.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Tool Setup</h2>
+          <p>We need the basics working:</p>
+          <ul>
+            <li>browser</li>
+            <li>code editor</li>
+            <li>Node.js</li>
+            <li>npm</li>
+            <li>GitHub account</li>
+            <li>Figma account</li>
+            <li>React project</li>
+          </ul>
+          <aside class="notes">
+            Treat setup issues as normal. The success criterion is that everyone knows what is missing and what to fix.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Checkpoint</h2>
+          <p>Can you:</p>
+          <ul>
+            <li>open the project?</li>
+            <li>start the local server?</li>
+            <li>change text in a component?</li>
+            <li>see the browser update?</li>
+            <li>explain where the component lives?</li>
+          </ul>
+          <aside class="notes">
+            This gives a concrete minimum for the day. It also helps students who are unsure whether they are following.
+          </aside>
+        </section>
+
+        <section>
+          <h2>From Today to Next Time</h2>
+          <p><strong>Today:</strong> We begin moving from visual design to interactive code.</p>
+          <p><strong>Next:</strong> We practice the basics and prepare to structure designs as reusable components.</p>
+          <p><strong>Later:</strong> We use MCP/AI, gestures, motion and alternative input to develop stronger prototypes.</p>
+          <aside class="notes">
+            End with continuity. The course is cumulative, and today's basics matter later.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Reflection</h2>
+          <p>Write down:</p>
+          <ul>
+            <li>one thing you understood</li>
+            <li>one thing that is still unclear</li>
+            <li>one interface idea you might want to explore</li>
+          </ul>
+          <aside class="notes">
+            Use this to identify where the group is technically. It can also feed the next lesson.
+          </aside>
+        </section>
+
+        <section>
+          <h2>After Today</h2>
+          <ul>
+            <li>Finish the first exercises</li>
+            <li>Make sure your tools work</li>
+            <li>Continue React self-study if needed</li>
+            <li>Start noticing interactive experiences around you</li>
+            <li>Bring questions to the workday</li>
+          </ul>
+          <aside class="notes">
+            Keep the homework practical. The workday is about strengthening the foundation before the next React session.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        transition: "slide",
+        controlsTutorial: false,
+        plugins: [RevealNotes, RevealHighlight],
+      });
+    </script>
+  </body>
+</html>

@@ -51,7 +51,8 @@ By the end of the day, you should have the required tools installed, a clearer s
 ### Materials
 
 - **Slides**
-  - Will be available
+  - [Figma to React: Intro, Tools & React slides](04-05-2026-intro-tools-react-slides.md)
+  - [Reveal.js slide deck](04-05-2026-intro-tools-react-reveal.html)
 - **Exercises**
   - Will be available
 - **Other links**
