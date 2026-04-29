@@ -131,6 +131,50 @@ How could we build something like it?
 
 ---
 
+# What If the Interface Was Different?
+
+Think of a normal digital action:
+
+- choosing something
+- navigating
+- confirming
+- exploring
+- getting feedback
+- saving something
+
+Now ask:
+
+- What if this did not happen through a normal button, menu or form?
+- Could it happen through touch, gesture, movement, camera input or motion?
+- Would that make the experience clearer, more meaningful or more memorable?
+
+> Speaker note: Use this as an eye-opener. The point is not to make students chase impressive technology, but to make them question the default interface pattern.
+
+---
+
+# Pair Exercise
+
+Choose a real context:
+
+- museum
+- shop
+- event
+- service
+- public space
+- product
+- company
+
+Then fill in:
+
+- What does the user want to do?
+- What would the normal interface be?
+- What could the alternative interface be?
+- Why would it make sense in this context?
+
+> Speaker note: Give them 5 minutes in pairs. Ask 2-3 pairs to share. End by asking: is the alternative interface meaningful, or is it just decoration?
+
+---
+
 # Design to Code
 
 When we move from Figma to React, we ask:
@@ -393,4 +437,3 @@ Write down:
 - Bring questions to the workday
 
 > Speaker note: Keep the homework practical. The workday is about strengthening the foundation before the next React session.
-
