@@ -5,25 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Figma to React: Intro, Tools & React</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css"
+    />
 
     <style>
       :root {
-        --r-main-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        --r-heading-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --r-main-font:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        --r-heading-font:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
         --r-heading-text-transform: none;
         --r-heading-letter-spacing: 0;
-        --r-main-color: #172026;
-        --r-heading-color: #111827;
-        --r-link-color: #2563eb;
-        --r-selection-background-color: #dbeafe;
-        --r-background-color: #f8fafc;
+        --r-main-color: #dbe7f3;
+        --r-heading-color: #f8fafc;
+        --r-link-color: #7dd3fc;
+        --r-link-color-hover: #a7f3d0;
+        --r-selection-background-color: #164e63;
+        --r-background-color: #08111f;
+      }
+
+      body {
+        background: linear-gradient(
+          145deg,
+          #070b14 0%,
+          #111827 48%,
+          #06151f 100%
+        );
       }
 
       .reveal {
-        font-size: 34px;
+        color: #dbe7f3;
+        font-size: 32px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .reveal .slides section {
+        text-align: left;
+      }
+
+      .reveal .slides section::before {
+        background: linear-gradient(90deg, #38bdf8, #a78bfa, #34d399);
+        border-radius: 999px;
+        content: "";
+        height: 5px;
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        top: -0.55em;
+        width: 4.8em;
       }
 
       .reveal h1,
@@ -45,12 +87,23 @@
         line-height: 1.35;
       }
 
+      .reveal p {
+        color: #cbd5e1;
+        max-width: 28ch;
+      }
+
       .reveal ul {
-        display: inline-block;
+        display: block;
+        margin-left: 1.1em;
+        max-width: 29ch;
       }
 
       .reveal li + li {
         margin-top: 0.28em;
+      }
+
+      .reveal li::marker {
+        color: #38bdf8;
       }
 
       .reveal code {
@@ -63,8 +116,28 @@
         border-radius: 8px;
       }
 
+      .reveal pre code {
+        background: #020617;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        color: #e2e8f0;
+        padding: 1em;
+      }
+
+      .reveal strong {
+        color: #f8fafc;
+      }
+
+      .reveal .controls {
+        color: #38bdf8;
+      }
+
+      .reveal .progress {
+        color: #38bdf8;
+      }
+
       .eyebrow {
-        color: #475569;
+        color: #7dd3fc;
         font-size: 0.72em;
         font-weight: 700;
         letter-spacing: 0.08em;
@@ -72,11 +145,12 @@
       }
 
       .subtitle {
-        color: #475569;
+        color: #94a3b8;
         font-size: 0.85em;
       }
 
       .statement {
+        color: #f8fafc;
         font-size: 1.25em;
         font-weight: 720;
         line-height: 1.2;
@@ -91,12 +165,21 @@
       }
 
       .step {
-        background: #e0f2fe;
-        border: 2px solid #bae6fd;
+        background: rgba(15, 23, 42, 0.88);
+        border: 1px solid #334155;
         border-radius: 8px;
-        color: #075985;
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
+        color: #bae6fd;
         font-weight: 720;
         padding: 0.22em 0.55em;
+      }
+
+      .step:nth-child(2n) {
+        color: #c4b5fd;
+      }
+
+      .step:nth-child(3n) {
+        color: #86efac;
       }
 
       .two-column {
@@ -107,16 +190,125 @@
       }
 
       .two-column h3 {
-        color: #334155;
+        color: #7dd3fc;
         font-size: 0.85em;
         margin-bottom: 0.35em;
       }
 
+      .people {
+        align-items: stretch;
+        gap: 0.75em;
+        margin-top: 0.7em;
+      }
+
+      .person {
+        background: linear-gradient(
+          180deg,
+          rgba(15, 23, 42, 0.92),
+          rgba(15, 23, 42, 0.68)
+        );
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+        display: grid;
+        gap: 0.8em;
+        grid-template-columns: 4.2em minmax(0, 1fr);
+        padding: 0.78em;
+        text-align: left;
+      }
+
+      .person img {
+        aspect-ratio: 1;
+        border: 2px solid rgba(125, 211, 252, 0.92);
+        border-radius: 999px;
+        display: block;
+        margin: 0;
+        object-fit: cover;
+        width: 4.2em;
+      }
+
+      .person-content {
+        align-self: center;
+      }
+
+      .person h3 {
+        color: #f8fafc;
+        font-size: 0.7em;
+        line-height: 1.1;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      .person p {
+        color: #cbd5e1;
+        font-size: 0.54em;
+        line-height: 1.25;
+        margin-bottom: 0.35em;
+        margin-top: 0;
+        max-width: none;
+      }
+
+      .person .role {
+        align-self: start;
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.28);
+        border-radius: 999px;
+        color: #bae6fd;
+        display: inline-block;
+        font-size: 0.46em;
+        font-weight: 760;
+        margin-top: 0.2em;
+        padding: 0.2em 0.62em;
+        width: fit-content;
+      }
+
+      .person:nth-child(2) .role {
+        background: rgba(167, 139, 250, 0.12);
+        border-color: rgba(167, 139, 250, 0.32);
+        color: #ddd6fe;
+      }
+
+      .person .email {
+        color: #94a3b8;
+        font-size: 0.46em;
+      }
+
+      .person .aka {
+        color: #7dd3fc;
+        font-weight: 700;
+      }
+
+      .collaboration-note {
+        border-left: 3px solid #34d399;
+        color: #cbd5e1;
+        font-size: 0.72em;
+        margin-top: 0.85em;
+        max-width: 34ch;
+        padding-left: 0.75em;
+      }
+
       .question {
-        color: #1e3a8a;
+        color: #bae6fd;
         font-size: 1.12em;
         font-weight: 720;
         line-height: 1.25;
+      }
+
+      .compact p,
+      .compact li {
+        font-size: 0.82em;
+        line-height: 1.28;
+      }
+
+      .wide p,
+      .wide ul {
+        max-width: 50ch;
+      }
+
+      .link-label {
+        color: #7dd3fc;
+        font-size: 0.72em;
+        font-weight: 700;
       }
     </style>
   </head>
@@ -128,7 +320,48 @@
           <h1>Figma to React:<br />Intro, Tools & React</h1>
           <p class="subtitle">04-05-2026</p>
           <aside class="notes">
-            Welcome them into the course as a practical design and development space. The first lesson should feel like a shared beginning, not a technical test.
+            Welcome them into the course as a practical design and development
+            space. The first lesson should feel like a shared beginning, not a
+            technical test.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Who Are We?</h2>
+          <div class="two-column people">
+            <div class="person">
+              <img
+                src="https://raw.githubusercontent.com/cederdorff/race/master/images/users/race.webp"
+                alt="Rasmus Vase Cederdorff"
+              />
+              <div class="person-content">
+                <h3>Rasmus Vase Cederdorff</h3>
+                <p class="aka">RACE</p>
+                <p class="email">race@eaaa.dk</p>
+                <p class="role">Technical focus</p>
+              </div>
+            </div>
+            <div class="person">
+              <img
+                src="https://raw.githubusercontent.com/cederdorff/race/master/images/users/lyda.webp"
+                alt="Lykke Dahlén"
+              />
+              <div class="person-content">
+                <h3>Lykke Dahlén</h3>
+                <p class="aka">LYDA</p>
+                <p class="email">lyda@eaaa.dk</p>
+                <p class="role">Design focus</p>
+              </div>
+            </div>
+          </div>
+          <p class="collaboration-note">
+            The ambition is to connect design and technology in a meaningful way
+            throughout the course.
+          </p>
+          <aside class="notes">
+            Use this to make the teaching setup explicit. The course is
+            strongest when students see design and technology as connected, not
+            as two separate tracks.
           </aside>
         </section>
 
@@ -143,29 +376,92 @@
             <li>Build small interactive UI pieces with React</li>
           </ul>
           <aside class="notes">
-            Keep the promise simple. Today is about orientation, confidence and first contact with React as a prototyping material.
+            Keep the promise simple. Today is about orientation, confidence and
+            first contact with React as a prototyping material.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Agenda</h2>
+          <ul>
+            <li>Welcome and introductions</li>
+            <li>Course framing and alternative UI/UX</li>
+            <li>Tool setup</li>
+            <li>Introduction to React</li>
+            <li>React basics</li>
+            <li>Wrap-up and next steps</li>
+          </ul>
+          <aside class="notes">
+            This is the practical flow of the day. Use it to give students a
+            clear sense of pacing and what will happen when.
           </aside>
         </section>
 
         <section>
           <h2>The Course in One Sentence</h2>
-          <p class="statement">We turn visual interface ideas into working interactive prototypes.</p>
+          <p class="statement">
+            We turn visual interface ideas into working interactive prototypes.
+          </p>
           <div class="steps">
             <div class="step">Design becomes structure</div>
             <div class="step">Structure becomes code</div>
             <div class="step">Code becomes interaction</div>
           </div>
           <aside class="notes">
-            This is the short version students should remember. It also prepares them for the full course progression.
+            This is the short version students should remember. It also prepares
+            them for the full course progression.
+          </aside>
+        </section>
+
+        <section class="compact wide">
+          <h2>Official Course Description</h2>
+          <p>
+            The elective Interactive design and development works with a wide
+            range of technologies, focusing on the interaction between design
+            and programming as well as alternative user interfaces. The focus is
+            on new technologies in the development of concepts and prototypes,
+            and how they can be used to create interactive experiences where
+            technology and design merge.
+          </p>
+          <p>
+            The subject element focuses on specific technologies as well as
+            business understanding and development of existing companies.
+          </p>
+          <p>
+            <span class="link-label">Full course description on Canvas</span>
+            <br />
+            <a
+              href="https://eaaa.instructure.com/courses/31377/pages/about-the-course-interactive-design-and-development"
+              >About the course - Interactive Design and Development</a
+            >
+          </p>
+          <p>
+            <span class="link-label">Curriculum PDF</span>
+            <br />
+            <a
+              href="https://www.baaa.dk/media/zoomsurn/curriculum-digital-concept-development-institutional-part-august-2025-updated.pdf"
+              >Digital Concept Development - institutional part</a
+            >
+          </p>
+          <aside class="notes">
+            Use this as the formal wording before you translate it into
+            something more understandable for students.
           </aside>
         </section>
 
         <section>
           <h2>What Does the Curriculum Really Mean?</h2>
-          <p>This elective is about how design and programming work together.</p>
-          <p>You will explore how technologies can be used to create interactive experiences, alternative interfaces and meaningful digital layers for real contexts.</p>
+          <p>
+            This elective is about how design and programming work together.
+          </p>
+          <p>
+            You will explore how technologies can be used to create interactive
+            experiences, alternative interfaces and meaningful digital layers
+            for real contexts.
+          </p>
           <aside class="notes">
-            Avoid reading the formal curriculum aloud. Use this as the student-facing translation.
+            Avoid reading the formal curriculum aloud. Use this as the
+            student-facing translation.
           </aside>
         </section>
 
@@ -180,7 +476,9 @@
             <div class="step">Experimental gesture interfaces</div>
           </div>
           <aside class="notes">
-            Point out that the course starts with fundamentals before moving toward gestures, motion and experimental input. The technical skills build toward concept work.
+            Point out that the course starts with fundamentals before moving
+            toward gestures, motion and experimental input. The technical skills
+            build toward concept work.
           </aside>
         </section>
 
@@ -197,9 +495,13 @@
             <li>Venue</li>
             <li>Public space</li>
           </ul>
-          <p>Develop a prototype that adds a meaningful digital layer to the experience.</p>
+          <p>
+            Develop a prototype that adds a meaningful digital layer to the
+            experience.
+          </p>
           <aside class="notes">
-            This helps students move away from random app ideas. The prototype should belong to a situation, audience and concept.
+            This helps students move away from random app ideas. The prototype
+            should belong to a situation, audience and concept.
           </aside>
         </section>
 
@@ -215,7 +517,37 @@
             <li>when the user makes a choice</li>
           </ul>
           <aside class="notes">
-            This is a key bridge. Design files often show static moments. Interactive prototypes need states, feedback and flow.
+            This is a key bridge. Design files often show static moments.
+            Interactive prototypes need states, feedback and flow.
+          </aside>
+        </section>
+
+        <section>
+          <h2>What Is an Interface?</h2>
+          <p>An interface is the place where a person and a system meet.</p>
+          <p>It is how the user:</p>
+          <ul>
+            <li>understands what is possible</li>
+            <li>gives input</li>
+            <li>receives feedback</li>
+            <li>moves through an experience</li>
+          </ul>
+          <aside class="notes">
+            Keep this broad. An interface is not only a screen. It can be a
+            button, a gesture, a sound, a physical object, a camera input or a
+            motion response.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Discussion</h2>
+          <p class="question">Think of an interface you remember.</p>
+          <p>What made it interactive?</p>
+          <p>Was it useful, playful, confusing or surprising?</p>
+          <p>How could we build something like it?</p>
+          <aside class="notes">
+            Let students answer before showing technical explanations. The goal
+            is to make them observe interaction quality, not just visual style.
           </aside>
         </section>
 
@@ -234,18 +566,9 @@
             <li>motion feedback</li>
           </ul>
           <aside class="notes">
-            Ask students where they have met interfaces that felt different from a normal website or app. Keep it broad and accessible.
-          </aside>
-        </section>
-
-        <section>
-          <h2>Discussion</h2>
-          <p class="question">Think of an interface you remember.</p>
-          <p>What made it interactive?</p>
-          <p>Was it useful, playful, confusing or surprising?</p>
-          <p>How could we build something like it?</p>
-          <aside class="notes">
-            Let students answer before showing technical explanations. The goal is to make them observe interaction quality, not just visual style.
+            Now expand the definition. Alternative interfaces are not separate
+            from UX; they are different ways of letting users understand, act
+            and receive feedback.
           </aside>
         </section>
 
@@ -260,9 +583,16 @@
             <li>getting feedback</li>
             <li>saving something</li>
           </ul>
-          <p>Now ask: what if this did not happen through a normal button, menu or form?</p>
+          <p>
+            Now ask: what if this did not happen through a normal button, menu
+            or form?
+          </p>
           <aside class="notes">
-            Use this as an eye-opener. The point is not to make students chase impressive technology, but to make them question the default interface pattern. Ask whether it could happen through touch, gesture, movement, camera input or motion, and whether that would make the experience clearer, more meaningful or more memorable.
+            Use this as an eye-opener. The point is not to make students chase
+            impressive technology, but to make them question the default
+            interface pattern. Ask whether it could happen through touch,
+            gesture, movement, camera input or motion, and whether that would
+            make the experience clearer, more meaningful or more memorable.
           </aside>
         </section>
 
@@ -278,9 +608,13 @@
             <li>product</li>
             <li>company</li>
           </ul>
-          <p>Then define the user action, the normal interface, the alternative interface and why it makes sense.</p>
+          <p>
+            Then define the user action, the normal interface, the alternative
+            interface and why it makes sense.
+          </p>
           <aside class="notes">
-            Give them 5 minutes in pairs. Ask 2-3 pairs to share. End by asking: is the alternative interface meaningful, or is it just decoration?
+            Give them 5 minutes in pairs. Ask 2-3 pairs to share. End by asking:
+            is the alternative interface meaningful, or is it just decoration?
           </aside>
         </section>
 
@@ -295,7 +629,8 @@
             <li>What feedback should the interface give?</li>
           </ul>
           <aside class="notes">
-            This prepares the mental model for components, props, state and events.
+            This prepares the mental model for components, props, state and
+            events.
           </aside>
         </section>
 
@@ -326,13 +661,16 @@
             </div>
           </div>
           <aside class="notes">
-            Do not over-explain yet. This slide is a map students can return to later.
+            Do not over-explain yet. This slide is a map students can return to
+            later.
           </aside>
         </section>
 
         <section>
           <h2>Where MCP and AI Fit</h2>
-          <p>MCP and AI can help us inspect, translate and scaffold from Figma.</p>
+          <p>
+            MCP and AI can help us inspect, translate and scaffold from Figma.
+          </p>
           <p>But we still need to understand:</p>
           <ul>
             <li>what the code does</li>
@@ -341,7 +679,9 @@
             <li>whether the prototype supports the concept</li>
           </ul>
           <aside class="notes">
-            Set expectations early. AI assistance is part of the workflow later, but React understanding is what lets students judge and improve the output.
+            Set expectations early. AI assistance is part of the workflow later,
+            but React understanding is what lets students judge and improve the
+            output.
           </aside>
         </section>
 
@@ -357,7 +697,8 @@
             <li>interactive flows</li>
           </ul>
           <aside class="notes">
-            Frame React as a prototyping material, not as full production engineering.
+            Frame React as a prototyping material, not as full production
+            engineering.
           </aside>
         </section>
 
@@ -368,7 +709,8 @@
           <p>State is information that can change.</p>
           <p>Events are things the user does.</p>
           <aside class="notes">
-            Keep this slide visible when live coding. It gives students four words to hang onto.
+            Keep this slide visible when live coding. It gives students four
+            words to hang onto.
           </aside>
         </section>
 
@@ -385,7 +727,8 @@
             <li>product item</li>
           </ul>
           <aside class="notes">
-            Connect this to Figma components. Students already understand repeated visual patterns.
+            Connect this to Figma components. Students already understand
+            repeated visual patterns.
           </aside>
         </section>
 
@@ -426,7 +769,8 @@
             <li>loading, success or error</li>
           </ul>
           <aside class="notes">
-            This is where students start seeing why code can express more than a static design.
+            This is where students start seeing why code can express more than a
+            static design.
           </aside>
         </section>
 
@@ -443,7 +787,8 @@
   );
 }</code></pre>
           <aside class="notes">
-            This can be the first live-code pattern. A tiny state change is enough.
+            This can be the first live-code pattern. A tiny state change is
+            enough.
           </aside>
         </section>
 
@@ -457,9 +802,13 @@
             <li>one state value</li>
             <li>one user action</li>
           </ul>
-          <p>Examples: like button, expandable card, selected filter, simple tab switcher.</p>
+          <p>
+            Examples: like button, expandable card, selected filter, simple tab
+            switcher.
+          </p>
           <aside class="notes">
-            Let students choose from the examples. Choice makes the exercise feel less like typing practice.
+            Let students choose from the examples. Choice makes the exercise
+            feel less like typing practice.
           </aside>
         </section>
 
@@ -476,7 +825,8 @@
             <li>React project</li>
           </ul>
           <aside class="notes">
-            Treat setup issues as normal. The success criterion is that everyone knows what is missing and what to fix.
+            Treat setup issues as normal. The success criterion is that everyone
+            knows what is missing and what to fix.
           </aside>
         </section>
 
@@ -491,17 +841,28 @@
             <li>explain where the component lives?</li>
           </ul>
           <aside class="notes">
-            This gives a concrete minimum for the day. It also helps students who are unsure whether they are following.
+            This gives a concrete minimum for the day. It also helps students
+            who are unsure whether they are following.
           </aside>
         </section>
 
         <section>
           <h2>From Today to Next Time</h2>
-          <p><strong>Today:</strong> We begin moving from visual design to interactive code.</p>
-          <p><strong>Next:</strong> We practice the basics and prepare to structure designs as reusable components.</p>
-          <p><strong>Later:</strong> We use MCP/AI, gestures, motion and alternative input to develop stronger prototypes.</p>
+          <p>
+            <strong>Today:</strong> We begin moving from visual design to
+            interactive code.
+          </p>
+          <p>
+            <strong>Next:</strong> We practice the basics and prepare to
+            structure designs as reusable components.
+          </p>
+          <p>
+            <strong>Later:</strong> We use MCP/AI, gestures, motion and
+            alternative input to develop stronger prototypes.
+          </p>
           <aside class="notes">
-            End with continuity. The course is cumulative, and today's basics matter later.
+            End with continuity. The course is cumulative, and today's basics
+            matter later.
           </aside>
         </section>
 
@@ -514,7 +875,8 @@
             <li>one interface idea you might want to explore</li>
           </ul>
           <aside class="notes">
-            Use this to identify where the group is technically. It can also feed the next lesson.
+            Use this to identify where the group is technically. It can also
+            feed the next lesson.
           </aside>
         </section>
 
@@ -528,7 +890,8 @@
             <li>Bring questions to the workday</li>
           </ul>
           <aside class="notes">
-            Keep the homework practical. The workday is about strengthening the foundation before the next React session.
+            Keep the homework practical. The workday is about strengthening the
+            foundation before the next React session.
           </aside>
         </section>
       </div>
