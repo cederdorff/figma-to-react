@@ -651,6 +651,93 @@
         font-size: 0.68em;
         font-weight: 700;
       }
+
+      .roomy h2 {
+        font-size: 1.58em;
+        margin-bottom: 0.28em;
+      }
+
+      .roomy p,
+      .roomy li {
+        font-size: 0.72em;
+        line-height: 1.24;
+      }
+
+      .roomy p {
+        margin-bottom: 0.45em;
+        max-width: 54ch;
+      }
+
+      .roomy ul {
+        margin-left: 0.95em;
+        max-width: none;
+      }
+
+      .roomy li + li {
+        margin-top: 0.16em;
+      }
+
+      .info-grid {
+        display: grid;
+        gap: 0.85em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 0.8em;
+      }
+
+      .info-card {
+        background: rgba(15, 23, 42, 0.62);
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 10px;
+        padding: 0.9em;
+      }
+
+      .info-card h3 {
+        color: #f8fafc;
+        font-size: 0.72em;
+        margin-bottom: 0.45em;
+        margin-top: 0;
+      }
+
+      .info-card p {
+        margin-bottom: 0.45em;
+        max-width: none;
+      }
+
+      .info-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-card ul {
+        margin-left: 0.95em;
+        max-width: none;
+      }
+
+      .info-card li {
+        line-height: 1.24;
+      }
+
+      .bullet-columns {
+        columns: 2;
+        column-gap: 1.6em;
+      }
+
+      .bullet-columns li {
+        break-inside: avoid;
+        margin-bottom: 0.22em;
+      }
+
+      .small-links {
+        display: grid;
+        gap: 0.7em;
+      }
+
+      .small-links p {
+        margin-bottom: 0;
+      }
+
+      .small-note {
+        color: #94a3b8;
+      }
     </style>
   </head>
   <body>
@@ -909,77 +996,88 @@
           </aside>
         </section>
 
-        <section class="compact wide">
+        <section class="roomy">
           <h2>Official Course Description</h2>
-          <p>
-            The elective Interactive design and development works with a wide
-            range of technologies, focusing on the interaction between design
-            and programming as well as alternative user interfaces. The focus is
-            on new technologies in the development of concepts and prototypes,
-            and how they can be used to create interactive experiences where
-            technology and design merge.
-          </p>
-          <p>
-            The subject element focuses on specific technologies as well as
-            business understanding and development of existing companies.
-          </p>
-          <p>
-            <span class="link-label">Full course description on Canvas</span>
-            <br />
-            <a
-              href="https://eaaa.instructure.com/courses/31377/pages/about-the-course-interactive-design-and-development"
-              >About the course - Interactive Design and Development</a
-            >
-          </p>
-          <p>
-            <span class="link-label">Curriculum PDF</span>
-            <br />
-            <a
-              href="https://www.baaa.dk/media/zoomsurn/curriculum-digital-concept-development-institutional-part-august-2025-updated.pdf"
-              >Digital Concept Development - institutional part</a
-            >
-          </p>
+          <div class="info-grid">
+            <div class="info-card">
+              <p>
+                The elective Interactive design and development works with a
+                wide range of technologies, focusing on the interaction between
+                design and programming as well as alternative user interfaces.
+              </p>
+              <p>
+                The focus is on new technologies in the development of concepts
+                and prototypes, and how they can be used to create interactive
+                experiences where technology and design merge.
+              </p>
+              <p>
+                The subject element focuses on specific technologies as well as
+                business understanding and development of existing companies.
+              </p>
+            </div>
+            <div class="info-card small-links">
+              <p class="link-label">Read the full descriptions</p>
+              <p class="small-note">Canvas course page</p>
+              <p>
+                <a
+                  href="https://eaaa.instructure.com/courses/31377/pages/about-the-course-interactive-design-and-development"
+                  >About the course - Interactive Design and Development</a
+                >
+              </p>
+              <p class="small-note">Curriculum PDF</p>
+              <p>
+                <a
+                  href="https://www.baaa.dk/media/zoomsurn/curriculum-digital-concept-development-institutional-part-august-2025-updated.pdf"
+                  >Digital Concept Development - institutional part</a
+                >
+              </p>
+            </div>
+          </div>
           <aside class="notes">
             Use this as the formal wording before you translate it into
             something more understandable for students.
           </aside>
         </section>
 
-        <section class="compact wide dense">
+        <section class="roomy">
           <h2>What Does the Curriculum Really Mean?</h2>
-          <p>
-            This elective is about how design and programming work together.
+          <p class="statement">
+            This elective is about how design and programming work together in
+            interactive prototypes.
           </p>
-          <p>
-            You will explore how technologies can be used to create interactive
-            experiences, alternative interfaces and meaningful digital layers
-            for real contexts.
-          </p>
-          <ul>
-            <li>
-              Turning interface designs into working interactive prototypes
-            </li>
-            <li>
-              Using Figma and React to move from visual design to components,
-              props, state, layout and interaction
-            </li>
-            <li>
-              Using MCP and AI-assisted workflows as support for translating,
-              inspecting and improving code
-            </li>
-            <li>
-              Exploring alternative interfaces through gestures, motion feedback
-              and experimental input
-            </li>
-            <li>
-              Working with real contexts and building meaningful digital layers
-              for user experiences
-            </li>
-            <li>
-              Learning how to choose, test and explain your design and
-              technology decisions
-            </li>
-          </ul>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Build and translate</h3>
+              <ul>
+                <li>Turn interface designs into working interactive prototypes</li>
+                <li>
+                  Use Figma and React to move from visual design to components,
+                  props, state, layout and interaction
+                </li>
+                <li>
+                  Use MCP and AI-assisted workflows as support for translating,
+                  inspecting and improving code
+                </li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Extend and explain</h3>
+              <ul>
+                <li>
+                  Explore alternative interfaces through gestures, motion
+                  feedback and experimental input
+                </li>
+                <li>
+                  Work with real contexts and build meaningful digital layers
+                  for user experiences
+                </li>
+                <li>
+                  Learn how to choose, test and explain your design and
+                  technology decisions
+                </li>
+              </ul>
+            </div>
+          </div>
           <aside class="notes">
             This now does both jobs: a student-friendly translation of the
             curriculum and a practical summary of what the course actually
@@ -987,7 +1085,7 @@
           </aside>
         </section>
 
-        <section>
+        <section class="roomy">
           <h2>Course Progression</h2>
           <div class="progression-grid">
             <div class="progression-card">
@@ -1033,7 +1131,7 @@
           </aside>
         </section>
 
-        <section>
+        <section class="roomy">
           <h2>Exam</h2>
           <div class="exam-grid">
             <div class="exam-card">
@@ -1075,11 +1173,11 @@
           </aside>
         </section>
 
-        <section>
+        <section class="roomy">
           <h2>Padlet</h2>
           <div class="padlet-card">
             <p>Please add a new post on Padlet with:</p>
-            <ul>
+            <ul class="bullet-columns">
               <li>Profile picture</li>
               <li>Name</li>
               <li>Where are you from? (country / city)</li>
@@ -1101,24 +1199,30 @@
           </aside>
         </section>
 
-        <section>
+        <section class="roomy">
           <h2>Different Starting Points</h2>
           <p>
             We come into this elective with very different backgrounds, skills
-            and levels.
+            and confidence levels.
           </p>
-          <ul>
-            <li>Some of you know very little programming</li>
-            <li>Some of you have already built much bigger solutions</li>
-            <li>The same kind of gap also exists in design, tools and confidence</li>
-          </ul>
-          <p>
-            That is completely normal. Part of this course is to help and learn
-            from each other.
-          </p>
-          <p>
-            That is also why you have been placed in table groups.
-          </p>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Different starting points</h3>
+              <ul>
+                <li>Some of you know very little programming</li>
+                <li>Some of you have already built much bigger solutions</li>
+                <li>The same kind of gap also exists in design</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>How we work in this course</h3>
+              <ul>
+                <li>We help and learn from each other</li>
+                <li>Questions are part of the work, not a sign of failure</li>
+                <li>That is also why you have been placed in table groups</li>
+              </ul>
+            </div>
+          </div>
           <aside class="notes">
             Use this to lower pressure early. Make it clear that different
             levels are expected, and that collaboration is part of how the
@@ -1126,31 +1230,33 @@
           </aside>
         </section>
 
-        <section>
+        <section class="roomy">
           <h2>What Is an Interface?</h2>
-          <p>An interface is the place where a person and a system meet.</p>
-          <p>
-            It is all the ways a person can interact with a machine, a product
-            or a digital system.
+          <p class="statement">
+            An interface is the place where a person and a system meet.
           </p>
-          <p>It is how the user:</p>
-          <ul>
-            <li>understands what is possible</li>
-            <li>gives input</li>
-            <li>receives feedback</li>
-            <li>moves through an experience</li>
-          </ul>
-          <p>
-            Most interfaces we meet every day are conventional interfaces, for
-            example:
-          </p>
-          <ul>
-            <li>buttons</li>
-            <li>menus</li>
-            <li>pages</li>
-            <li>links</li>
-            <li>forms</li>
-          </ul>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>What an interface does</h3>
+              <ul>
+                <li>Helps the user understand what is possible</li>
+                <li>Lets the user give input</li>
+                <li>Gives feedback</li>
+                <li>Moves the user through an experience</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Conventional interfaces</h3>
+              <p>Most interfaces we meet every day use patterns such as:</p>
+              <ul class="bullet-columns">
+                <li>buttons</li>
+                <li>menus</li>
+                <li>pages</li>
+                <li>links</li>
+                <li>forms</li>
+              </ul>
+            </div>
+          </div>
           <aside class="notes">
             Start broad. An interface is not only a screen. It can be a button,
             a gesture, a sound, a physical object, camera input or motion
@@ -1181,29 +1287,36 @@
           </aside>
         </section>
 
-        <section>
+        <section class="roomy">
           <p class="eyebrow">Short Input</p>
           <h2>What Is an Alternative Interface?</h2>
           <p>
-            An interface does not have to rely only on buttons, menus, pages and
-            forms.
+            An interface does not have to rely only on buttons, menus, pages
+            and forms.
           </p>
-          <p>It can also use:</p>
-          <ul>
-            <li>touch</li>
-            <li>drag</li>
-            <li>swipe</li>
-            <li>long press</li>
-            <li>movement</li>
-            <li>camera input</li>
-            <li>hand gestures</li>
-            <li>motion feedback</li>
-          </ul>
-          <p>
-            The point is not to be impressive. The point is to ask whether a
-            different form of interaction would make more sense in a specific
-            context.
-          </p>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>It can also use</h3>
+              <ul class="bullet-columns">
+                <li>touch</li>
+                <li>drag</li>
+                <li>swipe</li>
+                <li>long press</li>
+                <li>movement</li>
+                <li>camera input</li>
+                <li>hand gestures</li>
+                <li>motion feedback</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>The real question</h3>
+              <p>
+                The point is not to be impressive. The point is to ask whether
+                a different form of interaction would make more sense in a
+                specific context.
+              </p>
+            </div>
+          </div>
         </section>
 
         <section>
@@ -1445,10 +1558,10 @@
           </aside>
         </section>
 
-        <section>
+        <section class="roomy">
           <h2>Tool Setup</h2>
           <p>We need the basics working:</p>
-          <ul>
+          <ul class="bullet-columns">
             <li>browser</li>
             <li>code editor</li>
             <li>Node.js</li>
