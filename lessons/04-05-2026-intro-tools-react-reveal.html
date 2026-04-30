@@ -584,6 +584,61 @@
         font-size: 0.62em;
         line-height: 1.24;
       }
+
+      .progression-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2em;
+        margin-top: 0.9em;
+      }
+
+      .progression-links a {
+        color: #7dd3fc;
+        font-size: 0.68em;
+        font-weight: 700;
+      }
+
+      .exam-grid {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 1em;
+      }
+
+      .exam-card {
+        background: rgba(15, 23, 42, 0.62);
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 10px;
+        min-height: 8.3em;
+        padding: 1em;
+      }
+
+      .exam-card h3 {
+        color: #f8fafc;
+        font-size: 0.82em;
+        margin-bottom: 0.5em;
+        margin-top: 0;
+      }
+
+      .exam-card ul {
+        margin-left: 0.95em;
+        max-width: none;
+      }
+
+      .exam-card li {
+        font-size: 0.62em;
+        line-height: 1.24;
+      }
+
+      .exam-link {
+        margin-top: 0.9em;
+      }
+
+      .exam-link a {
+        color: #7dd3fc;
+        font-size: 0.68em;
+        font-weight: 700;
+      }
     </style>
   </head>
   <body>
@@ -925,7 +980,10 @@
           <div class="progression-grid">
             <div class="progression-card">
               <h3>Figma to React</h3>
-              <p>Turning visual design into working interactive prototypes.</p>
+              <p>
+                Learning the basics needed to turn design into structure, and
+                structure into code with React.
+              </p>
               <ul>
                 <li>Reading Figma and design structure</li>
                 <li>Components, props, state and interaction</li>
@@ -949,6 +1007,13 @@
               </ul>
             </div>
           </div>
+          <div class="progression-links">
+            <a
+              href="https://skemasys.eaaa.dk/Module/TimeTable?educationId=4&periodId=1073&activityId=9991"
+              >Timetable</a
+            >
+            <a href="https://eaaa.instructure.com/courses/31377">Canvas</a>
+          </div>
           <aside class="notes">
             Frame the course as two main blocks. The first is about translating
             design into code. The second is about moving beyond standard screen
@@ -957,19 +1022,44 @@
         </section>
 
         <section>
-          <h2>Not Just a Screen</h2>
-          <p>A Figma frame is one moment.</p>
-          <p>A React prototype can show what happens:</p>
-          <ul>
-            <li>before</li>
-            <li>during</li>
-            <li>after</li>
-            <li>when something goes wrong</li>
-            <li>when the user makes a choice</li>
-          </ul>
+          <h2>Exam</h2>
+          <div class="exam-grid">
+            <div class="exam-card">
+              <h3>Format</h3>
+              <ul>
+                <li>Individual oral exam based on a group project</li>
+                <li>Group project in teams of 3 to 4 students</li>
+                <li>
+                  The project consists of a prototype, documentation and a video
+                  showing the intention of the prototype
+                </li>
+                <li>
+                  Documentation is max 10 standard pages and is submitted with
+                  the prototype and video via WISEflow
+                </li>
+              </ul>
+            </div>
+            <div class="exam-card">
+              <h3>Oral Exam</h3>
+              <ul>
+                <li>Group presentation (5 min. per group member)</li>
+                <li>
+                  Then an individual oral examination based on the project and
+                  submitted material (10 min. per student)
+                </li>
+                <li>Deliberation and feedback (5 min.)</li>
+              </ul>
+            </div>
+          </div>
+          <p class="exam-link">
+            <a
+              href="https://www.baaa.dk/media/zoomsurn/curriculum-digital-concept-development-institutional-part-august-2025-updated.pdf"
+              >Curriculum PDF, pages 23-25</a
+            >
+          </p>
           <aside class="notes">
-            This is a key bridge. Design files often show static moments.
-            Interactive prototypes need states, feedback and flow.
+            This is the practical exam overview. It is based on the curriculum
+            section for Interactive design and development, pages 23 to 25.
           </aside>
         </section>
 
@@ -1044,28 +1134,6 @@
             interface pattern. Ask whether it could happen through touch,
             gesture, movement, camera input or motion, and whether that would
             make the experience clearer, more meaningful or more memorable.
-          </aside>
-        </section>
-
-        <section>
-          <h2>Pair Exercise</h2>
-          <p>Choose a real context:</p>
-          <ul>
-            <li>museum</li>
-            <li>shop</li>
-            <li>event</li>
-            <li>service</li>
-            <li>public space</li>
-            <li>product</li>
-            <li>company</li>
-          </ul>
-          <p>
-            Then define the user action, the normal interface, the alternative
-            interface and why it makes sense.
-          </p>
-          <aside class="notes">
-            Give them 5 minutes in pairs. Ask 2-3 pairs to share. End by asking:
-            is the alternative interface meaningful, or is it just decoration?
           </aside>
         </section>
 
