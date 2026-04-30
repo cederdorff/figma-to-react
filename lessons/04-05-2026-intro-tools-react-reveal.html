@@ -1247,7 +1247,13 @@
             </div>
             <div class="info-card">
               <h3>Conventional interfaces</h3>
-              <p>Most interfaces we meet every day use patterns such as:</p>
+              <p>Most interfaces we meet every day involve things such as:</p>
+              <ul class="bullet-columns">
+                <li>screens and touchscreens</li>
+                <li>keyboard and mouse</li>
+                <li>sound and light</li>
+              </ul>
+              <p>And on screens, we often use patterns such as:</p>
               <ul class="bullet-columns">
                 <li>buttons</li>
                 <li>menus</li>
@@ -1291,12 +1297,12 @@
           <p class="eyebrow">Short Input</p>
           <h2>What Is an Alternative Interface?</h2>
           <p>
-            An interface does not have to rely only on buttons, menus, pages
-            and forms.
+            An alternative interface changes how input, feedback or interaction
+            happens.
           </p>
           <div class="info-grid">
             <div class="info-card">
-              <h3>It can also use</h3>
+              <h3>It might use</h3>
               <ul class="bullet-columns">
                 <li>touch</li>
                 <li>drag</li>
@@ -1309,6 +1315,15 @@
               </ul>
             </div>
             <div class="info-card">
+              <h3>What makes it alternative?</h3>
+              <p>
+                It may move beyond the usual screen, mouse, keyboard and common
+                UI patterns.
+              </p>
+              <p>
+                It might use the body, space, sensors, motion or the physical
+                context around the user.
+              </p>
               <h3>The real question</h3>
               <p>
                 The point is not to be impressive. The point is to ask whether
@@ -1361,6 +1376,99 @@
             Use this as the class discussion moment. Ask a few groups to share
             concrete examples before moving into design-to-code thinking. Keep
             the share-back short and comparative.
+          </aside>
+        </section>
+
+        <section class="roomy">
+          <p class="eyebrow">Bridge</p>
+          <h2>From Interaction Ideas to Building</h2>
+          <p class="statement">
+            Once we have an interface idea, the next question is: how do we
+            turn it into something we can actually build?
+          </p>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>In design</h3>
+              <ul>
+                <li>We sketch screens, flows and interaction ideas</li>
+                <li>We decide what the user should see and do</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>In code</h3>
+              <ul>
+                <li>We structure the interface into smaller pieces</li>
+                <li>We make those pieces interactive and reusable</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            This is the pivot. Close the exercise by saying: we have talked
+            about interaction and alternative interfaces, but now we need a way
+            to build them. That way starts with structure.
+          </aside>
+        </section>
+
+        <section class="roomy">
+          <h2>We See UI as Components</h2>
+          <p class="statement">
+            We do not build interfaces as one big screen. We split them into
+            components.
+          </p>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>A component can be</h3>
+              <ul>
+                <li>a button</li>
+                <li>a card</li>
+                <li>a navigation bar</li>
+                <li>a product item</li>
+                <li>a modal or dialog</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Why this matters</h3>
+              <ul>
+                <li>It makes the interface easier to understand</li>
+                <li>It makes the code easier to build and change</li>
+                <li>It helps us reuse patterns across a design</li>
+                <li>It connects naturally to both Figma and React</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            This is an important teaching slide. Make the word component feel
+            simple and practical. Students should leave with the idea that
+            component thinking is a way of seeing interface structure.
+          </aside>
+        </section>
+
+        <section class="roomy">
+          <h2>Two Terms We Will Use All the Time</h2>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Figma</h3>
+              <p>
+                Figma is where we read and organise the design: screens,
+                layout, components, variants and user flows.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>React</h3>
+              <p>
+                React is where we build the interface in code: components,
+                props, state and interaction.
+              </p>
+            </div>
+          </div>
+          <p>
+            In short: <strong>Figma helps us see the structure</strong> and
+            <strong>React helps us build the structure</strong>.
+          </p>
+          <aside class="notes">
+            Keep this slide light. It is not a full explanation of either tool.
+            It is only there to establish the vocabulary before the design to
+            code slides.
           </aside>
         </section>
 
