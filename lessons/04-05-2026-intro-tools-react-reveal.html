@@ -927,6 +927,41 @@
         width: 100%;
       }
 
+      .react-title-slide::before {
+        display: none;
+      }
+
+      .react-title-slide {
+        text-align: center !important;
+      }
+
+      .react-title-slide .react-lockup {
+        align-items: center;
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        margin: 1.8em auto 1em;
+      }
+
+      .react-title-slide .react-lockup img {
+        height: 3.2em;
+        width: 3.2em;
+      }
+
+      .react-title-slide h2 {
+        font-size: 2.3em;
+        line-height: 1;
+        margin: 0;
+      }
+
+      .react-title-slide p {
+        color: #f8fafc;
+        font-size: 1em;
+        margin: 0.8em auto 0;
+        max-width: none;
+        text-align: center;
+      }
+
       .exercise-slide h2 {
         font-size: 1.52em;
         margin-bottom: 0.24em;
@@ -2195,6 +2230,22 @@ function Footer() {
           </aside>
         </section>
 
+        <section class="react-title-slide">
+          <div class="react-lockup">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+              alt="React logo"
+            />
+            <h2>React</h2>
+          </div>
+          <p>A JavaScript library for building user interfaces</p>
+          <aside class="notes">
+            This is a simple reset slide before the React section starts. Let it
+            breathe for a moment, then move straight into why React is useful in
+            this course.
+          </aside>
+        </section>
+
         <section>
           <h2>Why React?</h2>
           <p>React helps us build interfaces as pieces that can change.</p>
@@ -2213,11 +2264,12 @@ function Footer() {
         </section>
 
         <section>
+          <p class="eyebrow">Thinking in React</p>
           <h2>React Mental Model</h2>
-          <p>A component is a piece of interface.</p>
-          <p>Props are information passed into that piece.</p>
-          <p>State is information that can change.</p>
-          <p>Events are things the user does.</p>
+          <p>A <strong>component</strong> is a piece of interface.</p>
+          <p><strong>Props</strong> are information passed into that piece.</p>
+          <p><strong>State</strong> is information that can change.</p>
+          <p><strong>Events</strong> are things the user does.</p>
           <aside class="notes">
             Keep this slide visible when live coding. It gives students four
             words to hang onto.
