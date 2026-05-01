@@ -6,11 +6,11 @@
 
 ### Purpose of The Day
 
-The purpose of today is to create a shared starting point for the course. We will get to know each other, frame the elective, look at examples of alternative UI/UX, and make sure everyone has the basic tools installed and working.
+The purpose of today is to create a shared starting point for the course. We will get to know each other, translate the elective into something practical, and explore how interfaces can be more than screens, buttons and menus.
 
-We will also begin building the bridge from Figma to React by asking how a visual interface can become interactive code. Later in the course, we will use MCP and AI-assisted workflows to support that process, but today the focus is on understanding the basics first.
+We will then move from interface ideas into component thinking: how to look at real websites and apps as reusable UI parts. That gives us the bridge into React, where we will begin learning how to build components in code.
 
-By the end of the day, you should have the required tools installed, a clearer sense of the course direction, and a first understanding of why React matters in the move from design to code.
+By the end of the day, you should have a clearer sense of the course direction, a first understanding of components, and a working React setup for the first exercises.
 
 ---
 
@@ -28,21 +28,24 @@ By the end of the day, you should have the required tools installed, a clearer s
 ### Agenda
 
 1. **Welcome and introductions**
-   - We will get to know each other, the course, and the overall way we will work in the elective.
-2. **Course framing and alternative UI/UX**
-   - We will look at examples of alternative interfaces and interactive experiences.
-   - We will break them down together and ask: how could we actually build this?
-3. **Tool setup**
-   - We will set up or check the tools needed for the course.
-   - The goal is to make sure everyone can work locally with the same basic setup.
-4. **Introduction to React**
-   - We will start with why React is useful in this course.
-   - We will connect React to the move from Figma designs to interactive code.
-   - We will frame React as the foundation you need before we later bring MCP and AI into the workflow.
+   - We will get to know each other, the lecturers, the group and the overall way we will work in the elective.
+2. **What this course is about**
+   - We will translate the curriculum into a clearer course direction.
+   - We will look at the course progression, technologies, exam format and first practical expectations.
+3. **Alternative interfaces and interaction**
+   - We will define what an interface is and discuss how interfaces can move beyond screens, buttons and menus.
+   - We will look at examples using gestures, movement, camera input, physical interaction and motion feedback.
+   - In table groups, you will reimagine a familiar interface as an alternative interaction.
+4. **Component thinking**
+   - We will practice seeing UI as components, reusable components and component trees.
+   - We will look at examples from real websites and apps, including how a UI layout can map to React components.
 5. **React basics**
-   - We will work with components, JSX, props, `useState` and event handlers.
-   - We will begin turning visual interface ideas into simple interactive UI.
-6. **Thanks for today**
+   - We will introduce React as a JavaScript library for building user interfaces.
+   - We will work with components, JSX, props, state and event handlers.
+6. **Tools and Exercises**
+   - We will check the basic tools and React project setup.
+   - We will work with the first React exercises: getting started with React and building a page layout with components.
+7. **Wrap-up and next steps**
    - We will wrap up the day and answer final questions.
    - We will also talk about what to do on the workday after this lesson.
 
@@ -53,8 +56,9 @@ By the end of the day, you should have the required tools installed, a clearer s
 - **Slides**
   - [Reveal.js slide deck](04-05-2026-intro-tools-react-reveal.html)
 - **Exercises**
-  - Will be available
+  - [Getting started with React](https://www.notion.so/Getting-started-with-React-0fd48b8ae90a438bb6ec8dc95628f13f?pvs=21)
+  - [React Page Layout with Components](https://www.notion.so/React-Page-Layout-with-Components-e6a428b2ee3d43e3a995d8261be068de?pvs=21)
 - **Other links**
-  - Will be available
+  - [Tool setup guide](https://github.com/cederdorff/figma-to-react/blob/main/guides/tool-setup-guide.md)
 
 ---
