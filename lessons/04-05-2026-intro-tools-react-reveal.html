@@ -796,6 +796,84 @@
         font-size: 0.6em;
         font-weight: 700;
       }
+
+      .code-media-slide {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 1.15fr 0.85fr;
+        margin-top: 1em;
+      }
+
+      .code-panel {
+        background: rgba(15, 23, 42, 0.62);
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .code-panel pre {
+        margin: 0;
+        width: 100%;
+      }
+
+      .code-panel pre code {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        font-size: 0.78em;
+        min-height: 100%;
+      }
+
+      .visual-pair-slide::before {
+        display: none;
+      }
+
+      .visual-pair-slide .code-media-slide {
+        gap: 0.8em;
+        grid-template-columns: 1.22fr 0.78fr;
+        margin-top: 0.15em;
+      }
+
+      .visual-pair-slide .media-frame,
+      .visual-pair-slide .code-panel {
+        min-height: 13.8em;
+      }
+
+      .visual-pair-slide .media-frame img {
+        aspect-ratio: auto;
+        height: 100%;
+      }
+
+      .visual-pair-slide .code-panel pre code {
+        font-size: 0.68em;
+        line-height: 1.16;
+        padding: 0.72em;
+      }
+
+      .exercise-slide h2 {
+        font-size: 1.52em;
+        margin-bottom: 0.24em;
+      }
+
+      .exercise-slide p,
+      .exercise-slide li {
+        font-size: 0.7em;
+        line-height: 1.2;
+      }
+
+      .exercise-slide p {
+        margin-bottom: 0.38em;
+        max-width: 56ch;
+      }
+
+      .exercise-slide ul {
+        margin-left: 0.95em;
+        max-width: 56ch;
+      }
+
+      .exercise-slide li + li {
+        margin-top: 0.12em;
+      }
     </style>
   </head>
   <body>
@@ -1055,6 +1133,35 @@
         </section>
 
         <section class="roomy">
+          <h2>Two Terms We Will Use All the Time</h2>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Figma</h3>
+              <p>
+                Figma is where we read and organise the design: screens, layout,
+                components, variants and user flows.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>React</h3>
+              <p>
+                React is where we build the interface in code: components,
+                props, state and interaction.
+              </p>
+            </div>
+          </div>
+          <p>
+            In short: <strong>Figma helps us see the structure</strong> and
+            <strong>React helps us build the structure</strong>.
+          </p>
+          <aside class="notes">
+            Keep this slide light. It is not a full explanation of either tool.
+            It is only there to establish the vocabulary before the design to
+            code slides.
+          </aside>
+        </section>
+
+        <section class="roomy">
           <h2>Official Course Description</h2>
           <div class="info-grid">
             <div class="info-card">
@@ -1107,7 +1214,9 @@
             <div class="info-card">
               <h3>Build and translate</h3>
               <ul>
-                <li>Turn interface designs into working interactive prototypes</li>
+                <li>
+                  Turn interface designs into working interactive prototypes
+                </li>
                 <li>
                   Use Figma and React to move from visual design to components,
                   props, state, layout and interaction
@@ -1434,8 +1543,8 @@
               </p>
               <h3>The real question</h3>
               <p>
-                The point is not to be impressive. The point is to ask whether
-                a different form of interaction would make more sense in a
+                The point is not to be impressive. The point is to ask whether a
+                different form of interaction would make more sense in a
                 specific context.
               </p>
             </div>
@@ -1502,8 +1611,8 @@
               </p>
               <ul>
                 <li>
-                  The interface is not a button or a menu, but a physical
-                  object and a playful action
+                  The interface is not a button or a menu, but a physical object
+                  and a playful action
                 </li>
                 <li>
                   The user interacts through movement, air and a real-world
@@ -1547,25 +1656,26 @@
               <ul>
                 <li>The interaction should fit the context</li>
                 <li>It should help the user understand what to do</li>
-                <li>It should make the experience clearer or more meaningful</li>
+                <li>
+                  It should make the experience clearer or more meaningful
+                </li>
               </ul>
             </div>
           </div>
           <aside class="notes">
             This is the conclusion before the group exercise. The point is not
-            to reject screens, buttons or mice. The point is to open up the
-            idea of what an interface can be.
+            to reject screens, buttons or mice. The point is to open up the idea
+            of what an interface can be.
           </aside>
         </section>
 
-        <section>
+        <section class="exercise-slide">
           <p class="eyebrow">Group Exercise</p>
           <h2>What If the Interface Was Different?</h2>
-          <p>
-            Take one of the familiar interfaces you chose and reimagine it
-            together.
-          </p>
+          <p>Start by sharing your individual examples in your Table Group.</p>
           <ul>
+            <li>Each person presents their interface shortly</li>
+            <li>Choose one or two examples to work with together</li>
             <li>What is the core action?</li>
             <li>How does it work now?</li>
             <li>What could the alternative interface be?</li>
@@ -1575,14 +1685,14 @@
             </li>
           </ul>
           <p>
-            Work in your Table Group and turn one familiar interface into a
-            different interaction idea. Start from the existing action, then
-            change the way it is done.
+            Start from the existing action, then reimagine how the interaction
+            could happen differently.
           </p>
           <aside class="notes">
-            This is where they apply the concept. They should start from a
-            normal interface and then reimagine it, rather than inventing from
-            nothing. That gives them something concrete to compare against.
+            First, let them briefly share the interfaces they each picked. Then
+            the table group chooses one or two examples and works from those.
+            That makes the exercise collaborative without losing the individual
+            reflection work they already did.
           </aside>
         </section>
 
@@ -1607,8 +1717,8 @@
           <p class="eyebrow">Bridge</p>
           <h2>From Interaction Ideas to Building</h2>
           <p class="statement">
-            Once we have an interface idea, the next question is: how do we
-            turn it into something we can actually build?
+            Once we have an interface idea, the next question is: how do we turn
+            it into something we can actually build?
           </p>
           <div class="info-grid">
             <div class="info-card">
@@ -1655,7 +1765,10 @@
               <ul>
                 <li>It makes the interface easier to understand</li>
                 <li>It makes the code easier to build and change</li>
-                <li>It helps us reuse patterns across a design</li>
+                <li>
+                  It helps us create <strong>reusable components</strong> across
+                  a design
+                </li>
                 <li>It connects naturally to both Figma and React</li>
               </ul>
             </div>
@@ -1668,31 +1781,179 @@
         </section>
 
         <section class="roomy">
-          <h2>Two Terms We Will Use All the Time</h2>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Figma</h3>
-              <p>
-                Figma is where we read and organise the design: screens,
-                layout, components, variants and user flows.
-              </p>
+          <p class="eyebrow">Component Thinking</p>
+          <h2>Components, Components, Components</h2>
+          <div class="media-slide">
+            <div class="media-frame">
+              <img
+                src="https://raw.githubusercontent.com/cederdorff/race/master/images/ui-to-components.png"
+                alt="Illustration of a user interface being broken into smaller components"
+              />
             </div>
-            <div class="info-card">
-              <h3>React</h3>
+            <div class="media-copy">
+              <h3>How we read an interface</h3>
+              <ul>
+                <li>Start with the whole screen</li>
+                <li>Look for repeated UI patterns</li>
+                <li>Split the screen into smaller interface parts</li>
+                <li>Name those parts as components</li>
+                <li>
+                  Then decide what can change and what can become reusable
+                  components
+                </li>
+              </ul>
               <p>
-                React is where we build the interface in code: components,
-                props, state and interaction.
+                This is one of the most important habits in the course: when we
+                look at UI, we look for components.
               </p>
             </div>
           </div>
-          <p>
-            In short: <strong>Figma helps us see the structure</strong> and
-            <strong>React helps us build the structure</strong>.
-          </p>
           <aside class="notes">
-            Keep this slide light. It is not a full explanation of either tool.
-            It is only there to establish the vocabulary before the design to
-            code slides.
+            Stay with the repetition here. The goal is to make component
+            thinking feel like a reflex: see the whole, split it into parts,
+            name the parts, then build from there.
+          </aside>
+        </section>
+
+        <section class="roomy">
+          <p class="eyebrow">Another Example</p>
+          <h2>A Component Can Contain Components</h2>
+          <div class="media-slide">
+            <div class="media-frame">
+              <img
+                src="https://raw.githubusercontent.com/cederdorff/race/master/images/media-component-logo-bricks.avif"
+                alt="Illustration showing a media component divided into smaller components"
+              />
+            </div>
+            <div class="media-copy">
+              <h3>Example: a media component</h3>
+              <p>
+                Think of components like <strong>LEGO bricks</strong>: larger
+                pieces can be built from smaller pieces.
+              </p>
+              <ul>
+                <li>The whole thing can be one component</li>
+                <li>Inside it, we might have an image component</li>
+                <li>We might have a text component or text content area</li>
+                <li>We might have a button component</li>
+                <li>
+                  So a larger component can be built from smaller
+                  <strong>reusable components</strong>
+                </li>
+              </ul>
+              <p>
+                This is the idea we keep returning to: components can contain
+                other components.
+              </p>
+            </div>
+          </div>
+          <aside class="notes">
+            Make the nesting idea explicit here. Students often understand
+            components as single isolated things. This slide helps them see that
+            a component can also be made of smaller parts.
+          </aside>
+        </section>
+
+        <section class="roomy">
+          <p class="eyebrow">Component Thinking</p>
+          <h2>A Website Can Be a Component Tree</h2>
+          <div class="media-slide">
+            <div class="media-frame">
+              <img
+                src="https://raw.githubusercontent.com/cederdorff/race/master/images/component-tree.avif"
+                alt="Component tree showing a homepage with header, article and footer, and nested components inside the header"
+              />
+            </div>
+            <div class="media-copy">
+              <h3>Example: homepage structure</h3>
+              <ul>
+                <li>
+                  <strong>Homepage</strong> can be the top-level component
+                </li>
+                <li>
+                  It can contain <strong>Header</strong>,
+                  <strong>Article</strong> and <strong>Footer</strong>
+                </li>
+                <li>
+                  <strong>Header</strong> can contain <strong>Logo</strong>,
+                  <strong>Title</strong> and <strong>Nav</strong>
+                </li>
+                <li>
+                  <strong>Nav</strong> can contain individual
+                  <strong>Links</strong>
+                </li>
+              </ul>
+              <p>
+                This is how we start seeing a page not just as one design, but
+                as a hierarchy of <strong>reusable components</strong> and
+                parts.
+              </p>
+            </div>
+          </div>
+          <aside class="notes">
+            This is a good place to say the word tree out loud. Students do not
+            need computer science depth here. They just need to see that pages
+            are built from nested parts with parent-child relationships.
+          </aside>
+        </section>
+
+        <section class="roomy visual-pair-slide">
+          <div class="code-media-slide">
+            <div class="media-frame">
+              <img
+                src="https://raw.githubusercontent.com/cederdorff/race/master/images/react-page-layout-of-components.png"
+                alt="UI layout broken into React page components"
+              />
+            </div>
+            <div class="code-panel">
+              <pre><code class="language-jsx">function Homepage() {
+  return (
+    <>
+      <Navigation />
+      <Header />
+      <PageContent />
+      <Footer />
+    </>
+  );
+}
+
+function Navigation() {
+  return (
+    <nav>
+      <a href="#">Home</a>
+    </nav>
+  );
+}
+
+function Header() {
+  return (
+    <header>
+      <h1>React Page Template</h1>
+    </header>
+  );
+}
+
+function PageContent() {
+  return (
+    <section>
+      <h2>Here goes some page content</h2>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <p>This is my Footer</p>
+    </footer>
+  );
+}</code></pre>
+            </div>
+          </div>
+          <aside class="notes">
+            This is the payoff of the component section. The interface on the
+            left is not just a visual layout. In React, each visible part can
+            become a component in code. Keep the mapping simple and concrete.
           </aside>
         </section>
 
@@ -1932,7 +2193,7 @@
           </p>
           <p>
             <strong>Next:</strong> We practice the basics and prepare to
-            structure designs as reusable components.
+            structure designs as <strong>reusable components</strong>.
           </p>
           <p>
             <strong>Later:</strong> We use MCP/AI, gestures, motion and
