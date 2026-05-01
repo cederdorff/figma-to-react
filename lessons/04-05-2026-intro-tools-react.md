@@ -54,7 +54,7 @@ By the end of the day, you should have a clearer sense of the course direction, 
 ### Materials
 
 - **Slides**
-  - [Reveal.js slide deck](04-05-2026-intro-tools-react-reveal.html)
+  - [Reveal.js slide deck](../slides/04-05-2026-intro-tools-react.html)
 - **Exercises**
   - [Getting started with React](https://www.notion.so/Getting-started-with-React-0fd48b8ae90a438bb6ec8dc95628f13f?pvs=21)
   - [React Page Layout with Components](https://www.notion.so/React-Page-Layout-with-Components-e6a428b2ee3d43e3a995d8261be068de?pvs=21)
