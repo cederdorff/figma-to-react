@@ -499,6 +499,20 @@
         width: 100%;
       }
 
+      .media-frame img {
+        aspect-ratio: 16 / 10;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .media-frame iframe {
+        aspect-ratio: 16 / 9;
+        border: 0;
+        display: block;
+        width: 100%;
+      }
+
       .media-copy {
         align-content: center;
         padding: 1em;
@@ -737,6 +751,50 @@
 
       .small-note {
         color: #94a3b8;
+      }
+
+      .tech-grid {
+        display: grid;
+        gap: 0.85em;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 0.8em;
+      }
+
+      .tech-card {
+        background: rgba(15, 23, 42, 0.62);
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 10px;
+        padding: 0.85em;
+      }
+
+      .tech-card h3 {
+        color: #f8fafc;
+        font-size: 0.68em;
+        margin-bottom: 0.45em;
+        margin-top: 0;
+      }
+
+      .tech-card ul {
+        margin-left: 0.95em;
+        max-width: none;
+      }
+
+      .tech-card li {
+        font-size: 0.56em;
+        line-height: 1.24;
+      }
+
+      .tech-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em 1.4em;
+        margin-top: 0.85em;
+      }
+
+      .tech-links a {
+        color: #7dd3fc;
+        font-size: 0.6em;
+        font-weight: 700;
       }
     </style>
   </head>
@@ -1132,6 +1190,56 @@
         </section>
 
         <section class="roomy">
+          <h2>Technologies We Will Explore</h2>
+          <p>
+            We will not master all of these at the same depth, but they give us
+            different ways to build, animate and rethink interaction.
+          </p>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <h3>Build and structure</h3>
+              <ul>
+                <li>React</li>
+                <li>Figma MCP</li>
+                <li>Firebase or Supabase as backend possibilities</li>
+              </ul>
+            </div>
+            <div class="tech-card">
+              <h3>Motion and interface behaviour</h3>
+              <ul>
+                <li>Framer Motion / Motion</li>
+                <li>Scroll, hover and interaction patterns</li>
+                <li>CSS animations and transitions</li>
+                <li>Haptic feedback concepts</li>
+              </ul>
+            </div>
+            <div class="tech-card">
+              <h3>Sensors, input and experimentation</h3>
+              <ul>
+                <li>TensorFlow.js</li>
+                <li>Webcam and microphone APIs</li>
+                <li>Device APIs such as touch and gyroscope</li>
+                <li>Three.js / WebGL as a teaser</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tech-links">
+            <a href="https://motion.dev/">motion.dev</a>
+            <a href="https://haptics.lochie.me/">Haptics reference</a>
+            <a
+              href="https://www.codedex.io/projects/make-a-webcam-controlled-game-with-tensorflowjs"
+              >Webcam game with TensorFlow.js</a
+            >
+          </div>
+          <aside class="notes">
+            Keep this grounded. The point is not to promise that every
+            technology becomes a deep specialty. The point is to show the range
+            of materials we can use across design-to-code, motion and
+            alternative interfaces.
+          </aside>
+        </section>
+
+        <section class="roomy">
           <h2>Exam</h2>
           <div class="exam-grid">
             <div class="exam-card">
@@ -1332,6 +1440,122 @@
               </p>
             </div>
           </div>
+        </section>
+
+        <section class="roomy">
+          <p class="eyebrow">Examples</p>
+          <h2>Alternative Interfaces in Practice</h2>
+          <div class="media-slide">
+            <div class="media-frame">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/codedex-io.appspot.com/o/projects%2Fmake-a-webcam-controlled-game-with-tensorflowjs%2Fdemo.gif?alt=media&token=e72eaaa2-588a-45f3-aff2-63f7e6cda54a"
+                alt="Webcam-controlled game using body movement as input"
+              />
+            </div>
+            <div class="media-copy">
+              <h3>Real examples</h3>
+              <ul>
+                <li>
+                  <strong>Webcam-controlled game:</strong> the camera tracks
+                  your movement and your body becomes the controller
+                </li>
+                <li>
+                  <strong>Swipe and drag interfaces:</strong> interaction
+                  happens through movement rather than menus and forms
+                </li>
+                <li>
+                  <strong>Motion-based feedback:</strong> animation, vibration
+                  or sound helps the user feel what changed
+                </li>
+                <li>
+                  <strong>Touchless kiosks or installations:</strong> hand
+                  gestures or proximity can replace direct touch
+                </li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            Use the webcam-controlled game as the concrete anchor. Then broaden
+            it: alternative interfaces can also be much smaller shifts, like
+            gesture-driven navigation, motion feedback or touchless public
+            interaction.
+          </aside>
+        </section>
+
+        <section class="roomy">
+          <p class="eyebrow">Examples</p>
+          <h2>Alternative Interfaces in Practice</h2>
+          <div class="media-slide">
+            <div class="media-frame">
+              <iframe
+                src="https://player.vimeo.com/video/820837334?autoplay=1&loop=1&background=1&quality=auto"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                title="Dandelion installation"
+              ></iframe>
+            </div>
+            <div class="media-copy">
+              <h3>Dandelion installation</h3>
+              <p>
+                <strong>Can you blow dandelions with a hairdryer?</strong> In
+                the installation <strong>Dandelion</strong>, you can.
+              </p>
+              <ul>
+                <li>
+                  The interface is not a button or a menu, but a physical
+                  object and a playful action
+                </li>
+                <li>
+                  The user interacts through movement, air and a real-world
+                  metaphor
+                </li>
+                <li>
+                  The digital response only makes sense because it is connected
+                  to the physical context
+                </li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            This is a strong example because it is intuitive and memorable. The
+            user already understands the action from the physical world. The
+            interface works by connecting that familiar action to a digital
+            response.
+          </aside>
+        </section>
+
+        <section class="roomy">
+          <p class="eyebrow">Takeaway</p>
+          <h2>User Interfaces Can Be Many Things</h2>
+          <p class="statement">
+            A user interface does not have to be just a screen, a button and a
+            mouse.
+          </p>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>It can also be</h3>
+              <ul>
+                <li>touch and gestures</li>
+                <li>movement and body position</li>
+                <li>camera input</li>
+                <li>sound, light or vibration</li>
+                <li>objects and physical actions</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>What matters</h3>
+              <ul>
+                <li>The interaction should fit the context</li>
+                <li>It should help the user understand what to do</li>
+                <li>It should make the experience clearer or more meaningful</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            This is the conclusion before the group exercise. The point is not
+            to reject screens, buttons or mice. The point is to open up the
+            idea of what an interface can be.
+          </aside>
         </section>
 
         <section>
