@@ -98,7 +98,7 @@
       }
 
       .reveal li + li {
-        margin-top: 0.28em;
+        margin-top: 0.36em;
       }
 
       .reveal li::marker {
@@ -434,7 +434,7 @@
       .about-card img {
         aspect-ratio: 16 / 7;
         border: 1px solid rgba(148, 163, 184, 0.18);
-        border-radius: 8px;
+        border-radius: 10px;
         display: block;
         margin-bottom: 0.7em;
         object-fit: cover;
@@ -459,7 +459,7 @@
       }
 
       .about-card ul {
-        margin-left: 0.9em;
+        margin-left: 0.5em;
         max-width: none;
       }
 
@@ -477,45 +477,470 @@
         margin-top: 0.75em;
       }
 
-      .media-slide {
+      .visual-layout {
+        align-items: start;
         display: grid;
         gap: 1em;
-        grid-template-columns: 0.85fr 1.15fr;
-        margin-top: 1em;
+        grid-template-columns: minmax(0, 0.92fr) minmax(12em, 1.08fr);
+        margin-top: 0.75em;
       }
 
-      .media-frame,
+      .visual-layout.reverse {
+        grid-template-columns: minmax(12em, 1.08fr) minmax(0, 0.92fr);
+      }
+
+      .official-course-slide .visual-layout {
+        grid-template-columns: minmax(0, 1.22fr) minmax(10.4em, 0.78fr);
+      }
+
+      .official-course-slide .tile-grid {
+        gap: 0.34em;
+        grid-template-columns: 1fr;
+      }
+
+      .curriculum-meaning-slide .visual-layout.reverse {
+        grid-template-columns: minmax(10.6em, 0.9fr) minmax(0, 1.1fr);
+      }
+
+      .visual-copy p,
+      .visual-copy ul {
+        max-width: none;
+      }
+
+      .visual-copy p,
+      .visual-copy li {
+        font-size: 0.72em;
+        line-height: 1.24;
+      }
+
+      .visual-copy .info-grid {
+        gap: 0.55em;
+        grid-template-columns: 1fr;
+        margin-top: 0.55em;
+      }
+
+      .visual-copy .info-card {
+        padding: 0.65em;
+      }
+
+      .visual-copy .info-card h3 {
+        font-size: 0.64em;
+        margin-bottom: 0.32em;
+      }
+
+      .visual-copy .info-card p,
+      .visual-copy .info-card li {
+        font-size: 0.57em;
+        line-height: 1.18;
+      }
+
+      .visual-copy > :first-child,
+      .visual-board > :first-child {
+        margin-top: 0;
+      }
+
+      .visual-board {
+        background:
+          linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.06) 1px,
+            transparent 1px
+          ),
+          rgba(15, 23, 42, 0.5);
+        background-size: 1.2em 1.2em;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        box-sizing: border-box;
+        min-height: 10.6em;
+        overflow: hidden;
+        padding: 0.85em;
+        position: relative;
+      }
+
+      .visual-board.tight {
+        min-height: 8.7em;
+      }
+
+      .visual-board.tall {
+        min-height: 12em;
+      }
+
+      .visual-title {
+        color: #7dd3fc;
+        display: block;
+        font-size: 0.54em;
+        font-weight: 780;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.75em;
+        text-transform: uppercase;
+      }
+
+      .visual-flow {
+        align-items: center;
+        display: grid;
+        gap: 0.38em;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(0, 1fr);
+      }
+
+      .visual-flow.vertical {
+        grid-auto-flow: row;
+        grid-auto-rows: auto;
+      }
+
+      .visual-flow.formula {
+        gap: 0.3em;
+        grid-auto-columns: auto;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(
+            0,
+            1.18fr
+          );
+      }
+
+      .visual-flow.formula .visual-arrow {
+        padding: 0 0.12em;
+      }
+
+      .visual-chip,
+      .visual-node {
+        background: rgba(8, 17, 31, 0.88);
+        border: 1px solid rgba(125, 211, 252, 0.28);
+        border-radius: 8px;
+        color: #dbeafe;
+        font-size: 0.5em;
+        font-weight: 760;
+        line-height: 1.15;
+        padding: 0.62em;
+        text-align: center;
+      }
+
+      .visual-chip span,
+      .visual-node span {
+        color: #94a3b8;
+        display: block;
+        font-size: 0.82em;
+        font-weight: 650;
+        margin-top: 0.22em;
+      }
+
+      .visual-chip.purple,
+      .visual-node.purple {
+        border-color: rgba(167, 139, 250, 0.42);
+        color: #ddd6fe;
+      }
+
+      .visual-chip.green,
+      .visual-node.green {
+        border-color: rgba(52, 211, 153, 0.42);
+        color: #bbf7d0;
+      }
+
+      .visual-chip.yellow,
+      .visual-node.yellow {
+        border-color: rgba(251, 191, 36, 0.42);
+        color: #fde68a;
+      }
+
+      .visual-arrow {
+        color: #38bdf8;
+        font-size: 0.72em;
+        font-weight: 780;
+        text-align: center;
+      }
+
+      .mini-screen {
+        background: #020617;
+        border: 1px solid rgba(148, 163, 184, 0.28);
+        border-radius: 8px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+        margin: 0.85em auto 0;
+        max-width: 12.5em;
+        min-height: 5.9em;
+        padding: 0.48em;
+      }
+
+      .mini-screen-bar {
+        align-items: center;
+        display: flex;
+        gap: 0.18em;
+        margin-bottom: 0.45em;
+      }
+
+      .mini-screen-dot {
+        background: #38bdf8;
+        border-radius: 999px;
+        height: 0.28em;
+        width: 0.28em;
+      }
+
+      .mini-screen-dot:nth-child(2) {
+        background: #a78bfa;
+      }
+
+      .mini-screen-dot:nth-child(3) {
+        background: #34d399;
+      }
+
+      .wireframe {
+        display: grid;
+        gap: 0.28em;
+        grid-template-columns: 0.7fr 1fr;
+      }
+
+      .wireframe span {
+        background: rgba(125, 211, 252, 0.14);
+        border: 1px solid rgba(125, 211, 252, 0.18);
+        border-radius: 5px;
+        min-height: 0.7em;
+      }
+
+      .wireframe .wide {
+        grid-column: 1 / -1;
+        min-height: 1.2em;
+      }
+
+      .wireframe .tall {
+        min-height: 2.8em;
+      }
+
+      .loop-diagram {
+        display: grid;
+        gap: 0.45em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .loop-core {
+        align-items: center;
+        background: rgba(56, 189, 248, 0.14);
+        border: 1px solid rgba(56, 189, 248, 0.36);
+        border-radius: 999px;
+        color: #f8fafc;
+        display: flex;
+        font-size: 0.56em;
+        font-weight: 780;
+        grid-column: 1 / -1;
+        justify-content: center;
+        margin: 0 auto 0.15em;
+        min-height: 3.2em;
+        width: 8.4em;
+      }
+
+      .component-stack {
+        display: grid;
+        gap: 0.34em;
+        margin: 0.5em auto 0;
+        max-width: 12em;
+      }
+
+      .component-layer {
+        background: rgba(8, 17, 31, 0.9);
+        border: 1px solid rgba(125, 211, 252, 0.28);
+        border-radius: 8px;
+        color: #dbeafe;
+        font-size: 0.5em;
+        font-weight: 760;
+        padding: 0.52em;
+        text-align: center;
+      }
+
+      .component-layer:nth-child(2n) {
+        border-color: rgba(167, 139, 250, 0.38);
+        transform: translateX(0.7em);
+      }
+
+      .component-layer:nth-child(3n) {
+        border-color: rgba(52, 211, 153, 0.38);
+        transform: translateX(-0.45em);
+      }
+
+      .tile-grid {
+        display: grid;
+        gap: 0.42em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tile-grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .visual-card {
+        background: rgba(8, 17, 31, 0.86);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 8px;
+        color: #dbe7f3;
+        font-size: 0.48em;
+        font-weight: 720;
+        min-height: 3.8em;
+        padding: 0.58em;
+      }
+
+      .visual-card strong {
+        color: #7dd3fc;
+        display: block;
+        font-size: 1.05em;
+        margin-bottom: 0.25em;
+      }
+
+      .state-track {
+        align-items: center;
+        display: grid;
+        gap: 0.34em;
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        margin-top: 1.1em;
+      }
+
+      .state-step {
+        background: rgba(8, 17, 31, 0.9);
+        border: 1px solid rgba(125, 211, 252, 0.28);
+        border-radius: 8px;
+        color: #dbeafe;
+        font-size: 0.48em;
+        font-weight: 760;
+        min-height: 3.4em;
+        padding: 0.62em;
+        text-align: center;
+      }
+
+      .tool-matrix {
+        display: grid;
+        gap: 0.42em;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .tool-matrix .visual-chip {
+        min-height: 3.1em;
+      }
+
+      .media-slide {
+        align-items: start;
+        display: grid;
+        gap: 0.9em;
+        grid-template-columns: minmax(0, 1.14fr) minmax(12em, 0.86fr);
+        margin-top: 0.75em;
+      }
+
+      .media-slide.video-focus {
+        grid-template-columns: minmax(0, 1.18fr) minmax(8.5em, 0.82fr);
+      }
+
       .media-copy {
         background: rgba(15, 23, 42, 0.62);
         border: 1px solid rgba(148, 163, 184, 0.22);
-        border-radius: 10px;
-        overflow: hidden;
+        border-radius: 8px;
+        overflow: visible;
+      }
+
+      .media-frame {
+        align-items: flex-start;
+        display: flex;
+        justify-content: center;
+        min-height: 13.7em;
+        overflow: visible;
       }
 
       .media-frame video {
-        aspect-ratio: 9 / 16;
+        border-radius: 10px;
         display: block;
-        object-fit: cover;
-        width: 100%;
+        height: 13.7em;
+        max-width: 100%;
+        object-fit: contain;
+        width: auto;
+      }
+
+      .media-slide.video-focus .media-frame {
+        justify-content: flex-end;
+        min-height: 16.4em;
+      }
+
+      .media-slide.video-focus .media-frame video {
+        border-radius: 10px;
+        height: 16.4em;
+        max-width: 100%;
+        width: auto;
+      }
+
+      .about-me-slide .media-copy {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        display: grid;
+        gap: 0.52em;
+        min-height: 0;
+        padding: 0;
+      }
+
+      .about-me-slide .media-slide.video-focus {
+        gap: 1.2em;
+        grid-template-columns: minmax(0, 1.32fr) minmax(8.2em, 0.68fr);
+      }
+
+      .about-me-slide > .about-role-eyebrow {
+        margin: 0 0 0.42em;
+      }
+
+      .about-me-slide .media-copy p:not(.eyebrow),
+      .about-me-slide .media-copy li {
+        font-size: 0.6em;
+        line-height: 1.18;
+      }
+
+      .about-me-slide .media-copy p {
+        margin-bottom: 0.28em;
+      }
+
+      .about-me-slide .media-copy ul {
+        margin-left: 0.5em;
+      }
+
+      .about-me-slide .about-panel {
+        background: rgba(15, 23, 42, 0.62);
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        padding: 0.72em 0.78em;
+      }
+
+      .about-me-slide .about-panel p:last-child,
+      .about-me-slide .about-panel ul:last-child {
+        margin-bottom: 0;
+      }
+
+      .about-me-slide .about-kicker {
+        color: #f8fafc;
+        font-size: 0.6em;
+        font-weight: 700;
+        margin-bottom: 0.3em;
+      }
+
+      .about-me-slide .media-frame {
+        justify-content: center;
+      }
+
+      .about-me-slide .media-frame video {
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.32);
       }
 
       .media-frame img {
-        aspect-ratio: 16 / 10;
+        border-radius: 10px;
         display: block;
-        object-fit: cover;
+        max-height: 13.7em;
+        object-fit: contain;
         width: 100%;
       }
 
       .media-frame iframe {
         aspect-ratio: 16 / 9;
         border: 0;
+        border-radius: 10px;
         display: block;
+        max-height: 13.7em;
         width: 100%;
       }
 
       .media-copy {
         align-content: center;
-        padding: 1em;
+        align-self: start;
+        padding: 0.85em;
       }
 
       .media-copy h3 {
@@ -537,8 +962,124 @@
       }
 
       .padlet-card ul {
-        margin-left: 0.95em;
+        margin-left: 0.5em;
         max-width: none;
+      }
+
+      .padlet-slide .visual-layout {
+        align-items: start;
+        grid-template-columns: minmax(0, 1.28fr) minmax(10.5em, 0.72fr);
+      }
+
+      .padlet-slide .padlet-card ul.bullet-columns {
+        column-gap: 0;
+        columns: 1;
+      }
+
+      .starting-points-slide .visual-layout {
+        grid-template-columns: minmax(0, 1.08fr) minmax(10.6em, 0.92fr);
+      }
+
+      .interface-slide .loop-diagram {
+        gap: 0.5em;
+        padding-top: 0.08em;
+      }
+
+      .interface-slide .loop-core {
+        background: linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.2),
+          rgba(14, 165, 233, 0.12)
+        );
+        border-color: rgba(56, 189, 248, 0.52);
+        box-shadow:
+          0 0 0 1px rgba(56, 189, 248, 0.18),
+          0 8px 18px rgba(2, 132, 199, 0.22);
+        font-size: 0.6em;
+        letter-spacing: 0.01em;
+        min-height: 2.7em;
+        width: 9.2em;
+      }
+
+      .alt-practice-slide .media-frame {
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .alt-practice-slide .media-frame img,
+      .alt-practice-slide .media-frame iframe,
+      .alt-practice-slide .media-frame video {
+        border-radius: 10px;
+      }
+
+      .ui-materials-slide .statement {
+        max-width: 50ch;
+      }
+
+      .ui-materials-slide .visual-board {
+        background:
+          radial-gradient(
+            circle at 50% -10%,
+            rgba(56, 189, 248, 0.18),
+            transparent 45%
+          ),
+          linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.06) 1px,
+            transparent 1px
+          ),
+          rgba(15, 23, 42, 0.56);
+        border-color: rgba(125, 211, 252, 0.28);
+      }
+
+      .ui-materials-slide .tile-grid.three {
+        gap: 0.56em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ui-materials-slide .visual-card {
+        background: linear-gradient(
+          160deg,
+          rgba(8, 17, 31, 0.94),
+          rgba(15, 23, 42, 0.82)
+        );
+        border-color: rgba(148, 163, 184, 0.28);
+        font-size: 0.54em;
+        line-height: 1.2;
+        min-height: 4.85em;
+        padding: 0.72em 0.66em;
+        text-align: left;
+      }
+
+      .ui-materials-slide .visual-card strong {
+        font-size: 1.08em;
+        letter-spacing: 0.01em;
+        margin-bottom: 0.24em;
+      }
+
+      .ui-materials-slide .visual-card:nth-child(1) {
+        border-color: rgba(56, 189, 248, 0.45);
+      }
+
+      .ui-materials-slide .visual-card:nth-child(2) {
+        border-color: rgba(167, 139, 250, 0.44);
+      }
+
+      .ui-materials-slide .visual-card:nth-child(3) {
+        border-color: rgba(52, 211, 153, 0.44);
+      }
+
+      .ui-materials-slide .visual-card:nth-child(4) {
+        border-color: rgba(251, 191, 36, 0.44);
+      }
+
+      .ui-materials-slide .visual-card:nth-child(5) {
+        border-color: rgba(96, 165, 250, 0.42);
+      }
+
+      .ui-materials-slide .visual-card:nth-child(6) {
+        border-color: rgba(45, 212, 191, 0.42);
       }
 
       .compact p,
@@ -563,7 +1104,7 @@
       }
 
       .dense li + li {
-        margin-top: 0.18em;
+        margin-top: 0.24em;
       }
 
       .link-label {
@@ -602,7 +1143,7 @@
       }
 
       .progression-card ul {
-        margin-left: 0.95em;
+        margin-left: 0.5em;
         max-width: none;
       }
 
@@ -647,7 +1188,7 @@
       }
 
       .exam-card ul {
-        margin-left: 0.95em;
+        margin-left: 0.5em;
         max-width: none;
       }
 
@@ -688,7 +1229,32 @@
       }
 
       .roomy li + li {
+        margin-top: 0.22em;
+      }
+
+      .media-copy p,
+      .media-copy li {
+        font-size: 0.64em;
+        line-height: 1.2;
+      }
+
+      .roomy .media-copy h3 {
+        font-size: 0.76em;
+        margin-bottom: 0.38em;
+      }
+
+      .roomy .media-copy p,
+      .roomy .media-copy li {
+        font-size: 0.58em;
+        line-height: 1.17;
+      }
+
+      .media-copy li + li {
         margin-top: 0.16em;
+      }
+
+      .roomy .media-copy li + li {
+        margin-top: 0.12em;
       }
 
       .info-grid {
@@ -722,7 +1288,7 @@
       }
 
       .info-card ul {
-        margin-left: 0.95em;
+        margin-left: 0.5em;
         max-width: none;
       }
 
@@ -775,7 +1341,7 @@
       }
 
       .tech-card ul {
-        margin-left: 0.95em;
+        margin-left: 0.5em;
         max-width: none;
       }
 
@@ -835,51 +1401,14 @@
       }
 
       .site-diagram img {
+        aspect-ratio: 16 / 9;
         border: 1px solid rgba(148, 163, 184, 0.22);
         border-radius: 10px;
         display: block;
+        height: 13.2em;
+        object-fit: cover;
+        object-position: top center;
         width: 100%;
-      }
-
-      .component-box {
-        border: 3px solid;
-        border-radius: 12px;
-        position: absolute;
-      }
-
-      .component-box::before {
-        background: rgba(8, 17, 31, 0.92);
-        border: 1px solid currentColor;
-        border-radius: 999px;
-        color: #f8fafc;
-        content: attr(data-label);
-        font-size: 0.34em;
-        font-weight: 760;
-        left: var(--label-left, 0.8em);
-        padding: 0.18em 0.55em;
-        position: absolute;
-        top: var(--label-top, -1.1em);
-        white-space: nowrap;
-      }
-
-      .component-box.teal {
-        border-color: #38bdf8;
-      }
-
-      .component-box.purple {
-        border-color: #a78bfa;
-      }
-
-      .component-box.green {
-        border-color: #34d399;
-      }
-
-      .component-box.yellow {
-        border-color: #fbbf24;
-      }
-
-      .component-box.red {
-        border-color: #fb7185;
       }
 
       .visual-pair-slide::before {
@@ -899,7 +1428,8 @@
 
       .visual-pair-slide .media-frame img {
         aspect-ratio: auto;
-        height: 100%;
+        height: 13.8em;
+        object-fit: contain;
       }
 
       .visual-pair-slide .code-panel pre code {
@@ -909,20 +1439,20 @@
       }
 
       .analysis-slide .media-slide {
-        grid-template-columns: 1.08fr 0.92fr;
+        grid-template-columns: minmax(0, 1.22fr) minmax(12em, 0.78fr);
       }
 
       .analysis-slide .media-frame {
         align-items: center;
         display: flex;
         justify-content: center;
-        padding: 0.45em;
+        min-height: 14.1em;
+        padding: 0;
       }
 
       .analysis-slide .media-frame img {
         aspect-ratio: auto;
-        height: auto;
-        max-height: 100%;
+        max-height: 14.1em;
         object-fit: contain;
         width: 100%;
       }
@@ -967,6 +1497,11 @@
         margin-bottom: 0.24em;
       }
 
+      .exercise-slide .visual-layout {
+        gap: 1.1em;
+        grid-template-columns: minmax(0, 1.18fr) minmax(9.8em, 0.82fr);
+      }
+
       .exercise-slide p,
       .exercise-slide li {
         font-size: 0.7em;
@@ -984,7 +1519,142 @@
       }
 
       .exercise-slide li + li {
-        margin-top: 0.12em;
+        margin-top: 0.18em;
+      }
+
+      .exercise-slide .visual-board {
+        background:
+          radial-gradient(
+            circle at 50% -8%,
+            rgba(56, 189, 248, 0.16),
+            transparent 46%
+          ),
+          linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.06) 1px,
+            transparent 1px
+          ),
+          rgba(15, 23, 42, 0.52);
+        border-color: rgba(125, 211, 252, 0.26);
+        min-height: 10.2em;
+      }
+
+      .exercise-slide .visual-title {
+        letter-spacing: 0.02em;
+      }
+
+      .exercise-slide .visual-flow.vertical {
+        gap: 0.3em;
+      }
+
+      .exercise-slide .visual-chip {
+        font-size: 0.48em;
+        min-height: 2.5em;
+        padding: 0.5em 0.46em;
+      }
+
+      .components-intro-slide .visual-layout {
+        gap: 1.08em;
+        grid-template-columns: minmax(0, 1.08fr) minmax(10em, 0.92fr);
+      }
+
+      .components-intro-slide .visual-board {
+        background:
+          radial-gradient(
+            circle at 50% -12%,
+            rgba(56, 189, 248, 0.18),
+            transparent 44%
+          ),
+          linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.06) 1px,
+            transparent 1px
+          ),
+          rgba(15, 23, 42, 0.55);
+        border-color: rgba(125, 211, 252, 0.3);
+      }
+
+      .components-intro-slide .mini-screen {
+        border-color: rgba(125, 211, 252, 0.44);
+        box-shadow:
+          0 0 0 1px rgba(56, 189, 248, 0.14),
+          0 16px 36px rgba(2, 132, 199, 0.2);
+      }
+
+      .components-intro-slide .component-stack {
+        gap: 0.4em;
+        margin-top: 0.64em;
+        max-width: 12.2em;
+      }
+
+      .components-intro-slide .component-layer {
+        background: linear-gradient(
+          160deg,
+          rgba(8, 17, 31, 0.94),
+          rgba(15, 23, 42, 0.84)
+        );
+        box-shadow: 0 8px 18px rgba(2, 6, 23, 0.24);
+        font-size: 0.54em;
+        padding: 0.58em 0.62em;
+      }
+
+      .components-intro-slide .component-layer:nth-child(1) {
+        transform: translateX(0);
+      }
+
+      .components-intro-slide .component-layer:nth-child(2) {
+        transform: translateX(0.58em);
+      }
+
+      .components-intro-slide .component-layer:nth-child(3) {
+        transform: translateX(-0.32em);
+      }
+
+      .components-habit-slide .media-slide {
+        gap: 1.05em;
+        grid-template-columns: minmax(0, 1.2fr) minmax(11em, 0.8fr);
+      }
+
+      .components-habit-slide .media-frame {
+        align-items: center;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        min-height: 0;
+        overflow: visible;
+        padding: 0;
+      }
+
+      .components-habit-slide .media-frame img {
+        max-height: 13.8em;
+        width: 100%;
+      }
+
+      .components-habit-slide .media-copy {
+        background: linear-gradient(
+          160deg,
+          rgba(15, 23, 42, 0.72),
+          rgba(8, 17, 31, 0.78)
+        );
+        border-color: rgba(125, 211, 252, 0.26);
+        border-radius: 10px;
+        box-shadow: 0 10px 24px rgba(2, 6, 23, 0.22);
+        padding: 0.95em;
+      }
+
+      .components-habit-slide .media-copy h3 {
+        color: #93c5fd;
+      }
+
+      .components-habit-slide .media-copy ul {
+        margin-left: 0.78em;
+      }
+
+      .after-today-slide .visual-layout.reverse {
+        grid-template-columns: minmax(10.2em, 0.8fr) minmax(0, 1.2fr);
       }
     </style>
   </head>
@@ -1042,14 +1712,30 @@
 
         <section>
           <h2>Today</h2>
-          <ul>
-            <li>Get to know the course and each other</li>
-            <li>Understand what the elective is really about</li>
-            <li>Explore alternative interfaces and interaction ideas</li>
-            <li>Practice seeing UI as reusable components</li>
-            <li>Move from component thinking into React basics</li>
-            <li>Set up tools and begin the first React exercises</li>
-          </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <ul>
+                <li>Get to know the course and each other</li>
+                <li>Understand what the elective is really about</li>
+                <li>Explore alternative interfaces and interaction ideas</li>
+                <li>Practice seeing UI as reusable components</li>
+                <li>Move from component thinking into React basics</li>
+                <li>Set up tools and begin the first React exercises</li>
+              </ul>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">Today's movement</span>
+              <div class="visual-flow vertical">
+                <div class="visual-chip">Course context</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip purple">Alternative interfaces</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip green">Components</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip yellow">React</div>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             Keep the promise simple. Today is about orientation, confidence and
             first contact with React as a way to build components.
@@ -1058,15 +1744,31 @@
 
         <section>
           <h2>Agenda</h2>
-          <ul>
-            <li>Welcome and introductions</li>
-            <li>What this course is about</li>
-            <li>Alternative interfaces and interaction</li>
-            <li>Component thinking</li>
-            <li>React basics</li>
-            <li>Tools and Exercises</li>
-            <li>Wrap-up and next steps</li>
-          </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <ul>
+                <li>Welcome and introductions</li>
+                <li>What this course is about</li>
+                <li>Alternative interfaces and interaction</li>
+                <li>Component thinking</li>
+                <li>React basics</li>
+                <li>Tools and Exercises</li>
+                <li>Wrap-up and next steps</li>
+              </ul>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">Today's movement</span>
+              <div class="visual-flow vertical">
+                <div class="visual-chip">Course context</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip purple">Alternative interfaces</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip green">Components</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip yellow">React</div>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             This is the practical flow of the day. Use it to give students a
             clear sense of pacing and what will happen when.
@@ -1154,91 +1856,93 @@
           </aside>
         </section>
 
-        <section>
-          <h2>About Me</h2>
-          <div class="about-stack">
-            <div class="about-card">
-              <h3>Professionally</h3>
-              <span class="about-quote">"I speak JavaScript."</span>
-              <ul>
-                <li>Senior Lecturer and Web App Developer</li>
-                <li>Programming with an eye for UI and UX</li>
-                <li>
-                  Working with web development, JavaScript, React, Node.js and
-                  BaaS
-                </li>
-                <li>
-                  Building websites, webshops, web apps, mobile apps, server
-                  apps and BaaS solutions
-                </li>
-              </ul>
+        <section class="about-me-slide">
+          <p class="eyebrow about-role-eyebrow">
+            Senior Lecturer & Web App Developer
+          </p>
+          <h2>I'm Rasmus Vase Cederdorff</h2>
+          <div class="media-slide video-focus">
+            <div class="media-copy">
+              <div class="about-panel">
+                <p>
+                  <strong
+                    >I teach and build web apps with JavaScript at the
+                    core</strong
+                  >
+                </p>
+                <ul>
+                  <li>I speak JavaScript.</li>
+                  <li>I build websites, webshops, web apps and server apps.</li>
+                  <li>I work across React, Node.js and BaaS solutions.</li>
+                  <li>
+                    I always keep UI and UX in focus. Love programming but have
+                    an eye for UX and UI.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="about-panel">
+                <p class="about-kicker">Personally</p>
+                <ul>
+                  <li>
+                    I live in our Nybyggerne house with my husband Matias.
+                  </li>
+                  <li>I have two girls: Alicia and Ida.</li>
+                  <li>
+                    I enjoy sports, gadgets, photography and interior projects.
+                  </li>
+                  <li>OMG! What's wrong with my arm?</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <aside class="notes">
-            This is the professional version. It gives students a quick sense of
-            what I work with and what kind of technical perspective I bring into
-            the course.
-          </aside>
-        </section>
-
-        <section>
-          <h2>About Me</h2>
-          <div class="about-card">
-            <h3>Personally</h3>
-            <ul>
-              <li>Based in Holstebro with my husband Matias</li>
-              <li>Two girls: Alicia and Ida</li>
-              <li>Into sports</li>
-              <li>
-                Love Apple gadgets, photography and interior design projects
-              </li>
-              <li>And yes, something is wrong with the arm.</li>
-            </ul>
-          </div>
-          <aside class="notes">
-            This is the human version. It helps students meet me as a person
-            rather than only as the technical lecturer.
-          </aside>
-        </section>
-
-        <section>
-          <h2>A Fun Side Note</h2>
-          <div class="media-slide">
             <div class="media-frame">
               <video
                 src="https://github.com/cederdorff/race/raw/refs/heads/master/reels/red-office.mp4"
+                autoplay
                 controls
+                loop
                 muted
                 playsinline
               ></video>
             </div>
-            <div class="media-copy">
-              <h3>You may have seen me on television</h3>
-              <p>I was part of <strong>Nybyggerne 2025</strong>.</p>
-              <p>
-                It does not make me a better JavaScript developer, but it is a
-                pretty fun part of my story.
-              </p>
-            </div>
           </div>
           <aside class="notes">
-            Keep this light. It is just a small human detail and a fun way of
-            making the introduction more memorable.
+            Keep this very short. The video adds the memorable personal detail,
+            while the copy gives just enough professional and human context.
           </aside>
         </section>
 
-        <section>
+        <section class="in-short-slide">
           <p class="eyebrow">Interactive Design and Development</p>
           <h2>In Short</h2>
-          <ul>
-            <li>
-              Combining design and programming in working interactive prototypes
-            </li>
-            <li>
-              Exploring alternative interfaces through gestures, motion and new
-              forms of interaction
-            </li>
-          </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <ul>
+                <li>
+                  Combining design and programming in working interactive
+                  prototypes
+                </li>
+                <li>
+                  Exploring alternative interfaces through gestures, motion and
+                  new forms of interaction
+                </li>
+              </ul>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">Course formula</span>
+              <div class="visual-flow formula">
+                <div class="visual-chip">Design</div>
+                <div class="visual-arrow">+</div>
+                <div class="visual-chip purple">Code</div>
+                <div class="visual-arrow">=</div>
+                <div class="visual-chip green">Prototype</div>
+              </div>
+              <div class="visual-chip yellow" style="margin-top: 0.8em">
+                Alternative interaction
+                <span>gesture, motion, sensors, context</span>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             This is the shortest possible reset before the more formal course
             framing slides. Keep it broad, clear and easy to remember.
@@ -1247,26 +1951,53 @@
 
         <section class="roomy">
           <h2>Two Terms We Will Use All the Time</h2>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Figma</h3>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>Figma</h3>
+                  <p>
+                    Figma is where we design, iterate and organise: screens,
+                    layout, components, variants and user flows.
+                  </p>
+                </div>
+                <div class="info-card">
+                  <h3>React</h3>
+                  <p>
+                    React is where we build the interface in code: components,
+                    props, state and interaction.
+                  </p>
+                </div>
+              </div>
               <p>
-                Figma is where we read and organise the design: screens, layout,
-                components, variants and user flows.
+                In short:
+                <strong>Figma helps us design the structure</strong> and
+                <strong>React helps us build the structure</strong>.
               </p>
             </div>
-            <div class="info-card">
-              <h3>React</h3>
-              <p>
-                React is where we build the interface in code: components,
-                props, state and interaction.
-              </p>
+            <div class="visual-board">
+              <span class="visual-title">Design to code handoff</span>
+              <div class="mini-screen">
+                <div class="mini-screen-bar">
+                  <span class="mini-screen-dot"></span>
+                  <span class="mini-screen-dot"></span>
+                  <span class="mini-screen-dot"></span>
+                </div>
+                <div class="wireframe">
+                  <span class="wide"></span>
+                  <span class="tall"></span>
+                  <span class="tall"></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="visual-flow" style="margin-top: 0.65em">
+                <div class="visual-chip">Figma<span>design + plan</span></div>
+                <div class="visual-arrow">&rarr;</div>
+                <div class="visual-chip green">React<span>build</span></div>
+              </div>
             </div>
           </div>
-          <p>
-            In short: <strong>Figma helps us see the structure</strong> and
-            <strong>React helps us build the structure</strong>.
-          </p>
           <aside class="notes">
             Keep this slide light. It is not a full explanation of either tool.
             It is only there to establish the vocabulary before the design to
@@ -1274,39 +2005,58 @@
           </aside>
         </section>
 
-        <section class="roomy">
+        <section class="roomy official-course-slide">
           <h2>Official Course Description</h2>
-          <div class="info-grid">
+          <div class="visual-layout">
             <div class="info-card">
-              <p>
-                The elective Interactive design and development works with a
-                wide range of technologies, focusing on the interaction between
-                design and programming as well as alternative user interfaces.
-              </p>
-              <p>
-                The focus is on new technologies in the development of concepts
-                and prototypes, and how they can be used to create interactive
-                experiences where technology and design merge.
-              </p>
-              <p>
-                The subject element focuses on specific technologies as well as
-                business understanding and development of existing companies.
-              </p>
+              <ul>
+                <li>
+                  The elective Interactive design and development works with a
+                  wide range of technologies, focusing on the interaction
+                  between design and programming as well as alternative user
+                  interfaces.
+                </li>
+                <li>
+                  The focus is on new technologies in the development of
+                  concepts and prototypes, and how they can be used to create
+                  interactive experiences where technology and design merge.
+                </li>
+                <li>
+                  The subject element focuses on specific technologies as well
+                  as business understanding and development of existing
+                  companies.
+                </li>
+              </ul>
             </div>
-            <div class="info-card small-links">
-              <p class="link-label">Read the full descriptions</p>
-              <p class="small-note">Canvas course page</p>
-              <p>
+            <div class="visual-board">
+              <span class="visual-title">What the formal text points to</span>
+              <div class="tile-grid">
+                <div class="visual-card">
+                  <strong>Technology</strong>
+                  tools, platforms and prototypes
+                </div>
+                <div class="visual-card">
+                  <strong>Design</strong>
+                  interaction, concepts and flows
+                </div>
+                <div class="visual-card">
+                  <strong>Business</strong>
+                  real contexts and existing companies
+                </div>
+                <div class="visual-card">
+                  <strong>Experience</strong>
+                  meaningful interactive outcomes
+                </div>
+              </div>
+              <p class="exam-link">
                 <a
                   href="https://eaaa.instructure.com/courses/31377/pages/about-the-course-interactive-design-and-development"
-                  >About the course - Interactive Design and Development</a
+                  >Canvas course page</a
                 >
-              </p>
-              <p class="small-note">Curriculum PDF</p>
-              <p>
+                &nbsp;&nbsp;
                 <a
                   href="https://www.baaa.dk/media/zoomsurn/curriculum-digital-concept-development-institutional-part-august-2025-updated.pdf"
-                  >Digital Concept Development - institutional part</a
+                  >Curriculum PDF</a
                 >
               </p>
             </div>
@@ -1317,45 +2067,61 @@
           </aside>
         </section>
 
-        <section class="roomy">
+        <section class="roomy curriculum-meaning-slide">
           <h2>What Does the Curriculum Really Mean?</h2>
           <p class="statement">
             This elective is about how design and programming work together in
             interactive prototypes.
           </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Build and translate</h3>
-              <ul>
-                <li>
-                  Turn interface designs into working interactive prototypes
-                </li>
-                <li>
-                  Use Figma and React to move from visual design to components,
-                  props, state, layout and interaction
-                </li>
-                <li>
-                  Use MCP and AI-assisted workflows as support for translating,
-                  inspecting and improving code
-                </li>
-              </ul>
+          <div class="visual-layout reverse">
+            <div class="visual-board">
+              <span class="visual-title">What This Means in Practice</span>
+              <div class="visual-flow vertical">
+                <div class="visual-chip">Read a design</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip purple">Build a prototype</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip green">Test interaction</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip yellow">Explain decisions</div>
+              </div>
             </div>
-            <div class="info-card">
-              <h3>Extend and explain</h3>
-              <ul>
-                <li>
-                  Explore alternative interfaces through gestures, motion
-                  feedback and experimental input
-                </li>
-                <li>
-                  Work with real contexts and build meaningful digital layers
-                  for user experiences
-                </li>
-                <li>
-                  Learn how to choose, test and explain your design and
-                  technology decisions
-                </li>
-              </ul>
+            <div class="visual-copy">
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>Build and translate</h3>
+                  <ul>
+                    <li>
+                      Turn interface designs into working interactive prototypes
+                    </li>
+                    <li>
+                      Use Figma and React to move from visual design to
+                      components, props, state, layout and interaction
+                    </li>
+                    <li>
+                      Use MCP and AI-assisted workflows as support for
+                      translating, inspecting and improving code
+                    </li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h3>Extend and explain</h3>
+                  <ul>
+                    <li>
+                      Explore alternative interfaces through gestures, motion
+                      feedback and experimental input
+                    </li>
+                    <li>
+                      Work with real contexts and build meaningful digital
+                      layers for user experiences
+                    </li>
+                    <li>
+                      Learn how to choose, test and explain your design and
+                      technology decisions
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
           <aside class="notes">
@@ -1463,64 +2229,94 @@
 
         <section class="roomy">
           <h2>Exam</h2>
-          <div class="exam-grid">
-            <div class="exam-card">
-              <h3>Format</h3>
-              <ul>
-                <li>Individual oral exam based on a group project</li>
-                <li>Group project in teams of 3 to 4 students</li>
-                <li>
-                  The project consists of a prototype, documentation and a video
-                  showing the intention of the prototype
-                </li>
-                <li>
-                  Documentation is max 10 standard pages and is submitted with
-                  the prototype and video via WISEflow
-                </li>
-              </ul>
+          <div class="visual-layout reverse">
+            <div class="visual-board">
+              <span class="visual-title">Exam flow</span>
+              <div class="visual-flow vertical">
+                <div class="visual-chip">Group project</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip purple">Prototype + docs + video</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip green">Group presentation</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip yellow">Individual oral exam</div>
+              </div>
             </div>
-            <div class="exam-card">
-              <h3>Oral Exam</h3>
-              <ul>
-                <li>Group presentation (5 min. per group member)</li>
-                <li>
-                  Then an individual oral examination based on the project and
-                  submitted material (10 min. per student)
-                </li>
-                <li>Deliberation and feedback (5 min.)</li>
-              </ul>
+            <div class="visual-copy">
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>Format</h3>
+                  <ul>
+                    <li>Individual oral exam based on a group project</li>
+                    <li>Teams of 3 to 4 students</li>
+                    <li>Prototype, documentation and video via WISEflow</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h3>Oral Exam</h3>
+                  <ul>
+                    <li>Group presentation: 5 min. per group member</li>
+                    <li>Individual examination: 10 min. per student</li>
+                    <li>Deliberation and feedback: 5 min.</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="exam-link">
+                <a
+                  href="https://www.baaa.dk/media/zoomsurn/curriculum-digital-concept-development-institutional-part-august-2025-updated.pdf"
+                  >Curriculum PDF, pages 23-25</a
+                >
+              </p>
             </div>
           </div>
-          <p class="exam-link">
-            <a
-              href="https://www.baaa.dk/media/zoomsurn/curriculum-digital-concept-development-institutional-part-august-2025-updated.pdf"
-              >Curriculum PDF, pages 23-25</a
-            >
-          </p>
           <aside class="notes">
             This is the practical exam overview. It is based on the curriculum
             section for Interactive design and development, pages 23 to 25.
           </aside>
         </section>
 
-        <section class="roomy">
+        <section class="roomy padlet-slide">
           <h2>Padlet</h2>
-          <div class="padlet-card">
-            <p>Please add a new post on Padlet with:</p>
-            <ul class="bullet-columns">
-              <li>Profile picture</li>
-              <li>Name</li>
-              <li>Where are you from? (country / city)</li>
-              <li>What education do you come from?</li>
-              <li>Why did you choose this elective?</li>
-              <li>What do you expect to learn?</li>
-              <li>A fun fact about yourself</li>
-            </ul>
-            <p class="exam-link">
-              <a href="https://padlet.com/race_js/who_are_you"
-                >Padlet: who_are_you</a
-              >
-            </p>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <div class="padlet-card">
+                <p>Please add a new post on Padlet with:</p>
+                <ul class="bullet-columns">
+                  <li>Profile picture</li>
+                  <li>Name</li>
+                  <li>Where are you from? (country / city)</li>
+                  <li>What education do you come from?</li>
+                  <li>Why did you choose this elective?</li>
+                  <li>What do you expect to learn?</li>
+                  <li>A fun fact about yourself</li>
+                </ul>
+                <p class="exam-link">
+                  <a href="https://padlet.com/race_js/who_are_you"
+                    >Padlet: who_are_you</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">Profile post preview</span>
+              <div class="mini-screen">
+                <div class="mini-screen-bar">
+                  <span class="mini-screen-dot"></span>
+                  <span class="mini-screen-dot"></span>
+                  <span class="mini-screen-dot"></span>
+                </div>
+                <div class="wireframe">
+                  <span class="tall"></span>
+                  <span class="wide"></span>
+                  <span></span>
+                  <span></span>
+                  <span class="wide"></span>
+                </div>
+              </div>
+              <div class="visual-chip green" style="margin-top: 0.7em">
+                Who are you?
+              </div>
+            </div>
           </div>
           <aside class="notes">
             Use this as a simple onboarding activity. It gives you a better
@@ -1529,28 +2325,53 @@
           </aside>
         </section>
 
-        <section class="roomy">
+        <section class="roomy starting-points-slide">
           <h2>Different Starting Points</h2>
           <p>
             We come into this elective with very different backgrounds, skills
             and confidence levels.
           </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Different starting points</h3>
-              <ul>
-                <li>Some of you know very little programming</li>
-                <li>Some of you have already built much bigger solutions</li>
-                <li>The same kind of gap also exists in design</li>
-              </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>Different starting points</h3>
+                  <ul>
+                    <li>Some of you know very little programming</li>
+                    <li>
+                      Some of you have already built much bigger solutions
+                    </li>
+                    <li>The same kind of gap also exists in design</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h3>How we work in this course</h3>
+                  <ul>
+                    <li>We help and learn from each other</li>
+                    <li>
+                      Questions are part of the work, not a sign of failure
+                    </li>
+                    <li>
+                      That is also why you have been placed in table groups
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="info-card">
-              <h3>How we work in this course</h3>
-              <ul>
-                <li>We help and learn from each other</li>
-                <li>Questions are part of the work, not a sign of failure</li>
-                <li>That is also why you have been placed in table groups</li>
-              </ul>
+            <div class="visual-board">
+              <span class="visual-title">Room for different levels</span>
+              <div class="visual-flow vertical">
+                <div class="visual-chip">New to code</div>
+                <div class="visual-chip purple">Some practice</div>
+                <div class="visual-chip green">Confident builder</div>
+              </div>
+              <div class="visual-flow" style="margin-top: 0.75em">
+                <div class="visual-chip yellow">Ask</div>
+                <div class="visual-arrow">&rarr;</div>
+                <div class="visual-chip yellow">Share</div>
+                <div class="visual-arrow">&rarr;</div>
+                <div class="visual-chip yellow">Build</div>
+              </div>
             </div>
           </div>
           <aside class="notes">
@@ -1560,37 +2381,48 @@
           </aside>
         </section>
 
-        <section class="roomy">
+        <section class="roomy interface-slide">
           <h2>What Is an Interface?</h2>
           <p class="statement">
             An interface is the place where a person and a system meet.
           </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>What an interface does</h3>
-              <ul>
-                <li>Helps the user understand what is possible</li>
-                <li>Lets the user give input</li>
-                <li>Gives feedback</li>
-                <li>Moves the user through an experience</li>
-              </ul>
+          <div class="visual-layout reverse">
+            <div class="visual-board">
+              <span class="visual-title">Interface loop</span>
+              <div class="loop-diagram">
+                <div class="loop-core">Person + System</div>
+                <div class="visual-node">Input<span>tap, type, move</span></div>
+                <div class="visual-node purple">
+                  Feedback<span>visual, sound, motion</span>
+                </div>
+                <div class="visual-node green">
+                  Possibility<span>what can I do?</span>
+                </div>
+                <div class="visual-node yellow">
+                  Flow<span>what happens next?</span>
+                </div>
+              </div>
             </div>
-            <div class="info-card">
-              <h3>Conventional interfaces</h3>
-              <p>Most interfaces we meet every day involve things such as:</p>
-              <ul class="bullet-columns">
-                <li>screens and touchscreens</li>
-                <li>keyboard and mouse</li>
-                <li>sound and light</li>
-              </ul>
-              <p>And on screens, we often use patterns such as:</p>
-              <ul class="bullet-columns">
-                <li>buttons</li>
-                <li>menus</li>
-                <li>pages</li>
-                <li>links</li>
-                <li>forms</li>
-              </ul>
+            <div class="visual-copy">
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>What an interface does</h3>
+                  <ul>
+                    <li>Helps the user understand what is possible</li>
+                    <li>Lets the user give input</li>
+                    <li>Gives feedback</li>
+                    <li>Moves the user through an experience</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h3>Conventional interfaces</h3>
+                  <p>
+                    Most interfaces we meet every day involve things such as
+                    screens, keyboard, mouse, sound, light, buttons, menus,
+                    pages, links and forms.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <aside class="notes">
@@ -1604,18 +2436,43 @@
         <section>
           <p class="eyebrow">Individual Exercise</p>
           <h2>Think of an interface you remember</h2>
-          <p>Choose one familiar interface you have used yourself.</p>
-          <ul>
-            <li>What was it?</li>
-            <li>What was the user trying to do?</li>
-            <li>How did the user give input?</li>
-            <li>What feedback did the interface give?</li>
-            <li>Did it feel useful, playful, confusing or surprising?</li>
-          </ul>
-          <p>
-            Write down a few notes. Start with something ordinary rather than
-            trying to find a perfect example.
-          </p>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <p>Choose one familiar interface you have used yourself.</p>
+              <ul>
+                <li>What was it?</li>
+                <li>What was the user trying to do?</li>
+                <li>How did the user give input?</li>
+                <li>What feedback did the interface give?</li>
+                <li>Did it feel useful, playful, confusing or surprising?</li>
+              </ul>
+              <p>
+                Write down a few notes. Start with something ordinary rather
+                than trying to find a perfect example.
+              </p>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">Observation prompts</span>
+              <div class="tile-grid">
+                <div class="visual-card">
+                  <strong>Goal</strong>
+                  What did the user want?
+                </div>
+                <div class="visual-card">
+                  <strong>Input</strong>
+                  What action did they take?
+                </div>
+                <div class="visual-card">
+                  <strong>Feedback</strong>
+                  What changed?
+                </div>
+                <div class="visual-card">
+                  <strong>Feeling</strong>
+                  How did it land?
+                </div>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             Let them begin with familiar interfaces. Most students will think of
             standard interfaces, and that is exactly what you want here. The
@@ -1630,41 +2487,49 @@
             An alternative interface changes how input, feedback or interaction
             happens.
           </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>It might use</h3>
-              <ul class="bullet-columns">
-                <li>touch</li>
-                <li>drag</li>
-                <li>swipe</li>
-                <li>long press</li>
-                <li>movement</li>
-                <li>camera input</li>
-                <li>hand gestures</li>
-                <li>motion feedback</li>
-              </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>It might use</h3>
+                  <ul class="bullet-columns">
+                    <li>touch</li>
+                    <li>drag</li>
+                    <li>swipe</li>
+                    <li>long press</li>
+                    <li>movement</li>
+                    <li>camera input</li>
+                    <li>hand gestures</li>
+                    <li>motion feedback</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h3>The real question</h3>
+                  <p>
+                    Would a different form of interaction make more sense in a
+                    specific context?
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="info-card">
-              <h3>What makes it alternative?</h3>
-              <p>
-                It may move beyond the usual screen, mouse, keyboard and common
-                UI patterns.
-              </p>
-              <p>
-                It might use the body, space, sensors, motion or the physical
-                context around the user.
-              </p>
-              <h3>The real question</h3>
-              <p>
-                The point is not to be impressive. The point is to ask whether a
-                different form of interaction would make more sense in a
-                specific context.
-              </p>
+            <div class="visual-board">
+              <span class="visual-title">Shift the interface material</span>
+              <div class="tool-matrix">
+                <div class="visual-chip">Touch</div>
+                <div class="visual-chip purple">Gesture</div>
+                <div class="visual-chip green">Camera</div>
+                <div class="visual-chip yellow">Motion</div>
+                <div class="visual-chip">Space</div>
+                <div class="visual-chip purple">Objects</div>
+              </div>
+              <div class="visual-chip green" style="margin-top: 0.75em">
+                Screen pattern &rarr; contextual interaction
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="roomy">
+        <section class="roomy alt-practice-slide">
           <p class="eyebrow">Examples</p>
           <h2>Alternative Interfaces in Practice</h2>
           <div class="media-slide">
@@ -1704,7 +2569,7 @@
           </aside>
         </section>
 
-        <section class="roomy">
+        <section class="roomy alt-practice-slide">
           <p class="eyebrow">Examples</p>
           <h2>Alternative Interfaces in Practice</h2>
           <div class="media-slide">
@@ -1746,33 +2611,42 @@
           </aside>
         </section>
 
-        <section class="roomy">
+        <section class="roomy ui-materials-slide">
           <p class="eyebrow">Takeaway</p>
           <h2>User Interfaces Can Be Many Things</h2>
           <p class="statement">
             A user interface does not have to be just a screen, a button and a
             mouse.
           </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>It can also be</h3>
-              <ul>
-                <li>touch and gestures</li>
-                <li>movement and body position</li>
-                <li>camera input</li>
-                <li>sound, light or vibration</li>
-                <li>objects and physical actions</li>
-              </ul>
+          <div class="visual-layout reverse">
+            <div class="visual-board">
+              <span class="visual-title">Interface materials</span>
+              <div class="tile-grid three">
+                <div class="visual-card"><strong>Touch</strong>tap, drag</div>
+                <div class="visual-card"><strong>Body</strong>move, pose</div>
+                <div class="visual-card"><strong>Camera</strong>see, track</div>
+                <div class="visual-card">
+                  <strong>Sound</strong>listen, react
+                </div>
+                <div class="visual-card">
+                  <strong>Light</strong>signal, guide
+                </div>
+                <div class="visual-card"><strong>Object</strong>hold, blow</div>
+              </div>
             </div>
-            <div class="info-card">
-              <h3>What matters</h3>
-              <ul>
-                <li>The interaction should fit the context</li>
-                <li>It should help the user understand what to do</li>
-                <li>
-                  It should make the experience clearer or more meaningful
-                </li>
-              </ul>
+            <div class="visual-copy">
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>What matters</h3>
+                  <ul>
+                    <li>The interaction should fit the context</li>
+                    <li>It should help the user understand what to do</li>
+                    <li>
+                      It should make the experience clearer or more meaningful
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
           <aside class="notes">
@@ -1785,22 +2659,36 @@
         <section class="exercise-slide">
           <p class="eyebrow">Group Exercise</p>
           <h2>What If the Interface Was Different?</h2>
-          <p>Start by sharing your individual examples in your Table Group.</p>
-          <ul>
-            <li>Each person presents their interface shortly</li>
-            <li>Choose one or two examples to work with together</li>
-            <li>What is the core action?</li>
-            <li>How does it work now?</li>
-            <li>What could the alternative interface be?</li>
-            <li>
-              Would that make the experience clearer, more meaningful or more
-              memorable in that context?
-            </li>
-          </ul>
-          <p>
-            Start from the existing action, then reimagine how the interaction
-            could happen differently.
-          </p>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <p>
+                Start by sharing your individual examples in your Table Group.
+              </p>
+              <ul>
+                <li>Each person presents their interface shortly</li>
+                <li>Choose one or two examples to work with together</li>
+                <li>What is the core action?</li>
+                <li>How does it work now?</li>
+                <li>What could the alternative interface be?</li>
+                <li>
+                  Would that make the experience clearer, more meaningful or
+                  more memorable in that context?
+                </li>
+              </ul>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">Exercise path</span>
+              <div class="visual-flow vertical">
+                <div class="visual-chip">Share examples</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip purple">Find the core action</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip green">Change the interaction</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip yellow">Explain the fit</div>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             First, let them briefly share the interfaces they each picked. Then
             the table group chooses one or two examples and works from those.
@@ -1812,13 +2700,26 @@
         <section>
           <p class="eyebrow">Share Back</p>
           <h2>Share your thoughts</h2>
-          <ul>
-            <li>What interface did your group choose?</li>
-            <li>What is the normal interaction?</li>
-            <li>What alternative interface did you imagine?</li>
-            <li>Why would that make sense in that context?</li>
-          </ul>
-          <p>Be ready to share one example with the class in one minute.</p>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <ul>
+                <li>What interface did your group choose?</li>
+                <li>What is the normal interaction?</li>
+                <li>What alternative interface did you imagine?</li>
+                <li>Why would that make sense in that context?</li>
+              </ul>
+              <p>Be ready to share one example with the class in one minute.</p>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">One-minute share</span>
+              <div class="tile-grid">
+                <div class="visual-card"><strong>1</strong>interface</div>
+                <div class="visual-card"><strong>2</strong>normal input</div>
+                <div class="visual-card"><strong>3</strong>new input</div>
+                <div class="visual-card"><strong>4</strong>why it fits</div>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             Use this as the class discussion moment. Ask a few groups to share
             concrete examples before moving into design-to-code thinking. Keep
@@ -1833,20 +2734,36 @@
             Once we have an interface idea, the next question is: how do we turn
             it into something we can actually build?
           </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>In design</h3>
-              <ul>
-                <li>We sketch screens, flows and interaction ideas</li>
-                <li>We decide what the user should see and do</li>
-              </ul>
+          <div class="visual-layout reverse">
+            <div class="visual-board">
+              <span class="visual-title">Bridge from idea to build</span>
+              <div class="visual-flow vertical">
+                <div class="visual-chip">Interaction idea</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip purple">Flow + screen structure</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip green">Components</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip yellow">Working prototype</div>
+              </div>
             </div>
-            <div class="info-card">
-              <h3>In code</h3>
-              <ul>
-                <li>We structure the interface into smaller pieces</li>
-                <li>We make those pieces interactive and reusable</li>
-              </ul>
+            <div class="visual-copy">
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>In design</h3>
+                  <ul>
+                    <li>We sketch screens, flows and interaction ideas</li>
+                    <li>We decide what the user should see and do</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h3>In code</h3>
+                  <ul>
+                    <li>We structure the interface into smaller pieces</li>
+                    <li>We make those pieces interactive and reusable</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
           <aside class="notes">
@@ -1856,34 +2773,60 @@
           </aside>
         </section>
 
-        <section class="roomy">
+        <section class="roomy components-intro-slide">
           <h2>We See UI as Components</h2>
           <p class="statement">
             We do not build interfaces as one big screen. We split them into
             components.
           </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>A component can be</h3>
-              <ul>
-                <li>a button</li>
-                <li>a card</li>
-                <li>a navigation bar</li>
-                <li>a product item</li>
-                <li>a modal or dialog</li>
-              </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>A component can be</h3>
+                  <ul>
+                    <li>a button</li>
+                    <li>a card</li>
+                    <li>a navigation bar</li>
+                    <li>a product item</li>
+                    <li>a modal or dialog</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h3>Why this matters</h3>
+                  <ul>
+                    <li>It makes the interface easier to understand</li>
+                    <li>It makes the code easier to build and change</li>
+                    <li>
+                      It helps us create
+                      <strong>reusable components</strong> across a design
+                    </li>
+                    <li>It connects naturally to both Figma and React</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="info-card">
-              <h3>Why this matters</h3>
-              <ul>
-                <li>It makes the interface easier to understand</li>
-                <li>It makes the code easier to build and change</li>
-                <li>
-                  It helps us create <strong>reusable components</strong> across
-                  a design
-                </li>
-                <li>It connects naturally to both Figma and React</li>
-              </ul>
+            <div class="visual-board">
+              <span class="visual-title">Split the screen</span>
+              <div class="mini-screen">
+                <div class="mini-screen-bar">
+                  <span class="mini-screen-dot"></span>
+                  <span class="mini-screen-dot"></span>
+                  <span class="mini-screen-dot"></span>
+                </div>
+                <div class="wireframe">
+                  <span class="wide"></span>
+                  <span class="tall"></span>
+                  <span class="tall"></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="component-stack">
+                <div class="component-layer">Header</div>
+                <div class="component-layer">Card</div>
+                <div class="component-layer">Button</div>
+              </div>
             </div>
           </div>
           <aside class="notes">
@@ -1893,7 +2836,7 @@
           </aside>
         </section>
 
-        <section class="roomy">
+        <section class="roomy components-habit-slide">
           <p class="eyebrow">Component Thinking</p>
           <h2>Components, Components, Components</h2>
           <div class="media-slide">
@@ -2022,62 +2965,6 @@
               src="./assets/baaa-homepage.png"
               alt="Screenshot of baaa.dk homepage annotated with component regions"
             />
-            <div
-              class="component-box teal"
-              data-label="Header / top bar"
-              style="
-                left: 1.8%;
-                top: 1.4%;
-                width: 96.4%;
-                height: 9%;
-                --label-left: 42%;
-                --label-top: -1.2em;
-              "
-            ></div>
-            <div
-              class="component-box purple"
-              data-label="Search action"
-              style="
-                left: 1.2%;
-                top: 1.9%;
-                width: 3.4%;
-                height: 6.3%;
-                --label-left: 0;
-                --label-top: -1.45em;
-              "
-            ></div>
-            <div
-              class="component-box purple"
-              data-label="Menu action"
-              style="
-                left: 95.2%;
-                top: 1.9%;
-                width: 3.4%;
-                height: 6.3%;
-                --label-left: 0.2em;
-                --label-top: -1.45em;
-              "
-            ></div>
-            <div
-              class="component-box yellow"
-              data-label="Hero section"
-              style="left: 5.5%; top: 11%; width: 88.3%; height: 38.8%"
-            ></div>
-            <div
-              class="component-box red"
-              data-label="Hero heading + text"
-              style="left: 19.8%; top: 22.2%; width: 52.7%; height: 15.2%"
-            ></div>
-            <div
-              class="component-box green"
-              data-label="Content section"
-              style="left: 5.5%; top: 49.8%; width: 88.3%; height: 49%"
-            ></div>
-            <div
-              class="component-box red"
-              data-label="Section heading + text"
-              style="left: 26.9%; top: 60.3%; width: 51.1%; height: 13.7%"
-            ></div>
           </div>
           <aside class="notes">
             Keep this at a readable level. You do not need to identify every
@@ -2235,15 +3122,28 @@ function Footer() {
 
         <section>
           <h2>Why React?</h2>
-          <p>React helps us build interfaces as pieces that can change.</p>
-          <p>It is useful for prototypes because it gives us:</p>
-          <ul>
-            <li>components</li>
-            <li>reusable structure</li>
-            <li>state</li>
-            <li>event handling</li>
-            <li>interactive flows</li>
-          </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <p>React helps us build interfaces as pieces that can change.</p>
+              <p>It is useful for prototypes because it gives us:</p>
+              <ul>
+                <li>components</li>
+                <li>reusable structure</li>
+                <li>state</li>
+                <li>event handling</li>
+                <li>interactive flows</li>
+              </ul>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">React prototype material</span>
+              <div class="component-stack">
+                <div class="component-layer">Component</div>
+                <div class="component-layer">Props</div>
+                <div class="component-layer">State</div>
+                <div class="component-layer">Events</div>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             Frame React as a prototyping material, not as full production
             engineering.
@@ -2253,10 +3153,27 @@ function Footer() {
         <section>
           <p class="eyebrow">Thinking in React</p>
           <h2>React Mental Model</h2>
-          <p>A <strong>component</strong> is a piece of interface.</p>
-          <p><strong>Props</strong> are information passed into that piece.</p>
-          <p><strong>State</strong> is information that can change.</p>
-          <p><strong>Events</strong> are things the user does.</p>
+          <div class="visual-board">
+            <span class="visual-title">Four words to keep nearby</span>
+            <div class="tile-grid">
+              <div class="visual-card">
+                <strong>Component</strong>
+                a piece of interface
+              </div>
+              <div class="visual-card">
+                <strong>Props</strong>
+                information passed in
+              </div>
+              <div class="visual-card">
+                <strong>State</strong>
+                information that can change
+              </div>
+              <div class="visual-card">
+                <strong>Events</strong>
+                things the user does
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             Keep this slide visible when live coding. It gives students four
             words to hang onto.
@@ -2265,16 +3182,31 @@ function Footer() {
 
         <section>
           <h2>Component</h2>
-          <p>A component is a reusable interface piece.</p>
-          <p>Examples:</p>
-          <ul>
-            <li>button</li>
-            <li>card</li>
-            <li>navigation</li>
-            <li>filter</li>
-            <li>modal</li>
-            <li>product item</li>
-          </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <p>A component is a reusable interface piece.</p>
+              <p>Examples:</p>
+              <ul>
+                <li>button</li>
+                <li>card</li>
+                <li>navigation</li>
+                <li>filter</li>
+                <li>modal</li>
+                <li>product item</li>
+              </ul>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">Reusable UI pieces</span>
+              <div class="tool-matrix">
+                <div class="visual-chip">Button</div>
+                <div class="visual-chip purple">Card</div>
+                <div class="visual-chip green">Nav</div>
+                <div class="visual-chip yellow">Filter</div>
+                <div class="visual-chip">Modal</div>
+                <div class="visual-chip purple">Product</div>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             Connect this to Figma components. Students already understand
             repeated visual patterns.
@@ -2308,15 +3240,32 @@ function Footer() {
 
         <section>
           <h2>State</h2>
-          <p>State is what the interface remembers right now.</p>
-          <p>Examples:</p>
-          <ul>
-            <li>selected item</li>
-            <li>open or closed</li>
-            <li>active step</li>
-            <li>liked or not liked</li>
-            <li>loading, success or error</li>
-          </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <p>State is what the interface remembers right now.</p>
+              <p>Examples:</p>
+              <ul>
+                <li>selected item</li>
+                <li>open or closed</li>
+                <li>active step</li>
+                <li>liked or not liked</li>
+                <li>loading, success or error</li>
+              </ul>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">Changing over time</span>
+              <div class="state-track">
+                <div class="state-step">idle</div>
+                <div class="visual-arrow">&rarr;</div>
+                <div class="state-step">loading</div>
+                <div class="visual-arrow">&rarr;</div>
+                <div class="state-step">success</div>
+              </div>
+              <div class="visual-chip purple" style="margin-top: 0.85em">
+                click, type, submit, drag
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             This is where students start seeing why code can express more than a
             static design.
@@ -2343,16 +3292,34 @@ function Footer() {
 
         <section>
           <h2>Tool Setup</h2>
-          <p>We need the basics working:</p>
-          <ul class="bullet-columns">
-            <li>browser</li>
-            <li>code editor</li>
-            <li>Node.js</li>
-            <li>npm</li>
-            <li>GitHub account</li>
-            <li>Figma account</li>
-            <li>React project</li>
-          </ul>
+          <div class="visual-layout reverse">
+            <div class="visual-board tight">
+              <span class="visual-title">Tool chain</span>
+              <div class="tool-matrix">
+                <div class="visual-chip">Browser</div>
+                <div class="visual-chip purple">Editor</div>
+                <div class="visual-chip green">Node</div>
+                <div class="visual-chip yellow">npm</div>
+                <div class="visual-chip">GitHub</div>
+                <div class="visual-chip purple">Figma</div>
+              </div>
+              <div class="visual-chip green" style="margin-top: 0.75em">
+                React project
+              </div>
+            </div>
+            <div class="visual-copy">
+              <p>We need the basics working:</p>
+              <ul class="bullet-columns">
+                <li>browser</li>
+                <li>code editor</li>
+                <li>Node.js</li>
+                <li>npm</li>
+                <li>GitHub account</li>
+                <li>Figma account</li>
+                <li>React project</li>
+              </ul>
+            </div>
+          </div>
           <aside class="notes">
             Treat setup issues as normal. The success criterion is that everyone
             knows what is missing and what to fix.
@@ -2362,28 +3329,44 @@ function Footer() {
         <section class="roomy">
           <p class="eyebrow">Exercise 1</p>
           <h2>Getting Started with React</h2>
-          <p>
-            This is the first hands-on exercise in the React part of the
-            lesson.
-          </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Focus</h3>
-              <ul>
-                <li>Get the React project running</li>
-                <li>Find the important files</li>
-                <li>Make your first small changes</li>
-                <li>Get comfortable with the workflow</li>
-              </ul>
-            </div>
-            <div class="info-card">
-              <h3>Exercise link</h3>
+          <div class="visual-layout">
+            <div class="visual-copy">
               <p>
-                <a
-                  href="https://www.notion.so/Getting-started-with-React-0fd48b8ae90a438bb6ec8dc95628f13f?pvs=21"
-                  >Getting started with React</a
-                >
+                This is the first hands-on exercise in the React part of the
+                lesson.
               </p>
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>Focus</h3>
+                  <ul>
+                    <li>Get the React project running</li>
+                    <li>Find the important files</li>
+                    <li>Make your first small changes</li>
+                    <li>Get comfortable with the workflow</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h3>Exercise link</h3>
+                  <p>
+                    <a
+                      href="https://www.notion.so/Getting-started-with-React-0fd48b8ae90a438bb6ec8dc95628f13f?pvs=21"
+                      >Getting started with React</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="visual-board">
+              <span class="visual-title">First workflow</span>
+              <div class="visual-flow vertical">
+                <div class="visual-chip">Install</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip purple">Run dev server</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip green">Edit component</div>
+                <div class="visual-arrow">&darr;</div>
+                <div class="visual-chip yellow">See browser update</div>
+              </div>
             </div>
           </div>
           <aside class="notes">
@@ -2396,28 +3379,53 @@ function Footer() {
         <section class="roomy">
           <p class="eyebrow">Exercise 2</p>
           <h2>React Page Layout with Components</h2>
-          <p>
-            Next, we move from small edits to building a simple page layout out
-            of components.
-          </p>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Focus</h3>
-              <ul>
-                <li>Structure a page into components</li>
-                <li>Translate layout into React</li>
-                <li>Practice reusable components</li>
-                <li>Strengthen the Figma-to-React mindset</li>
-              </ul>
+          <div class="visual-layout reverse">
+            <div class="visual-board">
+              <span class="visual-title">Page as parts</span>
+              <div class="mini-screen">
+                <div class="mini-screen-bar">
+                  <span class="mini-screen-dot"></span>
+                  <span class="mini-screen-dot"></span>
+                  <span class="mini-screen-dot"></span>
+                </div>
+                <div class="wireframe">
+                  <span class="wide"></span>
+                  <span class="wide"></span>
+                  <span class="tall"></span>
+                  <span class="tall"></span>
+                </div>
+              </div>
+              <div class="visual-flow" style="margin-top: 0.7em">
+                <div class="visual-chip">Header</div>
+                <div class="visual-chip purple">Content</div>
+                <div class="visual-chip green">Footer</div>
+              </div>
             </div>
-            <div class="info-card">
-              <h3>Exercise link</h3>
+            <div class="visual-copy">
               <p>
-                <a
-                  href="https://www.notion.so/React-Page-Layout-with-Components-e6a428b2ee3d43e3a995d8261be068de?pvs=21"
-                  >React Page Layout with Components</a
-                >
+                Next, we move from small edits to building a simple page layout
+                out of components.
               </p>
+              <div class="info-grid">
+                <div class="info-card">
+                  <h3>Focus</h3>
+                  <ul>
+                    <li>Structure a page into components</li>
+                    <li>Translate layout into React</li>
+                    <li>Practice reusable components</li>
+                    <li>Strengthen the Figma-to-React mindset</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h3>Exercise link</h3>
+                  <p>
+                    <a
+                      href="https://www.notion.so/React-Page-Layout-with-Components-e6a428b2ee3d43e3a995d8261be068de?pvs=21"
+                      >React Page Layout with Components</a
+                    >
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <aside class="notes">
@@ -2428,67 +3436,83 @@ function Footer() {
         </section>
 
         <section>
-          <h2>Checkpoint</h2>
-          <p>Can you:</p>
-          <ul>
-            <li>open the project?</li>
-            <li>start the local server?</li>
-            <li>change text in a component?</li>
-            <li>see the browser update?</li>
-            <li>explain where the component lives?</li>
-          </ul>
-          <aside class="notes">
-            This gives a concrete minimum for the day. It also helps students
-            who are unsure whether they are following.
-          </aside>
-        </section>
-
-        <section>
-          <h2>From Today to Next Time</h2>
-          <p>
-            <strong>Today:</strong> We begin moving from visual design to
-            interactive code.
-          </p>
-          <p>
-            <strong>Next:</strong> We practice the basics and prepare to
-            structure designs as <strong>reusable components</strong>.
-          </p>
-          <p>
-            <strong>Later:</strong> We use MCP/AI, gestures, motion and
-            alternative input to develop stronger prototypes.
-          </p>
-          <aside class="notes">
-            End with continuity. The course is cumulative, and today's basics
-            matter later.
-          </aside>
-        </section>
-
-        <section>
           <h2>Reflection</h2>
-          <p>Write down:</p>
-          <ul>
-            <li>one thing you understood</li>
-            <li>one thing that is still unclear</li>
-            <li>one interface idea you might want to explore</li>
-          </ul>
+          <div class="visual-layout">
+            <div class="visual-copy">
+              <p>Write down:</p>
+              <ul>
+                <li>one thing you understood</li>
+                <li>one thing that is still unclear</li>
+                <li>one interface idea you might want to explore</li>
+              </ul>
+            </div>
+            <div class="visual-board tight">
+              <span class="visual-title">Three notes</span>
+              <div class="tile-grid three">
+                <div class="visual-card"><strong>1</strong>understood</div>
+                <div class="visual-card"><strong>2</strong>unclear</div>
+                <div class="visual-card"><strong>3</strong>idea</div>
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             Use this to identify where the group is technically. It can also
             feed the next lesson.
           </aside>
         </section>
 
-        <section>
+        <section class="after-today-slide">
           <h2>After Today</h2>
-          <ul>
-            <li>Finish the first exercises</li>
-            <li>Make sure your tools work</li>
-            <li>Continue React self-study if needed</li>
-            <li>Start noticing interactive experiences around you</li>
-            <li>Bring questions to the workday</li>
-          </ul>
+          <div class="visual-layout reverse">
+            <div class="visual-board tight">
+              <span class="visual-title">Next actions</span>
+              <div class="visual-flow vertical">
+                <div class="visual-chip">Finish day-one exercises</div>
+                <div class="visual-chip purple">Check tools + workflow</div>
+                <div class="visual-chip green">Continue React practice</div>
+                <div class="visual-chip yellow">Prepare for LYDA</div>
+              </div>
+            </div>
+            <div class="visual-copy">
+              <p>
+                The workday is about confidence and foundation, not speed. Use
+                the Canvas page as your checklist:
+              </p>
+              <ul>
+                <li>Review lesson-one slides, examples and notes</li>
+                <li>Finish the exercises from day one</li>
+                <li>Verify your setup and basic workflow on your machine</li>
+                <li>
+                  Use the self-study guide if HTML, CSS or JavaScript feels
+                  shaky
+                </li>
+                <li>Continue the CodeDex React course when ready</li>
+                <li>Check Canvas for preparation before LYDA's next lesson</li>
+              </ul>
+              <p>
+                If you get blocked: revisit the lesson materials, identify
+                whether the issue is tools, JavaScript or React, and ask for
+                help on Teams or at race@eaaa.dk.
+              </p>
+              <p class="exam-link">
+                <a
+                  href="https://eaaa.instructure.com/courses/31377/pages/workday-figma-to-react-05-05-2026?module_item_id=988056"
+                  >Workday: Figma to React (05-05-2026)</a
+                >
+                &nbsp;&nbsp;
+                <a
+                  href="https://www.notion.so/Self-study-with-CodeDex-io-350bc239db1180af9beacc9a801f863a"
+                  >Self-study guide</a
+                >
+                &nbsp;&nbsp;
+                <a href="https://www.codedex.io/react">CodeDex React</a>
+              </p>
+            </div>
+          </div>
           <aside class="notes">
-            Keep the homework practical. The workday is about strengthening the
-            foundation before the next React session.
+            Frame this as consolidation day, not progress race. Recommended
+            order: finish day-one exercises, use self-study if needed, continue
+            CodeDex React, then prepare for LYDA via Canvas instructions.
           </aside>
         </section>
       </div>
