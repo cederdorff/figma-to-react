@@ -56,8 +56,8 @@ By the end of the day, you should have a clearer sense of the course direction, 
 - **Slides**
   - [04-05-2026-intro-tools-react](https://cederdorff.com/figma-to-react/slides/04-05-2026-intro-tools-react.html)
 - **Exercises**
-  - [Getting started with React](https://www.notion.so/Getting-started-with-React-0fd48b8ae90a438bb6ec8dc95628f13f?pvs=21)
-  - [React Page Layout with Components](https://www.notion.so/React-Page-Layout-with-Components-e6a428b2ee3d43e3a995d8261be068de?pvs=21)
+  - [Getting started with React](https://www.notion.so/Getting-started-with-React-0fd48b8ae90a438bb6ec8dc95628f13f)
+  - [React Page Layout with Components](https://github.com/cederdorff/react-vite-page-layout/blob/main/docs/EXERCISE_GUIDE.md)
 - **Other links**
   - [Tool setup guide](https://github.com/cederdorff/figma-to-react/blob/main/guides/tool-setup-guide.md)
 
