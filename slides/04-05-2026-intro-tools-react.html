@@ -980,6 +980,20 @@
         grid-template-columns: minmax(0, 1.08fr) minmax(10.6em, 0.92fr);
       }
 
+      .starting-points-slide .visual-board {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45em;
+        min-height: 12.6em;
+      }
+
+      .starting-points-slide .reaction-gif img {
+        border-radius: 10px;
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+
       .interface-slide .loop-diagram {
         gap: 0.5em;
         padding-top: 0.08em;
@@ -2365,12 +2379,12 @@
                 <div class="visual-chip purple">Some practice</div>
                 <div class="visual-chip green">Confident builder</div>
               </div>
-              <div class="visual-flow" style="margin-top: 0.75em">
-                <div class="visual-chip yellow">Ask</div>
-                <div class="visual-arrow">&rarr;</div>
-                <div class="visual-chip yellow">Share</div>
-                <div class="visual-arrow">&rarr;</div>
-                <div class="visual-chip yellow">Build</div>
+
+              <div class="reaction-gif">
+                <img
+                  src="./assets/i-dont-understand-what-just-happened-here-ross-geller.gif"
+                  alt="I don't understand what just happened here reaction gif"
+                />
               </div>
             </div>
           </div>
