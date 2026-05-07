@@ -31,23 +31,23 @@ By the end of the day, you should have a clearer React mental model, a better se
    - Show the end result of the day: Codeagram.
    - Learn how to export the Reveal slides as a PDF.
    - Note the GitHub Student Developer Pack for next time.
-   - We will start by revisiting the exercises from the last lesson.
-   - We will also make time for questions from the workday and self-study period.
+   - Revisit last lesson's exercises.
+   - Make time for workday and self-study questions.
 2. **React basics and component thinking**
-   - We will practice the React mental model and the core building blocks: components, JSX, props, state and events.
-   - We will look at how these pieces work together in a React file and in a small interface.
-   - We will also look at how to break a UI into reusable parts instead of keeping everything in one flat screen.
-   - We will discuss what should become a component, a prop, data or state.
+   - Practice the React mental model: components, JSX, props, state and events.
+   - See how these pieces work together in a React file.
+   - Break a UI into reusable parts.
+   - Decide what should become a component, a prop, data or state.
 3. **Codeagram App**
-   - We will start the Codeagram app and use it as the main practical example for the lesson.
-   - We will set up the first components, layout, data structure, props, events, state and repeated UI.
-   - We will refactor parts of the code so they become easier to read and reuse.
+   - Build the Codeagram app as the main example for the day.
+   - Set up components, layout, data, props, events and state.
+   - Refactor parts of the code for clarity and reuse.
 4. **Small component system**
-   - We will build reusable components such as `Button`, `Card` and `Tag` where it fits the app.
-   - We will connect visual consistency to reusable values in code.
+   - Build reusable components such as `Button`, `Card` and `Tag` where they fit the app.
+   - Connect visual consistency to reusable values in code.
 5. **Wrap-up and next steps**
-   - We will reflect on what the Codeagram app taught us about React basics and component thinking.
-   - We will end with questions and a short look at what to continue next.
+   - Reflect on what the Codeagram app taught us.
+   - End with questions and next steps.
 
 ### Materials
 
