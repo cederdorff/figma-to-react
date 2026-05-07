@@ -47,7 +47,7 @@ By the end of the day, you should have a clearer React mental model, a better se
    - Connect visual consistency to reusable values in code.
 5. **Wrap-up and next steps**
    - Reflect on what the Codeagram app taught us.
-   - End with questions and next steps.
+   - End with questions, next steps and Workday.
 
 ### Materials
 
