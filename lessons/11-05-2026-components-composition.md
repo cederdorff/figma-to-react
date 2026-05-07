@@ -14,6 +14,8 @@ Focus question:
 
 By the end of the day, you should have a clearer React mental model, a better sense of how to break a UI into components, a small set of reusable components and a Codeagram app that shows how components, props, state and events fit together.
 
+---
+
 ### Preparation
 
 1. **Finish exercises from last lesson**
@@ -24,6 +26,8 @@ By the end of the day, you should have a clearer React mental model, a better se
 3. **CodeDex React course**
    - [CodeDex React course](https://www.codedex.io/react)
    - Do the sections "First React App", "JSX & Components", "Props & State" and "Events".
+
+---
 
 ### Agenda
 
@@ -48,6 +52,8 @@ By the end of the day, you should have a clearer React mental model, a better se
 5. **Wrap-up and next steps**
    - Reflect on what the Codeagram app taught us.
    - End with questions, next steps and Workday.
+
+---
 
 ### Materials
 
