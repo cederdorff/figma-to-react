@@ -6,59 +6,57 @@
 
 ### Purpose of The Day
 
-You will learn how to structure UI instead of copy-pasting screens. The transition from Figma decisions to React decisions is made explicit, so you are prepared to evaluate and refactor MCP/AI-generated code.
+The purpose of today is to strengthen the React foundation from the first session. We will revisit questions from the exercises and workday, then practice React basics and component thinking through the Codeagram app.
 
 Focus question:
 
-> How do we break a design into reusable components?
+> How do we break a design into reusable components and build them into a working app?
 
-By the end of the day, you should have a small component library, one screen composed from reusable components and a clearer sense of what good generated React code should become after refactoring.
+By the end of the day, you should have a clearer React mental model, a better sense of how to break a UI into components, a small set of reusable components and a Codeagram app that shows how components, props, state and events fit together.
 
 ### Preparation
 
-- Bring your React project from the first session.
-- Bring or choose a case you can use for interface inventory.
-- Bring a Figma design, screenshot or visual reference if you already have one.
-- Be ready to identify repeated UI patterns, user actions, states and content types.
-- Be ready to refactor code into reusable components.
+1. **Finish exercises from last lesson**
+   - [Getting started with React](https://www.notion.so/Getting-started-with-React-0fd48b8ae90a438bb6ec8dc95628f13f)
+   - [React Page Layout with Components](https://github.com/cederdorff/react-vite-page-layout/blob/main/docs/EXERCISE_GUIDE.md)
+2. **Use the self-study guide if you need more support**
+   - If HTML, CSS or JavaScript still feel shaky, keep working on [Self-study with CodeDex.io](https://www.notion.so/Self-study-with-CodeDex-io-350bc239db1180af9beacc9a801f863a)
+3. **CodeDex React course**
+   - [CodeDex React course](https://www.codedex.io/react)
+   - Do the sections "First React App", "JSX & Components", "Props & State" and "Events".
 
 ### Agenda
 
-- Recap: components, props, state and reading React files
-  - Review the React basics from the first session.
-  - Revisit how to read imports, component functions, JSX, styling, data and state.
-- Figma frames vs. React components
-  - Compare how a design is structured in Figma with how an interface is structured in React.
-  - Identify repeated UI patterns that should become reusable components.
-- Design-to-code decisions
-  - Decide what becomes a component, prop, data or state.
-  - Discuss what should be refactored when code is too flat, repetitive or hard to maintain.
-- Live coding: component variants
-  - Build components such as `Button`, `Card` and `Tag`.
-  - Use props to create variants instead of duplicating code.
-- Design tokens light
-  - Work with colors, spacing, border radius and typography as reusable design decisions.
-  - Connect visual consistency in Figma to reusable values in code.
-- Mapping over data and composing a screen
-  - Use arrays and `.map()` to render repeated UI.
-  - Compose a screen from smaller reusable components.
-- Exercise: build a small component system
-  - Build reusable components from a Figma design, screenshot or visual reference.
-  - Suggested components: `Button`, `Card`, `Navigation`, `Section`, `Filter`, `Modal` and `Tag`.
-- Interface inventory
-  - Create a small inventory from your case.
-  - Identify repeated UI elements, user actions, possible states and content types.
-- Refactor discussion
-  - Discuss what good React code should become after refactoring.
-  - Connect this to how you will later evaluate MCP/AI-generated code.
+1. **Today's goals and recap**
+   - Show the end result of the day: Codeagram.
+   - Learn how to export the Reveal slides as a PDF.
+   - Note the GitHub Student Developer Pack for next time.
+   - We will start by revisiting the exercises from the last lesson.
+   - We will also make time for questions from the workday and self-study period.
+2. **React basics and component thinking**
+   - We will practice the React mental model and the core building blocks: components, JSX, props, state and events.
+   - We will look at how these pieces work together in a React file and in a small interface.
+   - We will also look at how to break a UI into reusable parts instead of keeping everything in one flat screen.
+   - We will discuss what should become a component, a prop, data or state.
+3. **Codeagram App**
+   - We will start the Codeagram app and use it as the main practical example for the lesson.
+   - We will set up the first components, layout, data structure, props, events, state and repeated UI.
+   - We will refactor parts of the code so they become easier to read and reuse.
+4. **Small component system**
+   - We will build reusable components such as `Button`, `Card` and `Tag` where it fits the app.
+   - We will connect visual consistency to reusable values in code.
+5. **Wrap-up and next steps**
+   - We will reflect on what the Codeagram app taught us about React basics and component thinking.
+   - We will end with questions and a short look at what to continue next.
 
 ### Materials
 
-- Figma design or screenshot with repeated UI patterns
-- React starter project or your previous project
-- Example component code
-- Example design tokens
-- Small repetitive/generated-like React example for refactoring
-- Exercise brief for component inventory
+- **Slides**
+  - Will be available here
+- **Exercises**
+  - Will be available here
+
+- **Other links**
+  - Will be available here
 
 ---
