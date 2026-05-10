@@ -29,12 +29,13 @@
 
       .reveal {
         color: #dbe7f3;
-        font-size: 32px;
+        font-size: 30px;
         position: relative;
         z-index: 1;
       }
 
       .reveal .slides section {
+        box-sizing: border-box;
         text-align: left;
       }
 
@@ -57,23 +58,23 @@
       }
 
       .reveal h1 {
-        font-size: 2.25em;
+        font-size: 2.1em;
       }
 
       .reveal h2 {
-        font-size: 1.8em;
+        font-size: 1.6em;
       }
 
       .reveal h3 {
         color: #7dd3fc;
-        font-size: 0.85em;
-        margin-bottom: 0.35em;
+        font-size: 0.8em;
+        margin-bottom: 0.28em;
         margin-top: 0;
       }
 
       .reveal p,
       .reveal li {
-        line-height: 1.35;
+        line-height: 1.28;
       }
 
       .reveal p {
@@ -83,12 +84,12 @@
       .reveal ul,
       .reveal ol {
         display: block;
-        margin-left: 1.1em;
-        max-width: 29ch;
+        margin-left: 1em;
+        max-width: 34ch;
       }
 
       .reveal li + li {
-        margin-top: 0.36em;
+        margin-top: 0.28em;
       }
 
       .reveal li::marker {
@@ -124,7 +125,7 @@
 
       .eyebrow {
         color: #7dd3fc;
-        font-size: 0.72em;
+        font-size: 0.64em;
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -132,12 +133,12 @@
 
       .subtitle {
         color: #94a3b8;
-        font-size: 0.85em;
+        font-size: 0.76em;
       }
 
       .statement {
         color: #f8fafc;
-        font-size: 1.25em;
+        font-size: 1.12em;
         font-weight: 720;
         line-height: 1.2;
       }
@@ -149,7 +150,7 @@
       .resource-grid,
       .comparison-grid {
         display: grid;
-        gap: 0.8em;
+        gap: 0.62em;
       }
 
       .hero-grid,
@@ -161,7 +162,7 @@
 
       .hero-grid {
         align-items: end;
-        gap: 1.1em;
+        gap: 0.9em;
       }
 
       .deck-card,
@@ -186,7 +187,7 @@
       .tree-card,
       .stack-card,
       .check-card {
-        padding: 0.78em;
+        padding: 0.62em;
       }
 
       .accent {
@@ -201,7 +202,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0.35em;
-        margin-top: 0.7em;
+        margin-top: 0.55em;
       }
 
       .tag {
@@ -227,7 +228,7 @@
       .agenda-list li {
         align-items: start;
         display: grid;
-        gap: 0.55em;
+        gap: 0.45em;
         grid-template-columns: 2.1em minmax(0, 1fr);
       }
 
@@ -251,11 +252,41 @@
         display: block;
       }
 
+      .agenda-progress {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.32em;
+        margin: 0.45em 0 0.65em;
+      }
+
+      .agenda-progress-item {
+        background: rgba(15, 23, 42, 0.78);
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 999px;
+        color: #94a3b8;
+        display: inline-flex;
+        font-size: 0.36em;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        padding: 0.24em 0.5em;
+      }
+
+      .agenda-progress-item.is-done {
+        border-color: rgba(52, 211, 153, 0.26);
+        color: #bbf7d0;
+      }
+
+      .agenda-progress-item.is-current {
+        background: rgba(56, 189, 248, 0.12);
+        border-color: rgba(56, 189, 248, 0.28);
+        color: #e0f2fe;
+      }
+
       .phone {
         margin-left: auto;
-        max-width: 10.8em;
+        max-width: 9.8em;
         overflow: hidden;
-        padding: 0.42em;
+        padding: 0.34em;
       }
 
       .phone-frame {
@@ -273,13 +304,13 @@
 
       .metrics {
         display: grid;
-        gap: 0.55em;
+        gap: 0.42em;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        margin-top: 0.9em;
+        margin-top: 0.65em;
       }
 
       .mini-card {
-        padding: 0.6em;
+        padding: 0.48em;
       }
 
       .mini-label {
@@ -299,7 +330,7 @@
       }
 
       .comparison-grid {
-        margin-top: 0.7em;
+        margin-top: 0.55em;
       }
 
       .comparison-grid .surface h3,
@@ -325,17 +356,17 @@
       .stack-card ul,
       .check-card p,
       .check-card ul {
-        font-size: 0.66em;
+        font-size: 0.6em;
         max-width: none;
       }
 
       .matrix {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        margin-top: 0.8em;
+        margin-top: 0.6em;
       }
 
       .matrix-card {
-        min-height: 8.2em;
+        min-height: 7em;
       }
 
       .matrix-card .label {
@@ -349,13 +380,13 @@
       }
 
       .tree-card {
-        margin-top: 0.8em;
+        margin-top: 0.6em;
       }
 
       .tree {
         display: grid;
-        gap: 0.5em;
-        margin-top: 0.65em;
+        gap: 0.38em;
+        margin-top: 0.5em;
       }
 
       .tree-row {
@@ -389,7 +420,7 @@
       .split-quote {
         align-items: center;
         display: grid;
-        gap: 1em;
+        gap: 0.75em;
         grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
       }
 
@@ -397,7 +428,7 @@
         background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.68));
         border: 1px solid rgba(148, 163, 184, 0.22);
         border-radius: 8px;
-        padding: 0.9em;
+        padding: 0.72em;
       }
 
       .quote-card p {
@@ -410,17 +441,23 @@
 
       .resource-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        margin-top: 0.8em;
+        gap: 0.55em;
+        margin-top: 0.6em;
       }
 
       .resource-card ul {
-        margin-left: 0.8em;
+        margin-left: 0.65em;
+      }
+
+      .resource-card p,
+      .resource-card li {
+        font-size: 0.58em;
       }
 
       .build-steps {
         display: grid;
-        gap: 0.5em;
-        margin-top: 0.8em;
+        gap: 0.38em;
+        margin-top: 0.6em;
       }
 
       .build-step {
@@ -429,9 +466,9 @@
         border: 1px solid #334155;
         border-radius: 8px;
         display: grid;
-        gap: 0.7em;
+        gap: 0.55em;
         grid-template-columns: 2.3em minmax(0, 1fr);
-        padding: 0.48em 0.62em;
+        padding: 0.4em 0.52em;
       }
 
       .build-step span {
@@ -449,7 +486,7 @@
       }
 
       .build-step p {
-        font-size: 0.66em;
+        font-size: 0.58em;
         margin: 0;
         max-width: none;
       }
@@ -458,8 +495,8 @@
         background: rgba(15, 23, 42, 0.88);
         border: 1px solid #334155;
         border-radius: 8px;
-        margin-top: 0.85em;
-        padding: 0.85em;
+        margin-top: 0.6em;
+        padding: 0.65em;
       }
 
       .pdf-tip code,
@@ -476,6 +513,24 @@
       .roomy ul,
       .roomy ol {
         max-width: none;
+      }
+
+      @media (max-width: 1200px) {
+        .hero-grid,
+        .two-column,
+        .visual-grid,
+        .comparison-grid,
+        .resource-grid,
+        .matrix,
+        .split-quote,
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .phone {
+          margin-left: 0;
+          max-width: 7.8em;
+        }
       }
     </style>
   </head>
@@ -536,6 +591,9 @@
         <section class="roomy">
           <div class="eyebrow">Agenda</div>
           <h2>Day Flow</h2>
+          <p class="subtitle">
+            Each main section below shows the current agenda point so it is always clear where we are.
+          </p>
           <ol class="agenda-list">
             <li>
               <div>
@@ -571,8 +629,15 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">End Result</div>
+          <div class="eyebrow">Agenda 1/5 • Today's goals and recap</div>
           <h2>What we are building toward</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-current">1. Goals and recap</span>
+            <span class="agenda-progress-item">2. React basics</span>
+            <span class="agenda-progress-item">3. Codeagram app</span>
+            <span class="agenda-progress-item">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
           <div class="comparison-grid">
             <div class="surface">
               <h3>Codeagram should feel like a real app</h3>
@@ -610,9 +675,36 @@
           </div>
         </section>
 
+        <section>
+          <div class="eyebrow">Agenda 1/5 • Today's goals and recap</div>
+          <h2>Export Reveal slides as PDF</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-current">1. Goals and recap</span>
+            <span class="agenda-progress-item">2. React basics</span>
+            <span class="agenda-progress-item">3. Codeagram app</span>
+            <span class="agenda-progress-item">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
+          <p>Open the slide URL, add the print parameter, and use the browser print dialog.</p>
+          <div class="pdf-tip">
+            <p style="max-width: none; margin-top: 0">
+              Example:
+              <code> .../11-05-2026-components-composition.html?print-pdf </code>
+            </p>
+            <p style="max-width: none; margin-bottom: 0">Then choose <strong>Print</strong> and save as PDF.</p>
+          </div>
+        </section>
+
         <section class="roomy">
-          <div class="eyebrow">React Mental Model</div>
+          <div class="eyebrow">Agenda 2/5 • React basics and component thinking</div>
           <h2>Five ideas that need to connect</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-current">2. React basics</span>
+            <span class="agenda-progress-item">3. Codeagram app</span>
+            <span class="agenda-progress-item">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
           <div class="matrix">
             <div class="matrix-card">
               <span class="label">Component</span>
@@ -639,8 +731,15 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Decomposition</div>
+          <div class="eyebrow">Agenda 2/5 • React basics and component thinking</div>
           <h2>Read the screen before you code it</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-current">2. React basics</span>
+            <span class="agenda-progress-item">3. Codeagram app</span>
+            <span class="agenda-progress-item">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
           <div class="two-column">
             <div>
               <p>
@@ -691,8 +790,15 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Decision Making</div>
+          <div class="eyebrow">Agenda 2/5 • React basics and component thinking</div>
           <h2>Component, prop, data or state?</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-current">2. React basics</span>
+            <span class="agenda-progress-item">3. Codeagram app</span>
+            <span class="agenda-progress-item">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
           <div class="matrix">
             <div class="matrix-card">
               <h3>Make it a component when...</h3>
@@ -730,8 +836,15 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Props Example</div>
+          <div class="eyebrow">Agenda 3/5 • Codeagram app</div>
           <h2>One component, many posts</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-done">2. React basics</span>
+            <span class="agenda-progress-item is-current">3. Codeagram app</span>
+            <span class="agenda-progress-item">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
           <div class="visual-grid">
             <div>
               <pre><code class="language-jsx">function PostCard({ username, caption, imageUrl, liked }) {
@@ -763,8 +876,15 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">State Example</div>
+          <div class="eyebrow">Agenda 3/5 • Codeagram app</div>
           <h2>Interaction needs state and events</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-done">2. React basics</span>
+            <span class="agenda-progress-item is-current">3. Codeagram app</span>
+            <span class="agenda-progress-item">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
           <div class="visual-grid">
             <div>
               <pre><code class="language-jsx">function LikeButton() {
@@ -801,8 +921,15 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Composition Workflow</div>
+          <div class="eyebrow">Agenda 3/5 • Codeagram app</div>
           <h2>Suggested build order for Codeagram</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-done">2. React basics</span>
+            <span class="agenda-progress-item is-current">3. Codeagram app</span>
+            <span class="agenda-progress-item">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
           <div class="build-steps">
             <div class="build-step">
               <span>1</span>
@@ -832,8 +959,15 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Component System</div>
+          <div class="eyebrow">Agenda 4/5 • Small component system</div>
           <h2>Small reusable pieces are enough</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-done">2. React basics</span>
+            <span class="agenda-progress-item is-done">3. Codeagram app</span>
+            <span class="agenda-progress-item is-current">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
           <div class="comparison-grid">
             <div class="surface">
               <h3>Useful reusable components</h3>
@@ -860,8 +994,15 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Practice Lens</div>
+          <div class="eyebrow">Agenda 4/5 • Small component system</div>
           <h2>When you get stuck, inspect the problem type</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-done">2. React basics</span>
+            <span class="agenda-progress-item is-done">3. Codeagram app</span>
+            <span class="agenda-progress-item is-current">4. Component system</span>
+            <span class="agenda-progress-item">5. Wrap-up</span>
+          </div>
           <div class="comparison-grid">
             <div class="check-card">
               <h3>HTML / CSS issue?</h3>
@@ -885,22 +1026,16 @@
           </div>
         </section>
 
-        <section>
-          <div class="eyebrow">Practical Tip</div>
-          <h2>Export Reveal slides as PDF</h2>
-          <p>Open the slide URL, add the print parameter, and use the browser print dialog.</p>
-          <div class="pdf-tip">
-            <p style="max-width: none; margin-top: 0">
-              Example:
-              <code> .../11-05-2026-components-composition.html?print-pdf </code>
-            </p>
-            <p style="max-width: none; margin-bottom: 0">Then choose <strong>Print</strong> and save as PDF.</p>
-          </div>
-        </section>
-
         <section class="roomy">
-          <div class="eyebrow">Materials</div>
+          <div class="eyebrow">Agenda 5/5 • Wrap-up and next steps</div>
           <h2>What to use before and after class</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-done">2. React basics</span>
+            <span class="agenda-progress-item is-done">3. Codeagram app</span>
+            <span class="agenda-progress-item is-done">4. Component system</span>
+            <span class="agenda-progress-item is-current">5. Wrap-up</span>
+          </div>
           <div class="resource-grid">
             <div class="resource-card">
               <h3>Slides</h3>
@@ -946,8 +1081,15 @@
         </section>
 
         <section>
-          <div class="eyebrow">After Today</div>
+          <div class="eyebrow">Agenda 5/5 • Wrap-up and next steps</div>
           <h2>Success for this session</h2>
+          <div class="agenda-progress">
+            <span class="agenda-progress-item is-done">1. Goals and recap</span>
+            <span class="agenda-progress-item is-done">2. React basics</span>
+            <span class="agenda-progress-item is-done">3. Codeagram app</span>
+            <span class="agenda-progress-item is-done">4. Component system</span>
+            <span class="agenda-progress-item is-current">5. Wrap-up</span>
+          </div>
           <p class="statement">
             You should leave with a better answer to: what belongs in one component, and what should be split out?
           </p>
