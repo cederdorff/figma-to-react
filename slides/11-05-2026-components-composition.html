@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figma to React: From Components to Composition</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+
+    <style>
+      :root {
+        --r-main-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --r-heading-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --r-heading-text-transform: none;
+        --r-heading-letter-spacing: 0;
+        --r-main-color: #dbe7f3;
+        --r-heading-color: #f8fafc;
+        --r-link-color: #7dd3fc;
+        --r-link-color-hover: #a7f3d0;
+        --r-selection-background-color: #164e63;
+        --r-background-color: #08111f;
+      }
+
+      body {
+        background: linear-gradient(145deg, #070b14 0%, #111827 48%, #06151f 100%);
+      }
+
+      .reveal {
+        color: #dbe7f3;
+        font-size: 32px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .reveal .slides section {
+        text-align: left;
+      }
+
+      .reveal .slides section::before {
+        background: linear-gradient(90deg, #f05d5e, #ffe083, #7ae7c7);
+        border-radius: 999px;
+        content: "";
+        height: 5px;
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        top: -0.55em;
+        width: 4.8em;
+      }
+
+      .reveal h1,
+      .reveal h2 {
+        line-height: 1.04;
+        font-weight: 780;
+      }
+
+      .reveal h1 {
+        font-size: 2.25em;
+      }
+
+      .reveal h2 {
+        font-size: 1.8em;
+      }
+
+      .reveal h3 {
+        color: #7dd3fc;
+        font-size: 0.85em;
+        margin-bottom: 0.35em;
+        margin-top: 0;
+      }
+
+      .reveal p,
+      .reveal li {
+        line-height: 1.35;
+      }
+
+      .reveal p {
+        color: #cbd5e1;
+      }
+
+      .reveal ul,
+      .reveal ol {
+        display: block;
+        margin-left: 1.1em;
+        max-width: 29ch;
+      }
+
+      .reveal li + li {
+        margin-top: 0.36em;
+      }
+
+      .reveal li::marker {
+        color: #38bdf8;
+      }
+
+      .reveal code {
+        font-size: 0.78em;
+      }
+
+      .reveal strong {
+        color: #f8fafc;
+      }
+
+      .reveal pre {
+        width: 90%;
+        box-shadow: none;
+        border-radius: 8px;
+      }
+
+      .reveal pre code {
+        background: #020617;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        color: #e2e8f0;
+        padding: 1em;
+      }
+
+      .reveal .controls,
+      .reveal .progress {
+        color: #38bdf8;
+      }
+
+      .eyebrow {
+        color: #7dd3fc;
+        font-size: 0.72em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: #94a3b8;
+        font-size: 0.85em;
+      }
+
+      .statement {
+        color: #f8fafc;
+        font-size: 1.25em;
+        font-weight: 720;
+        line-height: 1.2;
+      }
+
+      .hero-grid,
+      .two-column,
+      .visual-grid,
+      .matrix,
+      .resource-grid,
+      .comparison-grid {
+        display: grid;
+        gap: 0.8em;
+      }
+
+      .hero-grid,
+      .two-column,
+      .visual-grid,
+      .comparison-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-grid {
+        align-items: end;
+        gap: 1.1em;
+      }
+
+      .deck-card,
+      .surface,
+      .matrix-card,
+      .resource-card,
+      .mini-card,
+      .phone,
+      .tree-card,
+      .stack-card,
+      .check-card {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.68));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+      }
+
+      .deck-card,
+      .surface,
+      .matrix-card,
+      .resource-card,
+      .tree-card,
+      .stack-card,
+      .check-card {
+        padding: 0.78em;
+      }
+
+      .accent {
+        color: #7dd3fc;
+      }
+
+      .muted {
+        color: #94a3b8;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35em;
+        margin-top: 0.7em;
+      }
+
+      .tag {
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.28);
+        border-radius: 999px;
+        color: #bae6fd;
+        display: inline-flex;
+        font-size: 0.46em;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        padding: 0.28em 0.72em;
+        text-transform: uppercase;
+      }
+
+      .agenda-list {
+        counter-reset: agenda;
+        list-style: none;
+        margin-left: 0;
+        max-width: none;
+      }
+
+      .agenda-list li {
+        align-items: start;
+        display: grid;
+        gap: 0.55em;
+        grid-template-columns: 2.1em minmax(0, 1fr);
+      }
+
+      .agenda-list li::before {
+        align-items: center;
+        background: linear-gradient(90deg, #38bdf8, #a78bfa);
+        border-radius: 8px;
+        color: #f8fafc;
+        content: counter(agenda, decimal-leading-zero);
+        counter-increment: agenda;
+        display: inline-flex;
+        font-size: 0.5em;
+        font-weight: 700;
+        height: 2.1em;
+        justify-content: center;
+        margin-top: 0.08em;
+        width: 2.1em;
+      }
+
+      .agenda-list strong {
+        display: block;
+      }
+
+      .phone {
+        margin-left: auto;
+        max-width: 10.8em;
+        overflow: hidden;
+        padding: 0.42em;
+      }
+
+      .phone-frame {
+        background: #020617;
+        border: 1px solid #1e293b;
+        border-radius: 20px;
+        padding: 0.42em;
+      }
+
+      .phone img {
+        border-radius: 16px;
+        display: block;
+        width: 100%;
+      }
+
+      .metrics {
+        display: grid;
+        gap: 0.55em;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 0.9em;
+      }
+
+      .mini-card {
+        padding: 0.6em;
+      }
+
+      .mini-label {
+        color: #94a3b8;
+        display: block;
+        font-size: 0.42em;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .mini-value {
+        color: #f8fafc;
+        display: block;
+        font-size: 0.72em;
+        font-weight: 700;
+      }
+
+      .comparison-grid {
+        margin-top: 0.7em;
+      }
+
+      .comparison-grid .surface h3,
+      .resource-card h3,
+      .matrix-card h3,
+      .tree-card h3,
+      .stack-card h3,
+      .check-card h3 {
+        color: #7dd3fc;
+        font-size: 0.78em;
+        margin-bottom: 0.35em;
+      }
+
+      .comparison-grid .surface p,
+      .comparison-grid .surface ul,
+      .resource-card p,
+      .resource-card ul,
+      .matrix-card p,
+      .matrix-card ul,
+      .tree-card p,
+      .tree-card ul,
+      .stack-card p,
+      .stack-card ul,
+      .check-card p,
+      .check-card ul {
+        font-size: 0.66em;
+        max-width: none;
+      }
+
+      .matrix {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 0.8em;
+      }
+
+      .matrix-card {
+        min-height: 8.2em;
+      }
+
+      .matrix-card .label {
+        color: #bae6fd;
+        display: inline-block;
+        font-size: 0.44em;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        margin-bottom: 0.45em;
+        text-transform: uppercase;
+      }
+
+      .tree-card {
+        margin-top: 0.8em;
+      }
+
+      .tree {
+        display: grid;
+        gap: 0.5em;
+        margin-top: 0.65em;
+      }
+
+      .tree-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45em;
+      }
+
+      .node {
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.28);
+        border-radius: 8px;
+        color: #bae6fd;
+        font-size: 0.46em;
+        font-weight: 700;
+        padding: 0.36em 0.58em;
+      }
+
+      .node.alt {
+        background: rgba(167, 139, 250, 0.12);
+        border-color: rgba(167, 139, 250, 0.32);
+        color: #ddd6fe;
+      }
+
+      .node.hot {
+        background: rgba(52, 211, 153, 0.12);
+        border-color: rgba(52, 211, 153, 0.3);
+        color: #bbf7d0;
+      }
+
+      .split-quote {
+        align-items: center;
+        display: grid;
+        gap: 1em;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      }
+
+      .quote-card {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.68));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        padding: 0.9em;
+      }
+
+      .quote-card p {
+        color: #f8fafc;
+        font-size: 1em;
+        font-weight: 720;
+        line-height: 1.18;
+        max-width: none;
+      }
+
+      .resource-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 0.8em;
+      }
+
+      .resource-card ul {
+        margin-left: 0.8em;
+      }
+
+      .build-steps {
+        display: grid;
+        gap: 0.5em;
+        margin-top: 0.8em;
+      }
+
+      .build-step {
+        align-items: center;
+        background: rgba(15, 23, 42, 0.88);
+        border: 1px solid #334155;
+        border-radius: 8px;
+        display: grid;
+        gap: 0.7em;
+        grid-template-columns: 2.3em minmax(0, 1fr);
+        padding: 0.48em 0.62em;
+      }
+
+      .build-step span {
+        align-items: center;
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.28);
+        border-radius: 8px;
+        color: #bae6fd;
+        display: inline-flex;
+        font-size: 0.5em;
+        font-weight: 700;
+        height: 2.1em;
+        justify-content: center;
+        width: 2.1em;
+      }
+
+      .build-step p {
+        font-size: 0.66em;
+        margin: 0;
+        max-width: none;
+      }
+
+      .pdf-tip {
+        background: rgba(15, 23, 42, 0.88);
+        border: 1px solid #334155;
+        border-radius: 8px;
+        margin-top: 0.85em;
+        padding: 0.85em;
+      }
+
+      .pdf-tip code,
+      .inline-chip {
+        background: rgba(56, 189, 248, 0.12);
+        border-radius: 999px;
+        color: #bae6fd;
+        display: inline-block;
+        font-size: 0.66em;
+        padding: 0.15em 0.48em;
+      }
+
+      .roomy p,
+      .roomy ul,
+      .roomy ol {
+        max-width: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">11-05-2026 • Figma to React</div>
+              <h1>From Components to Composition</h1>
+              <p class="statement">
+                Take a visual design apart, name the pieces, and rebuild it as a React app that actually makes sense.
+              </p>
+              <p class="subtitle">
+                Today is about turning React basics into reusable UI structure through the Codeagram app.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Components</span>
+                <span class="tag">Props</span>
+                <span class="tag">State</span>
+                <span class="tag">Composition</span>
+              </div>
+            </div>
+
+            <div class="phone">
+              <div class="phone-frame">
+                <img
+                  src="./assets/instagram-cederdorff-feed.png"
+                  alt="Example social feed UI used as inspiration for Codeagram"
+                />
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Frame the session as the first day where React should start feeling useful instead of abstract. The goal is
+            not a perfect app, but a better mental model for building one.
+          </aside>
+        </section>
+
+        <section>
+          <div class="split-quote">
+            <div>
+              <div class="eyebrow">Focus Question</div>
+              <h2>What are we trying to learn?</h2>
+              <p>
+                Not just how to write JSX, but how to decide <strong>what should become a component</strong> and how
+                those pieces should fit together.
+              </p>
+            </div>
+
+            <div class="quote-card">
+              <p>How do we break a design into reusable components and build them into a working app?</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Agenda</div>
+          <h2>Day Flow</h2>
+          <ol class="agenda-list">
+            <li>
+              <div>
+                <strong>Recap and goals</strong>
+                Revisit last lesson, questions from exercises, and the app we are building toward.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>React mental model</strong>
+                Components, JSX, props, state and events as one connected way of thinking.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Codeagram build</strong>
+                Break the screen apart, set up layout, data flow, and interaction.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Small component system</strong>
+                Reuse patterns like Button, Card and Tag where they improve clarity.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Wrap-up and workday</strong>
+                Reflect on what composition solved and what to keep practicing.
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">End Result</div>
+          <h2>What we are building toward</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>Codeagram should feel like a real app</h3>
+              <ul>
+                <li>A page layout with feed, profile or post cards.</li>
+                <li>Data mapped into repeated UI.</li>
+                <li>Buttons or interactions that update state.</li>
+                <li>Structure that is readable enough to refactor.</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>Not the goal today</h3>
+              <ul>
+                <li>Perfect CSS polish.</li>
+                <li>Every feature from a real social app.</li>
+                <li>One huge App component with everything inside it.</li>
+                <li>Copying a design literally without thinking about reuse.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div class="mini-card">
+              <span class="mini-label">Main skill</span>
+              <span class="mini-value">UI decomposition</span>
+            </div>
+            <div class="mini-card">
+              <span class="mini-label">Main artifact</span>
+              <span class="mini-value">Codeagram app</span>
+            </div>
+            <div class="mini-card">
+              <span class="mini-label">Main habit</span>
+              <span class="mini-value">Refactor for clarity</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">React Mental Model</div>
+          <h2>Five ideas that need to connect</h2>
+          <div class="matrix">
+            <div class="matrix-card">
+              <span class="label">Component</span>
+              <p>A reusable UI building block with a clear responsibility.</p>
+            </div>
+            <div class="matrix-card">
+              <span class="label">Props</span>
+              <p>Input passed into a component so it can stay flexible.</p>
+            </div>
+            <div class="matrix-card">
+              <span class="label">State</span>
+              <p>Data that changes over time and should trigger a re-render.</p>
+            </div>
+            <div class="matrix-card">
+              <span class="label">Events</span>
+              <p>User actions like click, input or submit that can update state.</p>
+            </div>
+          </div>
+          <div class="deck-card" style="margin-top: 0.8em">
+            <p class="statement" style="font-size: 0.88em; max-width: none">
+              JSX is just the language we use to describe how these ideas show up on screen.
+            </p>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Decomposition</div>
+          <h2>Read the screen before you code it</h2>
+          <div class="two-column">
+            <div>
+              <p>
+                Start by looking for repeated shapes, repeated content patterns, and areas that clearly have different
+                jobs.
+              </p>
+              <div class="tree-card">
+                <h3>Possible component tree</h3>
+                <div class="tree">
+                  <div class="tree-row">
+                    <div class="node hot">App</div>
+                  </div>
+                  <div class="tree-row">
+                    <div class="node">Header</div>
+                    <div class="node">Sidebar</div>
+                    <div class="node alt">Feed</div>
+                  </div>
+                  <div class="tree-row">
+                    <div class="node alt">PostCard</div>
+                    <div class="node alt">PostCard</div>
+                    <div class="node alt">PostCard</div>
+                  </div>
+                  <div class="tree-row">
+                    <div class="node">Avatar</div>
+                    <div class="node">Tag</div>
+                    <div class="node">LikeButton</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="surface">
+                <h3>Questions to ask</h3>
+                <ul>
+                  <li>What repeats?</li>
+                  <li>What changes from instance to instance?</li>
+                  <li>What is just content, and what is behavior?</li>
+                  <li>Where does state need to live?</li>
+                </ul>
+              </div>
+              <div class="surface" style="margin-top: 0.75em">
+                <h3>Good first split</h3>
+                <p>Layout first, then repeated content blocks, then smaller UI parts inside those blocks.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Decision Making</div>
+          <h2>Component, prop, data or state?</h2>
+          <div class="matrix">
+            <div class="matrix-card">
+              <h3>Make it a component when...</h3>
+              <ul>
+                <li>It has a clear job.</li>
+                <li>It repeats in the UI.</li>
+                <li>It makes the parent easier to read.</li>
+              </ul>
+            </div>
+            <div class="matrix-card">
+              <h3>Make it a prop when...</h3>
+              <ul>
+                <li>The structure stays the same.</li>
+                <li>Only labels, images or values change.</li>
+                <li>You want the same component in many contexts.</li>
+              </ul>
+            </div>
+            <div class="matrix-card">
+              <h3>Keep it as data when...</h3>
+              <ul>
+                <li>It can be listed in an array.</li>
+                <li>You can map over it.</li>
+                <li>It does not change because of user interaction yet.</li>
+              </ul>
+            </div>
+            <div class="matrix-card">
+              <h3>Use state when...</h3>
+              <ul>
+                <li>The value changes while the app runs.</li>
+                <li>A click or input should update the UI.</li>
+                <li>The user needs feedback from an action.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Props Example</div>
+          <h2>One component, many posts</h2>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">function PostCard({ username, caption, imageUrl, liked }) {
+  return (
+    &lt;article className="post-card"&gt;
+      &lt;img src={imageUrl} alt="" /&gt;
+      &lt;h3&gt;{username}&lt;/h3&gt;
+      &lt;p&gt;{caption}&lt;/p&gt;
+      &lt;span&gt;{liked ? "Liked" : "Not liked yet"}&lt;/span&gt;
+    &lt;/article&gt;
+  );
+}</code></pre>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>Why this matters</h3>
+                <ul>
+                  <li>The structure stays stable.</li>
+                  <li>The content changes through props.</li>
+                  <li>The parent can reuse the same component for many posts.</li>
+                </ul>
+              </div>
+              <div class="surface" style="margin-top: 0.75em">
+                <h3>Look for this pattern</h3>
+                <p>If you copy-paste the same JSX and only change text or images, you probably want props.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">State Example</div>
+          <h2>Interaction needs state and events</h2>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">function LikeButton() {
+  const [liked, setLiked] = useState(false);
+
+  return (
+    &lt;button onClick={() =&gt; setLiked(!liked)}&gt;
+      {liked ? "Unlike" : "Like"}
+    &lt;/button&gt;
+  );
+}</code></pre>
+            </div>
+            <div>
+              <div class="build-steps">
+                <div class="build-step">
+                  <span>1</span>
+                  <p>User clicks a button.</p>
+                </div>
+                <div class="build-step">
+                  <span>2</span>
+                  <p>An event handler runs.</p>
+                </div>
+                <div class="build-step">
+                  <span>3</span>
+                  <p>State updates.</p>
+                </div>
+                <div class="build-step">
+                  <span>4</span>
+                  <p>The UI re-renders with new feedback.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Composition Workflow</div>
+          <h2>Suggested build order for Codeagram</h2>
+          <div class="build-steps">
+            <div class="build-step">
+              <span>1</span>
+              <p>Sketch the page zones: header, sidebar, feed, cards.</p>
+            </div>
+            <div class="build-step">
+              <span>2</span>
+              <p>Build static components with placeholder content first.</p>
+            </div>
+            <div class="build-step">
+              <span>3</span>
+              <p>Move repeated content into arrays and map over it.</p>
+            </div>
+            <div class="build-step">
+              <span>4</span>
+              <p>Add props so the repeated parts can vary.</p>
+            </div>
+            <div class="build-step">
+              <span>5</span>
+              <p>Add the smallest useful interactions with state.</p>
+            </div>
+            <div class="build-step">
+              <span>6</span>
+              <p>Refactor names, files and reusable UI pieces afterward.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Component System</div>
+          <h2>Small reusable pieces are enough</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>Useful reusable components</h3>
+              <ul>
+                <li><strong>Button</strong> for actions and variants.</li>
+                <li><strong>Card</strong> for consistent containers.</li>
+                <li><strong>Tag</strong> for small labels or categories.</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>Common mistake</h3>
+              <ul>
+                <li>Making tiny components too early.</li>
+                <li>Splitting before the pattern is visible.</li>
+                <li>Creating generic components with unclear responsibility.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tag-row" style="margin-top: 0.9em">
+            <span class="inline-chip">Button variant="primary"</span>
+            <span class="inline-chip">Card padding="md"</span>
+            <span class="inline-chip">Tag tone="accent"</span>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Practice Lens</div>
+          <h2>When you get stuck, inspect the problem type</h2>
+          <div class="comparison-grid">
+            <div class="check-card">
+              <h3>HTML / CSS issue?</h3>
+              <p>The structure or styling is wrong, but the component idea still makes sense.</p>
+            </div>
+            <div class="check-card">
+              <h3>React issue?</h3>
+              <p>Props are not passed, state is in the wrong place, or the event flow is unclear.</p>
+            </div>
+            <div class="check-card">
+              <h3>Composition issue?</h3>
+              <p>The component boundaries are doing too much or not enough.</p>
+            </div>
+            <div class="check-card">
+              <h3>Data issue?</h3>
+              <p>
+                The content should probably live in an array and be rendered with
+                <span class="accent">map()</span>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="eyebrow">Practical Tip</div>
+          <h2>Export Reveal slides as PDF</h2>
+          <p>Open the slide URL, add the print parameter, and use the browser print dialog.</p>
+          <div class="pdf-tip">
+            <p style="max-width: none; margin-top: 0">
+              Example:
+              <code> .../11-05-2026-components-composition.html?print-pdf </code>
+            </p>
+            <p style="max-width: none; margin-bottom: 0">Then choose <strong>Print</strong> and save as PDF.</p>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Materials</div>
+          <h2>What to use before and after class</h2>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <h3>Slides</h3>
+              <ul>
+                <li>
+                  <a href="https://cederdorff.com/figma-to-react/slides/11-05-2026-components-composition.html">
+                    11-05-2026 deck
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <h3>Exercises</h3>
+              <p>
+                Main exercise for today: build Codeagram step by step with components, props, state, events, and
+                <span class="accent">.map()</span>.
+              </p>
+              <ul>
+                <li>
+                  <a href="https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md">
+                    Codeagram Feed with React Components
+                  </a>
+                </li>
+                <li>Choose guided mode or independent mode in the same guide.</li>
+                <li>
+                  Flow: header, post data, reusable post card, likes/bookmarks, then refactor with
+                  <span class="accent">.map()</span>.
+                </li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <h3>Other links</h3>
+              <ul>
+                <li>
+                  <a href="https://education.github.com/pack"> GitHub Student Developer Pack </a>
+                </li>
+                <li>
+                  <a href="https://www.codedex.io/react">CodeDex React</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="eyebrow">After Today</div>
+          <h2>Success for this session</h2>
+          <p class="statement">
+            You should leave with a better answer to: what belongs in one component, and what should be split out?
+          </p>
+          <div class="tag-row">
+            <span class="tag">Clearer React mental model</span>
+            <span class="tag">Reusable components</span>
+            <span class="tag">Codeagram progress</span>
+            <span class="tag">Better refactoring instincts</span>
+          </div>
+          <aside class="notes">
+            End by reinforcing that composition is not perfectionism. It is a way to make apps easier to build, read and
+            change.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        transition: "slide",
+        controlsTutorial: false,
+        plugins: [RevealNotes, RevealHighlight]
+      });
+    </script>
+  </body>
+</html>

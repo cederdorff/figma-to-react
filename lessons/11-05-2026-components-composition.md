@@ -58,11 +58,12 @@ By the end of the day, you should have a clearer React mental model, a better se
 ### Materials
 
 - **Slides**
-  - Will be available here
+  - [11-05-2026-components-composition](https://cederdorff.com/figma-to-react/slides/11-05-2026-components-composition.html)
 - **Exercises**
-  - Will be available here
+  - [Codeagram Feed with React Components](https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md)
 
 - **Other links**
-  - Will be available here
+  - [GitHub Student Developer Pack](https://education.github.com/pack)
+  - [CodeDex React course](https://www.codedex.io/react)
 
 ---
