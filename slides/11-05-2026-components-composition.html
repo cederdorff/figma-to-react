@@ -332,7 +332,7 @@
       .tree-card ul,
       .check-card p,
       .check-card ul {
-        font-size: 0.6em;
+        font-size: 0.66em;
         max-width: none;
       }
 
@@ -353,7 +353,7 @@
 
       .codeagram-intro .surface ul,
       .codeagram-intro .surface p {
-        font-size: 0.54em;
+        font-size: 0.62em;
       }
 
       .recap-overview {
@@ -370,7 +370,7 @@
 
       .recap-overview .surface ul,
       .discussion-slide .surface ul {
-        font-size: 0.54em;
+        font-size: 0.62em;
       }
 
       .recap-code {
@@ -413,7 +413,7 @@
       .exercise-recap .surface ul,
       .exercise-recap .surface p,
       .exercise-recap .recap-link {
-        font-size: 0.54em;
+        font-size: 0.62em;
       }
 
       .exercise-recap .surface ul {
@@ -699,7 +699,7 @@
 
       .idea-example-slide .surface p,
       .idea-example-slide .surface ul {
-        font-size: 0.56em;
+        font-size: 0.64em;
         max-width: none;
       }
 
@@ -787,6 +787,10 @@
         grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
       }
 
+      .system-example-slide .visual-grid > div {
+        min-width: 0;
+      }
+
       .system-example-slide pre {
         margin: 0;
         width: 100%;
@@ -806,7 +810,7 @@
 
       .system-example-slide .surface p,
       .system-example-slide .surface ul {
-        font-size: 0.56em;
+        font-size: 0.64em;
         max-width: none;
       }
 
@@ -824,6 +828,117 @@
         margin-top: 0.65em;
       }
 
+      .system-structure {
+        background: #020617;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        color: #dbe7f3;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 0.56em;
+        line-height: 1.45;
+        margin-top: 0.55em;
+        padding: 1em;
+        white-space: pre;
+      }
+
+      .system-structure code {
+        background: transparent;
+        border: 0;
+        color: inherit;
+        display: block;
+        font-size: 1em;
+        padding: 0;
+        white-space: inherit;
+      }
+
+      .system-folder-slide .visual-grid {
+        grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      }
+
+      .system-folder-slide .system-structure {
+        font-size: 0.5em;
+      }
+
+      .system-exercise .build-steps {
+        margin-top: 0.2em;
+      }
+
+      .system-exercise .two-column {
+        align-items: start;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      }
+
+      .system-exercise .surface p,
+      .system-exercise .surface ul,
+      .system-exercise .surface li {
+        font-size: 0.62em;
+        line-height: 1.22;
+      }
+
+      .system-exercise .build-step p {
+        font-size: 0.54em;
+      }
+
+      .wrap-up-next .resource-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 0.45em;
+      }
+
+      .wrap-up-next .resource-card {
+        min-height: 0;
+      }
+
+      .wrap-up-next .resource-card h3 {
+        font-size: 0.82em;
+      }
+
+      .wrap-up-next .resource-card p,
+      .wrap-up-next .resource-card li,
+      .wrap-up-next .recap-link {
+        font-size: 0.75em;
+        line-height: 1.28;
+        max-width: none;
+      }
+
+      .wrap-up-next .resource-card ul {
+        margin-left: 0.9em;
+      }
+
+      .wrap-up-next .next-lesson-card {
+        grid-column: 1 / -1;
+      }
+
+      .wrap-up-next .next-lesson-card p + p {
+        margin-top: 0.35em;
+      }
+
+      .exercise-work-slide .comparison-grid {
+        align-items: start;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      }
+
+      .exercise-work-slide .surface p,
+      .exercise-work-slide .surface li {
+        max-width: none;
+      }
+
+      .exercise-work-slide .surface ul {
+        margin-left: 0.85em;
+      }
+
+      .exercise-work-slide .app-shot {
+        max-width: 10.8em;
+        justify-self: center;
+      }
+
+      .exercise-work-slide .tree-row {
+        margin-top: 0.5em;
+      }
+
+      .exercise-work-slide .recap-link {
+        font-size: 0.54em;
+      }
+
       .codeagram-bridge .two-column {
         align-items: start;
         grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
@@ -832,7 +947,7 @@
 
       .codeagram-bridge .surface ul,
       .codeagram-bridge .surface p {
-        font-size: 0.54em;
+        font-size: 0.62em;
         max-width: none;
       }
 
@@ -1137,7 +1252,7 @@
 
       .resource-card p,
       .resource-card li {
-        font-size: 0.58em;
+        font-size: 0.64em;
       }
 
       .build-steps {
@@ -2167,6 +2282,59 @@ useEffect(() => {
           </div>
         </section>
 
+        <section class="roomy exercise-work-slide">
+          <div class="eyebrow">Exercise Work Slide</div>
+          <h2>Codeagram: build step by step</h2>
+          <div class="comparison-grid">
+            <div>
+              <div class="surface">
+                <h3>Suggested path</h3>
+                <ul>
+                  <li>Start with <code>Header</code>.</li>
+                  <li>Add the <code>posts</code> data.</li>
+                  <li>Build one reusable <code>PostCard</code>.</li>
+                  <li>Add <code>UserInfo</code>, likes and bookmark.</li>
+                  <li>Refactor the feed with <code>.map()</code>.</li>
+                </ul>
+              </div>
+              <div class="surface" style="margin-top: 0.6em">
+                <h3>When you get stuck</h3>
+                <ul>
+                  <li>Test one small step before moving on.</li>
+                  <li>Check class names against <code>styles.css</code>.</li>
+                  <li>Use the guide hints only when needed.</li>
+                  <li>Work with the person next to you before raising your hand.</li>
+                </ul>
+              </div>
+              <p class="recap-link">
+                Exercise guide:
+                <a href="https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md"
+                  >Codeagram EXERCISE_GUIDE.md</a
+                >
+              </p>
+            </div>
+            <div>
+              <div class="app-shot">
+                <img src="./assets/codeagram.png" alt="Screenshot of the Codeagram app exercise" />
+              </div>
+              <div class="surface" style="margin-top: 0.6em">
+                <h3>Keep these parts in mind</h3>
+                <div class="tree-row">
+                  <span class="node hot">App</span>
+                  <span class="node">Header</span>
+                  <span class="node">Feed</span>
+                  <span class="node alt">PostCard</span>
+                  <span class="node hot">UserInfo</span>
+                </div>
+                <p style="margin-top: 0.6em">
+                  Build one clear part at a time. The goal is not speed. The goal is to understand how components,
+                  props, state, events, and <code>.map()</code> connect.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section class="roomy">
           <div class="eyebrow">Small Component System</div>
           <h2>Find the first reusable patterns in Codeagram</h2>
@@ -2346,48 +2514,130 @@ Do not split everything just because you can.</code></pre>
           </div>
         </section>
 
-        <section class="roomy">
-          <div class="eyebrow">Wrap-up and Next Steps</div>
-          <h2>What happens after today</h2>
-          <div class="resource-grid">
-            <div class="resource-card">
-              <h3>Keep building</h3>
-              <ul>
-                <li>Continue working on the Codeagram app.</li>
-                <li>Refine what should stay in one component and what should be split out.</li>
-                <li>Add more confidence with props, state and events.</li>
-              </ul>
+        <section class="roomy system-example-slide system-folder-slide">
+          <div class="eyebrow">Small Component System</div>
+          <h2>Possible folder structure after the first extractions</h2>
+          <div class="visual-grid">
+            <div>
+              <pre class="system-structure"><code>src/
+  components/
+    Avatar.jsx
+    Header.jsx
+    HeaderActions.jsx
+    HeaderBrand.jsx
+    IconButton.jsx
+    PostCard.jsx
+    UserInfo.jsx
+  data/
+    posts.js
+  App.jsx
+  main.jsx
+  styles.css</code></pre>
             </div>
-            <div class="resource-card">
-              <h3>Keep practicing</h3>
-              <ul>
-                <li>Return to the React exercises from last time if needed.</li>
-                <li>Use the CodeDex React course for extra repetition.</li>
-                <li>Apply for the GitHub Student Developer Pack before next time.</li>
-              </ul>
-            </div>
-            <div class="resource-card">
-              <h3>Get support</h3>
-              <ul>
-                <li>If you get stuck for too long, write on Teams.</li>
-                <li>You can also email <strong>race@eaaa.dk</strong>.</li>
-                <li>Bring your questions from the workday back into class.</li>
-              </ul>
+            <div>
+              <div class="surface">
+                <h3>Why this structure works</h3>
+                <ul>
+                  <li>
+                    Small reusable pieces like <code>Avatar</code> and <code>IconButton</code> live next to the feature
+                    components that use them.
+                  </li>
+                  <li><code>PostCard</code> still owns the post feature instead of being split too aggressively.</li>
+                  <li>The app stays easy to scan because the file names match the UI names from the slides.</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>Important teaching point</h3>
+                <p>
+                  A component system does not need a big design-system folder on day one. A few well-named reusable
+                  pieces are enough.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        <section>
-          <div class="eyebrow">Wrap-up</div>
-          <h2>Success for today</h2>
-          <p class="statement">
-            A better answer to this question: what belongs in one React component, and what should be split out?
-          </p>
-          <div class="tag-row">
-            <span class="tag">Clearer React mental model</span>
-            <span class="tag">Better component boundaries</span>
-            <span class="tag">Codeagram progress</span>
-            <span class="tag">Next-step confidence</span>
+        <section class="roomy system-exercise">
+          <div class="eyebrow">Small Component System</div>
+          <h2>Class exercise: first refactor toward a small system</h2>
+          <div class="two-column">
+            <div>
+              <div class="surface">
+                <h3>Goal</h3>
+                <p>
+                  Refactor the current Codeagram app without changing the visual result. Extract only patterns that are
+                  already repeated.
+                </p>
+              </div>
+              <div class="surface" style="margin-top: 0.6em">
+                <h3>Success criteria</h3>
+                <ul>
+                  <li>Create <code>Avatar</code> and use it inside <code>UserInfo</code>.</li>
+                  <li>Create <code>IconButton</code> and use it in <code>HeaderActions</code>.</li>
+                  <li>Optionally reuse <code>IconButton</code> for the two post action buttons.</li>
+                  <li>Keep <code>PostCard</code> as the main feature component.</li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="build-steps">
+                <div class="build-step">
+                  <span>1</span>
+                  <p>Find repeated markup and repeated CSS classes in the existing app.</p>
+                </div>
+                <div class="build-step">
+                  <span>2</span>
+                  <p>Extract <code>Avatar</code> first, because it has the smallest API and lowest risk.</p>
+                </div>
+                <div class="build-step">
+                  <span>3</span>
+                  <p>Extract <code>IconButton</code> next and pass the icon component as a prop.</p>
+                </div>
+                <div class="build-step">
+                  <span>4</span>
+                  <p>Test that the UI still works and that likes and bookmarks still toggle.</p>
+                </div>
+                <div class="build-step">
+                  <span>5</span>
+                  <p>Discuss: what should stay feature-specific, and what now belongs in the small component system?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy wrap-up-next">
+          <div class="eyebrow">Wrap-up and Next Steps</div>
+          <h2>Tomorrow, this week, and next time</h2>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <h3>Tomorrow: Workday</h3>
+              <ul>
+                <li>Keep building Codeagram.</li>
+                <li>Practice components, props, state and events.</li>
+                <li>Apply for the GitHub Student Developer Pack.</li>
+                <li>Use self-study or CodeDex if needed.</li>
+              </ul>
+              <p class="recap-link">
+                <a href="https://eaaa.instructure.com/courses/31377/pages/workday-figma-to-react-12-05-2026"
+                  >Workday page</a
+                >
+              </p>
+            </div>
+            <div class="resource-card">
+              <h3>This Week</h3>
+              <ul>
+                <li>Wednesday: teaching with Lykke.</li>
+                <li>Friday: another workday.</li>
+                <li>Ask for help on Teams or at <strong>race@eaaa.dk</strong>.</li>
+                <li>AI tools are fine as study support.</li>
+              </ul>
+            </div>
+            <div class="resource-card next-lesson-card">
+              <h3>Next Time</h3>
+              <p><strong>20-05-2026:</strong> Figma to React with MCP</p>
+              <p>I’ll see you next week.</p>
+            </div>
           </div>
         </section>
       </div>

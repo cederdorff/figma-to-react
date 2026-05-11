@@ -47,7 +47,8 @@ By the end of the day, you should have a clearer React mental model, a better se
    - Set up components, layout, data, props, events and state.
    - Refactor parts of the code for clarity and reuse.
 4. **Small component system**
-   - Build reusable components such as `Button`, `Card` and `Tag` where they fit the app.
+   - Find the first reusable patterns that already exist in Codeagram.
+   - Extract small pieces such as `Avatar` and `IconButton` before making anything bigger.
    - Connect visual consistency to reusable values in code.
 5. **Wrap-up and next steps**
    - Reflect on what the Codeagram app taught us.
@@ -66,5 +67,48 @@ By the end of the day, you should have a clearer React mental model, a better se
 - **Other links**
   - [GitHub Student Developer Pack](https://education.github.com/pack)
   - [CodeDex React course](https://www.codedex.io/react)
+
+---
+
+### Small Component System Focus
+
+Use the local Codeagram app as the example and start from what is already repeated in the code.
+
+- `HeaderActions` already repeats icon-only buttons.
+- `UserInfo` already has a clear avatar pattern.
+- `PostCard` is already a repeated feature component in the feed.
+
+Suggested first extractions:
+
+1. `Avatar`
+2. `IconButton`
+3. Maybe `Card` later, if more wrappers start sharing the same structure
+
+Possible folder structure after the first extractions:
+
+```text
+src/
+   components/
+      Avatar.jsx
+      Header.jsx
+      HeaderActions.jsx
+      HeaderBrand.jsx
+      IconButton.jsx
+      PostCard.jsx
+      UserInfo.jsx
+   data/
+      posts.js
+   App.jsx
+   main.jsx
+   styles.css
+```
+
+Class exercise:
+
+1. Create an `Avatar` component and use it inside `UserInfo`.
+2. Create an `IconButton` component and use it inside `HeaderActions`.
+3. If there is time, try using the same `IconButton` in `PostCard`.
+4. Keep `PostCard` as a feature component.
+5. Test that the UI still looks the same and that likes and bookmarks still work.
 
 ---
