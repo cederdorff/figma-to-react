@@ -115,6 +115,7 @@
         border: 1px solid #1e293b;
         border-radius: 8px;
         color: #e2e8f0;
+        font-size: 0.84em;
         padding: 1em;
       }
 
@@ -335,6 +336,17 @@
         max-width: none;
       }
 
+      .tree-explainer h3 {
+        font-size: 0.71em !important;
+      }
+
+      .tree-explainer p,
+      .tree-explainer ul,
+      .tree-explainer li {
+        font-size: 0.66em !important;
+        line-height: 1.22;
+      }
+
       .codeagram-intro .statement {
         font-size: 0.8em !important;
       }
@@ -371,9 +383,425 @@
       }
 
       .recap-code pre code {
-        font-size: 0.58em;
+        font-size: 0.62em;
         line-height: 1.2;
         padding: 0.65em;
+      }
+
+      .exercise-recap {
+        align-items: start;
+      }
+
+      .exercise-recap .two-column {
+        align-items: start;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: 0.55em;
+      }
+
+      .exercise-recap pre {
+        margin: 0 0 0.45em;
+        width: 100%;
+      }
+
+      .exercise-recap pre code {
+        font-size: 0.66em;
+        line-height: 1.15;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+      }
+
+      .exercise-recap .surface ul,
+      .exercise-recap .surface p,
+      .exercise-recap .recap-link {
+        font-size: 0.54em;
+      }
+
+      .exercise-recap .surface ul {
+        margin-left: 0.8em;
+      }
+
+      .react-title-slide::before {
+        display: none;
+      }
+
+      .react-title-slide {
+        text-align: center !important;
+      }
+
+      .react-title-slide .react-lockup {
+        align-items: center;
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        margin: 1.8em auto 1em;
+      }
+
+      .react-title-slide .react-lockup img {
+        height: 3.2em;
+        width: 3.2em;
+      }
+
+      .react-title-slide h2 {
+        font-size: 2.3em;
+        line-height: 1;
+        margin: 0;
+      }
+
+      .react-title-slide p {
+        color: #f8fafc;
+        font-size: 1em;
+        margin: 0.8em auto 0;
+        max-width: none;
+        text-align: center;
+      }
+
+      .video-slide::before {
+        display: none;
+      }
+
+      .video-slide {
+        text-align: center !important;
+      }
+
+      .video-slide h2,
+      .video-slide p {
+        text-align: center;
+      }
+
+      .video-frame {
+        margin: 0.9em auto 0;
+        max-width: none;
+        width: 100%;
+      }
+
+      .video-frame iframe {
+        aspect-ratio: 16 / 9;
+        border: 0;
+        border-radius: 10px;
+        display: block;
+        max-height: 12.5em;
+        width: 100%;
+      }
+
+      .video-slide .recap-link {
+        font-size: 0.58em;
+        margin-top: 0.55em;
+      }
+
+      .react-map-slide .react-map {
+        align-items: stretch;
+        display: grid;
+        gap: 0.55em;
+        grid-template-areas:
+          "jsx core props"
+          "components core state"
+          ". events .";
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr) minmax(0, 1fr);
+        margin-top: 0.55em;
+      }
+
+      .react-map-slide .concept-card,
+      .react-map-slide .core-card {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.76));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 12px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+      }
+
+      .react-map-slide .concept-card {
+        min-height: 4.25em;
+        padding: 0.58em 0.62em 0.62em;
+      }
+
+      .react-map-slide .concept-card .concept-top {
+        align-items: center;
+        display: flex;
+        gap: 0.42em;
+        margin-bottom: 0.28em;
+      }
+
+      .react-map-slide .concept-icon {
+        align-items: center;
+        border-radius: 10px;
+        display: inline-flex;
+        font-size: 0.5em;
+        font-weight: 800;
+        height: 2.2em;
+        justify-content: center;
+        letter-spacing: 0.03em;
+        width: 2.2em;
+      }
+
+      .react-map-slide .concept-label {
+        font-size: 0.44em;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .react-map-slide .concept-card h3 {
+        color: #f8fafc;
+        font-size: 0.82em;
+        margin: 0;
+      }
+
+      .react-map-slide .concept-card p {
+        font-size: 0.5em;
+        line-height: 1.25;
+        margin: 0;
+        max-width: none;
+      }
+
+      .react-map-slide .core-card {
+        align-items: center;
+        display: grid;
+        grid-area: core;
+        padding: 0.8em;
+        text-align: center;
+      }
+
+      .react-map-slide .core-ring {
+        align-items: center;
+        background:
+          radial-gradient(circle at center, rgba(56, 189, 248, 0.16), transparent 58%),
+          linear-gradient(160deg, rgba(34, 197, 94, 0.12), rgba(56, 189, 248, 0.08));
+        border: 1px solid rgba(125, 211, 252, 0.28);
+        border-radius: 999px;
+        display: grid;
+        height: 7.6em;
+        justify-self: center;
+        padding: 0.9em;
+        place-items: center;
+        width: 7.6em;
+      }
+
+      .react-map-slide .core-ring span {
+        color: #94a3b8;
+        display: block;
+        font-size: 0.42em;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .react-map-slide .core-ring strong {
+        color: #f8fafc;
+        display: block;
+        font-size: 1.05em;
+        line-height: 1.08;
+        margin-top: 0.18em;
+      }
+
+      .react-map-slide .core-card p {
+        font-size: 0.5em;
+        line-height: 1.22;
+        margin: 0.55em auto 0;
+        max-width: 22ch;
+        text-align: center;
+      }
+
+      .react-map-slide .jsx-card {
+        border-color: rgba(250, 204, 21, 0.34);
+        grid-area: jsx;
+      }
+
+      .react-map-slide .jsx-card .concept-icon {
+        background: rgba(250, 204, 21, 0.14);
+        border: 1px solid rgba(250, 204, 21, 0.34);
+        color: #fde68a;
+      }
+
+      .react-map-slide .jsx-card .concept-label {
+        color: #fde68a;
+      }
+
+      .react-map-slide .components-card {
+        border-color: rgba(52, 211, 153, 0.34);
+        grid-area: components;
+      }
+
+      .react-map-slide .components-card .concept-icon {
+        background: rgba(52, 211, 153, 0.14);
+        border: 1px solid rgba(52, 211, 153, 0.34);
+        color: #bbf7d0;
+      }
+
+      .react-map-slide .components-card .concept-label {
+        color: #bbf7d0;
+      }
+
+      .react-map-slide .props-card {
+        border-color: rgba(167, 139, 250, 0.34);
+        grid-area: props;
+      }
+
+      .react-map-slide .props-card .concept-icon {
+        background: rgba(167, 139, 250, 0.14);
+        border: 1px solid rgba(167, 139, 250, 0.34);
+        color: #ddd6fe;
+      }
+
+      .react-map-slide .props-card .concept-label {
+        color: #ddd6fe;
+      }
+
+      .react-map-slide .state-card {
+        border-color: rgba(244, 114, 182, 0.34);
+        grid-area: state;
+      }
+
+      .react-map-slide .state-card .concept-icon {
+        background: rgba(244, 114, 182, 0.14);
+        border: 1px solid rgba(244, 114, 182, 0.34);
+        color: #fbcfe8;
+      }
+
+      .react-map-slide .state-card .concept-label {
+        color: #fbcfe8;
+      }
+
+      .react-map-slide .events-card {
+        border-color: rgba(56, 189, 248, 0.34);
+        grid-area: events;
+      }
+
+      .react-map-slide .events-card .concept-icon {
+        background: rgba(56, 189, 248, 0.14);
+        border: 1px solid rgba(56, 189, 248, 0.34);
+        color: #bae6fd;
+      }
+
+      .react-map-slide .events-card .concept-label {
+        color: #bae6fd;
+      }
+
+      .idea-example-slide .visual-grid {
+        align-items: start;
+        grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+      }
+
+      .idea-example-slide pre {
+        margin: 0;
+        width: 100%;
+      }
+
+      .idea-example-slide pre + pre {
+        margin-top: 0.45em;
+      }
+
+      .idea-example-slide pre code {
+        font-size: 0.82em;
+        line-height: 1.18;
+        overflow-wrap: anywhere;
+        padding: 0.8em;
+        white-space: pre-wrap;
+      }
+
+      .idea-example-slide .surface p,
+      .idea-example-slide .surface ul {
+        font-size: 0.56em;
+        max-width: none;
+      }
+
+      .idea-example-slide .surface ul {
+        margin-left: 0.8em;
+      }
+
+      .idea-example-slide .surface + .surface {
+        margin-top: 0.55em;
+      }
+
+      .idea-example-slide .idea-description {
+        color: #cbd5e1;
+        font-size: 0.62em;
+        line-height: 1.24;
+        margin: 0.2em 0 0.55em;
+        max-width: none;
+      }
+
+      .idea-example-slide .idea-description.secondary {
+        color: #94a3b8;
+        font-size: 0.5em;
+        margin-top: -0.22em;
+      }
+
+      .idea-example-slide .idea-context {
+        color: #94a3b8;
+        font-size: 0.44em;
+        letter-spacing: 0.03em;
+        margin: 0.5em 0 0;
+        max-width: none;
+      }
+
+      .idea-example-slide .surface {
+        border-width: 1px;
+      }
+
+      .idea-example-slide.jsx-example h2,
+      .idea-example-slide.jsx-example .surface h3 {
+        color: #fde68a;
+      }
+
+      .idea-example-slide.jsx-example .surface {
+        border-color: rgba(250, 204, 21, 0.34);
+      }
+
+      .idea-example-slide.components-example h2,
+      .idea-example-slide.components-example .surface h3 {
+        color: #bbf7d0;
+      }
+
+      .idea-example-slide.components-example .surface {
+        border-color: rgba(52, 211, 153, 0.34);
+      }
+
+      .idea-example-slide.props-example h2,
+      .idea-example-slide.props-example .surface h3 {
+        color: #ddd6fe;
+      }
+
+      .idea-example-slide.props-example .surface {
+        border-color: rgba(167, 139, 250, 0.34);
+      }
+
+      .idea-example-slide.state-example h2,
+      .idea-example-slide.state-example .surface h3 {
+        color: #fbcfe8;
+      }
+
+      .idea-example-slide.state-example .surface {
+        border-color: rgba(244, 114, 182, 0.34);
+      }
+
+      .idea-example-slide.events-example h2,
+      .idea-example-slide.events-example .surface h3 {
+        color: #bae6fd;
+      }
+
+      .idea-example-slide.events-example .surface {
+        border-color: rgba(56, 189, 248, 0.34);
+      }
+
+      .codeagram-bridge .two-column {
+        align-items: start;
+        grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
+        gap: 0.55em;
+      }
+
+      .codeagram-bridge .surface ul,
+      .codeagram-bridge .surface p {
+        font-size: 0.54em;
+        max-width: none;
+      }
+
+      .codeagram-bridge .surface ul {
+        margin-left: 0.8em;
+      }
+
+      .codeagram-bridge .app-shot {
+        align-self: center;
+        max-width: 9.8em;
+        justify-self: center;
       }
 
       .discussion-layout {
@@ -485,6 +913,139 @@
         margin-top: 0.5em;
       }
 
+      .tree-note {
+        color: #94a3b8;
+        font-size: 0.52em;
+        margin-top: 0.7em;
+        max-width: none;
+      }
+
+      .tree-diagram {
+        background: #020617;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        margin: 0.5em 0 0;
+        padding: 0.9em 1em;
+      }
+
+      .tree-visual,
+      .tree-visual ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+      }
+
+      .tree-visual {
+        color: #dbe7f3;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 0.6em;
+        line-height: 1.5;
+      }
+
+      .tree-visual ul {
+        margin-left: 0.95rem;
+        padding-left: 1.2rem;
+        position: relative;
+      }
+
+      .tree-visual ul::before {
+        background: rgba(148, 163, 184, 0.45);
+        bottom: 0.7em;
+        content: "";
+        left: 0;
+        position: absolute;
+        top: 0.1em;
+        width: 1px;
+      }
+
+      .tree-visual li {
+        margin: 0.42em 0;
+        position: relative;
+      }
+
+      .tree-visual li::before {
+        background: rgba(148, 163, 184, 0.45);
+        content: "";
+        height: 1px;
+        left: -1.2rem;
+        position: absolute;
+        top: 0.8em;
+        width: 0.85rem;
+      }
+
+      .tree-visual li:last-child::after {
+        background: #020617;
+        bottom: 0;
+        content: "";
+        left: -1.2rem;
+        position: absolute;
+        top: 0.85em;
+        width: 1px;
+      }
+
+      .tree-root::before,
+      .tree-root::after {
+        display: none;
+      }
+
+      .tree-root > .tree-chip {
+        margin-left: 0;
+      }
+
+      .tree-visual .tree-repeat-list > li {
+        margin: 0.32em 0;
+      }
+
+      .tree-visual .tree-repeat-list > li:nth-child(n + 2) {
+        opacity: 0.72;
+      }
+
+      .tree-visual .tree-repeat-list > li:nth-child(n + 2) .tree-chip {
+        transform: scale(0.98);
+      }
+
+      .tree-repeat-note {
+        color: #94a3b8;
+        display: inline-block;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 0.72em;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        margin-left: 0.55em;
+      }
+
+      .tree-chip {
+        border: 1px solid rgba(56, 189, 248, 0.28);
+        border-radius: 8px;
+        display: inline-block;
+        font-weight: 700;
+        padding: 0.28em 0.58em;
+      }
+
+      .tree-label-main {
+        background: rgba(56, 189, 248, 0.12);
+        color: #bae6fd;
+      }
+
+      .tree-label-alt {
+        background: rgba(167, 139, 250, 0.12);
+        border-color: rgba(167, 139, 250, 0.32);
+        color: #ddd6fe;
+      }
+
+      .tree-label-hot {
+        background: rgba(52, 211, 153, 0.12);
+        border-color: rgba(52, 211, 153, 0.3);
+        color: #bbf7d0;
+      }
+
       .tree-row {
         display: flex;
         flex-wrap: wrap;
@@ -574,6 +1135,64 @@
         max-width: none;
       }
 
+      .five-ideas-summary .build-steps {
+        margin-top: 0;
+      }
+
+      .five-ideas-summary .build-step {
+        padding: 0.34em 0.5em;
+      }
+
+      .five-ideas-summary .build-step.jsx-step {
+        border-color: rgba(250, 204, 21, 0.34);
+      }
+
+      .five-ideas-summary .build-step.jsx-step span {
+        background: rgba(250, 204, 21, 0.14);
+        border-color: rgba(250, 204, 21, 0.34);
+        color: #fde68a;
+      }
+
+      .five-ideas-summary .build-step.component-step {
+        border-color: rgba(52, 211, 153, 0.34);
+      }
+
+      .five-ideas-summary .build-step.component-step span {
+        background: rgba(52, 211, 153, 0.14);
+        border-color: rgba(52, 211, 153, 0.34);
+        color: #bbf7d0;
+      }
+
+      .five-ideas-summary .build-step.props-step {
+        border-color: rgba(167, 139, 250, 0.34);
+      }
+
+      .five-ideas-summary .build-step.props-step span {
+        background: rgba(167, 139, 250, 0.14);
+        border-color: rgba(167, 139, 250, 0.34);
+        color: #ddd6fe;
+      }
+
+      .five-ideas-summary .build-step.state-step {
+        border-color: rgba(244, 114, 182, 0.34);
+      }
+
+      .five-ideas-summary .build-step.state-step span {
+        background: rgba(244, 114, 182, 0.14);
+        border-color: rgba(244, 114, 182, 0.34);
+        color: #fbcfe8;
+      }
+
+      .five-ideas-summary .build-step.events-step {
+        border-color: rgba(56, 189, 248, 0.34);
+      }
+
+      .five-ideas-summary .build-step.events-step span {
+        background: rgba(56, 189, 248, 0.14);
+        border-color: rgba(56, 189, 248, 0.34);
+        color: #bae6fd;
+      }
+
       .pdf-tip {
         background: rgba(15, 23, 42, 0.88);
         border: 1px solid #334155;
@@ -617,6 +1236,20 @@
 
         .discussion-layout {
           grid-template-columns: 1fr;
+        }
+
+        .react-map-slide .react-map {
+          grid-template-columns: 1fr;
+        }
+
+        .react-map-slide .react-map {
+          grid-template-areas:
+            "core"
+            "jsx"
+            "components"
+            "props"
+            "state"
+            "events";
         }
       }
     </style>
@@ -822,7 +1455,7 @@
           </div>
         </section>
 
-        <section class="roomy">
+        <section class="roomy exercise-recap">
           <div class="eyebrow">Exercise Recap 1</div>
           <h2>Getting started with React</h2>
           <div class="two-column">
@@ -880,7 +1513,7 @@ useEffect(() => {
           </div>
         </section>
 
-        <section class="roomy">
+        <section class="roomy exercise-recap">
           <div class="eyebrow">Exercise Recap 2</div>
           <h2>React Page Layout with Components</h2>
           <div class="two-column">
@@ -928,49 +1561,436 @@ useEffect(() => {
           </div>
         </section>
 
-        <section class="roomy">
+        <section class="react-title-slide">
+          <div class="react-lockup">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React logo" />
+            <h2>React</h2>
+          </div>
+          <p>A JavaScript library for building user interfaces</p>
+        </section>
+
+        <section class="video-slide">
+          <div class="eyebrow">React Basics</div>
+          <h2>React in 100 Seconds</h2>
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/Tn6-PIqc4UM"
+              title="React in 100 Seconds"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="recap-link">
+            Video:
+            <a href="https://www.youtube.com/watch?v=Tn6-PIqc4UM">React in 100 Seconds</a>
+          </p>
+        </section>
+
+        <section class="roomy react-map-slide">
           <div class="eyebrow">React Basics</div>
           <h2>Five ideas that need to connect</h2>
-          <div class="matrix">
-            <div class="matrix-card">
-              <span class="label">JSX</span>
+          <div class="react-map">
+            <div class="concept-card jsx-card">
+              <div class="concept-top">
+                <span class="concept-icon">&lt;/&gt;</span>
+                <span class="concept-label">1. JSX</span>
+              </div>
+              <h3>Describe the UI</h3>
               <p>The syntax we use to describe what should appear on screen.</p>
             </div>
-            <div class="matrix-card">
-              <span class="label">Components</span>
-              <p>Reusable UI building blocks with a clear job.</p>
+
+            <div class="concept-card components-card">
+              <div class="concept-top">
+                <span class="concept-icon">[]</span>
+                <span class="concept-label">2. Components</span>
+              </div>
+              <h3>Split into parts</h3>
+              <p>Reusable UI building blocks with one clear job each.</p>
             </div>
-            <div class="matrix-card">
-              <span class="label">Props</span>
+
+            <div class="core-card">
+              <div class="core-ring">
+                <div>
+                  <span>Together they help us</span>
+                  <strong>Build UI in React</strong>
+                </div>
+              </div>
+              <p>
+                These ideas work together every time we build a screen. Mental model: structure first, then data flow,
+                then interaction, then refactor.
+              </p>
+            </div>
+
+            <div class="concept-card props-card">
+              <div class="concept-top">
+                <span class="concept-icon">{ }</span>
+                <span class="concept-label">3. Props</span>
+              </div>
+              <h3>Pass data in</h3>
               <p>Input that lets one component show different content.</p>
             </div>
-            <div class="matrix-card">
-              <span class="label">State</span>
+
+            <div class="concept-card state-card">
+              <div class="concept-top">
+                <span class="concept-icon">=</span>
+                <span class="concept-label">4. State</span>
+              </div>
+              <h3>Remember changes</h3>
               <p>Values that change over time and trigger a new render.</p>
             </div>
-            <div class="matrix-card">
-              <span class="label">Events</span>
-              <p>Clicks, typing, submits, and other actions that update the UI.</p>
-            </div>
-            <div class="matrix-card">
-              <span class="label">Mental model</span>
-              <p>Structure first, then data flow, then interaction, then refactor.</p>
+
+            <div class="concept-card events-card">
+              <div class="concept-top">
+                <span class="concept-icon">()</span>
+                <span class="concept-label">5. Events</span>
+              </div>
+              <h3>Respond to actions</h3>
+              <p>Clicks, typing, and submits are what let the UI react.</p>
             </div>
           </div>
         </section>
 
-        <section class="roomy">
+        <section class="roomy idea-example-slide jsx-example">
+          <div class="eyebrow">React Basics</div>
+          <h2>1. JSX</h2>
+          <p class="idea-description">JSX is the syntax we use to describe what should appear on screen in React.</p>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">export default function App() {
+  return (
+    &lt;main className="page-layout"&gt;
+      &lt;Navigation /&gt;
+      &lt;Header /&gt;
+      &lt;MainContent /&gt;
+      &lt;Footer /&gt;
+    &lt;/main&gt;
+  );
+}</code></pre>
+              <pre><code class="language-jsx">function User({ name, mail, image }) {
+  return (
+    &lt;div className="user-card"&gt;
+      &lt;img src={image} alt={name} /&gt;
+      &lt;h2&gt;{name}&lt;/h2&gt;
+      &lt;p&gt;{mail}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>What to notice</h3>
+                <ul>
+                  <li>It looks like HTML, but it is written inside JavaScript.</li>
+                  <li>Capital names like <code>Navigation</code> mean React components.</li>
+                  <li>Curly braces like <code>{name}</code> put JavaScript values into the UI.</li>
+                  <li>
+                    Self-closing tags like <code>&lt;Navigation /&gt;</code> and <code>&lt;img /&gt;</code> are common
+                    in JSX.
+                  </li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>Why it mattered in the exercise</h3>
+                <p>
+                  JSX let the class describe both the page structure and the user card content before adding more logic.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="idea-context">
+            Seen in:
+            <a href="https://github.com/cederdorff/react-vite-page-layout">React Page Layout with Components</a>
+            and
+            <a href="https://github.com/cederdorff/react-my-first-project">Getting started with React</a>
+          </p>
+        </section>
+
+        <section class="roomy idea-example-slide components-example">
+          <div class="eyebrow">React Basics</div>
+          <h2>2. Components</h2>
+          <p class="idea-description">Components are reusable UI building blocks with one clear job.</p>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">export default function App() {
+  return (
+    &lt;main className="page-layout"&gt;
+      &lt;Navigation /&gt;
+      &lt;Header /&gt;
+      &lt;MainContent /&gt;
+      &lt;Footer /&gt;
+    &lt;/main&gt;
+  );
+}</code></pre>
+              <pre><code class="language-jsx">function User({ name, mail, image }) {
+  return (
+    &lt;div className="user-card"&gt;...&lt;/div&gt;
+  );
+}</code></pre>
+              <pre><code class="language-jsx">&lt;User name="Mia" mail="mia@example.com" image="/mia.png" /&gt;
+&lt;User name="Noah" mail="noah@example.com" image="/noah.png" /&gt;</code></pre>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>What to notice</h3>
+                <ul>
+                  <li>
+                    <code>Navigation</code>, <code>Header</code>, and <code>Footer</code> are larger layout components.
+                  </li>
+                  <li><code>User</code> is one reusable card in the first exercise.</li>
+                  <li>The same <code>User</code> component can be repeated with different data.</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>Why it mattered in the exercises</h3>
+                <p>
+                  Components helped split the UI into clear page sections and reusable pieces like <code>User</code>
+                  instead of one big file with everything mixed together.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="idea-context">
+            Seen in:
+            <a href="https://github.com/cederdorff/react-my-first-project">Getting started with React</a>
+            and
+            <a href="https://github.com/cederdorff/react-vite-page-layout">React Page Layout with Components</a>
+          </p>
+        </section>
+
+        <section class="roomy idea-example-slide props-example">
+          <div class="eyebrow">React Basics</div>
+          <h2>3. Props</h2>
+          <p class="idea-description">Props are inputs passed into a component so it can show different content.</p>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">&lt;User name="Mia" mail="mia@example.com" image="/mia.png" /&gt;
+&lt;User name="Noah" mail="noah@example.com" image="/noah.png" /&gt;</code></pre>
+              <pre><code class="language-jsx">function User({ name, mail, image }) {
+  return (
+    &lt;div className="user-card"&gt;
+      &lt;img src={image} alt={name} /&gt;
+      &lt;h2&gt;{name}&lt;/h2&gt;
+      &lt;p&gt;{mail}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>What to notice</h3>
+                <ul>
+                  <li>
+                    <code>name</code>, <code>mail</code>, and <code>image</code> are passed into <code>User</code>.
+                  </li>
+                  <li>The component stays the same, but the content changes for each person.</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>Why it mattered in the exercise</h3>
+                <p>Props made it possible to reuse one <code>User</code> component for different users.</p>
+              </div>
+            </div>
+          </div>
+          <p class="idea-context">
+            Seen in:
+            <a href="https://github.com/cederdorff/react-my-first-project">Getting started with React</a>
+          </p>
+        </section>
+
+        <section class="roomy idea-example-slide props-example">
+          <div class="eyebrow">React Basics</div>
+          <h2>3. Props</h2>
+          <p class="idea-description">
+            Sometimes we pass one object prop and read values from that object inside the component.
+          </p>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">const mia = {
+  name: "Mia",
+  mail: "mia@example.com",
+  image: "/mia.png"
+};
+
+const noah = {
+  name: "Noah",
+  mail: "noah@example.com",
+  image: "/noah.png"
+};
+
+&lt;User user={mia} /&gt;
+&lt;User user={noah} /&gt;</code></pre>
+              <pre><code class="language-jsx">function User({ user }) {
+  return (
+    &lt;div className="user-card"&gt;
+      &lt;img src={user.image} alt={user.name} /&gt;
+      &lt;h2&gt;{user.name}&lt;/h2&gt;
+      &lt;p&gt;{user.mail}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>What to notice</h3>
+                <ul>
+                  <li>The component receives one prop called <code>user</code>.</li>
+                  <li>Inside the component, we use values like <code>user.name</code> and <code>user.image</code>.</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>When this is useful</h3>
+                <p>If several values belong together, passing one object can make the component call cleaner.</p>
+              </div>
+            </div>
+          </div>
+          <p class="idea-context">
+            Useful next step from:
+            <a href="https://github.com/cederdorff/react-my-first-project">Getting started with React</a>
+          </p>
+        </section>
+
+        <section class="roomy idea-example-slide state-example">
+          <div class="eyebrow">React Basics</div>
+          <h2>4. State</h2>
+          <p class="idea-description">State is data that can change over time and cause React to render again.</p>
+          <p class="idea-description secondary">Props come in. State changes inside the component.</p>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">const [liked, setLiked] = useState(false);
+
+&lt;button onClick={() =&gt; setLiked(!liked)}&gt;
+  {liked ? "Unlike" : "Like"}
+&lt;/button&gt;</code></pre>
+              <pre><code class="language-jsx">const [users, setUsers] = useState([]);
+
+useEffect(() => {
+  async function fetchUsers() {
+    const response = await fetch("...");
+    const data = await response.json();
+    setUsers(data);
+  }
+
+  fetchUsers();
+}, []);</code></pre>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>What to notice</h3>
+                <ul>
+                  <li><code>liked</code> starts as <code>false</code>.</li>
+                  <li>When the button is clicked, <code>setLiked</code> changes the value.</li>
+                  <li>The button text changes because React renders again with the new state.</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>Another state example you have seen</h3>
+                <p>
+                  In the user exercise, <code>users</code> also started with one value and changed later when the fetch
+                  finished.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="idea-context">
+            Seen in: today's Codeagram like-button example and
+            <a href="https://github.com/cederdorff/react-my-first-project">Getting started with React</a>
+          </p>
+        </section>
+
+        <section class="roomy idea-example-slide events-example">
+          <div class="eyebrow">React Basics</div>
+          <h2>5. Events</h2>
+          <p class="idea-description">
+            Events are how React responds to user actions like clicks, typing, and submits.
+          </p>
+          <p class="idea-description secondary">
+            The event is the action. The state change is what happens after the action.
+          </p>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">function LikeButton() {
+  const [liked, setLiked] = useState(false);
+
+  return (
+    &lt;button onClick={() =&gt; setLiked(!liked)}&gt;
+      {liked ? "Unlike" : "Like"}
+    &lt;/button&gt;
+  );
+}</code></pre>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>What to notice</h3>
+                <ul>
+                  <li><code>onClick</code> listens for the click.</li>
+                  <li>When the user clicks, the function runs.</li>
+                  <li>That function changes the state with <code>setLiked</code>.</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>Why this is a good event example</h3>
+                <p>It is easy to see the full chain: click button, run code, change state, update the UI text.</p>
+              </div>
+            </div>
+          </div>
+          <p class="idea-context">
+            Seen in: today's Codeagram like-button example. This is the natural next step after
+            <a href="https://github.com/cederdorff/react-vite-page-layout">React Page Layout with Components</a>
+          </p>
+        </section>
+
+        <section class="roomy codeagram-bridge">
+          <div class="eyebrow">Bridge to Codeagram</div>
+          <h2>We will practice all five ideas in Codeagram</h2>
+          <div class="two-column">
+            <div>
+              <div class="surface">
+                <h3>What we will practice</h3>
+                <ul>
+                  <li><strong>JSX:</strong> describe the screen structure in React.</li>
+                  <li>
+                    <strong>Components:</strong> split the app into parts like top bar, sidebar, feed, and post card.
+                  </li>
+                  <li><strong>Props:</strong> pass post data, usernames, images, and labels into components.</li>
+                  <li><strong>State + events:</strong> make likes, buttons, and interaction feel alive.</li>
+                </ul>
+              </div>
+              <div class="surface" style="margin-top: 0.6em">
+                <h3>Why this matters next</h3>
+                <p>
+                  The next step is not to memorize the five ideas separately. It is to see how they work together inside
+                  one small app.
+                </p>
+              </div>
+            </div>
+            <div class="app-shot">
+              <img src="./assets/codeagram.png" alt="Screenshot of the Codeagram app exercise" />
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy five-ideas-summary">
           <div class="eyebrow">React Basics</div>
           <h2>How the pieces fit together</h2>
           <div class="visual-grid">
             <div>
-              <pre><code class="language-jsx">function PostCard({ post }) {
+              <pre><code class="language-jsx">function PostCard({ username, image, caption }) {
   const [liked, setLiked] = useState(false);
 
   return (
     &lt;article className="post-card"&gt;
-      &lt;h3&gt;{post.username}&lt;/h3&gt;
-      &lt;p&gt;{post.caption}&lt;/p&gt;
+      &lt;img src={image} alt={username} /&gt;
+      &lt;h3&gt;{username}&lt;/h3&gt;
+      &lt;p&gt;{caption}&lt;/p&gt;
       &lt;button onClick={() =&gt; setLiked(!liked)}&gt;
         {liked ? "Unlike" : "Like"}
       &lt;/button&gt;
@@ -980,100 +2000,125 @@ useEffect(() => {
             </div>
             <div>
               <div class="build-steps">
-                <div class="build-step">
+                <div class="build-step jsx-step">
                   <span>1</span>
+                  <p><strong>JSX:</strong> tags and curly braces describe what should appear on screen.</p>
+                </div>
+                <div class="build-step component-step">
+                  <span>2</span>
                   <p><strong>Component:</strong> <code>PostCard</code> owns one clear piece of UI.</p>
                 </div>
-                <div class="build-step">
-                  <span>2</span>
-                  <p><strong>Props:</strong> <code>post</code> changes the content from card to card.</p>
-                </div>
-                <div class="build-step">
+                <div class="build-step props-step">
                   <span>3</span>
-                  <p><strong>State:</strong> <code>liked</code> changes when the user interacts.</p>
+                  <p>
+                    <strong>Props:</strong> <code>username</code>, <code>image</code>, and <code>caption</code> change
+                    the content.
+                  </p>
                 </div>
-                <div class="build-step">
+                <div class="build-step state-step">
                   <span>4</span>
-                  <p><strong>Event:</strong> the button click updates state and React re-renders.</p>
+                  <p><strong>State:</strong> <code>liked</code> remembers whether the post is liked or not.</p>
+                </div>
+                <div class="build-step events-step">
+                  <span>5</span>
+                  <p>
+                    <strong>Event:</strong> <code>onClick</code> runs when the button is clicked and updates the state.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="roomy">
-          <div class="eyebrow">Bridge to Codeagram</div>
-          <h2>Think in components, not full pages</h2>
+        <section class="roomy codeagram-bridge">
+          <div class="eyebrow">Question for the Class</div>
+          <h2>How could we split the Codeagram app into components?</h2>
           <div class="comparison-grid">
             <div class="surface">
-              <h3>Read the UI before coding</h3>
+              <h3>Talk together first</h3>
               <ul>
-                <li>What areas have different jobs?</li>
+                <li>What are the biggest areas on the screen?</li>
                 <li>What repeats?</li>
-                <li>What changes from post to post?</li>
-                <li>What needs interaction or feedback?</li>
+                <li>What could become one component?</li>
+                <li>What might need props, state, or events later?</li>
               </ul>
             </div>
-            <div class="surface">
-              <h3>Useful first move</h3>
-              <ul>
-                <li>Start with the large layout zones.</li>
-                <li>Then identify repeated cards or items.</li>
-                <li>Then split out the smaller reusable pieces inside them.</li>
-              </ul>
+            <div class="app-shot">
+              <img src="./assets/codeagram.png" alt="Screenshot of the Codeagram app for component discussion" />
             </div>
           </div>
         </section>
 
         <section class="roomy">
           <div class="eyebrow">Codeagram Component Thinking</div>
-          <h2>How we can split Codeagram into components</h2>
+          <h2>One possible component tree for Codeagram</h2>
           <div class="two-column">
             <div>
               <div class="tree-card">
-                <h3>Possible component tree</h3>
-                <div class="tree">
-                  <div class="tree-row">
-                    <div class="node hot">App</div>
-                  </div>
-                  <div class="tree-row">
-                    <div class="node">TopBar</div>
-                    <div class="node">Sidebar</div>
-                    <div class="node alt">Feed</div>
-                  </div>
-                  <div class="tree-row">
-                    <div class="node alt">PostCard</div>
-                    <div class="node alt">PostCard</div>
-                    <div class="node alt">PostCard</div>
-                  </div>
-                  <div class="tree-row">
-                    <div class="node">Avatar</div>
-                    <div class="node">IconButton</div>
-                    <div class="node">LikeButton</div>
-                    <div class="node">ProfileSummary</div>
-                  </div>
+                <h3>From page to reusable parts</h3>
+                <div class="tree-diagram">
+                  <ul class="tree-visual">
+                    <li class="tree-root">
+                      <span class="tree-chip tree-label-hot">App</span>
+                      <ul>
+                        <li>
+                          <span class="tree-chip tree-label-main">Header</span>
+                          <ul>
+                            <li><span class="tree-chip tree-label-main">HeaderBrand</span></li>
+                            <li><span class="tree-chip tree-label-main">HeaderActions</span></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="tree-chip tree-label-main">Feed</span>
+                          <span class="tree-repeat-note">renders several posts</span>
+                          <ul class="tree-repeat-list">
+                            <li>
+                              <span class="tree-chip tree-label-alt">PostCard</span>
+                              <ul>
+                                <li><span class="tree-chip tree-label-hot">UserInfo</span></li>
+                              </ul>
+                            </li>
+                            <li><span class="tree-chip tree-label-alt">PostCard</span></li>
+                            <li><span class="tree-chip tree-label-alt">PostCard</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
                 </div>
+                <p class="tree-note">
+                  <code>Feed</code> renders several <code>PostCard</code> instances. The first card is expanded to show
+                  its inner structure, while the others show that the same component repeats.
+                </p>
               </div>
             </div>
             <div>
-              <div class="surface">
-                <h3>What becomes data?</h3>
+              <div class="surface tree-explainer">
+                <h3>How to read this tree</h3>
                 <ul>
-                  <li>Post author, image, caption and like count.</li>
-                  <li>Sidebar links or profile stats.</li>
+                  <li><code>App</code> is the top-level component that puts the screen together.</li>
+                  <li>
+                    <code>Header</code> is one section, and it can be split into <code>HeaderBrand</code> and
+                    <code>HeaderActions</code>.
+                  </li>
+                  <li>
+                    <code>Feed</code> renders repeated <code>PostCard</code> components, and each card can contain
+                    <code>UserInfo</code>.
+                  </li>
                 </ul>
               </div>
-              <div class="surface" style="margin-top: 0.75em">
-                <h3>What becomes state?</h3>
+              <div class="surface tree-explainer" style="margin-top: 0.75em">
+                <h3>What does <code>PostCard</code> need?</h3>
                 <ul>
-                  <li>Liked or bookmarked state.</li>
-                  <li>Maybe selected tab or menu state later.</li>
+                  <li>Props for username, image and caption.</li>
+                  <li>State for things like liked or bookmarked.</li>
+                  <li>Events for clicking buttons and handling interactions.</li>
                 </ul>
               </div>
-              <div class="surface" style="margin-top: 0.75em">
-                <h3>What becomes props?</h3>
+              <div class="surface tree-explainer" style="margin-top: 0.75em">
+                <h3>Useful question for students</h3>
                 <ul>
-                  <li>Labels, images, counts, usernames and button variants.</li>
+                  <li>Which parts describe structure, which parts repeat, and which values should become props?</li>
                 </ul>
               </div>
             </div>
