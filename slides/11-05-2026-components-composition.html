@@ -2079,6 +2079,55 @@ useEffect(() => {
           </p>
         </section>
 
+        <section class="roomy idea-example-slide state-example">
+          <div class="eyebrow">React Basics</div>
+          <h2>A tiny counter is enough to show the full loop</h2>
+          <p class="idea-description">
+            A small counter is enough to show the full React loop: event, state update, and re-render.
+          </p>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">import { useState } from "react";
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;&gt;
+      &lt;h1&gt;My React Counter&lt;/h1&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Increment
+      &lt;/button&gt;
+    &lt;/&gt;
+  );
+}</code></pre>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>What to notice</h3>
+                <ul>
+                  <li><code>count</code> is the current state value.</li>
+                  <li>The button click is the event.</li>
+                  <li><code>setCount</code> updates the state.</li>
+                  <li>React renders again and the number changes on screen.</li>
+                </ul>
+              </div>
+              <div class="surface" style="margin-top: 0.6em">
+                <h3>Why this fits before events</h3>
+                <p>
+                  This example is the smallest possible bridge between the <code>State</code> slide and the
+                  <code>Events</code> slide because one click makes the state change visible immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="idea-context">
+            Useful next step from:
+            <a href="https://github.com/cederdorff/react-my-first-project">Getting started with React</a>
+          </p>
+        </section>
+
         <section class="roomy idea-example-slide events-example">
           <div class="eyebrow">React Basics</div>
           <h2>5. Events</h2>
