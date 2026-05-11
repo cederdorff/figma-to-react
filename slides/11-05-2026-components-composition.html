@@ -782,6 +782,33 @@
         border-color: rgba(56, 189, 248, 0.34);
       }
 
+      .counter-loop-slide .app-shot {
+        max-width: none;
+      }
+
+      .counter-loop-slide .visual-grid > div:first-child {
+        align-content: start;
+        display: grid;
+        gap: 0.45em;
+      }
+
+      .counter-loop-slide .app-shot img {
+        margin: 0 auto;
+        max-height: 5.8em;
+        object-fit: contain;
+        object-position: top center;
+        width: 100%;
+      }
+
+      .counter-loop-slide pre {
+        margin-top: 0;
+      }
+
+      .counter-loop-slide pre code {
+        font-size: 0.66em;
+        padding: 0.66em;
+      }
+
       .system-example-slide .visual-grid {
         align-items: start;
         grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
@@ -2079,7 +2106,7 @@ useEffect(() => {
           </p>
         </section>
 
-        <section class="roomy idea-example-slide state-example">
+        <section class="roomy idea-example-slide state-example counter-loop-slide">
           <div class="eyebrow">React Basics</div>
           <h2>A tiny counter is enough to show the full loop</h2>
           <p class="idea-description">
@@ -2087,6 +2114,12 @@ useEffect(() => {
           </p>
           <div class="visual-grid">
             <div>
+              <div class="app-shot">
+                <img
+                  src="./assets/react-counter.png"
+                  alt="Screenshot of a React counter example with code and browser preview"
+                />
+              </div>
               <pre><code class="language-jsx">import { useState } from "react";
 
 export default function App() {
@@ -2122,10 +2155,6 @@ export default function App() {
               </div>
             </div>
           </div>
-          <p class="idea-context">
-            Useful next step from:
-            <a href="https://github.com/cederdorff/react-my-first-project">Getting started with React</a>
-          </p>
         </section>
 
         <section class="roomy idea-example-slide events-example">
