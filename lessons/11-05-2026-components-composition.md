@@ -32,11 +32,11 @@ By the end of the day, you should have a clearer React mental model, a better se
 ### Agenda
 
 1. **Today's goals and recap**
+   - Set the focus for the day.
    - Show the end result of the day: Codeagram.
    - Learn how to export the Reveal slides as a PDF.
    - Note the GitHub Student Developer Pack for next time.
-   - Revisit last lesson's exercises.
-   - Make time for workday and self-study questions.
+   - Revisit last lesson's exercises and workday questions.
 2. **React basics and component thinking**
    - Practice the React mental model: components, JSX, props, state and events.
    - See how these pieces work together in a React file.
@@ -52,6 +52,7 @@ By the end of the day, you should have a clearer React mental model, a better se
 5. **Wrap-up and next steps**
    - Reflect on what the Codeagram app taught us.
    - End with questions, next steps and Workday.
+   - Remember: if you have problems with the GitHub Student Developer Pack, write on Teams or email `race@eaaa.dk`.
 
 ---
 

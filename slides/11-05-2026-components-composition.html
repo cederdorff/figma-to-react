@@ -160,20 +160,15 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .hero-grid {
-        align-items: end;
-        gap: 0.9em;
-      }
-
       .deck-card,
       .surface,
       .matrix-card,
       .resource-card,
       .mini-card,
-      .phone,
       .tree-card,
-      .stack-card,
-      .check-card {
+      .check-card,
+      .quote-card,
+      .app-shot {
         background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.68));
         border: 1px solid rgba(148, 163, 184, 0.22);
         border-radius: 8px;
@@ -185,8 +180,8 @@
       .matrix-card,
       .resource-card,
       .tree-card,
-      .stack-card,
-      .check-card {
+      .check-card,
+      .quote-card {
         padding: 0.62em;
       }
 
@@ -198,7 +193,8 @@
         color: #94a3b8;
       }
 
-      .tag-row {
+      .tag-row,
+      .contact-strip {
         display: flex;
         flex-wrap: wrap;
         gap: 0.35em;
@@ -228,8 +224,8 @@
       .agenda-list li {
         align-items: start;
         display: grid;
-        gap: 0.45em;
-        grid-template-columns: 2.1em minmax(0, 1fr);
+        gap: 0.22em;
+        grid-template-columns: 1.75em minmax(0, 1fr);
       }
 
       .agenda-list li::before {
@@ -242,62 +238,48 @@
         display: inline-flex;
         font-size: 0.5em;
         font-weight: 700;
-        height: 2.1em;
+        height: 1.9em;
         justify-content: center;
         margin-top: 0.08em;
-        width: 2.1em;
+        width: 1.9em;
       }
 
       .agenda-list strong {
         display: block;
       }
 
-      .agenda-progress {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.32em;
-        margin: 0.45em 0 0.65em;
+      .agenda-list.compact {
+        column-count: 2;
+        column-gap: 1em;
       }
 
-      .agenda-progress-item {
-        background: rgba(15, 23, 42, 0.78);
-        border: 1px solid rgba(148, 163, 184, 0.18);
-        border-radius: 999px;
-        color: #94a3b8;
-        display: inline-flex;
-        font-size: 0.36em;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        padding: 0.24em 0.5em;
+      .agenda-list.compact li {
+        break-inside: avoid;
+        font-size: 0.88em;
+        margin-bottom: 0.42em;
       }
 
-      .agenda-progress-item.is-done {
-        border-color: rgba(52, 211, 153, 0.26);
-        color: #bbf7d0;
+      .agenda-list.compact li::before {
+        font-size: 0.46em;
+        height: 1.8em;
+        width: 1.8em;
       }
 
-      .agenda-progress-item.is-current {
-        background: rgba(56, 189, 248, 0.12);
-        border-color: rgba(56, 189, 248, 0.28);
-        color: #e0f2fe;
+      .agenda-list.compact strong {
+        margin-bottom: 0.08em;
       }
 
-      .phone {
-        margin-left: auto;
-        max-width: 9.8em;
-        overflow: hidden;
-        padding: 0.34em;
+      .app-shot {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+        padding: 0;
       }
 
-      .phone-frame {
-        background: #020617;
-        border: 1px solid #1e293b;
-        border-radius: 20px;
-        padding: 0.42em;
-      }
-
-      .phone img {
-        border-radius: 16px;
+      .app-shot img {
+        border-radius: 0;
         display: block;
         width: 100%;
       }
@@ -329,15 +311,10 @@
         font-weight: 700;
       }
 
-      .comparison-grid {
-        margin-top: 0.55em;
-      }
-
       .comparison-grid .surface h3,
       .resource-card h3,
       .matrix-card h3,
       .tree-card h3,
-      .stack-card h3,
       .check-card h3 {
         color: #7dd3fc;
         font-size: 0.78em;
@@ -352,12 +329,30 @@
       .matrix-card ul,
       .tree-card p,
       .tree-card ul,
-      .stack-card p,
-      .stack-card ul,
       .check-card p,
       .check-card ul {
         font-size: 0.6em;
         max-width: none;
+      }
+
+      .codeagram-intro .statement {
+        font-size: 0.8em !important;
+      }
+
+      .codeagram-intro .surface ul,
+      .codeagram-intro .surface p {
+        font-size: 0.54em;
+      }
+
+      .recap-link {
+        font-size: 0.5em;
+        margin-top: 0.45em;
+      }
+
+      .discussion-note {
+        color: #94a3b8;
+        font-size: 0.58em;
+        margin-top: 0.55em;
       }
 
       .matrix {
@@ -380,7 +375,7 @@
       }
 
       .tree-card {
-        margin-top: 0.6em;
+        margin-top: 0.2em;
       }
 
       .tree {
@@ -417,25 +412,12 @@
         color: #bbf7d0;
       }
 
-      .split-quote {
-        align-items: center;
-        display: grid;
-        gap: 0.75em;
-        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      }
-
-      .quote-card {
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.68));
-        border: 1px solid rgba(148, 163, 184, 0.22);
-        border-radius: 8px;
-        padding: 0.72em;
-      }
-
       .quote-card p {
         color: #f8fafc;
         font-size: 1em;
         font-weight: 720;
         line-height: 1.18;
+        margin: 0;
         max-width: none;
       }
 
@@ -522,14 +504,12 @@
         .comparison-grid,
         .resource-grid,
         .matrix,
-        .split-quote,
         .metrics {
           grid-template-columns: 1fr;
         }
 
-        .phone {
-          margin-left: 0;
-          max-width: 7.8em;
+        .agenda-list.compact {
+          column-count: 1;
         }
       }
     </style>
@@ -538,50 +518,47 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <div class="hero-grid">
-            <div>
-              <div class="eyebrow">11-05-2026 • Figma to React</div>
-              <h1>From Components to Composition</h1>
-              <p class="statement">
-                Take a visual design apart, name the pieces, and rebuild it as a React app that actually makes sense.
-              </p>
-              <p class="subtitle">
-                Today is about turning React basics into reusable UI structure through the Codeagram app.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Components</span>
-                <span class="tag">Props</span>
-                <span class="tag">State</span>
-                <span class="tag">Composition</span>
-              </div>
-            </div>
-
-            <div class="phone">
-              <div class="phone-frame">
-                <img
-                  src="./assets/instagram-cederdorff-feed.png"
-                  alt="Example social feed UI used as inspiration for Codeagram"
-                />
-              </div>
-            </div>
-          </div>
-          <aside class="notes">
-            Frame the session as the first day where React should start feeling useful instead of abstract. The goal is
-            not a perfect app, but a better mental model for building one.
-          </aside>
+          <p class="eyebrow">Interactive Design and Development</p>
+          <h1>Figma to React:<br />From Components to Composition</h1>
+          <p class="subtitle">11-05-2026</p>
         </section>
 
-        <section>
-          <div class="split-quote">
+        <section class="roomy codeagram-intro">
+          <div class="eyebrow">What We Are Building</div>
+          <h2>Codeagram app</h2>
+          <div class="two-column">
             <div>
-              <div class="eyebrow">Focus Question</div>
-              <h2>What are we trying to learn?</h2>
-              <p>
-                Not just how to write JSX, but how to decide <strong>what should become a component</strong> and how
-                those pieces should fit together.
+              <p class="statement" style="font-size: 0.8em">
+                This is the concrete goal for today: a small app where React starts to feel useful instead of abstract.
               </p>
+              <div class="surface">
+                <h3>Why Codeagram works well today</h3>
+                <ul>
+                  <li>It has clear layout areas such as header, feed, cards, user avatar and actions.</li>
+                  <li>Posts repeat, so we can practice arrays, props and <span class="accent">map()</span>.</li>
+                  <li>Likes, bookmarks and buttons give us a reason to use state and events.</li>
+                  <li>It is complex enough to split into components, but still small enough to finish in class.</li>
+                </ul>
+              </div>
             </div>
+            <div class="app-shot">
+              <img src="./assets/codeagram.png" alt="Screenshot of the Codeagram app" />
+            </div>
+          </div>
+        </section>
 
+        <section class="roomy">
+          <div class="eyebrow">Focus of Today</div>
+          <h2>What should become clearer today?</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>Main focus</h3>
+              <ul>
+                <li>Strengthen the React foundation from last time.</li>
+                <li>Practice thinking in components instead of one big page.</li>
+                <li>Connect components, props, state and events in one app.</li>
+              </ul>
+            </div>
             <div class="quote-card">
               <p>How do we break a design into reusable components and build them into a working app?</p>
             </div>
@@ -590,162 +567,331 @@
 
         <section class="roomy">
           <div class="eyebrow">Agenda</div>
-          <h2>Day Flow</h2>
-          <p class="subtitle">
-            Each main section below shows the current agenda point so it is always clear where we are.
-          </p>
-          <ol class="agenda-list">
+          <h2>Day flow</h2>
+          <ol class="agenda-list compact">
             <li>
               <div>
-                <strong>Recap and goals</strong>
-                Revisit last lesson, questions from exercises, and the app we are building toward.
+                <strong>Today's goals and recap</strong>
+                Set the focus, show Codeagram, and revisit last lesson and workday questions.
               </div>
             </li>
             <li>
               <div>
-                <strong>React mental model</strong>
-                Components, JSX, props, state and events as one connected way of thinking.
+                <strong>React basics and component thinking</strong>
+                Practice the mental model: components, JSX, props, state and events.
               </div>
             </li>
             <li>
               <div>
-                <strong>Codeagram build</strong>
-                Break the screen apart, set up layout, data flow, and interaction.
+                <strong>Codeagram App</strong>
+                Build the main example with layout, data, props, events, state and refactoring.
               </div>
             </li>
             <li>
               <div>
                 <strong>Small component system</strong>
-                Reuse patterns like Button, Card and Tag where they improve clarity.
+                Build reusable pieces such as <code>Button</code>, <code>Card</code> and <code>Tag</code>.
               </div>
             </li>
             <li>
               <div>
-                <strong>Wrap-up and workday</strong>
-                Reflect on what composition solved and what to keep practicing.
+                <strong>Wrap-up and next steps</strong>
+                Reflect, connect to Workday, and remember Teams or <code>race@eaaa.dk</code> if needed.
               </div>
             </li>
           </ol>
         </section>
 
-        <section class="roomy">
-          <div class="eyebrow">Agenda 1/5 • Today's goals and recap</div>
-          <h2>What we are building toward</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-current">1. Goals and recap</span>
-            <span class="agenda-progress-item">2. React basics</span>
-            <span class="agenda-progress-item">3. Codeagram app</span>
-            <span class="agenda-progress-item">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
-          </div>
-          <div class="comparison-grid">
-            <div class="surface">
-              <h3>Codeagram should feel like a real app</h3>
-              <ul>
-                <li>A page layout with feed, profile or post cards.</li>
-                <li>Data mapped into repeated UI.</li>
-                <li>Buttons or interactions that update state.</li>
-                <li>Structure that is readable enough to refactor.</li>
-              </ul>
-            </div>
-            <div class="surface">
-              <h3>Not the goal today</h3>
-              <ul>
-                <li>Perfect CSS polish.</li>
-                <li>Every feature from a real social app.</li>
-                <li>One huge App component with everything inside it.</li>
-                <li>Copying a design literally without thinking about reuse.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="metrics">
-            <div class="mini-card">
-              <span class="mini-label">Main skill</span>
-              <span class="mini-value">UI decomposition</span>
-            </div>
-            <div class="mini-card">
-              <span class="mini-label">Main artifact</span>
-              <span class="mini-value">Codeagram app</span>
-            </div>
-            <div class="mini-card">
-              <span class="mini-label">Main habit</span>
-              <span class="mini-value">Refactor for clarity</span>
-            </div>
-          </div>
-        </section>
-
         <section>
-          <div class="eyebrow">Agenda 1/5 • Today's goals and recap</div>
+          <div class="eyebrow">Practical Reminder</div>
           <h2>Export Reveal slides as PDF</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-current">1. Goals and recap</span>
-            <span class="agenda-progress-item">2. React basics</span>
-            <span class="agenda-progress-item">3. Codeagram app</span>
-            <span class="agenda-progress-item">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
-          </div>
           <p>Open the slide URL, add the print parameter, and use the browser print dialog.</p>
           <div class="pdf-tip">
-            <p style="max-width: none; margin-top: 0">
+            <p style="margin-top: 0; max-width: none">
               Example:
-              <code> .../11-05-2026-components-composition.html?print-pdf </code>
+              <code>.../11-05-2026-components-composition.html?print-pdf</code>
             </p>
-            <p style="max-width: none; margin-bottom: 0">Then choose <strong>Print</strong> and save as PDF.</p>
+            <p style="margin-bottom: 0; max-width: none">Then choose <strong>Print</strong> and save as PDF.</p>
           </div>
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Agenda 2/5 • React basics and component thinking</div>
-          <h2>Five ideas that need to connect</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-current">2. React basics</span>
-            <span class="agenda-progress-item">3. Codeagram app</span>
-            <span class="agenda-progress-item">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
+          <div class="eyebrow">Before Next Time</div>
+          <h2>Get the GitHub Student Developer Pack</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>What to do</h3>
+              <ul>
+                <li>Apply before the next session if you have not already done it.</li>
+                <li>Use your student information and check the approval steps carefully.</li>
+                <li>
+                  Link:
+                  <a href="https://education.github.com/pack">education.github.com/pack</a>
+                </li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>If you have issues</h3>
+              <ul>
+                <li>Send me an email at <strong>race@eaaa.dk</strong>.</li>
+                <li>Or write to me on Teams.</li>
+                <li>Do not wait until the last minute if the application gets stuck.</li>
+              </ul>
+            </div>
           </div>
+          <div class="contact-strip">
+            <span class="inline-chip">race@eaaa.dk</span>
+            <span class="inline-chip">Teams message</span>
+            <span class="inline-chip">Before next time</span>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Recap</div>
+          <h2>What you worked on last time and during the workday</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>Last lesson</h3>
+              <ul>
+                <li><strong>Getting started with React</strong></li>
+                <li><strong>React Page Layout with Components</strong></li>
+                <li>Setting up React, writing JSX, and building a first page structure.</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>During the workday</h3>
+              <ul>
+                <li>Continue the exercises and keep practicing React basics.</li>
+                <li>Notice where layout, repetition and component naming felt difficult.</li>
+                <li>Bring questions from your own work so we can connect them to Codeagram today.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Table Groups</div>
+          <h2>Exercise recap together</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>Talk together at your table</h3>
+              <ul>
+                <li>Use the two exercises as concrete examples.</li>
+                <li>Explain the React ideas in your own words, not just the code.</li>
+                <li>Compare what felt easy and what felt confusing.</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>Questions to guide the discussion</h3>
+              <ul>
+                <li>What is a component in this exercise?</li>
+                <li>Where do you see props?</li>
+                <li>Do you use state? Why or why not?</li>
+                <li>Do you use events or <code>onClick</code>? If not, what could use them later?</li>
+                <li>What did you not understand yet?</li>
+              </ul>
+            </div>
+          </div>
+          <p class="discussion-note">Note your questions so we can collect them afterward.</p>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Exercise Recap 1</div>
+          <h2>Getting started with React</h2>
+          <div class="two-column">
+            <div>
+              <pre style="width: 100%"><code class="language-jsx">const [users, setUsers] = useState([]);
+
+useEffect(() => {
+  async function fetchUsers() {
+    const response = await fetch("...");
+    const data = await response.json();
+    setUsers(data);
+  }
+  fetchUsers();
+}, []);
+
+{users.map(user => (
+  &lt;User key={user.id} name={user.name} mail={user.mail} image={user.image} /&gt;
+))}</code></pre>
+              <p class="recap-link">
+                Solution:
+                <a href="https://github.com/cederdorff/react-my-first-project">react-my-first-project</a>
+              </p>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>What this exercise shows</h3>
+                <ul>
+                  <li><strong>Component:</strong> <code>App</code> and <code>User</code></li>
+                  <li><strong>Props:</strong> <code>name</code>, <code>mail</code>, <code>image</code></li>
+                  <li><strong>State:</strong> <code>users</code> changes after the fetch</li>
+                  <li><strong>Events:</strong> not really user events yet, but React still reacts to data changes</li>
+                </ul>
+              </div>
+              <div class="surface" style="margin-top: 0.7em">
+                <h3>Discuss at your table</h3>
+                <ul>
+                  <li>Why is <code>User</code> a component instead of repeated HTML?</li>
+                  <li>Why are the user values passed as props?</li>
+                  <li>Why does the state live in <code>App</code>?</li>
+                  <li>What part of this exercise was new or unclear?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Exercise Recap 2</div>
+          <h2>React Page Layout with Components</h2>
+          <div class="two-column">
+            <div>
+              <pre style="width: 100%"><code class="language-jsx">export default function App() {
+  return (
+    &lt;main className="page-layout"&gt;
+      &lt;Navigation /&gt;
+      &lt;Header /&gt;
+      &lt;MainContent /&gt;
+      &lt;Footer /&gt;
+    &lt;/main&gt;
+  );
+}</code></pre>
+              <pre style="width: 100%; margin-top: 0.6em"><code class="language-jsx">&lt;div className="media-grid"&gt;
+  &lt;MediaCard /&gt;
+  &lt;MediaCard /&gt;
+  &lt;MediaCard /&gt;
+&lt;/div&gt;</code></pre>
+              <p class="recap-link">
+                Solution:
+                <a href="https://github.com/cederdorff/react-vite-page-layout">react-vite-page-layout</a>
+              </p>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>What this exercise shows</h3>
+                <ul>
+                  <li><strong>Component composition:</strong> page built from smaller pieces</li>
+                  <li><strong>Props:</strong> not really used yet, which is also important to notice</li>
+                  <li><strong>State:</strong> none yet, because the goal is structure and layout</li>
+                  <li><strong>Events:</strong> the button is there visually, but no interaction is wired up yet</li>
+                </ul>
+              </div>
+              <div class="surface" style="margin-top: 0.7em">
+                <h3>Discuss at your table</h3>
+                <ul>
+                  <li>How does this exercise teach component thinking?</li>
+                  <li>Where could props improve the repeated <code>MediaCard</code> components?</li>
+                  <li>Do we need state yet, or would that be too early here?</li>
+                  <li>What could be the first useful <code>onClick</code> later on?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">React Basics</div>
+          <h2>Five ideas that need to connect</h2>
           <div class="matrix">
             <div class="matrix-card">
-              <span class="label">Component</span>
-              <p>A reusable UI building block with a clear responsibility.</p>
+              <span class="label">JSX</span>
+              <p>The syntax we use to describe what should appear on screen.</p>
+            </div>
+            <div class="matrix-card">
+              <span class="label">Components</span>
+              <p>Reusable UI building blocks with a clear job.</p>
             </div>
             <div class="matrix-card">
               <span class="label">Props</span>
-              <p>Input passed into a component so it can stay flexible.</p>
+              <p>Input that lets one component show different content.</p>
             </div>
             <div class="matrix-card">
               <span class="label">State</span>
-              <p>Data that changes over time and should trigger a re-render.</p>
+              <p>Values that change over time and trigger a new render.</p>
             </div>
             <div class="matrix-card">
               <span class="label">Events</span>
-              <p>User actions like click, input or submit that can update state.</p>
+              <p>Clicks, typing, submits, and other actions that update the UI.</p>
             </div>
-          </div>
-          <div class="deck-card" style="margin-top: 0.8em">
-            <p class="statement" style="font-size: 0.88em; max-width: none">
-              JSX is just the language we use to describe how these ideas show up on screen.
-            </p>
+            <div class="matrix-card">
+              <span class="label">Mental model</span>
+              <p>Structure first, then data flow, then interaction, then refactor.</p>
+            </div>
           </div>
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Agenda 2/5 • React basics and component thinking</div>
-          <h2>Read the screen before you code it</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-current">2. React basics</span>
-            <span class="agenda-progress-item">3. Codeagram app</span>
-            <span class="agenda-progress-item">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
+          <div class="eyebrow">React Basics</div>
+          <h2>How the pieces fit together</h2>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">function PostCard({ post }) {
+  const [liked, setLiked] = useState(false);
+
+  return (
+    &lt;article className="post-card"&gt;
+      &lt;h3&gt;{post.username}&lt;/h3&gt;
+      &lt;p&gt;{post.caption}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setLiked(!liked)}&gt;
+        {liked ? "Unlike" : "Like"}
+      &lt;/button&gt;
+    &lt;/article&gt;
+  );
+}</code></pre>
+            </div>
+            <div>
+              <div class="build-steps">
+                <div class="build-step">
+                  <span>1</span>
+                  <p><strong>Component:</strong> <code>PostCard</code> owns one clear piece of UI.</p>
+                </div>
+                <div class="build-step">
+                  <span>2</span>
+                  <p><strong>Props:</strong> <code>post</code> changes the content from card to card.</p>
+                </div>
+                <div class="build-step">
+                  <span>3</span>
+                  <p><strong>State:</strong> <code>liked</code> changes when the user interacts.</p>
+                </div>
+                <div class="build-step">
+                  <span>4</span>
+                  <p><strong>Event:</strong> the button click updates state and React re-renders.</p>
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Bridge to Codeagram</div>
+          <h2>Think in components, not full pages</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>Read the UI before coding</h3>
+              <ul>
+                <li>What areas have different jobs?</li>
+                <li>What repeats?</li>
+                <li>What changes from post to post?</li>
+                <li>What needs interaction or feedback?</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>Useful first move</h3>
+              <ul>
+                <li>Start with the large layout zones.</li>
+                <li>Then identify repeated cards or items.</li>
+                <li>Then split out the smaller reusable pieces inside them.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Codeagram Component Thinking</div>
+          <h2>How we can split Codeagram into components</h2>
           <div class="two-column">
             <div>
-              <p>
-                Start by looking for repeated shapes, repeated content patterns, and areas that clearly have different
-                jobs.
-              </p>
               <div class="tree-card">
                 <h3>Possible component tree</h3>
                 <div class="tree">
@@ -753,7 +899,7 @@
                     <div class="node hot">App</div>
                   </div>
                   <div class="tree-row">
-                    <div class="node">Header</div>
+                    <div class="node">TopBar</div>
                     <div class="node">Sidebar</div>
                     <div class="node alt">Feed</div>
                   </div>
@@ -764,345 +910,141 @@
                   </div>
                   <div class="tree-row">
                     <div class="node">Avatar</div>
-                    <div class="node">Tag</div>
+                    <div class="node">IconButton</div>
                     <div class="node">LikeButton</div>
+                    <div class="node">ProfileSummary</div>
                   </div>
                 </div>
               </div>
             </div>
-
             <div>
               <div class="surface">
-                <h3>Questions to ask</h3>
+                <h3>What becomes data?</h3>
                 <ul>
-                  <li>What repeats?</li>
-                  <li>What changes from instance to instance?</li>
-                  <li>What is just content, and what is behavior?</li>
-                  <li>Where does state need to live?</li>
+                  <li>Post author, image, caption and like count.</li>
+                  <li>Sidebar links or profile stats.</li>
                 </ul>
               </div>
               <div class="surface" style="margin-top: 0.75em">
-                <h3>Good first split</h3>
-                <p>Layout first, then repeated content blocks, then smaller UI parts inside those blocks.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="roomy">
-          <div class="eyebrow">Agenda 2/5 • React basics and component thinking</div>
-          <h2>Component, prop, data or state?</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-current">2. React basics</span>
-            <span class="agenda-progress-item">3. Codeagram app</span>
-            <span class="agenda-progress-item">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
-          </div>
-          <div class="matrix">
-            <div class="matrix-card">
-              <h3>Make it a component when...</h3>
-              <ul>
-                <li>It has a clear job.</li>
-                <li>It repeats in the UI.</li>
-                <li>It makes the parent easier to read.</li>
-              </ul>
-            </div>
-            <div class="matrix-card">
-              <h3>Make it a prop when...</h3>
-              <ul>
-                <li>The structure stays the same.</li>
-                <li>Only labels, images or values change.</li>
-                <li>You want the same component in many contexts.</li>
-              </ul>
-            </div>
-            <div class="matrix-card">
-              <h3>Keep it as data when...</h3>
-              <ul>
-                <li>It can be listed in an array.</li>
-                <li>You can map over it.</li>
-                <li>It does not change because of user interaction yet.</li>
-              </ul>
-            </div>
-            <div class="matrix-card">
-              <h3>Use state when...</h3>
-              <ul>
-                <li>The value changes while the app runs.</li>
-                <li>A click or input should update the UI.</li>
-                <li>The user needs feedback from an action.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="roomy">
-          <div class="eyebrow">Agenda 3/5 • Codeagram app</div>
-          <h2>One component, many posts</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-done">2. React basics</span>
-            <span class="agenda-progress-item is-current">3. Codeagram app</span>
-            <span class="agenda-progress-item">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
-          </div>
-          <div class="visual-grid">
-            <div>
-              <pre><code class="language-jsx">function PostCard({ username, caption, imageUrl, liked }) {
-  return (
-    &lt;article className="post-card"&gt;
-      &lt;img src={imageUrl} alt="" /&gt;
-      &lt;h3&gt;{username}&lt;/h3&gt;
-      &lt;p&gt;{caption}&lt;/p&gt;
-      &lt;span&gt;{liked ? "Liked" : "Not liked yet"}&lt;/span&gt;
-    &lt;/article&gt;
-  );
-}</code></pre>
-            </div>
-            <div>
-              <div class="surface">
-                <h3>Why this matters</h3>
+                <h3>What becomes state?</h3>
                 <ul>
-                  <li>The structure stays stable.</li>
-                  <li>The content changes through props.</li>
-                  <li>The parent can reuse the same component for many posts.</li>
+                  <li>Liked or bookmarked state.</li>
+                  <li>Maybe selected tab or menu state later.</li>
                 </ul>
               </div>
               <div class="surface" style="margin-top: 0.75em">
-                <h3>Look for this pattern</h3>
-                <p>If you copy-paste the same JSX and only change text or images, you probably want props.</p>
+                <h3>What becomes props?</h3>
+                <ul>
+                  <li>Labels, images, counts, usernames and button variants.</li>
+                </ul>
               </div>
             </div>
           </div>
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Agenda 3/5 • Codeagram app</div>
-          <h2>Interaction needs state and events</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-done">2. React basics</span>
-            <span class="agenda-progress-item is-current">3. Codeagram app</span>
-            <span class="agenda-progress-item">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
+          <div class="eyebrow">Small Component System</div>
+          <h2>Build a few reusable pieces from the app</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>Good candidates</h3>
+              <ul>
+                <li><strong>Card</strong> for post and profile containers.</li>
+                <li><strong>IconButton</strong> for small repeated actions.</li>
+                <li><strong>Avatar</strong> for consistent profile images.</li>
+                <li><strong>SectionTitle</strong> or <strong>Stat</strong> if the pattern is repeated.</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>What to avoid</h3>
+              <ul>
+                <li>Making everything reusable before the pattern is visible.</li>
+                <li>Creating abstract components with unclear names.</li>
+                <li>Splitting so much that the page becomes harder to read.</li>
+              </ul>
+            </div>
           </div>
-          <div class="visual-grid">
-            <div>
-              <pre><code class="language-jsx">function LikeButton() {
-  const [liked, setLiked] = useState(false);
-
-  return (
-    &lt;button onClick={() =&gt; setLiked(!liked)}&gt;
-      {liked ? "Unlike" : "Like"}
-    &lt;/button&gt;
-  );
-}</code></pre>
-            </div>
-            <div>
-              <div class="build-steps">
-                <div class="build-step">
-                  <span>1</span>
-                  <p>User clicks a button.</p>
-                </div>
-                <div class="build-step">
-                  <span>2</span>
-                  <p>An event handler runs.</p>
-                </div>
-                <div class="build-step">
-                  <span>3</span>
-                  <p>State updates.</p>
-                </div>
-                <div class="build-step">
-                  <span>4</span>
-                  <p>The UI re-renders with new feedback.</p>
-                </div>
-              </div>
-            </div>
+          <div class="tag-row" style="margin-top: 0.85em">
+            <span class="inline-chip">Card variant="post"</span>
+            <span class="inline-chip">IconButton icon="heart"</span>
+            <span class="inline-chip">Avatar size="md"</span>
           </div>
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Agenda 3/5 • Codeagram app</div>
-          <h2>Suggested build order for Codeagram</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-done">2. React basics</span>
-            <span class="agenda-progress-item is-current">3. Codeagram app</span>
-            <span class="agenda-progress-item">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
-          </div>
+          <div class="eyebrow">Small Component System</div>
+          <h2>Suggested build order</h2>
           <div class="build-steps">
             <div class="build-step">
               <span>1</span>
-              <p>Sketch the page zones: header, sidebar, feed, cards.</p>
+              <p>Build the page layout with static placeholder content.</p>
             </div>
             <div class="build-step">
               <span>2</span>
-              <p>Build static components with placeholder content first.</p>
+              <p>Turn repeated posts into a reusable <code>PostCard</code>.</p>
             </div>
             <div class="build-step">
               <span>3</span>
-              <p>Move repeated content into arrays and map over it.</p>
+              <p>Move post content into an array and render with <code>map()</code>.</p>
             </div>
             <div class="build-step">
               <span>4</span>
-              <p>Add props so the repeated parts can vary.</p>
+              <p>Add the smallest useful interaction with state and events.</p>
             </div>
             <div class="build-step">
               <span>5</span>
-              <p>Add the smallest useful interactions with state.</p>
+              <p>Extract shared pieces like <code>Avatar</code>, <code>IconButton</code>, or <code>Card</code>.</p>
             </div>
             <div class="build-step">
               <span>6</span>
-              <p>Refactor names, files and reusable UI pieces afterward.</p>
+              <p>Refactor names, props and files once the structure is working.</p>
             </div>
           </div>
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Agenda 4/5 • Small component system</div>
-          <h2>Small reusable pieces are enough</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-done">2. React basics</span>
-            <span class="agenda-progress-item is-done">3. Codeagram app</span>
-            <span class="agenda-progress-item is-current">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
-          </div>
-          <div class="comparison-grid">
-            <div class="surface">
-              <h3>Useful reusable components</h3>
-              <ul>
-                <li><strong>Button</strong> for actions and variants.</li>
-                <li><strong>Card</strong> for consistent containers.</li>
-                <li><strong>Tag</strong> for small labels or categories.</li>
-              </ul>
-            </div>
-            <div class="surface">
-              <h3>Common mistake</h3>
-              <ul>
-                <li>Making tiny components too early.</li>
-                <li>Splitting before the pattern is visible.</li>
-                <li>Creating generic components with unclear responsibility.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tag-row" style="margin-top: 0.9em">
-            <span class="inline-chip">Button variant="primary"</span>
-            <span class="inline-chip">Card padding="md"</span>
-            <span class="inline-chip">Tag tone="accent"</span>
-          </div>
-        </section>
-
-        <section class="roomy">
-          <div class="eyebrow">Agenda 4/5 • Small component system</div>
-          <h2>When you get stuck, inspect the problem type</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-done">2. React basics</span>
-            <span class="agenda-progress-item is-done">3. Codeagram app</span>
-            <span class="agenda-progress-item is-current">4. Component system</span>
-            <span class="agenda-progress-item">5. Wrap-up</span>
-          </div>
-          <div class="comparison-grid">
-            <div class="check-card">
-              <h3>HTML / CSS issue?</h3>
-              <p>The structure or styling is wrong, but the component idea still makes sense.</p>
-            </div>
-            <div class="check-card">
-              <h3>React issue?</h3>
-              <p>Props are not passed, state is in the wrong place, or the event flow is unclear.</p>
-            </div>
-            <div class="check-card">
-              <h3>Composition issue?</h3>
-              <p>The component boundaries are doing too much or not enough.</p>
-            </div>
-            <div class="check-card">
-              <h3>Data issue?</h3>
-              <p>
-                The content should probably live in an array and be rendered with
-                <span class="accent">map()</span>.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="roomy">
-          <div class="eyebrow">Agenda 5/5 • Wrap-up and next steps</div>
-          <h2>What to use before and after class</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-done">2. React basics</span>
-            <span class="agenda-progress-item is-done">3. Codeagram app</span>
-            <span class="agenda-progress-item is-done">4. Component system</span>
-            <span class="agenda-progress-item is-current">5. Wrap-up</span>
-          </div>
+          <div class="eyebrow">Wrap-up and Next Steps</div>
+          <h2>What happens after today</h2>
           <div class="resource-grid">
             <div class="resource-card">
-              <h3>Slides</h3>
+              <h3>Keep building</h3>
               <ul>
-                <li>
-                  <a href="https://cederdorff.com/figma-to-react/slides/11-05-2026-components-composition.html">
-                    11-05-2026 deck
-                  </a>
-                </li>
+                <li>Continue working on the Codeagram app.</li>
+                <li>Refine what should stay in one component and what should be split out.</li>
+                <li>Add more confidence with props, state and events.</li>
               </ul>
             </div>
             <div class="resource-card">
-              <h3>Exercises</h3>
-              <p>
-                Main exercise for today: build Codeagram step by step with components, props, state, events, and
-                <span class="accent">.map()</span>.
-              </p>
+              <h3>Keep practicing</h3>
               <ul>
-                <li>
-                  <a href="https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md">
-                    Codeagram Feed with React Components
-                  </a>
-                </li>
-                <li>Choose guided mode or independent mode in the same guide.</li>
-                <li>
-                  Flow: header, post data, reusable post card, likes/bookmarks, then refactor with
-                  <span class="accent">.map()</span>.
-                </li>
+                <li>Return to the React exercises from last time if needed.</li>
+                <li>Use the CodeDex React course for extra repetition.</li>
+                <li>Apply for the GitHub Student Developer Pack before next time.</li>
               </ul>
             </div>
             <div class="resource-card">
-              <h3>Other links</h3>
+              <h3>Get support</h3>
               <ul>
-                <li>
-                  <a href="https://education.github.com/pack"> GitHub Student Developer Pack </a>
-                </li>
-                <li>
-                  <a href="https://www.codedex.io/react">CodeDex React</a>
-                </li>
+                <li>If you get stuck for too long, write on Teams.</li>
+                <li>You can also email <strong>race@eaaa.dk</strong>.</li>
+                <li>Bring your questions from the workday back into class.</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section>
-          <div class="eyebrow">Agenda 5/5 • Wrap-up and next steps</div>
-          <h2>Success for this session</h2>
-          <div class="agenda-progress">
-            <span class="agenda-progress-item is-done">1. Goals and recap</span>
-            <span class="agenda-progress-item is-done">2. React basics</span>
-            <span class="agenda-progress-item is-done">3. Codeagram app</span>
-            <span class="agenda-progress-item is-done">4. Component system</span>
-            <span class="agenda-progress-item is-current">5. Wrap-up</span>
-          </div>
+          <div class="eyebrow">Wrap-up</div>
+          <h2>Success for today</h2>
           <p class="statement">
-            You should leave with a better answer to: what belongs in one component, and what should be split out?
+            A better answer to this question: what belongs in one React component, and what should be split out?
           </p>
           <div class="tag-row">
             <span class="tag">Clearer React mental model</span>
-            <span class="tag">Reusable components</span>
+            <span class="tag">Better component boundaries</span>
             <span class="tag">Codeagram progress</span>
-            <span class="tag">Better refactoring instincts</span>
+            <span class="tag">Next-step confidence</span>
           </div>
-          <aside class="notes">
-            End by reinforcing that composition is not perfectionism. It is a way to make apps easier to build, read and
-            change.
-          </aside>
         </section>
       </div>
     </div>
