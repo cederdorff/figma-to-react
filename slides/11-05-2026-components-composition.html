@@ -782,6 +782,48 @@
         border-color: rgba(56, 189, 248, 0.34);
       }
 
+      .system-example-slide .visual-grid {
+        align-items: start;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+      }
+
+      .system-example-slide pre {
+        margin: 0;
+        width: 100%;
+      }
+
+      .system-example-slide pre + pre {
+        margin-top: 0.5em;
+      }
+
+      .system-example-slide pre code {
+        font-size: 0.7em;
+        line-height: 1.15;
+        overflow-wrap: anywhere;
+        padding: 0.75em;
+        white-space: pre-wrap;
+      }
+
+      .system-example-slide .surface p,
+      .system-example-slide .surface ul {
+        font-size: 0.56em;
+        max-width: none;
+      }
+
+      .system-example-slide .surface ul {
+        margin-left: 0.8em;
+      }
+
+      .system-example-slide .surface + .surface {
+        margin-top: 0.55em;
+      }
+
+      .system-files {
+        color: #94a3b8;
+        font-size: 0.48em;
+        margin-top: 0.65em;
+      }
+
       .codeagram-bridge .two-column {
         align-items: start;
         grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
@@ -2127,60 +2169,179 @@ useEffect(() => {
 
         <section class="roomy">
           <div class="eyebrow">Small Component System</div>
-          <h2>Build a few reusable pieces from the app</h2>
+          <h2>Find the first reusable patterns in Codeagram</h2>
           <div class="comparison-grid">
             <div class="surface">
-              <h3>Good candidates</h3>
+              <h3>Already repeated in the app</h3>
               <ul>
-                <li><strong>Card</strong> for post and profile containers.</li>
-                <li><strong>IconButton</strong> for small repeated actions.</li>
-                <li><strong>Avatar</strong> for consistent profile images.</li>
-                <li><strong>SectionTitle</strong> or <strong>Stat</strong> if the pattern is repeated.</li>
+                <li><code>HeaderActions</code> renders three buttons with the same <code>icon-button</code> class.</li>
+                <li><code>PostCard</code> renders two action buttons with the same button structure.</li>
+                <li><code>UserInfo</code> already has a clear avatar pattern with the <code>avatar</code> class.</li>
+                <li><code>PostCard</code> itself is a strong card-shaped container.</li>
               </ul>
             </div>
             <div class="surface">
-              <h3>What to avoid</h3>
+              <h3>Good first system pieces</h3>
               <ul>
-                <li>Making everything reusable before the pattern is visible.</li>
-                <li>Creating abstract components with unclear names.</li>
-                <li>Splitting so much that the page becomes harder to read.</li>
+                <li><code>Avatar</code> for profile images.</li>
+                <li><code>IconButton</code> for icon-only actions.</li>
+                <li><code>Card</code> if more surfaces start sharing the same wrapper.</li>
+                <li><code>PostActions</code> if the post controls grow beyond two buttons.</li>
               </ul>
             </div>
           </div>
-          <div class="tag-row" style="margin-top: 0.85em">
-            <span class="inline-chip">Card variant="post"</span>
-            <span class="inline-chip">IconButton icon="heart"</span>
-            <span class="inline-chip">Avatar size="md"</span>
+          <p class="system-files">
+            Current files: <code>HeaderActions.jsx</code>, <code>UserInfo.jsx</code>, <code>PostCard.jsx</code>,
+            <code>styles.css</code>
+          </p>
+        </section>
+
+        <section class="roomy system-example-slide components-example">
+          <div class="eyebrow">Small Component System</div>
+          <h2>Example 1: extract an <code>Avatar</code> component</h2>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">export function UserInfo({ avatar, timestamp, username }) {
+  return (
+    &lt;div className="user-info"&gt;
+      &lt;img className="avatar" src={avatar} /&gt;
+      &lt;h2&gt;{username}&lt;/h2&gt;
+      &lt;p&gt;{timestamp}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+              <pre><code class="language-jsx">export function Avatar({ src, alt }) {
+  return &lt;img className="avatar" src={src} alt={alt} /&gt;;
+}
+
+export function UserInfo({ avatar, timestamp, username }) {
+  return (
+    &lt;div className="user-info"&gt;
+      &lt;Avatar src={avatar} alt={username} /&gt;
+      &lt;h2&gt;{username}&lt;/h2&gt;
+      &lt;p&gt;{timestamp}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+            </div>
+            <div>
+              <div class="surface">
+                <h3>Why this is a good first extraction</h3>
+                <ul>
+                  <li>The avatar already has one clear job: show a profile image.</li>
+                  <li>The CSS is already isolated in one class: <code>.avatar</code>.</li>
+                  <li>The component API stays small: <code>src</code> and <code>alt</code>.</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>What students should notice</h3>
+                <p>
+                  We are not inventing a system from nothing. We are naming and extracting a pattern that already exists
+                  in the app.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section class="roomy">
+        <section class="roomy system-example-slide props-example">
           <div class="eyebrow">Small Component System</div>
-          <h2>Suggested build order</h2>
-          <div class="build-steps">
-            <div class="build-step">
-              <span>1</span>
-              <p>Build the page layout with static placeholder content.</p>
+          <h2>Example 2: unify repeated icon buttons</h2>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">&lt;button className="icon-button" type="button"&gt;
+  &lt;Search /&gt;
+&lt;/button&gt;
+
+&lt;button className="icon-button has-dot" type="button"&gt;
+  &lt;Bell /&gt;
+&lt;/button&gt;
+
+&lt;button className="action-button" type="button" onClick={toggleLike}&gt;
+  &lt;Heart className={liked ? "is-active" : ""} /&gt;
+&lt;/button&gt;</code></pre>
+              <pre><code class="language-jsx">export function IconButton({
+  icon: Icon,
+  label,
+  active = false,
+  hasDot = false,
+  onClick
+}) {
+  return (
+    &lt;button
+      className={`icon-button ${hasDot ? "has-dot" : ""}`.trim()}
+      type="button"
+      aria-label={label}
+      onClick={onClick}
+    &gt;
+      &lt;Icon className={active ? "is-active" : ""} /&gt;
+    &lt;/button&gt;
+  );
+}</code></pre>
             </div>
-            <div class="build-step">
-              <span>2</span>
-              <p>Turn repeated posts into a reusable <code>PostCard</code>.</p>
+            <div>
+              <div class="surface">
+                <h3>Why this helps</h3>
+                <ul>
+                  <li>The button shape, spacing and icon behavior move into one place.</li>
+                  <li>Different icons become props instead of copy-pasted markup.</li>
+                  <li>Accessibility improves because <code>aria-label</code> becomes part of the API.</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>Small but useful API</h3>
+                <p>
+                  <code>icon</code>, <code>label</code>, <code>onClick</code>, <code>active</code> and
+                  <code>hasDot</code> are enough for the current app. No need to over-design it yet.
+                </p>
+              </div>
             </div>
-            <div class="build-step">
-              <span>3</span>
-              <p>Move post content into an array and render with <code>map()</code>.</p>
+          </div>
+        </section>
+
+        <section class="roomy system-example-slide state-example">
+          <div class="eyebrow">Small Component System</div>
+          <h2>Example 3: keep the system small</h2>
+          <div class="visual-grid">
+            <div>
+              <pre><code class="language-jsx">function App() {
+  return (
+    &lt;div className="codeagram-app"&gt;
+      &lt;Header /&gt;
+      &lt;div className="feed"&gt;
+        {posts.map(post =&gt; (
+          &lt;PostCard key={post.id} post={post} /&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+              <pre><code class="language-jsx">Small system for this app:
+
+- Avatar
+- IconButton
+- maybe Card later
+
+Keep PostCard as a feature component.
+Do not split everything just because you can.</code></pre>
             </div>
-            <div class="build-step">
-              <span>4</span>
-              <p>Add the smallest useful interaction with state and events.</p>
-            </div>
-            <div class="build-step">
-              <span>5</span>
-              <p>Extract shared pieces like <code>Avatar</code>, <code>IconButton</code>, or <code>Card</code>.</p>
-            </div>
-            <div class="build-step">
-              <span>6</span>
-              <p>Refactor names, props and files once the structure is working.</p>
+            <div>
+              <div class="surface">
+                <h3>Good rule of thumb</h3>
+                <ul>
+                  <li>Extract something when the pattern is repeated and has one clear purpose.</li>
+                  <li>Keep feature components like <code>PostCard</code> intact while the app is still small.</li>
+                  <li>Only add more system pieces when the next repetition appears in the code.</li>
+                </ul>
+              </div>
+              <div class="surface">
+                <h3>Suggested build order from the current app</h3>
+                <ul>
+                  <li>Start with <code>Avatar</code>.</li>
+                  <li>Then extract <code>IconButton</code>.</li>
+                  <li>After that, decide whether <code>Card</code> or <code>PostActions</code> is actually needed.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
