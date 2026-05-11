@@ -344,6 +344,107 @@
         font-size: 0.54em;
       }
 
+      .recap-overview {
+        align-items: start;
+      }
+
+      .recap-overview .image-stack {
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+      }
+
+      .recap-overview .thumb-shot {
+        max-height: 5.4em;
+      }
+
+      .recap-overview .surface ul,
+      .discussion-slide .surface ul {
+        font-size: 0.54em;
+      }
+
+      .recap-code {
+        margin-top: 0.55em;
+      }
+
+      .recap-code pre {
+        margin: 0;
+        width: 100%;
+      }
+
+      .recap-code pre code {
+        font-size: 0.58em;
+        line-height: 1.2;
+        padding: 0.65em;
+      }
+
+      .discussion-layout {
+        align-items: start;
+        display: grid;
+        gap: 0.8em;
+        grid-template-columns: minmax(0, 1.42fr) minmax(0, 0.58fr);
+      }
+
+      .discussion-media {
+        display: grid;
+        gap: 0.55em;
+        grid-template-columns: 1fr;
+        max-width: 10em;
+      }
+
+      .discussion-layout .surface {
+        max-width: none;
+      }
+
+      .discussion-layout .surface p,
+      .discussion-layout .surface li {
+        font-size: 0.9em;
+      }
+
+      .discussion-layout .surface p {
+        max-width: none;
+      }
+
+      .discussion-layout .discussion-questions {
+        margin-left: 0.9em;
+        max-width: none;
+        line-height: 1.2;
+      }
+
+      .discussion-layout .discussion-questions li {
+        margin-bottom: 0.3em;
+      }
+
+      .discussion-layout .discussion-note {
+        font-size: 0.78em;
+      }
+
+      .image-stack,
+      .thumb-grid {
+        display: grid;
+        gap: 0.5em;
+      }
+
+      .thumb-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-bottom: 0.55em;
+      }
+
+      .thumb-shot {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        overflow: hidden;
+        padding: 0;
+      }
+
+      .thumb-shot img {
+        border-radius: 0;
+        display: block;
+        height: 100%;
+        object-fit: contain;
+        object-position: top center;
+        width: 100%;
+      }
+
       .recap-link {
         font-size: 0.5em;
         margin-top: 0.45em;
@@ -504,12 +605,18 @@
         .comparison-grid,
         .resource-grid,
         .matrix,
-        .metrics {
+        .metrics,
+        .thumb-grid,
+        .discussion-media {
           grid-template-columns: 1fr;
         }
 
         .agenda-list.compact {
           column-count: 1;
+        }
+
+        .discussion-layout {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -649,50 +756,70 @@
         <section class="roomy">
           <div class="eyebrow">Recap</div>
           <h2>What you worked on last time and during the workday</h2>
-          <div class="comparison-grid">
-            <div class="surface">
-              <h3>Last lesson</h3>
-              <ul>
-                <li><strong>Getting started with React</strong></li>
-                <li><strong>React Page Layout with Components</strong></li>
-                <li>Setting up React, writing JSX, and building a first page structure.</li>
-              </ul>
+          <div class="two-column recap-overview">
+            <div>
+              <div class="surface">
+                <h3>Last lesson</h3>
+
+                <ul>
+                  <li><strong>Getting started with React</strong></li>
+                  <li><strong>React Page Layout with Components</strong></li>
+                  <li>Set up React, wrote JSX, and started building with components.</li>
+                </ul>
+              </div>
+              <div class="surface" style="margin-top: 0.6em">
+                <h3>During the workday</h3>
+                <ul>
+                  <li>Continue the exercises and keep practicing React basics.</li>
+                  <li>Notice where layout, repetition and component naming felt difficult.</li>
+                </ul>
+              </div>
             </div>
-            <div class="surface">
-              <h3>During the workday</h3>
-              <ul>
-                <li>Continue the exercises and keep practicing React basics.</li>
-                <li>Notice where layout, repetition and component naming felt difficult.</li>
-                <li>Bring questions from your own work so we can connect them to Codeagram today.</li>
-              </ul>
+            <div class="image-stack">
+              <div class="thumb-shot">
+                <img src="./assets/react-my-first-project.png" alt="Screenshot of the My First React App exercise" />
+              </div>
+              <div class="thumb-shot">
+                <img
+                  src="./assets/react-vite-page-layout.png"
+                  alt="Screenshot of the React Page Layout with Components exercise"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="roomy">
+        <section class="roomy discussion-slide">
           <div class="eyebrow">Table Groups</div>
           <h2>Exercise recap together</h2>
-          <div class="comparison-grid">
+          <div class="discussion-layout">
             <div class="surface">
               <h3>Talk together at your table</h3>
-              <ul>
-                <li>Use the two exercises as concrete examples.</li>
-                <li>Explain the React ideas in your own words, not just the code.</li>
-                <li>Compare what felt easy and what felt confusing.</li>
-              </ul>
-            </div>
-            <div class="surface">
-              <h3>Questions to guide the discussion</h3>
-              <ul>
-                <li>What is a component in this exercise?</li>
+              <p>Use both exercises as examples and explain the React ideas in your own words.</p>
+              <ul class="discussion-questions">
+                <li>What is a component in each exercise?</li>
                 <li>Where do you see props?</li>
                 <li>Do you use state? Why or why not?</li>
                 <li>Do you use events or <code>onClick</code>? If not, what could use them later?</li>
-                <li>What did you not understand yet?</li>
+                <li>What felt easy?</li>
+                <li>What is still unclear?</li>
               </ul>
+              <p class="discussion-note" style="margin-bottom: 0">
+                Note your questions so we can collect them afterward.
+              </p>
+            </div>
+            <div class="discussion-media">
+              <div class="thumb-shot">
+                <img src="./assets/react-my-first-project.png" alt="Screenshot of the My First React App exercise" />
+              </div>
+              <div class="thumb-shot">
+                <img
+                  src="./assets/react-vite-page-layout.png"
+                  alt="Screenshot of the React Page Layout with Components exercise"
+                />
+              </div>
             </div>
           </div>
-          <p class="discussion-note">Note your questions so we can collect them afterward.</p>
         </section>
 
         <section class="roomy">
@@ -714,6 +841,17 @@ useEffect(() => {
 {users.map(user => (
   &lt;User key={user.id} name={user.name} mail={user.mail} image={user.image} /&gt;
 ))}</code></pre>
+              <div>
+                <pre><code class="language-jsx">export default function User({ name, mail, image }) {
+  return (
+    &lt;div className="user-card"&gt;
+      &lt;img src={image} alt={name} /&gt;
+      &lt;h2&gt;{name}&lt;/h2&gt;
+      &lt;p&gt;{mail}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+              </div>
               <p class="recap-link">
                 Solution:
                 <a href="https://github.com/cederdorff/react-my-first-project">react-my-first-project</a>
