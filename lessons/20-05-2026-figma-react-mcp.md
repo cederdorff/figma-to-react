@@ -6,60 +6,81 @@
 
 ### Purpose of The Day
 
-You will use Figma MCP/AI-assisted workflows to create a React prototype from a Figma design. You should understand the generated output, evaluate its quality, refactor where needed and add meaningful interaction.
+The purpose of today is to build a bridge from the React foundation in the previous sessions into MCP/AI-assisted workflows.
+
+We will start by revisiting the React ideas from Codeagram and `From Components to Composition`, then use that knowledge to inspect, question and improve generated output from a Figma-to-React workflow.
 
 Focus question:
 
-> How can AI/MCP help us inspect, translate or scaffold from Figma, and where do we still need human design and development judgement?
+> Why does React knowledge matter before using MCP/AI, and how can that knowledge help us turn generated output into a better interactive prototype?
 
-By the end of the day, you should have a deployed or shareable React prototype created from a Figma design with MCP/AI assistance, improved through React refactoring, meaningful interaction and a short test task for a classmate.
+By the end of the day, you should have a shareable React prototype created from a Figma design with MCP/AI assistance, improved through React refactoring, meaningful interaction and a short test task for a classmate.
+
+---
 
 ### Preparation
 
-- Bring your React project.
-- Make sure you understand components, props and state from the first two sessions.
-- Bring or choose a Figma design that can become a small interactive prototype.
-- Be ready to inspect generated code and decide what should be kept, refactored or rebuilt.
-- Be ready to test your prototype with a classmate.
+1. **Finish the Codeagram app as much as possible**
+   - [Codeagram Feed with React Components](https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md)
+2. **Ensure you have an AI coding tool ready**
+   - Make sure you have GitHub Copilot, or alternatively Codex or Claude Code installed in VS Code (extension).
+3. **Ensure you have Figma installed**
+   - You will need it for the MCP/AI-assisted workflow.
+4. **Bring or choose a Figma design**
+   - Pick a design that can become a small interactive prototype with a clear user flow.
+5. **Self-study as needed**
+   - Work on your coding skills with the [CodeDex React course](https://www.codedex.io/react) and/or the [Self-study with CodeDex.io](https://www.notion.so/Self-study-with-CodeDex-io-350bc239db1180af9beacc9a801f863a)
+
+---
 
 ### Agenda
 
-- Recap: why React knowledge matters before using MCP/AI
-  - Revisit components, props, state and component structure.
-  - Connect the first two React sessions to the ability to understand generated code.
-- Figma MCP/AI workflow overview
-  - See how MCP/AI can inspect, translate or scaffold from a Figma design.
-  - Discuss MCP/AI as an assisted workflow, not a replacement for design and development judgement.
-- Demo: generate or scaffold a React version
-  - Start from a Figma design.
-  - Use MCP/AI to create a first React version or scaffold.
-- Read the generated output
-  - Identify components, props, layout, styling, assets and missing state.
-  - Look for where the generated code is helpful and where it needs human decisions.
-- Critique the output
-  - Ask what works, what is too literal, what is duplicated and what needs interaction.
-  - Decide what should be kept, refactored or rebuilt.
-- Refactor into clearer components and add state
-  - Improve structure, naming and reusability.
-  - Add meaningful state and interaction so the result becomes a prototype, not just a static screen.
-- Exercise: create a 2-3 step prototype from a Figma design
-  - Define a user goal, start state, key action, feedback and end state.
-  - Possible flows: overview → detail → action, onboarding → choice → result, product selection → confirmation, or physical object/location → digital content → saved choice.
-- Pair testing with a short user task
-  - Test whether a classmate can understand and complete the prototype flow.
-  - Note where the prototype needs clearer interaction, feedback or structure.
-- Wrap-up: MCP/AI and human judgement
-  - Reflect on where MCP helped.
-  - Reflect on where React knowledge, UX judgement and design decisions were still necessary.
+1. **Today's goals and recap**
+   - Set the focus for the day and show the kind of prototype we are aiming for.
+   - Start with a short Codeagram recap: identify components, props, state and events before we use MCP/AI.
+   - Connect today directly to `From Components to Composition`.
+2. **Why React knowledge matters before using MCP/AI**
+   - Show that generated code is only useful if you can read component structure, follow props and understand where state belongs.
+   - Frame MCP/AI as assisted workflow, not automatic understanding.
+3. **Figma MCP/AI workflow overview**
+   - See how MCP/AI can inspect, translate or scaffold from a Figma design.
+   - Discuss what kinds of output are helpful, and what kinds still need human decisions.
+4. **Demo: from Figma design to first React scaffold**
+   - Start from a Figma design.
+   - Use MCP/AI to create a first React version or scaffold.
+5. **Read the generated output**
+   - Identify components, props, layout, styling, assets and missing state.
+   - Compare the output to the component thinking from Codeagram.
+6. **Critique the output**
+   - Ask what works, what is too literal, what is duplicated and what still needs interaction.
+   - Decide what should be kept, refactored or rebuilt.
+7. **Refactor structure and add interaction**
+   - Improve naming, component boundaries and reusability.
+   - Add meaningful state and interaction so the result becomes a prototype, not just a static screen.
+8. **Exercise: create a 2-3 step prototype from a Figma design**
+   - Define a user goal, start state, key action, feedback and end state.
+   - Possible flows: overview to detail to action, onboarding to choice to result, product selection to confirmation, or physical object/location to digital content to saved choice.
+9. **Pair testing with a short user task**
+   - Test whether a classmate can understand and complete the prototype flow.
+   - Note where the prototype needs clearer interaction, feedback or structure.
+10. **Wrap-up: MCP/AI and human judgement**
+
+- Reflect on where MCP helped.
+- Reflect on where React knowledge, UX judgement and design decisions were still necessary.
+
+---
 
 ### Materials
 
-- Figma file prepared for MCP/AI workflow
-- Figma MCP/AI setup instructions
-- React project/starter repo
-- Generated-code evaluation checklist
-- Refactoring checklist
-- Deployment guide
-- Pair-testing task template
+- **Main materials**
+  - Figma file prepared for MCP/AI workflow
+  - Figma MCP/AI setup instructions
+  - React project/starter repo
+- **Checklists and templates**
+  - Generated-code evaluation checklist
+  - Refactoring checklist
+  - Pair-testing task template
+- **Other**
+  - Deployment guide
 
 ---
