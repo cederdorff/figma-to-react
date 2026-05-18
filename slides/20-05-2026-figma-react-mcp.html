@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Figma to React with MCP: From Design to Interactive Prototype</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+
+    <style>
+      :root {
+        --r-main-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --r-heading-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --r-heading-text-transform: none;
+        --r-heading-letter-spacing: 0;
+        --r-main-color: #dbe7f3;
+        --r-heading-color: #f8fafc;
+        --r-link-color: #7dd3fc;
+        --r-link-color-hover: #a7f3d0;
+        --r-selection-background-color: #164e63;
+        --r-background-color: #08111f;
+      }
+
+      body {
+        background: linear-gradient(145deg, #070b14 0%, #111827 48%, #06151f 100%);
+      }
+
+      .reveal {
+        color: #dbe7f3;
+        font-size: 30px;
+      }
+
+      .reveal .slides section {
+        box-sizing: border-box;
+        text-align: left;
+      }
+
+      .reveal .slides section::before {
+        background: linear-gradient(90deg, #f05d5e, #ffe083, #7ae7c7);
+        border-radius: 999px;
+        content: "";
+        height: 5px;
+        left: 0;
+        position: absolute;
+        top: -0.55em;
+        width: 4.8em;
+      }
+
+      .reveal h1,
+      .reveal h2 {
+        line-height: 1.04;
+        font-weight: 780;
+      }
+
+      .reveal h1 {
+        font-size: 2.1em;
+      }
+
+      .reveal h2 {
+        font-size: 1.6em;
+      }
+
+      .reveal h3 {
+        color: #7dd3fc;
+        font-size: 0.8em;
+        margin: 0 0 0.3em;
+      }
+
+      .reveal p,
+      .reveal li {
+        line-height: 1.28;
+      }
+
+      .reveal p {
+        color: #cbd5e1;
+      }
+
+      .reveal ul,
+      .reveal ol {
+        display: block;
+        margin-left: 1em;
+        max-width: 34ch;
+      }
+
+      .reveal li + li {
+        margin-top: 0.28em;
+      }
+
+      .reveal li::marker {
+        color: #38bdf8;
+      }
+
+      .reveal strong {
+        color: #f8fafc;
+      }
+
+      .reveal code {
+        font-size: 0.78em;
+      }
+
+      .reveal pre {
+        width: 90%;
+        box-shadow: none;
+      }
+
+      .reveal .controls,
+      .reveal .progress {
+        color: #38bdf8;
+      }
+
+      .eyebrow {
+        color: #7dd3fc;
+        font-size: 0.64em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: #94a3b8;
+        font-size: 0.76em;
+      }
+
+      .statement {
+        color: #f8fafc;
+        font-size: 1.12em;
+        font-weight: 720;
+        line-height: 1.2;
+      }
+
+      .roomy,
+      .title-center,
+      .workflow-slide {
+        box-sizing: border-box;
+      }
+
+      .title-center::before {
+        display: none;
+      }
+
+      .title-center {
+        text-align: center !important;
+      }
+
+      .title-center h1,
+      .title-center p,
+      .title-center .hero-tags {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-grid,
+      .two-column,
+      .comparison-grid,
+      .prep-grid,
+      .resource-grid,
+      .flow-grid {
+        display: grid;
+        gap: 0.62em;
+      }
+
+      .hero-grid,
+      .two-column,
+      .comparison-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .prep-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .resource-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .flow-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        margin-top: 0.8em;
+      }
+
+      .deck-card,
+      .surface,
+      .quote-card,
+      .resource-card,
+      .flow-card,
+      .image-frame {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.68));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+      }
+
+      .deck-card,
+      .surface,
+      .quote-card,
+      .resource-card,
+      .flow-card {
+        padding: 0.62em;
+      }
+
+      .accent {
+        color: #7dd3fc;
+      }
+
+      .muted {
+        color: #94a3b8;
+      }
+
+      .hero-tags,
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35em;
+        margin-top: 0.55em;
+      }
+
+      .hero-tags {
+        justify-content: center;
+      }
+
+      .tag {
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.28);
+        border-radius: 999px;
+        color: #bae6fd;
+        display: inline-flex;
+        font-size: 0.46em;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        padding: 0.28em 0.72em;
+        text-transform: uppercase;
+      }
+
+      .agenda-list {
+        counter-reset: agenda;
+        list-style: none;
+        margin-left: 0;
+        max-width: none;
+      }
+
+      .agenda-list li {
+        align-items: start;
+        display: grid;
+        gap: 0.22em;
+        grid-template-columns: 1.75em minmax(0, 1fr);
+      }
+
+      .agenda-list li::before {
+        align-items: center;
+        background: linear-gradient(90deg, #38bdf8, #a78bfa);
+        border-radius: 8px;
+        color: #f8fafc;
+        content: counter(agenda, decimal-leading-zero);
+        counter-increment: agenda;
+        display: inline-flex;
+        font-size: 0.5em;
+        font-weight: 700;
+        height: 1.9em;
+        justify-content: center;
+        margin-top: 0.08em;
+        width: 1.9em;
+      }
+
+      .agenda-list strong {
+        display: block;
+      }
+
+      .app-shot,
+      .image-frame {
+        overflow: hidden;
+      }
+
+      .app-shot img,
+      .image-frame img {
+        display: block;
+        width: 100%;
+      }
+
+      .app-shot img {
+        border-radius: 8px;
+      }
+
+      .focus-list,
+      .check-list {
+        margin-left: 0.95em;
+        max-width: none;
+      }
+
+      .quote-card p {
+        color: #f8fafc;
+        font-size: 1em;
+        line-height: 1.24;
+        margin: 0;
+      }
+
+      .flow-card {
+        min-height: 5.7em;
+      }
+
+      .flow-step {
+        color: #94a3b8;
+        display: block;
+        font-size: 0.42em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.32em;
+        text-transform: uppercase;
+      }
+
+      .flow-card p,
+      .resource-card p,
+      .resource-card ul,
+      .surface p,
+      .surface ul,
+      .deck-card p,
+      .deck-card ul,
+      .quote-card p {
+        font-size: 0.66em;
+        max-width: none;
+      }
+
+      .resource-card h3,
+      .surface h3,
+      .deck-card h3,
+      .flow-card h3 {
+        color: #7dd3fc;
+        font-size: 0.78em;
+      }
+
+      .workflow-slide::before {
+        display: none;
+      }
+
+      .workflow-slide h2,
+      .workflow-slide p {
+        text-align: center;
+      }
+
+      .workflow-slide .flow-card h3,
+      .workflow-slide .flow-card p {
+        text-align: left;
+      }
+
+      .prep-grid .surface ul,
+      .prep-grid .surface p {
+        font-size: 0.62em;
+      }
+
+      .compact-link {
+        font-size: 0.54em;
+        margin-top: 0.5em;
+      }
+
+      @media (max-width: 1100px) {
+        .reveal {
+          font-size: 26px;
+        }
+
+        .hero-grid,
+        .two-column,
+        .comparison-grid,
+        .prep-grid,
+        .resource-grid,
+        .flow-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="title-center">
+          <p class="eyebrow">Interactive Design and Development</p>
+          <h1>Figma to React with MCP:<br />From Design to Interactive Prototype</h1>
+          <p class="subtitle">20-05-2026</p>
+          <div class="hero-tags">
+            <span class="tag">React</span>
+            <span class="tag">Figma</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Prototype</span>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Focus of Today</div>
+          <h2>What are we trying to get to?</h2>
+          <div class="hero-grid">
+            <div>
+              <p class="statement">
+                The goal is not to get perfect generated code. The goal is to turn a Figma design into a small,
+                believable React prototype that we actually understand.
+              </p>
+              <div class="surface">
+                <h3>By the end of today</h3>
+                <ul class="focus-list">
+                  <li>You have a first scaffold from a Figma design.</li>
+                  <li>You have refactored parts of it into clearer React structure.</li>
+                  <li>You have added at least one meaningful interaction.</li>
+                  <li>You can explain what MCP helped with and what still required you.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="quote-card">
+              <p>
+                Why does React knowledge matter before using MCP or AI, and how can that knowledge help us turn
+                generated output into a better interactive prototype?
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Agenda</div>
+          <h2>Day flow</h2>
+          <ol class="agenda-list">
+            <li>
+              <div>
+                <strong>Recap: Codeagram app</strong>
+                Revisit components, props, state and events.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Demo: from Figma design to first React scaffold</strong>
+                Show the result early so the rest of the day has a concrete target.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Why React knowledge matters before using MCP or AI</strong>
+                Use the demo to talk about understanding, not just generating.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Figma MCP or AI workflow overview</strong>
+                See where design context, code generation and human judgement meet.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Exercise time: from scaffold to prototype</strong>
+                Refactor, add interaction and test a small flow.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Wrap-up: MCP or AI and human judgement</strong>
+                Reflect on what the tool did and what you still had to do.
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Preparation</div>
+          <h2>Before class</h2>
+          <div class="prep-grid">
+            <div class="surface">
+              <h3>React and support</h3>
+              <ul>
+                <li>
+                  Finish the
+                  <a href="https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md"
+                    >Codeagram Feed with React Components</a
+                  >
+                  as much as possible.
+                </li>
+                <li>
+                  Use the <a href="https://www.codedex.io/react">CodeDex React course</a> and
+                  <a href="https://www.notion.so/Self-study-with-CodeDex-io-350bc239db1180af9beacc9a801f863a"
+                    >Self-study with CodeDex.io</a
+                  >
+                  if needed.
+                </li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>Tools and context</h3>
+              <ul>
+                <li>Have GitHub Copilot, Codex or Claude Code ready in VS Code.</li>
+                <li>Have Figma installed.</li>
+                <li>
+                  Skim
+                  <a
+                    href="https://help.figma.com/hc/en-us/articles/35280968300439-Figma-MCP-collection-What-is-the-Figma-MCP-server"
+                    >What is the Figma MCP server?</a
+                  >
+                  and watch the video.
+                </li>
+                <li>If you already have a Figma design, bring one with a simple user flow.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Recap</div>
+          <h2>Why start with Codeagram again?</h2>
+          <div class="two-column">
+            <div>
+              <p class="statement" style="font-size: 0.82em">
+                Codeagram is our bridge. It reminds us how to read a UI as components before we ask a tool to help us.
+              </p>
+              <div class="surface">
+                <h3>What to quickly revisit</h3>
+                <ul>
+                  <li>What should become a component?</li>
+                  <li>What should become props?</li>
+                  <li>Where does state belong?</li>
+                  <li>What interactions need events?</li>
+                </ul>
+              </div>
+            </div>
+            <div class="app-shot">
+              <img src="./assets/codeagram.png" alt="Screenshot of the Codeagram app" />
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Demo First</div>
+          <h2>Show the goal early</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>Why do the demo so early?</h3>
+              <ul>
+                <li>It shows the destination before we unpack the theory.</li>
+                <li>It gives students a concrete result to aim for.</li>
+                <li>It makes the rest of the slides easier to understand.</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>What to notice during the demo</h3>
+              <ul>
+                <li>What part came from the design?</li>
+                <li>What part came from the AI tool?</li>
+                <li>What still looks rough or unfinished?</li>
+                <li>What still needs React and UX judgement?</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">React Before MCP</div>
+          <h2>Why React knowledge still matters</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>If you only prompt</h3>
+              <ul>
+                <li>You may get code you cannot explain.</li>
+                <li>You may keep duplicated or overly literal components.</li>
+                <li>You may miss where state and interaction should live.</li>
+                <li>You may accept a static screen instead of a prototype.</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>If you understand React</h3>
+              <ul>
+                <li>You can read the component structure critically.</li>
+                <li>You can decide what to keep, split, rename or rebuild.</li>
+                <li>You can place props, state and events more intentionally.</li>
+                <li>You can turn generated output into something more believable.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">MCP Framing</div>
+          <h2>What is Figma MCP actually doing?</h2>
+          <div class="hero-grid">
+            <div class="surface">
+              <h3>A useful mental model</h3>
+              <p>
+                Think of Figma MCP as a bridge that gives the AI tool more design context: components, layers,
+                variables, spacing and structure.
+              </p>
+              <p style="margin-bottom: 0">The AI tool still generates the code. MCP helps the tool see more of the design.</p>
+            </div>
+            <div class="surface">
+              <h3>Important consequence</h3>
+              <ul>
+                <li>MCP is not a guarantee of good code.</li>
+                <li>Good design context still needs good judgement.</li>
+                <li>Generated output still needs reading, critique and refactoring.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="compact-link">
+            Prep article:
+            <a href="https://help.figma.com/hc/en-us/articles/35280968300439-Figma-MCP-collection-What-is-the-Figma-MCP-server"
+              >Figma MCP collection: What is the Figma MCP server?</a
+            >
+          </p>
+        </section>
+
+        <section class="workflow-slide">
+          <div class="eyebrow">Workflow Overview</div>
+          <h2>One possible day flow</h2>
+          <p>Design context, generated output, and human improvement each play a different role.</p>
+          <div class="flow-grid">
+            <div class="flow-card">
+              <span class="flow-step">01</span>
+              <h3>Figma design</h3>
+              <p>Start with a frame, screen or small flow.</p>
+            </div>
+            <div class="flow-card">
+              <span class="flow-step">02</span>
+              <h3>MCP context</h3>
+              <p>Expose structure, components, variables and layout information.</p>
+            </div>
+            <div class="flow-card">
+              <span class="flow-step">03</span>
+              <h3>AI output</h3>
+              <p>Generate or scaffold a first React version.</p>
+            </div>
+            <div class="flow-card">
+              <span class="flow-step">04</span>
+              <h3>Refactor</h3>
+              <p>Rename, split components, clean structure and remove noise.</p>
+            </div>
+            <div class="flow-card">
+              <span class="flow-step">05</span>
+              <h3>Prototype</h3>
+              <p>Add state, interaction, feedback and a testable user flow.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Exercise Time</div>
+          <h2>From scaffold to prototype</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>Your task</h3>
+              <ul>
+                <li>Start from a Figma design.</li>
+                <li>Use MCP or AI to get a first React scaffold.</li>
+                <li>Refactor at least one part of the structure.</li>
+                <li>Add at least one meaningful interaction.</li>
+                <li>Let a classmate try a short task.</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>Possible flows</h3>
+              <ul>
+                <li>Overview to detail to action</li>
+                <li>Onboarding to choice to result</li>
+                <li>Product selection to confirmation</li>
+                <li>Physical object or location to digital content to saved choice</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Exercise Checklist</div>
+          <h2>What should you improve after generation?</h2>
+          <div class="resource-grid">
+            <div class="resource-card">
+              <h3>Structure</h3>
+              <ul class="check-list">
+                <li>Are the component names clear?</li>
+                <li>Is anything too big or too repeated?</li>
+                <li>Should some values become props?</li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <h3>Interaction</h3>
+              <ul class="check-list">
+                <li>What state is missing?</li>
+                <li>What should react to user input?</li>
+                <li>What feedback should appear after an action?</li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <h3>Prototype quality</h3>
+              <ul class="check-list">
+                <li>Can a classmate understand the flow?</li>
+                <li>Does the prototype feel believable?</li>
+                <li>What should be rebuilt instead of patched?</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Wrap-up</div>
+          <h2>MCP or AI and human judgement</h2>
+          <div class="hero-grid">
+            <div class="surface">
+              <h3>MCP or AI helped with</h3>
+              <ul>
+                <li>Getting to a first version faster</li>
+                <li>Translating design structure into a scaffold</li>
+                <li>Reducing some repetitive setup work</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>You still had to do</h3>
+              <ul>
+                <li>Read and critique the output</li>
+                <li>Refactor for clearer React structure</li>
+                <li>Decide what interaction actually matters</li>
+                <li>Test whether the prototype works for someone else</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">Read</span>
+            <span class="tag">Question</span>
+            <span class="tag">Refactor</span>
+            <span class="tag">Prototype</span>
+            <span class="tag">Test</span>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        transition: "slide",
+        controlsTutorial: false,
+        plugins: [RevealNotes, RevealHighlight]
+      });
+    </script>
+  </body>
+</html>

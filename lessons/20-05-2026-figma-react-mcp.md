@@ -53,10 +53,12 @@ By the end of the day, you should have a shareable React prototype created from 
 ### Materials
 
 - **Slides**
-  - Will be available here
+  - [20-05-2026-figma-react-mcp](https://cederdorff.com/figma-to-react/slides/20-05-2026-figma-react-mcp.html)
 - **Exercises**
   - Will be available here
 - **Other links**
-  - Will be available here
+  - [Figma MCP collection: What is the Figma MCP server?](https://help.figma.com/hc/en-us/articles/35280968300439-Figma-MCP-collection-What-is-the-Figma-MCP-server)
+  - [CodeDex React course](https://www.codedex.io/react)
+  - [Self-study with CodeDex.io](https://www.notion.so/Self-study-with-CodeDex-io-350bc239db1180af9beacc9a801f863a)
 
 ---
