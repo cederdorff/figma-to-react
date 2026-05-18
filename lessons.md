@@ -16,6 +16,8 @@ This file is an index for the RACE lesson plans.
 | 05-05-2026 | Figma to React          | [Workday - Figma to React](lessons/05-05-2026-workday-figma-react.md)                    |
 | 11-05-2026 | Figma to React          | [From Components to Composition](lessons/11-05-2026-components-composition.md)           |
 | 12-05-2026 | Figma to React          | [Workday - Figma to React](lessons/12-05-2026-workday-figma-react.md)                    |
+| 18-05-2026 | Figma to React          | [Workday - Figma to React](lessons/18-05-2026-workday-figma-react.md)                    |
+| 19-05-2026 | Figma to React          | [Workday - Figma to React](lessons/19-05-2026-workday-figma-react.md)                    |
 | 20-05-2026 | Figma to React          | [Figma to React with MCP](lessons/20-05-2026-figma-react-mcp.md)                         |
 | 26-05-2026 | Gesture & Motion Design | [Touch Gestures as Interface](lessons/26-05-2026-touch-gestures-interface.md)            |
 | 29-05-2026 | Gesture & Motion Design | [Motion as UX Feedback](lessons/29-05-2026-motion-ux-feedback.md)                        |
