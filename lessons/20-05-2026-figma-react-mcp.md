@@ -8,13 +8,15 @@
 
 The purpose of today is to build a bridge from the React foundation in the previous sessions into MCP/AI-assisted workflows.
 
-We will start by revisiting the React ideas from Codeagram and `From Components to Composition`, then use that knowledge to inspect, question and improve generated output from a Figma-to-React workflow.
+We will begin with a short recap of Codeagram, then quickly show the target result through a demo: how a Figma design can become a first React scaffold with MCP/AI support.
+
+From there, we will use React knowledge to read, question, refactor and improve the generated output, so it becomes a small interactive prototype rather than just a static screen.
 
 Focus question:
 
 > Why does React knowledge matter before using MCP/AI, and how can that knowledge help us turn generated output into a better interactive prototype?
 
-By the end of the day, you should have a shareable React prototype created from a Figma design with MCP/AI assistance, improved through React refactoring, meaningful interaction and a short test task for a classmate.
+By the end of the day, you should have a shareable React prototype created from a Figma design with MCP/AI assistance, improved through React refactoring and meaningful interaction.
 
 ---
 
@@ -44,7 +46,8 @@ By the end of the day, you should have a shareable React prototype created from 
 4. **Figma MCP/AI workflow overview**
    - See how MCP/AI can inspect, translate or scaffold from a Figma design.
 5. **Exercise time: from scaffold to prototype**
-   - Refactor, add interaction and test a small prototype flow.
+   - Refactor and add interaction so the result becomes a small prototype flow.
+   - The goal is not only to generate a screen, but to improve it into a small interactive prototype.
 6. **Wrap-up: MCP/AI and human judgement**
    - Reflect on what MCP helped with and what still required React and UX judgement.
 
@@ -55,7 +58,7 @@ By the end of the day, you should have a shareable React prototype created from 
 - **Slides**
   - [20-05-2026-figma-react-mcp](https://cederdorff.com/figma-to-react/slides/20-05-2026-figma-react-mcp.html)
 - **Exercises**
-  - Will be available here
+  - [Codeagram Feed with React Components](https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md)
 - **Other links**
   - [Figma MCP collection: What is the Figma MCP server?](https://help.figma.com/hc/en-us/articles/35280968300439-Figma-MCP-collection-What-is-the-Figma-MCP-server)
   - [CodeDex React course](https://www.codedex.io/react)
