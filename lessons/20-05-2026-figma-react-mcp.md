@@ -26,8 +26,8 @@ By the end of the day, you should have a shareable React prototype created from 
    - Make sure you have GitHub Copilot, or alternatively Codex or Claude Code installed in VS Code (extension).
 3. **Ensure you have Figma installed**
    - You will need it for the MCP/AI-assisted workflow.
-4. **Bring or choose a Figma design**
-   - Pick a design that can become a small interactive prototype with a clear user flow.
+4. **Bring a Figma design if you have one**
+   - It should be something that can become a small interactive prototype with a clear user flow.
 5. **Self-study as needed**
    - Work on your coding skills with the [CodeDex React course](https://www.codedex.io/react) and/or the [Self-study with CodeDex.io](https://www.notion.so/Self-study-with-CodeDex-io-350bc239db1180af9beacc9a801f863a)
 
