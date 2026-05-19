@@ -349,6 +349,59 @@
         font-size: 0.62em;
       }
 
+      .goal-flow {
+        align-items: center;
+        display: grid;
+        gap: 0.45em;
+        grid-template-columns: minmax(0, 1fr) 0.28fr minmax(0, 1fr) 0.28fr minmax(0, 1fr);
+        margin-top: 0.8em;
+      }
+
+      .goal-card {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.78));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 12px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+        min-height: 7.4em;
+        padding: 0.75em 0.7em;
+      }
+
+      .goal-step {
+        color: #94a3b8;
+        display: block;
+        font-size: 0.42em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.35em;
+        text-transform: uppercase;
+      }
+
+      .goal-card h3 {
+        color: #f8fafc;
+        font-size: 0.82em;
+        margin-bottom: 0.2em;
+      }
+
+      .goal-card p {
+        font-size: 0.62em;
+        margin-bottom: 0;
+      }
+
+      .goal-arrow {
+        align-items: center;
+        color: #7dd3fc;
+        display: flex;
+        font-size: 1.35em;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 1;
+      }
+
+      .goal-note {
+        margin-top: 0.7em;
+        max-width: none;
+      }
+
       .compact-link {
         font-size: 0.54em;
         margin-top: 0.5em;
@@ -364,8 +417,14 @@
         .comparison-grid,
         .prep-grid,
         .resource-grid,
-        .flow-grid {
+        .flow-grid,
+        .goal-flow {
           grid-template-columns: 1fr;
+        }
+
+        .goal-arrow {
+          font-size: 0.9em;
+          transform: rotate(90deg);
         }
       }
     </style>
@@ -388,29 +447,32 @@
         <section class="roomy">
           <div class="eyebrow">Focus of Today</div>
           <h2>What are we trying to get to?</h2>
-          <div class="hero-grid">
-            <div>
-              <p class="statement">
-                The goal is not to get perfect generated code. The goal is to turn a Figma design into a small,
-                believable React prototype that we actually understand.
-              </p>
-              <div class="surface">
-                <h3>By the end of today</h3>
-                <ul class="focus-list">
-                  <li>You have a first scaffold from a Figma design.</li>
-                  <li>You have refactored parts of it into clearer React structure.</li>
-                  <li>You have added at least one meaningful interaction.</li>
-                  <li>You can explain what MCP helped with and what still required you.</li>
-                </ul>
-              </div>
+          <p class="statement">
+            Today we move through one clear path: from a Figma design, through MCP design context, into a React
+            prototype that we can inspect and improve.
+          </p>
+          <div class="goal-flow">
+            <div class="goal-card">
+              <span class="goal-step">Step 01</span>
+              <h3>Figma Design</h3>
+              <p>Start with one clean frame or a small flow with clear layout, repeated UI, and structure.</p>
             </div>
-            <div class="quote-card">
-              <p>
-                Why does React knowledge matter before using MCP/AI, and how can that knowledge help us turn
-                generated output into a better interactive prototype?
-              </p>
+            <div class="goal-arrow" aria-hidden="true">→</div>
+            <div class="goal-card">
+              <span class="goal-step">Step 02</span>
+              <h3>MCP Context</h3>
+              <p>Use a Figma link so the AI can read the design context instead of guessing from a plain prompt.</p>
+            </div>
+            <div class="goal-arrow" aria-hidden="true">→</div>
+            <div class="goal-card">
+              <span class="goal-step">Step 03</span>
+              <h3>React Prototype</h3>
+              <p>Generate a first version in React that we can improve.</p>
             </div>
           </div>
+          <p class="goal-note">
+            The goal is not perfect generated code. The goal is a small React prototype that we actually understand.
+          </p>
         </section>
 
         <section class="roomy">
