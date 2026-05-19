@@ -710,7 +710,7 @@ When Codeagram feels more stable, try the workflow on a new small app or concept
 Use this order:
 
 1. Choose a small idea.
-   - Use an existing Figma design, or create one yourself.
+   - Use an existing Figma design, or create one yourself (or use Figma Make to get started).
 2. Keep the scope small.
    - Start with one screen or one very small flow.
 3. Create a new React project.
