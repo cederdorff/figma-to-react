@@ -662,6 +662,125 @@
         color: #bae6fd;
       }
 
+      .tree-slide .tree-intro {
+        font-size: 0.82em;
+        margin-bottom: 0.55em;
+        text-align: center;
+      }
+
+      .component-tree {
+        align-items: start;
+        display: grid;
+        gap: 0.8em;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      }
+
+      .tree-canvas {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.78));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 12px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+        padding: 0.72em;
+      }
+
+      .tree-row {
+        display: grid;
+        gap: 0.44em;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 0.4em;
+      }
+
+      .tree-node {
+        background: linear-gradient(180deg, rgba(56, 189, 248, 0.14), rgba(30, 41, 59, 0.88));
+        border: 1px solid rgba(125, 211, 252, 0.32);
+        border-radius: 10px;
+        color: #f8fafc;
+        font-size: 0.52em;
+        font-weight: 700;
+        min-height: 3.1em;
+        padding: 0.62em 0.5em;
+        text-align: center;
+      }
+
+      .tree-node small {
+        color: #bae6fd;
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+      }
+
+      .tree-root {
+        background: linear-gradient(180deg, rgba(52, 211, 153, 0.2), rgba(15, 23, 42, 0.9));
+        border-color: rgba(52, 211, 153, 0.38);
+        margin: 0 auto;
+        max-width: 15.5em;
+      }
+
+      .tree-connector {
+        color: #7dd3fc;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        margin-top: 0.2em;
+        text-align: center;
+      }
+
+      .tree-node.maybe {
+        background: linear-gradient(180deg, rgba(250, 204, 21, 0.2), rgba(15, 23, 42, 0.9));
+        border-color: rgba(250, 204, 21, 0.44);
+        position: relative;
+      }
+
+      .tree-node.maybe::after {
+        align-items: center;
+        background: #facc15;
+        border: 1px solid #fef08a;
+        border-radius: 999px;
+        color: #1e293b;
+        content: "?";
+        display: inline-flex;
+        font-size: 0.82em;
+        font-weight: 800;
+        height: 1.25em;
+        justify-content: center;
+        position: absolute;
+        right: -0.35em;
+        top: -0.35em;
+        width: 1.25em;
+      }
+
+      .tree-hint {
+        color: #fde68a;
+        font-size: 0.5em;
+        margin-top: 0.35em;
+        text-align: center;
+      }
+
+      .tree-questions {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.78));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 12px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+        padding: 0.72em;
+      }
+
+      .tree-questions h3 {
+        color: #7dd3fc;
+        font-size: 0.76em;
+      }
+
+      .tree-questions ul {
+        font-size: 0.62em;
+        margin-bottom: 0;
+      }
+
+      .tree-note {
+        color: #94a3b8;
+        font-size: 0.58em;
+        margin-top: 0.6em;
+        text-align: center;
+      }
+
       @media (max-width: 1100px) {
         .reveal {
           font-size: 26px;
@@ -673,7 +792,8 @@
         .prep-grid,
         .resource-grid,
         .flow-grid,
-        .goal-flow {
+        .goal-flow,
+        .component-tree {
           grid-template-columns: 1fr;
         }
 
@@ -934,7 +1054,7 @@
                   <li><strong>Structure:</strong> Why did you split things the way you did?</li>
                   <li>
                     <strong>Five core concepts:</strong> Find one example of JSX, components, props, state, and events
-                    in your code — we will map these together on the next slide.
+                    in your code — use the map on the next slide.
                   </li>
                 </ul>
               </div>
@@ -1007,6 +1127,80 @@
               </div>
               <h3>Respond to actions</h3>
               <p>Where did you handle clicks or input changes?</p>
+            </div>
+          </div>
+          <p class="compact-link" style="text-align: center; margin-top: 0.8em">
+            Need a refresher?
+            <a
+              href="https://cederdorff.com/figma-to-react/slides/11-05-2026-components-composition.html#/12"
+              target="_blank"
+              >Slides 13–20 from last lesson →</a
+            >
+          </p>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Before We Look at the Solution</div>
+          <h2>What if we split it into more components?</h2>
+          <p class="statement tree-intro">Look at your code and discuss where smaller components could live.</p>
+          <div class="component-tree">
+            <div class="tree-canvas">
+              <div class="tree-node tree-root">
+                <small>Current parent</small>
+                CodeagramApp
+              </div>
+              <div class="tree-connector">|</div>
+              <div class="tree-row">
+                <div class="tree-node">
+                  <small>Already a component</small>
+                  Header
+                </div>
+                <div class="tree-node maybe">
+                  <small>Could this split?</small>
+                  PostFeed
+                </div>
+                <div class="tree-node maybe">
+                  <small>Could this split?</small>
+                  Sidebar
+                </div>
+              </div>
+              <div class="tree-hint">? marks places where a smaller component might help</div>
+            </div>
+            <div class="tree-questions">
+              <h3>Talk through in pairs</h3>
+              <ul>
+                <li>Which part looks reusable?</li>
+                <li>Which part feels too big?</li>
+                <li>What could you name one smaller component?</li>
+              </ul>
+            </div>
+          </div>
+          <p class="tree-note">No perfect answer needed. Just start seeing component possibilities.</p>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Suggested Solution</div>
+          <h2>Here is how I structured the Codeagram app</h2>
+          <div class="two-column">
+            <div>
+              <p class="statement" style="font-size: 0.82em">
+                This is one way to solve it — not the only way. Use it to compare your choices, not to judge them.
+              </p>
+              <div class="surface">
+                <h3>What to look for in the repo</h3>
+                <ul>
+                  <li><strong>Component breakdown:</strong> Which parts became their own component and why.</li>
+                  <li><strong>Props vs. state:</strong> What is passed down and what lives locally.</li>
+                  <li><strong>Event handling:</strong> Where interactions are defined and how they flow.</li>
+                  <li><strong>JSX structure:</strong> How the markup reflects the visual hierarchy.</li>
+                </ul>
+              </div>
+              <p class="compact-link">
+                <a href="https://github.com/cederdorff/codeagram" target="_blank">github.com/cederdorff/codeagram →</a>
+              </p>
+            </div>
+            <div class="app-shot">
+              <img src="./assets/codeagram.png" alt="Screenshot of the Codeagram app" />
             </div>
           </div>
         </section>
