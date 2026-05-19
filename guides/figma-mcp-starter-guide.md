@@ -35,6 +35,10 @@ If you want the short version, do this:
 
 If that works, then move on to more screens, more views, and more advanced tasks.
 
+You do not need to understand everything before you start.
+
+If you are unsure, begin with this quick version and learn the rest while you work.
+
 ---
 
 ## Before You Start
@@ -61,8 +65,10 @@ Note:
 > To use them more carefully:
 >
 > - start with smaller prompts first
+> - large prompts often use more credits and can give messier results
 > - use the smallest relevant Figma context you can
 > - refine a working prompt instead of starting over each time
+> - if a result is wrong, adjust the prompt in a focused way before retrying
 > - do not keep resending large prompts without changing anything
 
 Official setup article:
