@@ -760,6 +760,180 @@
         word-break: break-all;
       }
 
+      .review-slide::before,
+      .takeaway-slide::before {
+        display: none;
+      }
+
+      .review-slide h2,
+      .review-slide p,
+      .takeaway-slide h2,
+      .takeaway-slide p {
+        text-align: center;
+      }
+
+      .review-slide .review-intro,
+      .takeaway-slide .takeaway-intro {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 30em;
+      }
+
+      .review-slide .review-grid {
+        display: grid;
+        gap: 0.48em;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 0.65em;
+      }
+
+      .review-slide .review-card,
+      .takeaway-slide .takeaway-card,
+      .takeaway-slide .takeaway-banner {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.78));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 14px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+      }
+
+      .review-slide .review-card {
+        min-height: 8.6em;
+        padding: 0.72em;
+        position: relative;
+      }
+
+      .review-slide .review-card::before {
+        background: var(--review-accent, linear-gradient(90deg, #38bdf8, #7ae7c7));
+        content: "";
+        height: 4px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .review-slide .review-step,
+      .takeaway-slide .takeaway-step {
+        color: #94a3b8;
+        display: block;
+        font-size: 0.4em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .review-slide .review-card h3,
+      .takeaway-slide .takeaway-card h3,
+      .takeaway-slide .takeaway-banner h3 {
+        color: #f8fafc;
+        font-size: 0.9em;
+        margin: 0.16em 0 0.18em;
+        text-align: left;
+      }
+
+      .review-slide .review-card p,
+      .takeaway-slide .takeaway-card p,
+      .takeaway-slide .takeaway-banner p {
+        font-size: 0.58em;
+        line-height: 1.24;
+        margin: 0;
+        max-width: none;
+        text-align: left;
+      }
+
+      .review-slide .review-prompt {
+        align-items: center;
+        background: rgba(8, 17, 31, 0.68);
+        border: 1px dashed rgba(125, 211, 252, 0.28);
+        border-radius: 12px;
+        color: #dbe7f3;
+        display: grid;
+        font-size: 0.48em;
+        font-weight: 700;
+        line-height: 1.22;
+        margin-top: 0.52em;
+        min-height: 4.4em;
+        padding: 0.55em 0.62em;
+        text-align: center;
+      }
+
+      .review-slide .review-structure {
+        --review-accent: linear-gradient(90deg, #38bdf8, #14b8a6);
+      }
+
+      .review-slide .review-interaction {
+        --review-accent: linear-gradient(90deg, #f59e0b, #fb7185);
+      }
+
+      .review-slide .review-quality {
+        --review-accent: linear-gradient(90deg, #a78bfa, #38bdf8);
+      }
+
+      .review-slide .review-note {
+        color: #fde68a;
+        font-size: 0.58em;
+        font-weight: 700;
+        margin-top: 0.55em;
+      }
+
+      .takeaway-slide .takeaway-grid {
+        display: grid;
+        gap: 0.5em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 0.68em;
+      }
+
+      .takeaway-slide .takeaway-card {
+        min-height: 9.2em;
+        padding: 0.76em;
+      }
+
+      .takeaway-slide .takeaway-kicker {
+        align-items: center;
+        border-radius: 999px;
+        display: inline-flex;
+        font-size: 0.38em;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        padding: 0.24em 0.62em;
+        text-transform: uppercase;
+      }
+
+      .takeaway-slide .kicker-ai {
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(56, 189, 248, 0.22);
+        color: #bae6fd;
+      }
+
+      .takeaway-slide .kicker-human {
+        background: rgba(251, 191, 36, 0.12);
+        border: 1px solid rgba(251, 191, 36, 0.24);
+        color: #fde68a;
+      }
+
+      .takeaway-slide .takeaway-list {
+        display: grid;
+        gap: 0.34em;
+        margin-top: 0.55em;
+      }
+
+      .takeaway-slide .takeaway-line {
+        background: rgba(8, 17, 31, 0.68);
+        border: 1px dashed rgba(148, 163, 184, 0.25);
+        border-radius: 12px;
+        color: #dbe7f3;
+        font-size: 0.5em;
+        font-weight: 700;
+        line-height: 1.2;
+        padding: 0.58em 0.64em;
+        text-align: left;
+      }
+
+      .takeaway-slide .takeaway-final {
+        margin-top: 0.55em;
+        padding: 0.7em 0.82em;
+        text-align: center;
+      }
+
       .basics-map {
         display: grid;
         gap: 0.4em;
@@ -1211,6 +1385,11 @@
           transform: rotate(90deg);
         }
 
+        .review-slide .review-grid,
+        .takeaway-slide .takeaway-grid {
+          grid-template-columns: 1fr;
+        }
+
         .tree-children,
         .tree-subrow,
         .tree-subrow.three-up,
@@ -1254,12 +1433,6 @@
               <div>
                 <strong>Recap: Codeagram app</strong>
                 Quick refresh on components, props, state, and events.
-              </div>
-            </li>
-            <li>
-              <div>
-                <strong>Demo: from Figma design to first React scaffold</strong>
-                See the target output early.
               </div>
             </li>
             <li>
@@ -1889,66 +2062,58 @@
           </div>
         </section>
 
-        <section class="roomy">
+        <section class="roomy review-slide">
           <div class="eyebrow">Exercise Checklist</div>
           <h2>What should you improve after generation?</h2>
-          <div class="resource-grid">
-            <div class="resource-card">
+          <p class="review-intro">Do not stop at the first draft. Read it through these three lenses.</p>
+          <div class="review-grid">
+            <article class="review-card review-structure">
+              <span class="review-step">Lens 01</span>
               <h3>Structure</h3>
-              <ul class="check-list">
-                <li>Are the component names clear?</li>
-                <li>Is anything too big or too repeated?</li>
-                <li>Should some values become props?</li>
-              </ul>
-            </div>
-            <div class="resource-card">
+              <p>Look at naming, repeated UI, and whether parts should become smaller components or props.</p>
+              <div class="review-prompt">Is this component clear, or is it trying to do too much?</div>
+            </article>
+            <article class="review-card review-interaction">
+              <span class="review-step">Lens 02</span>
               <h3>Interaction</h3>
-              <ul class="check-list">
-                <li>What state is missing?</li>
-                <li>What should react to user input?</li>
-                <li>What feedback should appear after an action?</li>
-              </ul>
-            </div>
-            <div class="resource-card">
-              <h3>Prototype quality</h3>
-              <ul class="check-list">
-                <li>If someone else tries it, can they understand the flow?</li>
-                <li>Does the prototype feel believable?</li>
-                <li>What should be rebuilt instead of patched?</li>
-              </ul>
-            </div>
+              <p>Look for missing state, user feedback, and places where the prototype should react.</p>
+              <div class="review-prompt">What should happen when a user clicks, types, or chooses?</div>
+            </article>
+            <article class="review-card review-quality">
+              <span class="review-step">Lens 03</span>
+              <h3>Believability</h3>
+              <p>Look at whether the flow feels understandable and whether the prototype should be rebuilt instead of patched.</p>
+              <div class="review-prompt">If someone else tries it, will the flow make sense?</div>
+            </article>
           </div>
+          <p class="review-note">Pick one improvement first. Make it real before moving on.</p>
         </section>
 
-        <section class="roomy">
+        <section class="roomy takeaway-slide">
           <div class="eyebrow">Wrap-up</div>
           <h2>Key takeaways: MCP/AI and human judgement</h2>
-          <div class="hero-grid">
-            <div class="surface">
-              <h3>MCP/AI helped with</h3>
-              <ul>
-                <li>Getting to a first version faster</li>
-                <li>Translating design structure into a scaffold</li>
-                <li>Reducing some repetitive setup work</li>
-              </ul>
-            </div>
-            <div class="surface">
-              <h3>You still had to do</h3>
-              <ul>
-                <li>Read and critique the output</li>
-                <li>Refactor for clearer React structure</li>
-                <li>Decide what interaction actually matters</li>
-                <li>If there is time, let someone else try the flow</li>
-              </ul>
-            </div>
+          <p class="takeaway-intro">MCP/AI helps you start faster. You still decide what makes the prototype good.</p>
+          <div class="takeaway-grid">
+            <article class="takeaway-card">
+              <span class="takeaway-kicker kicker-ai">MCP/AI is good at</span>
+              <h3>Getting you started</h3>
+              <div class="takeaway-list">
+                <div class="takeaway-line">Reading more real design context</div>
+                <div class="takeaway-line">Generating a first React draft</div>
+                <div class="takeaway-line">Reducing repetitive setup work</div>
+              </div>
+            </article>
+            <article class="takeaway-card">
+              <span class="takeaway-kicker kicker-human">You are still responsible for</span>
+              <h3>Making it good</h3>
+              <div class="takeaway-list">
+                <div class="takeaway-line">Reading and questioning the output</div>
+                <div class="takeaway-line">Refactoring for clearer React structure</div>
+                <div class="takeaway-line">Choosing the right interaction and feedback</div>
+              </div>
+            </article>
           </div>
-          <div class="tag-row">
-            <span class="tag">Read</span>
-            <span class="tag">Question</span>
-            <span class="tag">Refactor</span>
-            <span class="tag">Prototype</span>
-            <span class="tag">Reflect</span>
-          </div>
+          <p class="takeaway-final">Use AI for speed. Use your own judgement for quality.</p>
         </section>
       </div>
     </div>

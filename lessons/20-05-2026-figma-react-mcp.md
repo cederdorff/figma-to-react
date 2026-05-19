@@ -8,7 +8,7 @@
 
 The purpose of today is to build a bridge from the React foundation in the previous sessions into MCP/AI-assisted workflows.
 
-We will begin with a short recap of Codeagram, then quickly show the target result through a demo: how a Figma design can become a first React scaffold with MCP/AI support.
+We will begin with a short recap of Codeagram, then move into the Figma-to-React workflow and talk through how a Figma design can become a first React scaffold with MCP/AI support.
 
 From there, we will use React knowledge to read, question, refactor and improve the generated output, so it becomes a small interactive prototype rather than just a static screen.
 
@@ -41,13 +41,11 @@ By the end of the day, you should have a shareable React prototype created from 
    - Frame the day and connect React basics to reading, questioning, and improving generated output.
 2. **Recap: Codeagram app**
    - Revisit components, props, state, and events as a bridge from `From Components to Composition`.
-3. **Demo: from Figma design to first React scaffold**
-   - Show the target early and inspect what the workflow gives us.
-4. **Figma MCP/AI workflow overview**
+3. **Figma MCP/AI workflow overview**
    - Move from Figma design, to MCP context, to a first React scaffold.
-5. **Workshop: from Figma design to React**
+4. **Workshop: from Figma design to React**
    - Use the Figma MCP Starter Guide to set up MCP in VS Code, generate a first scaffold, then refactor and add meaningful interaction.
-6. **Wrap-up**
+5. **Wrap-up**
    - Summarize key takeaways and what to practice next.
 
 ---
