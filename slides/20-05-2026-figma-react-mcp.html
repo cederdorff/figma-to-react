@@ -513,6 +513,49 @@
         </section>
 
         <section class="roomy">
+          <div class="eyebrow">Agenda</div>
+          <h2>Day flow</h2>
+          <ol class="agenda-list">
+            <li>
+              <div>
+                <strong>Introduction: why React knowledge matters before MCP/AI</strong>
+                Why React basics still matter in an MCP/AI workflow.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Recap: Codeagram app</strong>
+                Quick refresh on components, props, state, and events.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Demo: from Figma design to first React scaffold</strong>
+                See the target output early.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Figma MCP/AI workflow overview</strong>
+                From design context to first scaffold.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Workshop: from Figma design to React</strong>
+                Build, refactor, and add interaction.
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Wrap-up</strong>
+                Key takeaways and next practice steps.
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="roomy">
           <div class="eyebrow">Focus of Today</div>
           <h2>What are we trying to get to?</h2>
           <p class="statement">
@@ -689,110 +732,23 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Agenda</div>
-          <h2>Day flow</h2>
-          <ol class="agenda-list">
-            <li>
-              <div>
-                <strong>Introduction: why React knowledge matters before MCP/AI</strong>
-                Why React basics still matter in an MCP/AI workflow.
-              </div>
-            </li>
-            <li>
-              <div>
-                <strong>Recap: Codeagram app</strong>
-                Quick refresh on components, props, state, and events.
-              </div>
-            </li>
-            <li>
-              <div>
-                <strong>Demo: from Figma design to first React scaffold</strong>
-                See the target output early.
-              </div>
-            </li>
-            <li>
-              <div>
-                <strong>Figma MCP/AI workflow overview</strong>
-                From design context to first scaffold.
-              </div>
-            </li>
-            <li>
-              <div>
-                <strong>Workshop: from Figma design to React</strong>
-                Build, refactor, and add interaction.
-              </div>
-            </li>
-            <li>
-              <div>
-                <strong>Wrap-up</strong>
-                Key takeaways and next practice steps.
-              </div>
-            </li>
-          </ol>
-        </section>
-
-        <section class="roomy">
-          <div class="eyebrow">Preparation</div>
-          <h2>Before class</h2>
-          <div class="prep-grid">
-            <div class="surface">
-              <h3>React and support</h3>
-              <ul>
-                <li>
-                  Finish the
-                  <a href="https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md"
-                    >Codeagram Feed with React Components</a
-                  >
-                  as much as possible.
-                </li>
-                <li>
-                  Use the <a href="https://www.codedex.io/react">CodeDex React course</a> and
-                  <a href="https://www.notion.so/Self-study-with-CodeDex-io-350bc239db1180af9beacc9a801f863a"
-                    >Self-study with CodeDex.io</a
-                  >
-                  if needed.
-                </li>
-              </ul>
-            </div>
-            <div class="surface">
-              <h3>Tools and context</h3>
-              <ul>
-                <li>Have GitHub Copilot, Codex or Claude Code ready in VS Code.</li>
-                <li>Have Figma installed.</li>
-                <li>
-                  Skim
-                  <a
-                    href="https://help.figma.com/hc/en-us/articles/35280968300439-Figma-MCP-collection-What-is-the-Figma-MCP-server"
-                    >What is the Figma MCP server?</a
-                  >
-                  and watch the video.
-                </li>
-                <li>
-                  Skim the
-                  <a href="../guides/figma-mcp-starter-guide.md">Figma MCP Starter Guide</a>
-                  before class.
-                </li>
-                <li>If you already have a Figma design, bring one with a simple user flow.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="roomy">
           <div class="eyebrow">Recap</div>
-          <h2>Why start with Codeagram again?</h2>
+          <h2>Codeagram app: your React foundation</h2>
           <div class="two-column">
             <div>
               <p class="statement" style="font-size: 0.82em">
-                Codeagram is our bridge. It reminds us how to read a UI as components before we ask a tool to help us.
+                You just built Codeagram in React. Let's review what you created and why that structure matters for
+                MCP/AI workflows.
               </p>
               <div class="surface">
-                <h3>What to quickly revisit</h3>
+                <h3>In pairs, talk through</h3>
                 <ul>
-                  <li>What should become a component?</li>
-                  <li>What should become props?</li>
-                  <li>Where does state belong?</li>
-                  <li>What interactions need events?</li>
+                  <li><strong>Component tree:</strong> Draw all your components and how they connect.</li>
+                  <li><strong>Structure:</strong> Why did you split things the way you did?</li>
+                  <li>
+                    <strong>Five core concepts:</strong> Find one example of components, props, state, events, and
+                    lifecycle in your code.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -802,26 +758,32 @@
           </div>
         </section>
 
-        <section class="roomy">
-          <div class="eyebrow">Demo</div>
-          <h2>From Figma design to first React scaffold</h2>
-          <div class="comparison-grid">
-            <div class="surface">
-              <h3>Why do the demo so early?</h3>
-              <ul>
-                <li>It shows the destination before we unpack the theory.</li>
-                <li>It gives students a concrete result to aim for.</li>
-                <li>It makes the rest of the slides easier to understand.</li>
-              </ul>
+        <section class="workflow-slide">
+          <div class="eyebrow">React Recap</div>
+          <h2>The five core concepts in your Codeagram app</h2>
+          <p class="statement" style="margin-bottom: 0.7em">
+            Spot these in your own code—this is your React foundation for everything that comes next.
+          </p>
+          <div class="visual-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1em">
+            <div class="matrix-card" style="background: linear-gradient(120deg, #38bdf8 0%, #0ea5e9 100%)">
+              <h3>Components</h3>
+              <p>Reusable UI building blocks. Each should do one thing well.</p>
             </div>
-            <div class="surface">
-              <h3>What to notice during the demo</h3>
-              <ul>
-                <li>What part came from the design?</li>
-                <li>What part came from the AI tool?</li>
-                <li>What still looks rough or unfinished?</li>
-                <li>What still needs React and UX judgement?</li>
-              </ul>
+            <div class="matrix-card" style="background: linear-gradient(120deg, #a78bfa 0%, #7c3aed 100%)">
+              <h3>Props</h3>
+              <p>Inputs to components. Pass data and callbacks down the tree.</p>
+            </div>
+            <div class="matrix-card" style="background: linear-gradient(120deg, #f472b6 0%, #be185d 100%)">
+              <h3>State</h3>
+              <p>Data that changes. Lives in the component that owns it.</p>
+            </div>
+            <div class="matrix-card" style="background: linear-gradient(120deg, #facc15 0%, #ca8a04 100%)">
+              <h3>Events</h3>
+              <p>How your UI responds to user actions (click, input, etc).</p>
+            </div>
+            <div class="matrix-card" style="background: linear-gradient(120deg, #34d399 0%, #059669 100%)">
+              <h3>Lifecycle</h3>
+              <p>What happens when? Mount, update, unmount, effects.</p>
             </div>
           </div>
         </section>
