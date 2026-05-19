@@ -37,19 +37,18 @@ By the end of the day, you should have a shareable React prototype created from 
 
 ### Agenda
 
-1. **Recap: Codeagram app**
-   - Revisit components, props, state and events as a bridge from `From Components to Composition`.
-2. **Demo: from Figma design to first React scaffold**
-   - Go from design to first output and inspect what the workflow gives us.
-3. **Why React knowledge matters before using MCP/AI**
-   - Connect the React basics from the previous lessons to the need to read, question, validate, and improve generated output.
+1. **Introduction: why React knowledge matters before MCP/AI**
+   - Frame the day and connect React basics to reading, questioning, and improving generated output.
+2. **Recap: Codeagram app**
+   - Revisit components, props, state, and events as a bridge from `From Components to Composition`.
+3. **Demo: from Figma design to first React scaffold**
+   - Show the target early and inspect what the workflow gives us.
 4. **Figma MCP/AI workflow overview**
-   - See how the workflow moves from Figma design, to MCP context, to a first React scaffold.
-5. **Exercise time: from scaffold to prototype**
-   - Use the Figma MCP Starter Guide to set up Figma MCP with VS Code, get design context, generate a first scaffold, then refactor and add interaction.
-   - The goal is not only to generate a screen, but to improve it into a small interactive prototype.
-6. **Wrap-up: MCP/AI and human judgement**
-   - Reflect on what MCP helped with and what still required React and UX judgement.
+   - Move from Figma design, to MCP context, to a first React scaffold.
+5. **Workshop: from Figma design to React**
+   - Use the Figma MCP Starter Guide to set up MCP in VS Code, generate a first scaffold, then refactor and add meaningful interaction.
+6. **Wrap-up**
+   - Summarize key takeaways and what to practice next.
 
 ---
 
