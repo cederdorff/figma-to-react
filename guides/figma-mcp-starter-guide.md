@@ -299,6 +299,73 @@ MCP and AI can help you move faster, but you still need React knowledge to evalu
 
 ---
 
+## Prompting Tips and Best Practices
+
+When you prompt your MCP client, these habits usually lead to better results:
+
+### Start small
+
+- Start with one frame, not a whole app.
+- Ask for one working screen before asking for multiple pages.
+- Get a simple result first, then improve it.
+
+### Be specific
+
+- Say exactly what you want the AI to do.
+- If you want structure help, ask for structure help.
+- If you want styling help, ask for styling help.
+- If you want refactoring, say that directly.
+
+### Improve one thing at a time
+
+- Do not ask for layout fixes, new features, routing, animations, and refactoring in the same prompt.
+- Change one thing, test it, then continue.
+
+### Use better links
+
+- Link to the whole frame when you want a first implementation.
+- Link to a specific component, layer, icon, or section when you want a more targeted change.
+- Smaller context often gives cleaner results.
+
+### Ask for explanation
+
+- Ask the AI to explain the files it changed.
+- Ask it to explain the component structure.
+- Ask it where props and state are used.
+
+### Ask for React quality, not only visual similarity
+
+- A result can look correct and still be poorly structured.
+- Ask whether the component structure can be improved.
+- Ask whether repeated values should become props.
+- Ask whether the code is too duplicated or too literal.
+
+### Compare against your own knowledge
+
+- Do not assume the generated code is “correct” just because it runs.
+- Compare it to your own Codeagram implementation.
+- Use your own React understanding to judge the result.
+
+### Example follow-up prompts
+
+```text
+Refactor this implementation into clearer reusable React components.
+Explain what you change and why.
+```
+
+```text
+Use this Figma link for the navigation only.
+Update my existing React code so the navigation matches the design more closely.
+Keep the current functionality working.
+```
+
+```text
+The UI works, but the component structure feels messy.
+Please clean up the structure without changing the visual result.
+```
+
+---
+
 ### 7. Improve the result
 
 Now iterate.
