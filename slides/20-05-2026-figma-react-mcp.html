@@ -344,6 +344,173 @@
         text-align: left;
       }
 
+      .workflow-slide .workflow-intro {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 32em;
+      }
+
+      .workflow-slide .practice-board {
+        display: grid;
+        gap: 0.42em;
+        margin-top: 0.55em;
+      }
+
+      .workflow-slide .practice-strip {
+        display: grid;
+        gap: 0.32em;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .workflow-slide .practice-stage,
+      .workflow-slide .practice-feedback {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.78));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 14px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+      }
+
+      .workflow-slide .practice-stage {
+        min-height: 6.3em;
+        overflow: hidden;
+        padding: 0.48em 0.5em 0.46em;
+        position: relative;
+      }
+
+      .workflow-slide .practice-stage::before {
+        background: var(--stage-accent, linear-gradient(90deg, #38bdf8, #7ae7c7));
+        content: "";
+        height: 3px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .workflow-slide .practice-stage:not(:last-child)::after {
+        background: linear-gradient(90deg, rgba(56, 189, 248, 0.6), rgba(125, 211, 252, 0));
+        content: "";
+        height: 2px;
+        position: absolute;
+        right: -0.42em;
+        top: 50%;
+        width: 0.45em;
+      }
+
+      .workflow-slide .practice-stage h3,
+      .workflow-slide .practice-feedback h3 {
+        color: #f8fafc;
+        margin: 0.12em 0 0.18em;
+        text-align: left;
+      }
+
+      .workflow-slide .practice-stage h3 {
+        font-size: 0.72em;
+      }
+
+      .workflow-slide .practice-stage p,
+      .workflow-slide .practice-feedback p {
+        font-size: 0.48em;
+        line-height: 1.18;
+        margin: 0;
+        max-width: none;
+        text-align: left;
+      }
+
+      .workflow-slide .stage-role,
+      .workflow-slide .feedback-label {
+        align-items: center;
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(125, 211, 252, 0.2);
+        border-radius: 999px;
+        color: #bae6fd;
+        display: inline-flex;
+        font-size: 0.34em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        padding: 0.22em 0.58em;
+        text-transform: uppercase;
+      }
+
+      .workflow-slide .stage-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.22em;
+        margin: 0.14em 0 0.2em;
+      }
+
+      .workflow-slide .tool-label {
+        background: rgba(148, 163, 184, 0.12);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 999px;
+        color: #cbd5e1;
+        display: inline-flex;
+        font-size: 0.31em;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        padding: 0.2em 0.48em;
+      }
+
+      .workflow-slide .practice-stage .flow-step {
+        margin-bottom: 0.18em;
+      }
+
+      .workflow-slide .stage-human {
+        --stage-accent: linear-gradient(90deg, #fb7185, #f59e0b);
+      }
+
+      .workflow-slide .stage-ai {
+        --stage-accent: linear-gradient(90deg, #38bdf8, #818cf8);
+      }
+
+      .workflow-slide .stage-mcp {
+        --stage-accent: linear-gradient(90deg, #14b8a6, #22c55e);
+      }
+
+      .workflow-slide .stage-tool {
+        --stage-accent: linear-gradient(90deg, #facc15, #4ade80);
+      }
+
+      .workflow-slide .stage-output {
+        --stage-accent: linear-gradient(90deg, #a78bfa, #38bdf8);
+      }
+
+      .workflow-slide .practice-feedback {
+        align-items: center;
+        display: grid;
+        gap: 0.4em;
+        grid-template-columns: 1.05fr 1.95fr;
+        padding: 0.48em 0.6em;
+      }
+
+      .workflow-slide .feedback-copy h3,
+      .workflow-slide .feedback-copy p {
+        text-align: left;
+      }
+
+      .workflow-slide .feedback-copy h3 {
+        font-size: 0.72em;
+      }
+
+      .workflow-slide .feedback-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.38em;
+        justify-content: flex-start;
+      }
+
+      .workflow-slide .feedback-chip {
+        background: rgba(15, 23, 42, 0.76);
+        border: 1px dashed rgba(125, 211, 252, 0.32);
+        border-radius: 999px;
+        color: #dbe7f3;
+        display: inline-flex;
+        font-size: 0.38em;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        padding: 0.36em 0.68em;
+      }
+
       .prep-grid .surface ul,
       .prep-grid .surface p {
         font-size: 0.62em;
@@ -387,6 +554,25 @@
         margin-bottom: 0;
       }
 
+      .goal-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.24em;
+        margin: 0.08em 0 0.22em;
+      }
+
+      .goal-label {
+        background: rgba(148, 163, 184, 0.12);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 999px;
+        color: #cbd5e1;
+        display: inline-flex;
+        font-size: 0.4em;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        padding: 0.22em 0.56em;
+      }
+
       .goal-arrow {
         align-items: center;
         color: #7dd3fc;
@@ -400,6 +586,178 @@
       .goal-note {
         margin-top: 0.7em;
         max-width: none;
+      }
+
+      .studio-slide::before {
+        display: none;
+      }
+
+      .studio-slide h2,
+      .studio-slide p {
+        text-align: center;
+      }
+
+      .studio-slide .studio-intro {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 30em;
+      }
+
+      .studio-slide .studio-board {
+        display: grid;
+        gap: 0.52em;
+        margin-top: 0.65em;
+      }
+
+      .studio-slide .studio-flow {
+        align-items: stretch;
+        display: grid;
+        gap: 0.42em;
+        grid-template-columns: minmax(0, 1fr) 0.22fr minmax(0, 1fr) 0.22fr minmax(0, 1fr);
+      }
+
+      .studio-slide .studio-card,
+      .studio-slide .studio-support {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.78));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 14px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+      }
+
+      .studio-slide .studio-card {
+        min-height: 8.7em;
+        padding: 0.72em;
+        position: relative;
+      }
+
+      .studio-slide .studio-card::before {
+        background: var(--studio-accent, linear-gradient(90deg, #38bdf8, #7ae7c7));
+        content: "";
+        height: 4px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .studio-slide .studio-card h3,
+      .studio-slide .studio-support h3 {
+        color: #f8fafc;
+        font-size: 0.88em;
+        margin: 0.16em 0 0.18em;
+        text-align: left;
+      }
+
+      .studio-slide .studio-card p,
+      .studio-slide .studio-support p {
+        font-size: 0.56em;
+        line-height: 1.24;
+        margin: 0;
+        max-width: none;
+        text-align: left;
+      }
+
+      .studio-slide .studio-step {
+        color: #94a3b8;
+        display: block;
+        font-size: 0.4em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .studio-slide .studio-role {
+        align-items: center;
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid rgba(125, 211, 252, 0.2);
+        border-radius: 999px;
+        color: #bae6fd;
+        display: inline-flex;
+        font-size: 0.36em;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        margin-top: 0.2em;
+        padding: 0.24em 0.62em;
+        text-transform: uppercase;
+      }
+
+      .studio-slide .studio-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.28em;
+        margin-top: 0.5em;
+      }
+
+      .studio-slide .studio-chip {
+        background: rgba(148, 163, 184, 0.12);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 999px;
+        color: #dbe7f3;
+        display: inline-flex;
+        font-size: 0.4em;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        padding: 0.28em 0.62em;
+      }
+
+      .studio-slide .studio-arrow {
+        align-items: center;
+        color: #7dd3fc;
+        display: flex;
+        font-size: 1.3em;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 1;
+      }
+
+      .studio-slide .card-start {
+        --studio-accent: linear-gradient(90deg, #fb7185, #f59e0b);
+      }
+
+      .studio-slide .card-build {
+        --studio-accent: linear-gradient(90deg, #14b8a6, #38bdf8);
+      }
+
+      .studio-slide .card-improve {
+        --studio-accent: linear-gradient(90deg, #a78bfa, #38bdf8);
+      }
+
+      .studio-slide .studio-support {
+        align-items: center;
+        display: block;
+        padding: 0.58em 0.66em;
+      }
+
+      .studio-slide .support-note {
+        color: #fde68a;
+        display: block;
+        font-size: 0.42em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .studio-slide .studio-support > div {
+        margin: 0 auto;
+        max-width: 30em;
+      }
+
+      .studio-slide .studio-support h3,
+      .studio-slide .studio-support p,
+      .studio-slide .studio-support .support-note {
+        text-align: center;
+      }
+
+      .studio-slide .guide-link {
+        margin-top: 0.38em;
+      }
+
+      .studio-slide .guide-link a {
+        color: #bae6fd;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.5em;
+        word-break: break-all;
       }
 
       .basics-map {
@@ -690,6 +1048,28 @@
         margin-top: 0.4em;
       }
 
+      .tree-children {
+        display: grid;
+        gap: 0.6em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 0.4em;
+      }
+
+      .tree-branch {
+        display: grid;
+        gap: 0.26em;
+      }
+
+      .tree-subrow {
+        display: grid;
+        gap: 0.36em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tree-subrow.three-up {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .tree-node {
         background: linear-gradient(180deg, rgba(56, 189, 248, 0.14), rgba(30, 41, 59, 0.88));
         border: 1px solid rgba(125, 211, 252, 0.32);
@@ -749,10 +1129,26 @@
         width: 1.25em;
       }
 
+      .tree-node.repeat {
+        background: linear-gradient(180deg, rgba(167, 139, 250, 0.18), rgba(15, 23, 42, 0.9));
+        border-color: rgba(167, 139, 250, 0.38);
+      }
+
+      .tree-node.repeat small {
+        color: #ddd6fe;
+      }
+
       .tree-hint {
         color: #fde68a;
         font-size: 0.5em;
         margin-top: 0.35em;
+        text-align: center;
+      }
+
+      .tree-branch-note {
+        color: #94a3b8;
+        font-size: 0.46em;
+        margin-top: 0.08em;
         text-align: center;
       }
 
@@ -794,6 +1190,31 @@
         .flow-grid,
         .goal-flow,
         .component-tree {
+          grid-template-columns: 1fr;
+        }
+
+        .workflow-slide .practice-strip,
+        .workflow-slide .practice-feedback {
+          grid-template-columns: 1fr;
+        }
+
+        .workflow-slide .practice-stage::after {
+          display: none;
+        }
+
+        .studio-slide .studio-flow,
+        .studio-slide .studio-support {
+          grid-template-columns: 1fr;
+        }
+
+        .studio-slide .studio-arrow {
+          transform: rotate(90deg);
+        }
+
+        .tree-children,
+        .tree-subrow,
+        .tree-subrow.three-up,
+        .tree-row {
           grid-template-columns: 1fr;
         }
 
@@ -1150,18 +1571,35 @@
                 CodeagramApp
               </div>
               <div class="tree-connector">|</div>
-              <div class="tree-row">
-                <div class="tree-node">
-                  <small>Already a component</small>
-                  Header
+              <div class="tree-children">
+                <div class="tree-branch">
+                  <div class="tree-node">
+                    <small>Component</small>
+                    Header
+                  </div>
+                  <div class="tree-connector">|</div>
+                  <div class="tree-subrow">
+                    <div class="tree-node">HeaderBrand</div>
+                    <div class="tree-node">HeaderActions</div>
+                  </div>
                 </div>
-                <div class="tree-node maybe">
-                  <small>Could this split?</small>
-                  PostFeed
-                </div>
-                <div class="tree-node maybe">
-                  <small>Could this split?</small>
-                  Sidebar
+                <div class="tree-branch">
+                  <div class="tree-node repeat">
+                    <small>Multiple cards</small>
+                    PostCard
+                  </div>
+                  <div class="tree-connector">|</div>
+                  <div class="tree-subrow">
+                    <div class="tree-node">UserInfo</div>
+                    <div class="tree-node maybe">Avatar</div>
+                  </div>
+                  <div class="tree-subrow">
+                    <div class="tree-node maybe">IconButton(s)</div>
+                    <div class="tree-node maybe">Card</div>
+                  </div>
+                  <div class="tree-branch-note">
+                    These could be extracted if you start seeing the same pattern repeat.
+                  </div>
                 </div>
               </div>
               <div class="tree-hint">? marks places where a smaller component might help</div>
@@ -1169,9 +1607,9 @@
             <div class="tree-questions">
               <h3>Talk through in pairs</h3>
               <ul>
-                <li>Which part looks reusable?</li>
-                <li>Which part feels too big?</li>
-                <li>What could you name one smaller component?</li>
+                <li>Can you find these parts in your own code?</li>
+                <li>Does <strong>PostCard</strong> feel like one thing, or several smaller things?</li>
+                <li>Which of the yellow boxes would you extract first?</li>
               </ul>
             </div>
           </div>
@@ -1206,100 +1644,249 @@
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Workflow Overview</div>
-          <h2>Figma MCP/AI workflow overview</h2>
-          <div class="hero-grid">
-            <div class="surface">
-              <h3>A useful mental model</h3>
-              <p>
-                Think of Figma MCP as a bridge that gives the AI tool more design context: components, layers,
-                variables, spacing and structure.
-              </p>
-              <p style="margin-bottom: 0">
-                The AI tool still generates the code. MCP helps the tool see more of the design.
-              </p>
+          <div class="eyebrow">MCP Basics</div>
+          <h2>What is MCP?</h2>
+          <p class="statement" style="font-size: 0.82em">
+            MCP stands for <strong>Model Context Protocol</strong>. In short: it is a standard way for AI models
+            (ChatGPT, Claude, and others) to connect to tools, apps, APIs, databases, and files.
+          </p>
+          <div class="goal-flow">
+            <div class="goal-card">
+              <span class="goal-step">Part 01</span>
+              <div class="goal-meta">
+                <span class="goal-label">Example: Codex / ChatGPT</span>
+              </div>
+              <h3>AI in VS Code</h3>
+              <p>Understands your prompt and decides what tool context is needed.</p>
             </div>
-            <div class="surface">
-              <h3>Important consequence</h3>
-              <ul>
-                <li>MCP is not a guarantee of good code.</li>
-                <li>Good design context still needs good judgement.</li>
-                <li>Generated output still needs reading, critique and refactoring.</li>
-              </ul>
+            <div class="goal-arrow" aria-hidden="true">→</div>
+            <div class="goal-card">
+              <span class="goal-step">Part 02</span>
+              <div class="goal-meta">
+                <span class="goal-label">Example: Figma MCP</span>
+              </div>
+              <h3>MCP Server</h3>
+              <p>Acts as a bridge that exposes specific capabilities in a safe, structured way.</p>
+            </div>
+            <div class="goal-arrow" aria-hidden="true">→</div>
+            <div class="goal-card">
+              <span class="goal-step">Part 03</span>
+              <div class="goal-meta">
+                <span class="goal-label">Example: Figma</span>
+              </div>
+              <h3>Tool Context</h3>
+              <p>Returns real design data like nodes, spacing, components, and other metadata.</p>
             </div>
           </div>
-          <p class="compact-link">
-            Prep article:
-            <a
-              href="https://help.figma.com/hc/en-us/articles/35280968300439-Figma-MCP-collection-What-is-the-Figma-MCP-server"
-              >Figma MCP collection: What is the Figma MCP server?</a
-            >
+          <p class="goal-note">
+            Instead of every AI app needing custom integrations for GitHub, Slack, databases, Figma, and more, MCP
+            defines a common protocol so tools can plug into AI systems consistently.
           </p>
         </section>
 
-        <section class="workflow-slide">
-          <div class="eyebrow">Workflow Steps</div>
-          <h2>From design context to interactive prototype</h2>
-          <p>Design context, generated output, and human improvement each play a different role.</p>
-          <div class="flow-grid">
-            <div class="flow-card">
-              <span class="flow-step">01</span>
-              <h3>Figma design</h3>
-              <p>Start with a frame, screen or small flow.</p>
+        <section class="roomy">
+          <div class="eyebrow">MCP Basics</div>
+          <h2>What MCP enables</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>An AI assistant can</h3>
+              <ul>
+                <li>read files</li>
+                <li>query databases</li>
+                <li>call APIs</li>
+                <li>interact with apps (GitHub, Notion, Figma, and more)</li>
+                <li>execute actions safely</li>
+              </ul>
             </div>
-            <div class="flow-card">
-              <span class="flow-step">02</span>
-              <h3>MCP context</h3>
-              <p>Expose structure, components, variables and layout information.</p>
-            </div>
-            <div class="flow-card">
-              <span class="flow-step">03</span>
-              <h3>AI output</h3>
-              <p>Generate or scaffold a first React version.</p>
-            </div>
-            <div class="flow-card">
-              <span class="flow-step">04</span>
-              <h3>Refactor</h3>
-              <p>Rename, split components, clean structure and remove noise.</p>
-            </div>
-            <div class="flow-card">
-              <span class="flow-step">05</span>
-              <h3>Prototype</h3>
-              <p>Add state, interaction and feedback so the flow feels believable.</p>
+            <div class="surface">
+              <h3>What this means for class</h3>
+              <ul>
+                <li>Better context in, better first draft out.</li>
+                <li>Less manual copy-paste between tools.</li>
+                <li>You can focus more on decisions and quality.</li>
+              </ul>
+              <p style="margin-bottom: 0">Think "one protocol, many tools" instead of one-off integrations.</p>
             </div>
           </div>
         </section>
 
         <section class="roomy">
-          <div class="eyebrow">Workshop</div>
-          <h2>From Figma design to React</h2>
+          <div class="eyebrow">MCP Basics</div>
+          <h2>Why do we need MCP?</h2>
           <div class="comparison-grid">
             <div class="surface">
-              <h3>Your task</h3>
+              <h3>Without MCP (prompt only)</h3>
               <ul>
-                <li>Use the <a href="../guides/figma-mcp-starter-guide.md">Figma MCP Starter Guide</a>.</li>
-                <li>Set up Figma MCP with VS Code.</li>
-                <li>Start from a Figma design.</li>
-                <li>Use MCP/AI to get a first React scaffold.</li>
-                <li>Refactor at least one part of the structure.</li>
-                <li>Add at least one meaningful interaction.</li>
-                <li>If there is time, let someone else try a short task.</li>
+                <li>The AI must guess layout and structure from text.</li>
+                <li>Important design details can be missed.</li>
+                <li>You often get output that feels generic.</li>
               </ul>
             </div>
             <div class="surface">
-              <h3>Possible flows</h3>
+              <h3>With MCP (real tool context)</h3>
               <ul>
-                <li>Overview to detail to action</li>
-                <li>Onboarding to choice to result</li>
-                <li>Product selection to confirmation</li>
-                <li>Physical object or location to digital content to saved choice</li>
+                <li>The AI can read actual design structure and properties.</li>
+                <li>Output is usually closer to the intended design.</li>
+                <li>You can spend more time improving instead of rebuilding basics.</li>
               </ul>
             </div>
           </div>
-          <p class="compact-link">
-            Use the Codeagram app from last lesson as your React reference when you inspect and improve the generated
-            code.
+        </section>
+
+        <section class="workflow-slide">
+          <div class="eyebrow">MCP Basics</div>
+          <h2>How does it work in practice?</h2>
+          <p class="workflow-intro">The AI gets real context, makes a first draft, and improves through feedback.</p>
+          <div class="practice-board">
+            <div class="practice-strip">
+              <article class="practice-stage stage-human">
+                <span class="flow-step">01</span>
+                <span class="stage-role">Human input</span>
+                <div class="stage-meta">
+                  <span class="tool-label">Prompt</span>
+                </div>
+                <h3>Set goal</h3>
+                <p>Ask for a concrete result, like a Figma screen in React.</p>
+              </article>
+
+              <article class="practice-stage stage-ai">
+                <span class="flow-step">02</span>
+                <span class="stage-role">AI assistant</span>
+                <div class="stage-meta">
+                  <span class="tool-label">Example: Codex / ChatGPT</span>
+                </div>
+                <h3>Plan</h3>
+                <p>The assistant figures out what it needs to inspect first.</p>
+              </article>
+
+              <article class="practice-stage stage-mcp">
+                <span class="flow-step">03</span>
+                <span class="stage-role">MCP bridge</span>
+                <div class="stage-meta">
+                  <span class="tool-label">Example: Figma MCP</span>
+                </div>
+                <h3>Get context</h3>
+                <p>MCP connects the AI to Figma and requests structured design data.</p>
+              </article>
+
+              <article class="practice-stage stage-tool">
+                <span class="flow-step">04</span>
+                <span class="stage-role">Tool response</span>
+                <div class="stage-meta">
+                  <span class="tool-label">Example: Figma</span>
+                </div>
+                <h3>Read design</h3>
+                <p>Figma returns layout, styling, and component details.</p>
+              </article>
+
+              <article class="practice-stage stage-output">
+                <span class="flow-step">05</span>
+                <span class="stage-role">First draft</span>
+                <div class="stage-meta">
+                  <span class="tool-label">Output: React + CSS</span>
+                </div>
+                <h3>Generate</h3>
+                <p>The AI produces a closer first draft than prompt-only output.</p>
+              </article>
+            </div>
+
+            <div class="practice-feedback">
+              <div class="feedback-copy">
+                <span class="feedback-label">Iteration loop</span>
+                <h3>Review and run again</h3>
+                <p>Review the result, add missing context, and loop back through the workflow.</p>
+              </div>
+              <div class="feedback-chips" aria-label="Iteration steps">
+                <span class="feedback-chip">Review</span>
+                <span class="feedback-chip">Refine prompt</span>
+                <span class="feedback-chip">Add context</span>
+                <span class="feedback-chip">Run again</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">Important</div>
+          <h2>MCP works in both directions</h2>
+          <p class="statement">
+            The same three parts still matter here. The difference is that MCP can support movement in both directions
+            between design context and implementation.
           </p>
+          <div class="goal-flow">
+            <div class="goal-card">
+              <span class="goal-step">Step 01</span>
+              <h3>Figma Design</h3>
+              <p>Design context can be read from Figma, and useful updates can also be pushed back into the design.</p>
+            </div>
+            <div class="goal-arrow" aria-hidden="true">↔</div>
+            <div class="goal-card">
+              <span class="goal-step">Step 02</span>
+              <h3>MCP Context</h3>
+              <p>
+                MCP is the bridge in the middle, letting the AI work with real tool context instead of one-way handoff.
+              </p>
+            </div>
+            <div class="goal-arrow" aria-hidden="true">↔</div>
+            <div class="goal-card">
+              <span class="goal-step">Step 03</span>
+              <h3>React Prototype</h3>
+              <p>Code can be generated from the design, improved, and in some workflows sent back to Figma too.</p>
+            </div>
+          </div>
+          <p class="goal-note">This is why MCP can support both design-to-code and code-to-design workflows.</p>
+        </section>
+
+        <section class="roomy studio-slide">
+          <div class="eyebrow">Workshop</div>
+          <h2>From Figma design to React</h2>
+          <p class="studio-intro">Pick a small flow. Generate a draft. Improve one thing.</p>
+          <div class="studio-board">
+            <div class="studio-flow">
+              <article class="studio-card card-start">
+                <span class="studio-step">Step 01</span>
+                <span class="studio-role">Pick a flow</span>
+                <h3>Choose a small screen</h3>
+                <p>Start with one clear frame or short user flow.</p>
+                <div class="studio-chips">
+                  <span class="studio-chip">Small and clear</span>
+                </div>
+              </article>
+              <div class="studio-arrow" aria-hidden="true">→</div>
+              <article class="studio-card card-build">
+                <span class="studio-step">Step 02</span>
+                <span class="studio-role">Generate a draft</span>
+                <h3>Use Figma MCP</h3>
+                <p>Generate a first React version from the design.</p>
+                <div class="studio-chips">
+                  <span class="studio-chip">Figma link → React draft</span>
+                </div>
+              </article>
+              <div class="studio-arrow" aria-hidden="true">→</div>
+              <article class="studio-card card-improve">
+                <span class="studio-step">Step 03</span>
+                <span class="studio-role">Make it better</span>
+                <h3>Improve one thing</h3>
+                <p>Refactor structure or add one meaningful interaction.</p>
+                <div class="studio-chips">
+                  <span class="studio-chip">Structure or interaction</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="studio-support">
+              <div>
+                <span class="support-note">Keep in mind</span>
+                <h3>Understand the result</h3>
+                <p>Use Codeagram as a React reference while you inspect the generated code.</p>
+                <p class="guide-link">
+                  <a href="https://github.com/cederdorff/figma-to-react/blob/main/guides/figma-mcp-starter-guide.md"
+                    >Figma MCP Starter Guide</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section class="roomy">

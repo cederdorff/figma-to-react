@@ -57,7 +57,7 @@ By the end of the day, you should have a shareable React prototype created from 
 - **Slides**
   - [20-05-2026-figma-react-mcp](https://cederdorff.com/figma-to-react/slides/20-05-2026-figma-react-mcp.html)
 - **Exercises**
-  - [Figma MCP Starter Guide](../guides/figma-mcp-starter-guide.md)
+  - [Figma MCP Starter Guide](https://github.com/cederdorff/figma-to-react/blob/main/guides/figma-mcp-starter-guide.md)
 - **Other links**
   - [Figma MCP collection: What is the Figma MCP server?](https://help.figma.com/hc/en-us/articles/35280968300439-Figma-MCP-collection-What-is-the-Figma-MCP-server)
   - [CodeDex React course](https://www.codedex.io/react)
