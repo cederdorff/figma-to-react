@@ -169,7 +169,7 @@ Important:
 
 ---
 
-### 4. Get design context in your MCP client
+### 4. Get the Figma link for design context
 
 This step is based on the official Figma guide:
 
@@ -177,12 +177,12 @@ This step is based on the official Figma guide:
 
 The remote Figma MCP workflow is **link-based**.
 
-That means:
+Your goal in this step is only to get the correct link to the frame or layer you want to use as context.
+
+Do this:
 
 1. In Figma Design, select the frame or layer you want to work from.
 2. Copy the link to that frame or layer.
-3. In your MCP-enabled chat in VS Code, paste the URL.
-4. Prompt the AI to help you implement the design in your React project.
 
 How to copy the link:
 
@@ -197,24 +197,14 @@ How to copy the link:
 
 Tip:
 
-- For the remote MCP server, the important thing is that you paste a URL pointing to the frame or layer you want to use as context.
+- For the remote MCP server, the important thing is that you get a URL pointing to the frame or layer you want to use as context.
 
 ![MCP client with link-based prompt](assets/mcp-client-link-prompt.png)
 
-Example prompt:
-
-```text
-Use this Figma link as design context and implement it in my React project.
-Start by creating a clean component structure.
-Use CSS for styling.
-Explain the components, props, and state you create.
-```
-
 Important:
 
-- Be specific.
 - Start with one frame or one important part of the design.
-- Do not begin with a huge prompt for an entire app unless your design is very small.
+- Do not begin with a huge multi-screen app unless your design is very small.
 - Your MCP client will not open the Figma link like a browser tab. Instead, it extracts the node ID from the URL and uses that to get design context from Figma.
 
 More official prompt examples:
@@ -223,9 +213,13 @@ More official prompt examples:
 
 ---
 
-### 5. Let the AI implement a first version
+### 5. Prompt your MCP client
 
-In VS Code, prompt GitHub Copilot Chat, Codex, or Claude Code to implement the design in your blank React project.
+Now use the link from step 4 in your MCP-enabled chat in VS Code.
+
+In VS Code, open GitHub Copilot Chat, Codex, or Claude Code and paste the Figma link into the chat.
+
+Then prompt the AI to help you implement the design in your blank React project.
 
 Suggested first prompt:
 
