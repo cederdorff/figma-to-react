@@ -569,16 +569,15 @@ Important:
 
 ### 9. Use the advanced Codeagram tasks
 
-Now combine:
+Now use the same workflow to extend the Codeagram app.
 
-- Figma design work
-- MCP context
-- AI prompting
-- your own React knowledge
+Use this part of the Codeagram guide:
 
-Use the advanced tasks from:
+- [Codeagram Feed with React Components: 7. Advanced Tasks (For Skilled Students or Anyone Curious)](https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md#7-advanced-tasks-for-skilled-students-or-anyone-curious)
 
-- [Codeagram Feed with React Components](https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md)
+Pick one advanced task at a time.
+
+Do not try to implement all of them at once.
 
 Suggested tasks:
 
@@ -589,14 +588,107 @@ Suggested tasks:
 5. Make it possible to create new posts
 6. Add one more action button
 
-Try different strategies:
+This is where you combine:
 
-- start in Figma, then go to code
-- start in code, then ask AI to update the design
-- link to the whole screen
-- link to one specific component
+- Figma design work
+- MCP context
+- AI prompting
+- your own React knowledge
 
-Compare the results.
+Use this order:
+
+1. Choose one advanced task.
+2. Decide which workflow makes most sense:
+   - **Workflow A: start in Figma, then go to code**
+   - **Workflow B: start in code, then update the Figma design**
+3. Implement a first version.
+4. Inspect the result.
+5. Improve it through smaller iterations.
+
+### Workflow A: start in Figma, then go to code
+
+Use this when the visual design should come first.
+
+This is often a good choice for:
+
+- tags
+- comments
+- buttons
+- layouts
+- new screens or views
+
+Use this order:
+
+1. Design the change in Figma first.
+2. Make sure the frame or component is structured well.
+3. Copy the link to the relevant frame or component.
+4. Paste that link into your MCP-enabled chat in VS Code.
+5. Ask the AI to implement the change in your existing React project.
+6. Run the app and test the result.
+7. Improve the code or design in smaller steps if needed.
+
+Example:
+
+- **Tags:** start in Figma, design how tags should look on the post card, then implement them in code
+
+### Workflow B: start in code, then update the Figma design
+
+Sometimes it makes more sense to begin in React instead of Figma.
+
+This is useful when:
+
+- the feature is easier to think through in code first
+- the logic matters more than the visual design at the beginning
+- you already know roughly how the UI should work
+
+In that case, use this order:
+
+1. Implement the feature in your React project first.
+2. Make sure it actually works in the browser.
+3. Decide what needs to be reflected in the design.
+   - Do you need a new page?
+   - A new component?
+   - A new state or interaction pattern?
+4. In Figma, choose the frame or component that should be updated.
+5. Copy the link to that frame or component.
+6. Ask the AI to help you update the Figma design so it matches the code you already built.
+7. Check whether the design now reflects the real behavior and structure of the code.
+
+Example prompt for this workflow:
+
+```text
+I already implemented this feature in my React project.
+Now help me update the Figma design so it matches the code.
+
+Use this Figma link as the design context:
+[PASTE FIGMA LINK HERE]
+
+Look at my current code and suggest or apply updates so the design reflects:
+- the new screen or view
+- the new interaction
+- the new UI elements
+
+Tell me what should change in the design.
+```
+
+Important:
+
+- In this workflow, code comes first and Figma follows.
+- This is different from the earlier workflow where Figma came first and code followed.
+- Use this only when it is genuinely easier to think through the feature in code first.
+
+Examples:
+
+- **Comments:** decide how comments should appear and whether they are always visible or expandable
+- **Search:** decide what the search should search through before you prompt
+- **Bookmarked posts:** this may be easier to start in code, then update the design afterward
+
+Important:
+
+- Keep the task small enough that you can still understand the result.
+- Be clear about what behavior you want before you prompt.
+- Compare the generated result to what you would build yourself.
+- Compare different prompting strategies and notice what gives the clearest result.
 
 ---
 
