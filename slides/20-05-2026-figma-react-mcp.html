@@ -402,6 +402,56 @@
         max-width: none;
       }
 
+      .basics-map {
+        display: grid;
+        gap: 0.4em;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 0.6em;
+      }
+
+      .structure-focus {
+        background: linear-gradient(180deg, rgba(14, 116, 144, 0.22), rgba(15, 23, 42, 0.86));
+        border: 1px solid rgba(125, 211, 252, 0.32);
+        border-radius: 12px;
+        margin-top: 0.6em;
+        padding: 0.7em;
+      }
+
+      .structure-label {
+        color: #7dd3fc;
+        display: block;
+        font-size: 0.42em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .structure-title {
+        color: #f8fafc;
+        display: block;
+        font-size: 0.95em;
+        font-weight: 780;
+        line-height: 1;
+        margin-bottom: 0.18em;
+      }
+
+      .structure-focus p {
+        font-size: 0.62em;
+        margin-bottom: 0;
+      }
+
+      .basic-pill {
+        background: rgba(56, 189, 248, 0.1);
+        border: 1px solid rgba(56, 189, 248, 0.22);
+        border-radius: 10px;
+        color: #f8fafc;
+        font-size: 0.6em;
+        font-weight: 700;
+        padding: 0.55em 0.6em;
+        text-align: center;
+      }
+
       .compact-link {
         font-size: 0.54em;
         margin-top: 0.5em;
@@ -481,13 +531,23 @@
           <div class="comparison-grid">
             <div class="surface">
               <h3>What we have worked with so far</h3>
-              <ul>
-                <li>structure and layout</li>
-                <li>components</li>
-                <li>props</li>
-                <li>state</li>
-                <li>events</li>
-              </ul>
+              <p>
+                We have been trying to learn some basic coding skills in React so we can understand how the code is
+                built, not only what the end result looks like.
+              </p>
+              <div class="structure-focus">
+                <span class="structure-label">Main Focus</span>
+                <span class="structure-title">Structure</span>
+                <p>
+                  Structure is one of the most important things we need to be able to validate in AI-generated output.
+                </p>
+              </div>
+              <div class="basics-map">
+                <div class="basic-pill">components</div>
+                <div class="basic-pill">props</div>
+                <div class="basic-pill">state</div>
+                <div class="basic-pill">events</div>
+              </div>
             </div>
             <div class="surface">
               <h3>Why it matters now</h3>
@@ -496,6 +556,31 @@
                 necessary today, because we need it to read, question, validate, and improve the output that MCP/AI
                 gives us.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">React Before MCP</div>
+          <h2>Why React knowledge still matters</h2>
+          <div class="comparison-grid">
+            <div class="surface">
+              <h3>If you only prompt</h3>
+              <ul>
+                <li>You may get code you cannot explain.</li>
+                <li>You may keep duplicated or overly literal components.</li>
+                <li>You may miss where state and interaction should live.</li>
+                <li>You may accept a static screen instead of a prototype.</li>
+              </ul>
+            </div>
+            <div class="surface">
+              <h3>If you understand React</h3>
+              <ul>
+                <li>You can read the component structure critically.</li>
+                <li>You can decide what to keep, split, rename or rebuild.</li>
+                <li>You can place props, state and events more intentionally.</li>
+                <li>You can turn generated output into something more believable.</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -633,31 +718,6 @@
                 <li>What part came from the AI tool?</li>
                 <li>What still looks rough or unfinished?</li>
                 <li>What still needs React and UX judgement?</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="roomy">
-          <div class="eyebrow">React Before MCP</div>
-          <h2>Why React knowledge still matters</h2>
-          <div class="comparison-grid">
-            <div class="surface">
-              <h3>If you only prompt</h3>
-              <ul>
-                <li>You may get code you cannot explain.</li>
-                <li>You may keep duplicated or overly literal components.</li>
-                <li>You may miss where state and interaction should live.</li>
-                <li>You may accept a static screen instead of a prototype.</li>
-              </ul>
-            </div>
-            <div class="surface">
-              <h3>If you understand React</h3>
-              <ul>
-                <li>You can read the component structure critically.</li>
-                <li>You can decide what to keep, split, rename or rebuild.</li>
-                <li>You can place props, state and events more intentionally.</li>
-                <li>You can turn generated output into something more believable.</li>
               </ul>
             </div>
           </div>
