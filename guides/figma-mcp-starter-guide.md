@@ -64,17 +64,51 @@ Official setup article:
 
 ### 1. Set up the remote Figma MCP server in VS Code
 
-Follow the official Figma setup guide:
+![Figma MCP setup in VS Code](assets/figma-mcp-vscode-setup.gif)
 
-- [VS Code and Figma: Set up the MCP server](https://help.figma.com/hc/en-us/articles/39890361040535-VS-Code-and-Figma-Set-up-the-MCP-server#h_01KPPGM2WBVB21ZYNEXJYDH16P)
+The GIF above shows the last part of the setup flow in VS Code.
+
+Do these steps directly in VS Code:
+
+1. Open the **Command Palette**:
+   - macOS: `Cmd + Shift + P`
+   - Windows: `Ctrl + Shift + P`
+2. Search for `MCP: Open User Configuration`.
+3. Open the `mcp.json` file that VS Code shows you.
+4. Paste this configuration into the file:
+
+```json
+{
+  "inputs": [],
+  "servers": {
+    "figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "type": "http"
+    }
+  }
+}
+```
+
+5. Save the file:
+   - macOS: `Cmd + S`
+   - Windows: `Ctrl + S`
+6. After saving, stay in VS Code and look for the Figma MCP server entry. See the GIF above.
+7. When you see a **Start** button above the Figma server entry, click it to begin authentication.
+8. Complete the authentication flow in the external browser window using your Figma account.
+9. Return to VS Code and confirm that the Figma MCP server is now running. See the GIF above if you are unsure what this should look like.
+
+Expected result:
+
+- The Figma MCP server appears as **running** in VS Code.
 
 Important:
 
-- Follow the section **Set up the remote Figma MCP server (preferred)**.
-- Stop before **Set up the desktop Figma MCP server**.
-- When VS Code asks you to authenticate, complete the login flow with your Figma account.
+- This guide only covers the **remote** Figma MCP server.
+- Do **not** continue to the **desktop Figma MCP server** section in the official guide.
 
-When the setup is complete, the Figma MCP server should be running in VS Code and authenticated with your Figma account.
+If the Figma guide changes in the future, use the official article here:
+
+- [VS Code and Figma: Set up the MCP server](https://help.figma.com/hc/en-us/articles/39890361040535-VS-Code-and-Figma-Set-up-the-MCP-server#h_01KPPGM2WBVB21ZYNEXJYDH16P)
 
 ---
 
@@ -137,7 +171,7 @@ Important:
 
 ### 4. Get design context in your MCP client
 
-Read this first:
+This step is based on the official Figma guide:
 
 - [Guide to the Figma MCP server](https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server#example-get-design-context)
 
@@ -146,13 +180,13 @@ The remote Figma MCP workflow is **link-based**.
 That means:
 
 1. In Figma Design, select the frame or layer you want to work from.
-2. Copy the URL to that frame or layer.
-3. Paste that URL into your MCP-enabled chat in VS Code.
-4. Ask the AI to help you implement the design in your React project.
+2. In the browser address bar, copy the link to that frame or layer.
+3. In your MCP-enabled chat in VS Code, paste the URL.
+4. Prompt the AI to help you implement the design in your React project.
 
 Tip:
 
-- In practice, this often means using **Copy link to selection** in Figma, as long as it gives you a URL pointing to the frame or layer you want to use.
+- **Copy link to selection** in Figma is often the easiest way to get the right URL.
 
 Example prompt:
 
@@ -168,6 +202,7 @@ Important:
 - Be specific.
 - Start with one frame or one important part of the design.
 - Do not begin with a huge prompt for an entire app unless your design is very small.
+- Your MCP client will not open the Figma link like a browser tab. Instead, it extracts the node ID from the URL and uses that to get design context from Figma.
 
 More official prompt examples:
 
