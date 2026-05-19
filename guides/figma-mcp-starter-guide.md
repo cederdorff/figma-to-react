@@ -340,6 +340,53 @@ When you prompt your MCP client, these habits usually lead to better results:
 - Ask whether repeated values should become props.
 - Ask whether the code is too duplicated or too literal.
 
+### Use your technical knowledge in the prompt
+
+- Your technical knowledge helps you write better prompts.
+- The more clearly you can describe the structure you want, the better the result is often going to be.
+- You do not only have to say `implement this in React`.
+- You can also guide the AI with technical choices about routing, styling, components, and code structure.
+
+Examples of useful technical directions:
+
+- `Use React Router if this needs multiple pages.`
+- `Use plain CSS instead of Tailwind.`
+- `Use semantic HTML where it makes sense.`
+- `Split repeated UI into reusable components.`
+- `Keep the first version simple and avoid over-engineering.`
+- `Explain where props and state are used.`
+
+Example prompts:
+
+```text
+Use this Figma link as design context:
+[PASTE FIGMA LINK HERE]
+
+Implement this screen in React.
+Use plain CSS.
+Split repeated UI into reusable components.
+Explain where props are used.
+```
+
+```text
+Use this Figma link as design context:
+[PASTE FIGMA LINK HERE]
+
+Implement this design in React.
+Use React Router for navigation between pages.
+Keep the code simple.
+Explain what files you create or change.
+```
+
+```text
+Use this Figma link as design context:
+[PASTE FIGMA LINK HERE]
+
+Implement this screen using components from src/components/ui.
+Style it with Tailwind.
+Keep the structure close to the existing codebase.
+```
+
 ### Compare against your own knowledge
 
 - Do not assume the generated code is “correct” just because it runs.
@@ -368,35 +415,83 @@ Please clean up the structure without changing the visual result.
 
 ### 7. Improve the result
 
-Now iterate.
+Now improve what the AI created.
+
+Do not just keep prompting randomly.
+
+Use this order:
+
+1. **Identify the problem**
+   - What is wrong right now?
+   - Is it mainly a visual problem, a code structure problem, or a missing interaction?
+2. **Choose one thing to improve**
+   - Do not try to fix everything in one prompt.
+   - Pick one clear improvement first.
+3. **Decide whether to improve it yourself or with AI**
+   - If the change is small and you understand it, try doing it yourself.
+   - If the change is larger or repetitive, ask AI for help.
+4. **Give better context**
+   - Link to a specific frame, component, layer, or icon when possible.
+   - Smaller and more focused prompts often work better than broad ones.
+5. **Test the result**
+   - Run the app again.
+   - Check that the change worked.
+   - Make sure the previous functionality still works.
+
+Common things to improve:
+
+- visual accuracy
+- spacing and layout
+- component structure
+- repeated code
+- missing props
+- missing state
+- missing interaction
+- navigation between views
+
+Use the Codeagram app from the previous lesson as a reference:
+
+- That version was coded from scratch.
+- It was built by thinking about React structure step by step.
+- It gives you a useful comparison when judging the generated result.
 
 Ask yourself:
 
-1. Did it implement the design closely enough?
-2. Is the code structure too flat or too messy?
-3. Should you improve something yourself?
-4. Should you ask AI to improve something specific?
+- Is the generated structure better or worse than the version we coded ourselves?
+- Does the generated code follow the same kind of React thinking?
+- Is anything in the generated version too flat, too duplicated, or harder to understand?
 
-Important:
-
-- It is often better to link to a specific frame, component, layer, or icon than to the whole design.
-- Smaller and more focused prompts usually work better.
-
-Example prompt:
+Example improvement prompts:
 
 ```text
-Use this Figma link for the PostCard only.
+Use this Figma link for the PostCard only:
+[PASTE FIGMA LINK HERE]
+
 Refactor my current implementation so PostCard becomes its own reusable component.
 Keep the existing behavior working.
+Explain what you change.
 ```
 
-Repeat this process until the result becomes better.
+```text
+Use this Figma link for the header only:
+[PASTE FIGMA LINK HERE]
+
+Update my existing React implementation so the header matches the design more closely.
+Do not change the rest of the app.
+```
+
+```text
+The layout works, but the code structure is messy.
+Please clean up the component structure without changing the visual result.
+Tell me what files you change and why.
+```
 
 Important:
 
 - Do not only ask for visual fixes.
 - Also ask for structural improvements when needed.
 - A nicer-looking result is not always a better React implementation.
+- Repeat this process until the result becomes clearer and more useful.
 
 ---
 
