@@ -457,6 +457,24 @@
         margin-top: 0.5em;
       }
 
+      .micro-code {
+        margin-top: 0.65em;
+      }
+
+      .micro-code pre {
+        margin: 0;
+        width: 100%;
+      }
+
+      .micro-code pre code {
+        background: #020617;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        font-size: 0.58em;
+        line-height: 1.2;
+        padding: 0.7em;
+      }
+
       @media (max-width: 1100px) {
         .reveal {
           font-size: 26px;
@@ -581,6 +599,43 @@
                 <li>You can place props, state and events more intentionally.</li>
                 <li>You can turn generated output into something more believable.</li>
               </ul>
+              <div class="micro-code">
+                <pre><code class="language-jsx">function PostCard({ post }) {
+  const [liked, setLiked] = useState(false);
+
+  return (
+    &lt;article&gt;
+      &lt;h2&gt;{post.username}&lt;/h2&gt;
+      &lt;button onClick={() => setLiked(!liked)}&gt;
+        {liked ? "Liked" : "Like"}
+      &lt;/button&gt;
+    &lt;/article&gt;
+  );
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="roomy">
+          <div class="eyebrow">A Common Feeling</div>
+          <h2>When the code works, but you cannot explain why</h2>
+          <div class="two-column">
+            <div class="surface">
+              <p class="statement" style="font-size: 0.82em">
+                This is exactly why React knowledge matters today. If the output feels opaque, it becomes hard to
+                validate, improve, or trust.
+              </p>
+              <p>
+                I know that we have only scratched the surface of React so far, but that is also what we have had time
+                for. Even this level of knowledge helps you judge the output much better than if you had none at all.
+              </p>
+            </div>
+            <div class="app-shot">
+              <img
+                src="./assets/i-dont-understand-what-just-happened-here-ross-geller.gif"
+                alt="Reaction GIF expressing confusion about generated code"
+              />
             </div>
           </div>
         </section>
@@ -591,8 +646,14 @@
           <ol class="agenda-list">
             <li>
               <div>
+                <strong>Introduction: why React knowledge matters before MCP/AI</strong>
+                Frame the day and connect React basics to reading, questioning, and improving generated output.
+              </div>
+            </li>
+            <li>
+              <div>
                 <strong>Recap: Codeagram app</strong>
-                Revisit components, props, state and events.
+                Revisit components, props, state, and events.
               </div>
             </li>
             <li>
@@ -603,26 +664,20 @@
             </li>
             <li>
               <div>
-                <strong>Why React knowledge matters before using MCP/AI</strong>
-                Use the demo to talk about understanding, not just generating.
-              </div>
-            </li>
-            <li>
-              <div>
                 <strong>Figma MCP/AI workflow overview</strong>
-                See where design context, code generation and human judgement meet.
+                Move from Figma design, to MCP context, to a first React scaffold.
               </div>
             </li>
             <li>
               <div>
-                <strong>Exercise time: from scaffold to prototype</strong>
-                Set up Figma MCP with VS Code, then generate, refactor and add interaction.
+                <strong>Workshop: from Figma design to React</strong>
+                Work through the design-to-code flow with guidance, then refine structure and interaction.
               </div>
             </li>
             <li>
               <div>
-                <strong>Wrap-up: MCP/AI and human judgement</strong>
-                Reflect on what the tool did and what you still had to do.
+                <strong>Wrap-up</strong>
+                Summarize key takeaways and what to practice next.
               </div>
             </li>
           </ol>

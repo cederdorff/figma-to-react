@@ -42,11 +42,11 @@ By the end of the day, you should have a shareable React prototype created from 
 2. **Demo: from Figma design to first React scaffold**
    - Go from design to first output and inspect what the workflow gives us.
 3. **Why React knowledge matters before using MCP/AI**
-   - Set the scene: generated code is only useful if you can read it, question it and improve it.
+   - Connect the React basics from the previous lessons to the need to read, question, validate, and improve generated output.
 4. **Figma MCP/AI workflow overview**
-   - See how MCP/AI can inspect, translate or scaffold from a Figma design.
+   - See how the workflow moves from Figma design, to MCP context, to a first React scaffold.
 5. **Exercise time: from scaffold to prototype**
-   - Use the Figma MCP Starter Guide to set up Figma MCP with VS Code, then generate, refactor and add interaction so the result becomes a small prototype flow.
+   - Use the Figma MCP Starter Guide to set up Figma MCP with VS Code, get design context, generate a first scaffold, then refactor and add interaction.
    - The goal is not only to generate a screen, but to improve it into a small interactive prototype.
 6. **Wrap-up: MCP/AI and human judgement**
    - Reflect on what MCP helped with and what still required React and UX judgement.
