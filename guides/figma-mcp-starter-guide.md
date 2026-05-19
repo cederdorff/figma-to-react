@@ -714,7 +714,7 @@ Use this order:
 2. Keep the scope small.
    - Start with one screen or one very small flow.
 3. Create a new React project.
-4. Set up the MCP workflow again.
+4. Reuse your existing MCP setup in VS Code.
 5. Get the Figma link for the frame or view you want to implement.
 6. Prompt your MCP client.
 7. Inspect the generated result.
