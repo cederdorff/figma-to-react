@@ -22,6 +22,21 @@ The goal is to:
 
 ---
 
+## Quick Version
+
+If you want the short version, do this:
+
+1. Set up the **remote** Figma MCP server in VS Code.
+2. Create a blank React project with Vite.
+3. Make or choose **one** clean Figma frame.
+4. Paste a link to that frame into Copilot, Codex, or Claude Code in VS Code.
+5. Ask it to implement the design in your React project.
+6. Run the app, inspect the code, and improve the result.
+
+If that works, then move on to more screens, more views, and more advanced tasks.
+
+---
+
 ## Before You Start
 
 Make sure you have:
@@ -57,6 +72,7 @@ Important:
 
 - Follow the section **Set up the remote Figma MCP server (preferred)**.
 - Stop before **Set up the desktop Figma MCP server**.
+- When VS Code asks you to authenticate, complete the login flow with your Figma account.
 
 When the setup is complete, the Figma MCP server should be running in VS Code and authenticated with your Figma account.
 
@@ -134,6 +150,10 @@ That means:
 3. Paste that URL into your MCP-enabled chat in VS Code.
 4. Ask the AI to help you implement the design in your React project.
 
+Tip:
+
+- In practice, this often means using **Copy link to selection** in Figma, as long as it gives you a URL pointing to the frame or layer you want to use.
+
 Example prompt:
 
 ```text
@@ -175,6 +195,8 @@ Then:
 2. run the app
 3. check whether it actually works
 4. restart the dev server if needed
+
+Do not continue until you have a real first result running in the browser.
 
 ---
 
@@ -224,6 +246,12 @@ Keep the existing behavior working.
 ```
 
 Repeat this process until the result becomes better.
+
+Important:
+
+- Do not only ask for visual fixes.
+- Also ask for structural improvements when needed.
+- A nicer-looking result is not always a better React implementation.
 
 ---
 
@@ -303,6 +331,20 @@ Do not try to build a huge app on your first attempt.
 
 ---
 
+## Minimum Success Criteria
+
+You are on the right track if you can say yes to most of these:
+
+1. Is the remote Figma MCP server running in VS Code?
+2. Does your blank React project run locally?
+3. Have you used one Figma link as design context successfully?
+4. Did the AI create a working first version in React?
+5. Can you explain at least some of the generated component structure?
+6. Have you improved at least one part of the generated code or design?
+7. Does the result feel closer to a small prototype than just a static screen?
+
+---
+
 ## Tips for Better Results
 
 - Start with one clean frame, not a whole product.
@@ -326,6 +368,33 @@ Do not try to build a huge app on your first attempt.
 3. Try a smaller prompt with a smaller part of the design.
 4. Ask the AI to explain the code it created.
 5. Ask for help if you are blocked too long.
+
+### Common Problems
+
+#### The MCP server does not seem to work
+
+- Check that you set up the **remote** server, not the desktop one.
+- Check that GitHub Copilot is enabled in VS Code.
+- Restart VS Code and try again.
+- Open the MCP configuration again and verify that the Figma server is still listed.
+
+#### The AI does not understand the design
+
+- Use a smaller and cleaner Figma frame.
+- Link to one part of the design instead of the whole app.
+- Improve the Figma structure first.
+
+#### The React project does not run
+
+- Make sure you ran `npm install`.
+- Restart the dev server with `npm run dev`.
+- Read the terminal error carefully before prompting again.
+
+#### The generated code works but looks messy
+
+- Ask the AI to refactor the component structure.
+- Ask it to explain what it created.
+- Compare it to your own Codeagram implementation.
 
 ---
 
