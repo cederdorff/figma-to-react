@@ -46,7 +46,7 @@ By the end of the day, you should have a shareable React prototype created from 
 4. **Figma MCP/AI workflow overview**
    - See how MCP/AI can inspect, translate or scaffold from a Figma design.
 5. **Exercise time: from scaffold to prototype**
-   - Set up Figma MCP with VS Code, then generate, refactor and add interaction so the result becomes a small prototype flow.
+   - Use the Figma MCP Starter Guide to set up Figma MCP with VS Code, then generate, refactor and add interaction so the result becomes a small prototype flow.
    - The goal is not only to generate a screen, but to improve it into a small interactive prototype.
 6. **Wrap-up: MCP/AI and human judgement**
    - Reflect on what MCP helped with and what still required React and UX judgement.
@@ -59,6 +59,7 @@ By the end of the day, you should have a shareable React prototype created from 
   - [20-05-2026-figma-react-mcp](https://cederdorff.com/figma-to-react/slides/20-05-2026-figma-react-mcp.html)
 - **Exercises**
   - [Codeagram Feed with React Components](https://github.com/cederdorff/codeagram/blob/main/docs/EXERCISE_GUIDE.md)
+  - [Figma MCP Starter Guide](../guides/figma-mcp-starter-guide.md)
 - **Other links**
   - [Figma MCP collection: What is the Figma MCP server?](https://help.figma.com/hc/en-us/articles/35280968300439-Figma-MCP-collection-What-is-the-Figma-MCP-server)
   - [CodeDex React course](https://www.codedex.io/react)
