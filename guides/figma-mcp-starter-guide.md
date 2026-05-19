@@ -53,8 +53,17 @@ Note:
 - GitHub Copilot is required for the official Figma MCP setup flow in VS Code.
 - Claude Code requires a paid Claude plan.
 - For this course, use the **remote Figma MCP server**, not the desktop server.
-- Depending on the AI tool you use, you may be using your own credits, limits, or budget.
-- Be aware of this and prompt thoughtfully instead of retrying large prompts over and over again.
+
+> **Credits, limits, and budget**
+>
+> Depending on the AI tool you use, you may be using your own credits, limits, or budget.
+>
+> To use them more carefully:
+>
+> - start with smaller prompts first
+> - use the smallest relevant Figma context you can
+> - refine a working prompt instead of starting over each time
+> - do not keep resending large prompts without changing anything
 
 Official setup article:
 
@@ -696,16 +705,42 @@ Important:
 
 ### 10. Try a new design-to-code experiment
 
-When Codeagram feels more stable, try a new small app:
+When Codeagram feels more stable, try the workflow on a new small app or concept.
 
-1. use an existing Figma design, or create one
-2. create a new React project
-3. set up the workflow again
-4. prompt, inspect, improve, repeat
+Use this order:
+
+1. Choose a small idea.
+   - Use an existing Figma design, or create one yourself.
+2. Keep the scope small.
+   - Start with one screen or one very small flow.
+3. Create a new React project.
+4. Set up the MCP workflow again.
+5. Get the Figma link for the frame or view you want to implement.
+6. Prompt your MCP client.
+7. Inspect the generated result.
+8. Improve the result through smaller iterations.
+
+Good starting ideas:
+
+- a small product card view
+- a simple profile page
+- a small dashboard screen
+- an event card or event detail page
+- a booking or confirmation screen
 
 Start simple.
 
 Do not try to build a huge app on your first attempt.
+
+The goal here is not to build something impressive as fast as possible.
+
+The goal is to practice the workflow again in a new context:
+
+- design
+- context
+- prompt
+- inspect
+- improve
 
 ---
 
