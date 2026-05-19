@@ -180,13 +180,26 @@ The remote Figma MCP workflow is **link-based**.
 That means:
 
 1. In Figma Design, select the frame or layer you want to work from.
-2. In the browser address bar, copy the link to that frame or layer.
+2. Copy the link to that frame or layer.
 3. In your MCP-enabled chat in VS Code, paste the URL.
 4. Prompt the AI to help you implement the design in your React project.
 
+How to copy the link:
+
+- **If you are using Figma in the browser:**
+  - select the frame or layer
+  - copy the link from the browser address bar, or
+  - use **Copy link to selection**
+- **If you are using the Figma desktop app:**
+  - select the frame or layer
+  - right-click the frame on the canvas or in the Layers panel
+  - go to **Copy/Paste as > Copy link**
+
 Tip:
 
-- **Copy link to selection** in Figma is often the easiest way to get the right URL.
+- For the remote MCP server, the important thing is that you paste a URL pointing to the frame or layer you want to use as context.
+
+![MCP client with link-based prompt](assets/mcp-client-link-prompt.png)
 
 Example prompt:
 
