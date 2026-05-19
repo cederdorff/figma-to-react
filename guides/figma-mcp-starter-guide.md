@@ -744,20 +744,6 @@ The goal is to practice the workflow again in a new context:
 
 ---
 
-## Minimum Success Criteria
-
-You are on the right track if you can say yes to most of these:
-
-1. Is the remote Figma MCP server running in VS Code?
-2. Does your blank React project run locally?
-3. Have you used one Figma link as design context successfully?
-4. Did the AI create a working first version in React?
-5. Can you explain at least some of the generated component structure?
-6. Have you improved at least one part of the generated code or design?
-7. Does the result feel closer to a small prototype than just a static screen?
-
----
-
 ## Tips for Better Results
 
 - Start with one clean frame, not a whole product.
