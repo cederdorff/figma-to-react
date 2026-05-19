@@ -283,6 +283,8 @@ After the AI has made changes:
 2. run the app
 3. check whether it actually works
 4. restart the dev server if needed
+   - In the VS Code terminal, press `Ctrl + C` to stop the current dev server.
+   - Then run `npm run dev` again.
 5. if something breaks, read the error before prompting again
 
 Do not continue until you have a real first result running in the browser.
@@ -787,7 +789,9 @@ The goal is to practice the workflow again in a new context:
 #### The React project does not run
 
 - Make sure you ran `npm install`.
-- Restart the dev server with `npm run dev`.
+- Restart the dev server:
+  - press `Ctrl + C` in the terminal to stop it
+  - run `npm run dev` again
 - Read the terminal error carefully before prompting again.
 
 #### The generated code works but looks messy
