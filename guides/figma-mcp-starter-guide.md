@@ -207,10 +207,6 @@ Important:
 - Do not begin with a huge multi-screen app unless your design is very small.
 - Your MCP client will not open the Figma link like a browser tab. Instead, it extracts the node ID from the URL and uses that to get design context from Figma.
 
-More official prompt examples:
-
-- [Tools and prompts](https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/)
-
 ---
 
 ### 5. Prompt your MCP client
@@ -224,12 +220,19 @@ Then prompt the AI to help you implement the design in your blank React project.
 Suggested first prompt:
 
 ```text
-Use this Figma link as design context and implement the screen in this React project.
+Use this Figma link as design context:
+[PASTE FIGMA LINK HERE]
+
+Implement the screen in this React project.
 Keep the code simple.
 Split the UI into meaningful components.
 Use props where values repeat.
 Tell me what files you create or change.
 ```
+
+More official prompt examples:
+
+- [Tools and prompts](https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/)
 
 Then:
 
