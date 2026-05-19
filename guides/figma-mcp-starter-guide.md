@@ -37,8 +37,6 @@ If that works, then move on to more screens, more views, and more advanced tasks
 
 You do not need to understand everything before you start.
 
-If you are unsure, begin with this quick version and learn the rest while you work.
-
 ---
 
 ## Before You Start
