@@ -53,6 +53,8 @@ Note:
 - GitHub Copilot is required for the official Figma MCP setup flow in VS Code.
 - Claude Code requires a paid Claude plan.
 - For this course, use the **remote Figma MCP server**, not the desktop server.
+- Depending on the AI tool you use, you may be using your own credits, limits, or budget.
+- Be aware of this and prompt thoughtfully instead of retrying large prompts over and over again.
 
 Official setup article:
 
@@ -730,6 +732,7 @@ You are on the right track if you can say yes to most of these:
 - Be specific when asking for improvements.
 - Use your own React knowledge to clean up the result.
 - Treat MCP and AI as support, not as a replacement for understanding.
+- A working result is not automatically a good React solution.
 
 ---
 
