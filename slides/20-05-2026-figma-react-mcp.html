@@ -475,6 +475,193 @@
         padding: 0.7em;
       }
 
+      .react-map-slide .react-map {
+        align-items: stretch;
+        display: grid;
+        gap: 0.55em;
+        grid-template-areas:
+          "jsx core props"
+          "components core state"
+          ". events .";
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr) minmax(0, 1fr);
+        margin-top: 0.55em;
+      }
+
+      .react-map-slide .concept-card,
+      .react-map-slide .core-card {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.76));
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 12px;
+        box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
+      }
+
+      .react-map-slide .concept-card {
+        min-height: 4.25em;
+        padding: 0.58em 0.62em 0.62em;
+      }
+
+      .react-map-slide .concept-card .concept-top {
+        align-items: center;
+        display: flex;
+        gap: 0.42em;
+        margin-bottom: 0.28em;
+      }
+
+      .react-map-slide .concept-icon {
+        align-items: center;
+        border-radius: 10px;
+        display: inline-flex;
+        font-size: 0.5em;
+        font-weight: 800;
+        height: 2.2em;
+        justify-content: center;
+        letter-spacing: 0.03em;
+        width: 2.2em;
+      }
+
+      .react-map-slide .concept-label {
+        font-size: 0.44em;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .react-map-slide .concept-card h3 {
+        color: #f8fafc;
+        font-size: 0.82em;
+        margin: 0;
+      }
+
+      .react-map-slide .concept-card p {
+        font-size: 0.5em;
+        line-height: 1.25;
+        margin: 0;
+        max-width: none;
+      }
+
+      .react-map-slide .core-card {
+        align-items: center;
+        display: grid;
+        grid-area: core;
+        padding: 0.8em;
+        text-align: center;
+      }
+
+      .react-map-slide .core-ring {
+        align-items: center;
+        background:
+          radial-gradient(circle at center, rgba(56, 189, 248, 0.16), transparent 58%),
+          linear-gradient(160deg, rgba(34, 197, 94, 0.12), rgba(56, 189, 248, 0.08));
+        border: 1px solid rgba(125, 211, 252, 0.28);
+        border-radius: 999px;
+        display: grid;
+        height: 7.6em;
+        justify-self: center;
+        padding: 0.9em;
+        place-items: center;
+        width: 7.6em;
+      }
+
+      .react-map-slide .core-ring span {
+        color: #94a3b8;
+        display: block;
+        font-size: 0.42em;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .react-map-slide .core-ring strong {
+        color: #f8fafc;
+        display: block;
+        font-size: 1.05em;
+        line-height: 1.08;
+        margin-top: 0.18em;
+      }
+
+      .react-map-slide .core-card p {
+        font-size: 0.5em;
+        line-height: 1.22;
+        margin: 0.55em auto 0;
+        max-width: 22ch;
+        text-align: center;
+      }
+
+      .react-map-slide .jsx-card {
+        border-color: rgba(250, 204, 21, 0.34);
+        grid-area: jsx;
+      }
+
+      .react-map-slide .jsx-card .concept-icon {
+        background: rgba(250, 204, 21, 0.14);
+        border: 1px solid rgba(250, 204, 21, 0.34);
+        color: #fde68a;
+      }
+
+      .react-map-slide .jsx-card .concept-label {
+        color: #fde68a;
+      }
+
+      .react-map-slide .components-card {
+        border-color: rgba(52, 211, 153, 0.34);
+        grid-area: components;
+      }
+
+      .react-map-slide .components-card .concept-icon {
+        background: rgba(52, 211, 153, 0.14);
+        border: 1px solid rgba(52, 211, 153, 0.34);
+        color: #bbf7d0;
+      }
+
+      .react-map-slide .components-card .concept-label {
+        color: #bbf7d0;
+      }
+
+      .react-map-slide .props-card {
+        border-color: rgba(167, 139, 250, 0.34);
+        grid-area: props;
+      }
+
+      .react-map-slide .props-card .concept-icon {
+        background: rgba(167, 139, 250, 0.14);
+        border: 1px solid rgba(167, 139, 250, 0.34);
+        color: #ddd6fe;
+      }
+
+      .react-map-slide .props-card .concept-label {
+        color: #ddd6fe;
+      }
+
+      .react-map-slide .state-card {
+        border-color: rgba(244, 114, 182, 0.34);
+        grid-area: state;
+      }
+
+      .react-map-slide .state-card .concept-icon {
+        background: rgba(244, 114, 182, 0.14);
+        border: 1px solid rgba(244, 114, 182, 0.34);
+        color: #fbcfe8;
+      }
+
+      .react-map-slide .state-card .concept-label {
+        color: #fbcfe8;
+      }
+
+      .react-map-slide .events-card {
+        border-color: rgba(56, 189, 248, 0.34);
+        grid-area: events;
+      }
+
+      .react-map-slide .events-card .concept-icon {
+        background: rgba(56, 189, 248, 0.14);
+        border: 1px solid rgba(56, 189, 248, 0.34);
+        color: #bae6fd;
+      }
+
+      .react-map-slide .events-card .concept-label {
+        color: #bae6fd;
+      }
+
       @media (max-width: 1100px) {
         .reveal {
           font-size: 26px;
@@ -733,7 +920,7 @@
 
         <section class="roomy">
           <div class="eyebrow">Recap</div>
-          <h2>Codeagram app: your React foundation</h2>
+          <h2>Your Codeagram — let's review what's inside</h2>
           <div class="two-column">
             <div>
               <p class="statement" style="font-size: 0.82em">
@@ -746,8 +933,8 @@
                   <li><strong>Component tree:</strong> Draw all your components and how they connect.</li>
                   <li><strong>Structure:</strong> Why did you split things the way you did?</li>
                   <li>
-                    <strong>Five core concepts:</strong> Find one example of components, props, state, events, and
-                    lifecycle in your code.
+                    <strong>Five core concepts:</strong> Find one example of JSX, components, props, state, and events
+                    in your code — we will map these together on the next slide.
                   </li>
                 </ul>
               </div>
@@ -758,32 +945,68 @@
           </div>
         </section>
 
-        <section class="workflow-slide">
-          <div class="eyebrow">React Recap</div>
-          <h2>The five core concepts in your Codeagram app</h2>
-          <p class="statement" style="margin-bottom: 0.7em">
-            Spot these in your own code—this is your React foundation for everything that comes next.
+        <section class="roomy react-map-slide">
+          <div class="eyebrow">React Concepts Review</div>
+          <h2>Find these five ideas in your Codeagram solution</h2>
+          <p class="statement" style="font-size: 0.9em; margin-bottom: 0; text-align: center">
+            Go through your code and spot where each concept lives and how they work together.
           </p>
-          <div class="visual-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1em">
-            <div class="matrix-card" style="background: linear-gradient(120deg, #38bdf8 0%, #0ea5e9 100%)">
-              <h3>Components</h3>
-              <p>Reusable UI building blocks. Each should do one thing well.</p>
+          <div class="react-map">
+            <div class="concept-card jsx-card">
+              <div class="concept-top">
+                <span class="concept-icon">&lt;/&gt;</span>
+                <span class="concept-label">1. JSX</span>
+              </div>
+              <h3>The UI markup</h3>
+              <p>Where did you describe what appears on screen?</p>
             </div>
-            <div class="matrix-card" style="background: linear-gradient(120deg, #a78bfa 0%, #7c3aed 100%)">
-              <h3>Props</h3>
-              <p>Inputs to components. Pass data and callbacks down the tree.</p>
+
+            <div class="concept-card components-card">
+              <div class="concept-top">
+                <span class="concept-icon">[ ]</span>
+                <span class="concept-label">2. Components</span>
+              </div>
+              <h3>Reusable parts</h3>
+              <p>Which files did you split into separate components?</p>
             </div>
-            <div class="matrix-card" style="background: linear-gradient(120deg, #f472b6 0%, #be185d 100%)">
-              <h3>State</h3>
-              <p>Data that changes. Lives in the component that owns it.</p>
+
+            <div class="core-card">
+              <div class="core-ring">
+                <div>
+                  <span>Your Codeagram uses</span>
+                  <strong>All Five Ideas</strong>
+                </div>
+              </div>
+              <p>
+                These all work together in your app. Mental model: structure first, then data flow, then interaction.
+              </p>
             </div>
-            <div class="matrix-card" style="background: linear-gradient(120deg, #facc15 0%, #ca8a04 100%)">
-              <h3>Events</h3>
-              <p>How your UI responds to user actions (click, input, etc).</p>
+
+            <div class="concept-card props-card">
+              <div class="concept-top">
+                <span class="concept-icon">{ }</span>
+                <span class="concept-label">3. Props</span>
+              </div>
+              <h3>Pass data down</h3>
+              <p>Which data did you pass from parent to child?</p>
             </div>
-            <div class="matrix-card" style="background: linear-gradient(120deg, #34d399 0%, #059669 100%)">
-              <h3>Lifecycle</h3>
-              <p>What happens when? Mount, update, unmount, effects.</p>
+
+            <div class="concept-card state-card">
+              <div class="concept-top">
+                <span class="concept-icon">=</span>
+                <span class="concept-label">4. State</span>
+              </div>
+              <h3>Data that changes</h3>
+              <p>Where did you use useState() or similar?</p>
+            </div>
+
+            <div class="concept-card events-card">
+              <div class="concept-top">
+                <span class="concept-icon">()</span>
+                <span class="concept-label">5. Events</span>
+              </div>
+              <h3>Respond to actions</h3>
+              <p>Where did you handle clicks or input changes?</p>
             </div>
           </div>
         </section>
