@@ -279,13 +279,13 @@ More official prompt examples:
 
 After the AI has made changes:
 
-1. let it do the work
-2. run the app
-3. check whether it actually works
-4. restart the dev server if needed
+1. Let it do the work.
+2. Run the app.
+3. Check whether it actually works.
+4. Restart the dev server if needed.
    - In the VS Code terminal, press `Ctrl + C` to stop the current dev server.
    - Then run `npm run dev` again.
-5. if something breaks, read the error before prompting again
+5. If something breaks, read the error before prompting again.
 
 Do not continue until you have a real first result running in the browser.
 
@@ -642,7 +642,7 @@ Use this order:
 
 Example:
 
-- **Tags:** start in Figma, design how tags should look on the post card, then implement them in code
+- **Tags:** start in Figma, design how tags should look on the post card, then implement them in code.
 
 ### Workflow B: start in code, then update the Figma design
 
@@ -692,9 +692,9 @@ Important:
 
 Examples:
 
-- **Comments:** decide how comments should appear and whether they are always visible or expandable
-- **Search:** decide what the search should search through before you prompt
-- **Bookmarked posts:** this may be easier to start in code, then update the design afterward
+- **Comments:** decide how comments should appear and whether they are always visible or expandable.
+- **Search:** decide what the search should search through before you prompt.
+- **Bookmarked posts:** this may be easier to start in code, then update the design afterward.
 
 Important:
 
