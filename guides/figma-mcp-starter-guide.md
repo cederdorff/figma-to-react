@@ -501,25 +501,69 @@ If your first screen works, continue.
 
 For example in Codeagram:
 
-1. Add a **Profile** page in Figma.
-2. Add a **Notifications** page in Figma.
-3. Improve the design structure if needed.
-4. Ask the AI to implement the new pages.
-5. Connect the pages in React.
+1. Add one new screen or view in Figma.
+   - For example a **Profile** page or a **Notifications** page.
+2. Make sure the new design is structured well.
+   - Clean up layout, naming, and repeated UI if needed.
+3. Copy the link to the new frame or view.
+4. Ask the AI to implement that one new screen in your existing React project.
+5. Connect the new screen to the rest of the app.
+   - For example, connect the navigation buttons or links so the screen can actually be opened.
+6. Test that navigation still works.
+
+Start with one new screen first. Do not add multiple new screens at once unless the first one is already working well.
+
+One well-connected new screen is enough for a good first result.
 
 Helpful technical direction:
 
 - Ask for **React Router** if you want multiple pages or views.
+- If you already have navigation in the UI, ask the AI to connect it to the new screen.
+
+> **React Router**
+>
+> React Router is a library for React that helps you create navigation between pages or views in your app.
+>
+> It is useful when your app should move between screens such as:
+>
+> - feed
+> - profile
+> - notifications
+>
+> Official website:
+> [reactrouter.com](https://reactrouter.com/)
 
 Example prompt:
 
 ```text
-Use React Router to add a profile page and a notifications page based on these Figma links.
+Use this Figma link as design context:
+[PASTE FIGMA LINK HERE]
+
+Add this new screen to my existing React project.
+Use React Router for navigation.
 Keep the existing feed page working.
-Update the navigation so the pages can be opened.
+Update the navigation so this new page can be opened.
+Tell me what files you create or change.
 ```
 
-Then test whether navigation actually works.
+Another example:
+
+```text
+Use this Figma link as design context:
+[PASTE FIGMA LINK HERE]
+
+Implement this profile page in my existing React app.
+Reuse existing components where possible.
+Keep the code structure consistent with the rest of the project.
+Update the existing navigation if needed.
+```
+
+Important:
+
+- Add one new screen at a time.
+- Reuse the components you already have when possible.
+- Do not let the new page become a completely separate code style from the rest of the app.
+- After each change, test that the app still runs and that navigation works.
 
 ---
 
