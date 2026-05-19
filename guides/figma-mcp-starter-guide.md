@@ -213,9 +213,20 @@ Important:
 
 Now use the link from step 4 in your MCP-enabled chat in VS Code.
 
-In VS Code, open GitHub Copilot Chat, Codex, or Claude Code and paste the Figma link into the chat.
+In VS Code:
 
-Then prompt the AI to help you implement the design in your blank React project.
+1. Open GitHub Copilot Chat, Codex, or Claude Code.
+2. Paste the Figma link into the chat.
+3. Ask the AI to implement the design in your blank React project.
+
+Start simple.
+
+For the first prompt, ask for:
+
+- one screen
+- a simple component structure
+- a working first version
+- an explanation of what files it changes
 
 Suggested first prompt:
 
@@ -228,18 +239,40 @@ Keep the code simple.
 Split the UI into meaningful components.
 Use props where values repeat.
 Tell me what files you create or change.
+Explain the component structure briefly before or after you make the changes.
 ```
+
+If you want a slightly more technical version, try this:
+
+```text
+Use this Figma link as design context:
+[PASTE FIGMA LINK HERE]
+
+Implement this screen in my blank React project.
+Use a clean component structure.
+Keep the styling simple.
+Do not over-engineer the solution.
+Tell me what files you create or change, and explain the components you add.
+```
+
+Important:
+
+- Start with one frame, not a whole app.
+- Do not ask for too many features in the first prompt.
+- First get a working version. Then improve it in later prompts.
+- If the result is messy, ask for refactoring in the next prompt instead of trying to fix everything at once.
 
 More official prompt examples:
 
 - [Tools and prompts](https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/)
 
-Then:
+After the AI has made changes:
 
 1. let it do the work
 2. run the app
 3. check whether it actually works
 4. restart the dev server if needed
+5. if something breaks, read the error before prompting again
 
 Do not continue until you have a real first result running in the browser.
 
