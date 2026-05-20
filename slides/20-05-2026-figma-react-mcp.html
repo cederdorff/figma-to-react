@@ -1194,24 +1194,33 @@
       }
 
       .react-map-slide .statement {
-        font-size: 0.82em !important;
+        font-size: 0.76em !important;
+        line-height: 1.16;
       }
 
       .react-map-slide .compact-link {
-        font-size: 0.54em;
-        margin-top: 0.58em !important;
+        font-size: 0.5em;
+        margin-top: 0.42em !important;
+      }
+
+      .react-map-slide .react-map {
+        margin-top: 0.32em;
+      }
+
+      .react-map-slide .core-card p {
+        max-width: 22ch;
       }
 
       .tree-slide .tree-intro {
-        font-size: 0.82em;
-        margin-bottom: 0.55em;
+        font-size: 0.74em;
+        margin-bottom: 0.42em;
         text-align: center;
       }
 
       .component-tree {
         align-items: start;
         display: grid;
-        gap: 0.8em;
+        gap: 0.62em;
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       }
 
@@ -1220,7 +1229,7 @@
         border: 1px solid rgba(148, 163, 184, 0.22);
         border-radius: 12px;
         box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
-        padding: 0.72em;
+        padding: 0.58em;
       }
 
       .tree-row {
@@ -1232,9 +1241,9 @@
 
       .tree-children {
         display: grid;
-        gap: 0.6em;
+        gap: 0.46em;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        margin-top: 0.4em;
+        margin-top: 0.28em;
       }
 
       .tree-branch {
@@ -1244,7 +1253,7 @@
 
       .tree-subrow {
         display: grid;
-        gap: 0.36em;
+        gap: 0.28em;
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -1257,11 +1266,11 @@
         border: 1px solid rgba(125, 211, 252, 0.32);
         border-radius: 10px;
         color: #f8fafc;
-        font-size: 0.46em;
+        font-size: 0.43em;
         font-weight: 700;
         line-height: 1.15;
-        min-height: 3.1em;
-        padding: 0.62em 0.5em;
+        min-height: 2.8em;
+        padding: 0.52em 0.42em;
         text-align: center;
       }
 
@@ -1281,10 +1290,10 @@
 
       .tree-connector {
         color: #7dd3fc;
-        font-size: 0.78em;
+        font-size: 0.68em;
         font-weight: 700;
         letter-spacing: 0.06em;
-        margin-top: 0.2em;
+        margin-top: 0.12em;
         text-align: center;
       }
 
@@ -1323,14 +1332,14 @@
 
       .tree-hint {
         color: #fde68a;
-        font-size: 0.5em;
-        margin-top: 0.35em;
+        font-size: 0.44em;
+        margin-top: 0.24em;
         text-align: center;
       }
 
       .tree-branch-note {
         color: #94a3b8;
-        font-size: 0.46em;
+        font-size: 0.42em;
         margin-top: 0.08em;
         text-align: center;
       }
@@ -1340,46 +1349,55 @@
         border: 1px solid rgba(148, 163, 184, 0.22);
         border-radius: 12px;
         box-shadow: 0 20px 65px rgba(0, 0, 0, 0.24);
-        padding: 0.72em;
+        padding: 0.58em;
       }
 
       .tree-questions h3 {
         color: #7dd3fc;
-        font-size: 0.76em;
+        font-size: 0.7em;
       }
 
       .tree-questions ul {
-        font-size: 0.62em;
+        font-size: 0.56em;
         margin-bottom: 0;
       }
 
       .tree-note {
         color: #94a3b8;
-        font-size: 0.58em;
-        margin-top: 0.6em;
+        font-size: 0.52em;
+        margin-top: 0.42em;
         text-align: center;
       }
 
       .disclaimer-slide .two-column {
         align-items: center;
-        gap: 1.1em;
+        gap: 0.9em;
         grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-        margin-top: 0.8em;
+        margin-top: 0.55em;
       }
 
       .disclaimer-slide .disclaimer-copy {
         align-self: center;
-        padding: 0.2em 0;
+        padding: 0.1em 0;
       }
 
       .disclaimer-slide .disclaimer-copy p,
       .disclaimer-slide .disclaimer-copy ul {
-        font-size: 0.66em;
+        font-size: 0.62em;
         max-width: none;
       }
 
+      .disclaimer-slide .statement {
+        font-size: 0.72em !important;
+        line-height: 1.16;
+      }
+
       .disclaimer-slide .disclaimer-copy ul {
-        margin-bottom: 0.8em;
+        margin-bottom: 0.5em;
+      }
+
+      .disclaimer-slide .compact-link {
+        font-size: 0.54em;
       }
 
       .disclaimer-slide .app-shot {
@@ -1967,7 +1985,7 @@
           </p>
         </section>
 
-        <section class="roomy">
+        <section class="roomy tree-slide">
           <div class="eyebrow">Before We Look at the Solution</div>
           <h2>What if we split it into more components?</h2>
           <p class="statement tree-intro">Look at your code and discuss where smaller components could live.</p>
