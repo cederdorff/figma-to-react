@@ -232,7 +232,7 @@ In VS Code:
 
 1. Open GitHub Copilot Chat, Codex, or Claude Code.
 2. Paste the Figma link into the chat.
-3. Ask the AI to implement the design in your blank React project.
+3. Ask the AI to implement the design in your existing React project (the one already open in VS Code).
 
 Start simple.
 
@@ -249,7 +249,7 @@ Suggested first prompt:
 Use this Figma link as design context:
 [PASTE FIGMA LINK HERE]
 
-Implement the screen in this React project.
+Implement the screen in my existing React project (do not create a new project).
 Keep the code simple.
 Split the UI into meaningful components.
 Use props where values repeat.
@@ -263,11 +263,26 @@ If you want a slightly more technical version, try this:
 Use this Figma link as design context:
 [PASTE FIGMA LINK HERE]
 
-Implement this screen in my blank React project.
+Implement this screen in my existing React project.
+Only edit files in this project.
 Use a clean component structure.
 Keep the styling simple.
 Do not over-engineer the solution.
 Tell me what files you create or change, and explain the components you add.
+```
+
+If you want a plain React version (no extra UI libraries), try this:
+
+```text
+Use this Figma link as design context:
+[PASTE FIGMA LINK HERE]
+
+Implement this screen in my existing React project.
+Use plain React and plain CSS (no Tailwind, no component libraries).
+Do not create a new project.
+Reuse my current project structure and naming style.
+Split repeated UI into reusable components.
+Tell me exactly what files you changed.
 ```
 
 Important:
