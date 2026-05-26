@@ -2,6 +2,8 @@
 
 [Back to lesson index](../lessons.md)
 
+**Schedule note:** This page is kept as the original May 29 lesson reference. The active plan for May 29 is [Touch Gestures as Interface](29-05-2026-touch-gestures-interface.md), which was moved from May 26.
+
 ## Gesture & Motion Design: Motion as UX Feedback
 
 ### Purpose of The Day

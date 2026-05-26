@@ -1,12 +1,12 @@
-# 26-05-2026
+# 29-05-2026
 
 [Back to lesson index](../lessons.md)
-
-**Schedule note:** This page is kept as the original May 26 lesson reference. The active plan for May 26 is the [Optional Guided Workday - Gesture & Motion Preparation](26-05-2026-guided-workday-gesture-motion.md), and this session has been moved to [29-05-2026](29-05-2026-touch-gestures-interface.md).
 
 ## Motion: Touch, Pointer, Drag and Swipe Gestures
 
 ### Purpose of The Day
+
+This session was moved from `26-05-2026`. The [original May 26 lesson page](26-05-2026-touch-gestures-interface.md) and the [original May 29 lesson page](29-05-2026-motion-ux-feedback.md) are kept for reference.
 
 We use **Motion** (formerly Framer Motion) to explore alternative ways of interacting with digital experiences.
 
@@ -21,6 +21,7 @@ Focus question:
 By the end of the session, you should see that digital experiences can be shaped by more than clicks, tabs and buttons.
 
 ---
+
 ### Preparation
 
 1. **Finish the Figma MCP Starter Guide**
@@ -30,7 +31,9 @@ By the end of the session, you should see that digital experiences can be shaped
    - A good supplement is [Describing the UI](https://react.dev/learn/describing-the-ui).
 3. **Skim Motion for React docs**
    - [Motion for React docs](https://motion.dev/docs/react)
-4. **Finish the CodeDex React course and/or self-study**
+4. **Use the optional workday from `26-05-2026`**
+   - Catch up, continue your prototype or try one small Motion experiment before class.
+5. **Finish the CodeDex React course and/or self-study**
    - You can also finish the [CodeDex React course](https://www.codedex.io/react) and/or the [Self-study with CodeDex.io](https://www.notion.so/Self-study-with-CodeDex-io-350bc239db1180af9beacc9a801f863a).
 
 ---
@@ -69,6 +72,11 @@ By the end of the session, you should see that digital experiences can be shaped
   - Will be available here
 - **Exercises**
   - Will be available here
+- **Previous workday**
+  - [`26-05-2026-guided-workday-gesture-motion.md`](26-05-2026-guided-workday-gesture-motion.md)
+- **Original lesson references**
+  - [`26-05-2026-touch-gestures-interface.md`](26-05-2026-touch-gestures-interface.md)
+  - [`29-05-2026-motion-ux-feedback.md`](29-05-2026-motion-ux-feedback.md)
 - **Other links**
   - [Motion docs](https://motion.dev/)
   - [React.dev Learn](https://react.dev/learn)
