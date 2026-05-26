@@ -79,4 +79,3 @@ Use this path if you want a structured React task:
   - [Motion for React docs](https://motion.dev/docs/react)
 
 ---
-

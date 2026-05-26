@@ -71,13 +71,14 @@ By the end of the session, you should see that digital experiences can be shaped
 - **Slides**
   - Will be available here
 - **Exercises**
-  - Will be available here
+  - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md)
 - **Previous workday**
   - [`26-05-2026-guided-workday-gesture-motion.md`](26-05-2026-guided-workday-gesture-motion.md)
 - **Original lesson references**
   - [`26-05-2026-touch-gestures-interface.md`](26-05-2026-touch-gestures-interface.md)
   - [`29-05-2026-motion-ux-feedback.md`](29-05-2026-motion-ux-feedback.md)
 - **Other links**
+  - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md)
   - [Motion docs](https://motion.dev/)
   - [React.dev Learn](https://react.dev/learn)
   - [React.dev - Describing the UI](https://react.dev/learn/describing-the-ui)
