@@ -6,7 +6,7 @@
 
 ## Core Progression
 
-**Design → Components → Interactive Prototype → Guided Workday → Touch Gesture → Experimental Gesture Interfaces**
+**Design → Components → Interactive Prototype → Guided Workdays → Touch Gesture → Experimental Gesture Interfaces**
 
 The RACE sessions form the technical spine of the elective. The focus is to help you turn visual design into working interactive prototypes, while connecting React, gestures and motion to UX, concept development, emerging technologies and technology choices.
 
@@ -77,6 +77,7 @@ Possible examples:
 | **11-05-2026** | [From Components to Composition](11-05-2026-components-composition.md)           | React basics, component thinking and reusable UI structure | Transition from design to programming           | A Codeagram app and a small component system                                       |
 | **20-05-2026** | [Figma to React with MCP](20-05-2026-figma-react-mcp.md)                         | Using MCP/AI to create and improve a React prototype       | Emerging tech, prototype testing, UX/UI         | A React prototype generated from a Figma design and improved manually              |
 | **26-05-2026** | [Optional Guided Workday - Gesture & Motion Preparation](26-05-2026-guided-workday-gesture-motion.md) | Guided support, catch-up and differentiated practice       | Project development, feedback, consolidation    | Progress on an individual task and preparation for gesture work                    |
+| **27-05-2026** | [Continued Guided Workday - React, Figma to React and Gesture Preparation](27-05-2026-continued-guided-workday.md) | Continued work on React exercises, prototypes and gesture preparation | Project development, feedback, consolidation    | Continued progress on the selected exercise, prototype or preparation task         |
 | **29-05-2026** | [Touch Gestures as Interface](29-05-2026-touch-gestures-interface.md)            | Pointer, touch, drag and swipe as meaningful input         | Alternative interfaces, interactive experiences | One touch or pointer gesture interaction                                           |
 | **01-06-2026** | [Experimental Gesture Interfaces](01-06-2026-experimental-gesture-interfaces.md) | Camera input, hand gestures and embodied interaction       | Emerging technologies, alternative interfaces   | An experimental gesture prototype or concept test                                  |
 | **09-06-2026** | [Buffer Day - Exam Project](09-06-2026-buffer-exam-project.md)                   | Flexible support day for follow-up or exam-project work    | Project development, feedback, consolidation    | Progress on project work or targeted support                                       |
