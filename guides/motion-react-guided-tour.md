@@ -184,6 +184,14 @@ body {
   padding: 24px;
 }
 
+.gallery {
+  display: grid;
+  gap: 40px;
+  justify-items: center;
+  min-height: 100vh;
+  padding: 32px 24px;
+}
+
 .comparison {
   align-items: start;
   display: grid;
@@ -293,12 +301,7 @@ The rest of this guide saves each implementation in its own component file. That
 
 You do not need to change anything else yet.
 
-Later, when you want to view a different saved implementation, change two lines in `src/App.jsx`:
-
-1. The `import` line at the top.
-2. The component inside `<main className="stage">`.
-
-For example, this shows the first saved component:
+Right now, `src/App.jsx` only shows the first component:
 
 ```jsx
 import StaticPracticeCard from "./components/StaticPracticeCard";
@@ -312,6 +315,8 @@ export default function App() {
   );
 }
 ```
+
+In the next steps, you will keep adding new saved components to `App.jsx` so the page becomes a small gallery of everything you have built.
 
 ---
 
@@ -385,7 +390,7 @@ import "./App.css";
 
 export default function App() {
   return (
-    <main className="stage">
+    <main className="gallery">
       <section className="comparison">
         <StaticPracticeCard />
         <MotionIntroCard />
@@ -445,7 +450,11 @@ export default function RevealDetailsCard() {
       <p className="eyebrow">Motion practice</p>
       <h1>React state</h1>
 
-      <motion.button className="button" onClick={() => setIsOpen(!isOpen)} whileTap={{ scale: 0.96 }}>
+      <motion.button
+        className="button"
+        onClick={() => setIsOpen(!isOpen)}
+        whileTap={{ scale: 0.96 }}
+      >
         {isOpen ? "Hide details" : "Show details"}
       </motion.button>
 
@@ -477,7 +486,7 @@ import "./App.css";
 
 export default function App() {
   return (
-    <main className="stage">
+    <main className="gallery">
       <section className="comparison">
         <StaticPracticeCard />
         <MotionIntroCard />
@@ -608,22 +617,30 @@ export default function SpringTransitionCard() {
 }
 ```
 
-Show this component in `src/App.jsx`:
+Add this component to the gallery in `src/App.jsx`:
 
 ```jsx
+import StaticPracticeCard from "./components/StaticPracticeCard";
+import MotionIntroCard from "./components/MotionIntroCard";
+import RevealDetailsCard from "./components/RevealDetailsCard";
 import SpringTransitionCard from "./components/SpringTransitionCard";
 import "./App.css";
 
 export default function App() {
   return (
-    <main className="stage">
-      <SpringTransitionCard />
+    <main className="gallery">
+      <section className="comparison">
+        <StaticPracticeCard />
+        <MotionIntroCard />
+        <RevealDetailsCard />
+        <SpringTransitionCard />
+      </section>
     </main>
   );
 }
 ```
 
-Save the files and check the browser. Refresh the page if you want to see the entry animation again.
+Save the files and check the browser. You should now see four saved examples. Refresh the page if you want to replay the spring entry animation.
 
 Before you tweak it, compare the example with the official docs:
 
@@ -731,22 +748,32 @@ export default function PressableButton() {
 }
 ```
 
-Show this component in `src/App.jsx`:
+Add this component to the gallery in `src/App.jsx`:
 
 ```jsx
+import StaticPracticeCard from "./components/StaticPracticeCard";
+import MotionIntroCard from "./components/MotionIntroCard";
+import RevealDetailsCard from "./components/RevealDetailsCard";
+import SpringTransitionCard from "./components/SpringTransitionCard";
 import PressableButton from "./components/PressableButton";
 import "./App.css";
 
 export default function App() {
   return (
-    <main className="stage">
-      <PressableButton />
+    <main className="gallery">
+      <section className="comparison">
+        <StaticPracticeCard />
+        <MotionIntroCard />
+        <RevealDetailsCard />
+        <SpringTransitionCard />
+        <PressableButton />
+      </section>
     </main>
   );
 }
 ```
 
-Save the files and check the browser. Hover and press the button to test the feedback.
+Save the files and check the browser. You should now see five saved examples. Hover and press the button feedback card to test the interaction.
 
 Before you tweak it, compare the example with the official docs:
 
@@ -806,22 +833,34 @@ export default function DraggableCard() {
 }
 ```
 
-Show this component in `src/App.jsx`:
+Add this component to the gallery in `src/App.jsx`:
 
 ```jsx
+import StaticPracticeCard from "./components/StaticPracticeCard";
+import MotionIntroCard from "./components/MotionIntroCard";
+import RevealDetailsCard from "./components/RevealDetailsCard";
+import SpringTransitionCard from "./components/SpringTransitionCard";
+import PressableButton from "./components/PressableButton";
 import DraggableCard from "./components/DraggableCard";
 import "./App.css";
 
 export default function App() {
   return (
-    <main className="stage">
-      <DraggableCard />
+    <main className="gallery">
+      <section className="comparison">
+        <StaticPracticeCard />
+        <MotionIntroCard />
+        <RevealDetailsCard />
+        <SpringTransitionCard />
+        <PressableButton />
+        <DraggableCard />
+      </section>
     </main>
   );
 }
 ```
 
-Save the files and check the browser. Drag the card and notice how it is constrained.
+Save the files and check the browser. You should now see six saved examples. Drag the drag card and notice how it is constrained.
 
 Before you tweak it, compare the example with the official docs:
 
@@ -913,22 +952,36 @@ export default function SwipeDecisionCard() {
 }
 ```
 
-Show this component in `src/App.jsx`:
+Add this component to the gallery in `src/App.jsx`:
 
 ```jsx
+import StaticPracticeCard from "./components/StaticPracticeCard";
+import MotionIntroCard from "./components/MotionIntroCard";
+import RevealDetailsCard from "./components/RevealDetailsCard";
+import SpringTransitionCard from "./components/SpringTransitionCard";
+import PressableButton from "./components/PressableButton";
+import DraggableCard from "./components/DraggableCard";
 import SwipeDecisionCard from "./components/SwipeDecisionCard";
 import "./App.css";
 
 export default function App() {
   return (
-    <main className="stage">
-      <SwipeDecisionCard />
+    <main className="gallery">
+      <section className="comparison">
+        <StaticPracticeCard />
+        <MotionIntroCard />
+        <RevealDetailsCard />
+        <SpringTransitionCard />
+        <PressableButton />
+        <DraggableCard />
+        <SwipeDecisionCard />
+      </section>
     </main>
   );
 }
 ```
 
-Save the files and check the browser. Drag right, drag left, and try a small drag that is not far enough.
+Save the files and check the browser. You should now see seven saved examples. In the swipe card, drag right, drag left, and try a small drag that is not far enough.
 
 Before you tweak it, compare the example with the official docs:
 
@@ -1022,22 +1075,38 @@ export default function ExpandingCard() {
 }
 ```
 
-Show this component in `src/App.jsx`:
+Add this component to the gallery in `src/App.jsx`:
 
 ```jsx
+import StaticPracticeCard from "./components/StaticPracticeCard";
+import MotionIntroCard from "./components/MotionIntroCard";
+import RevealDetailsCard from "./components/RevealDetailsCard";
+import SpringTransitionCard from "./components/SpringTransitionCard";
+import PressableButton from "./components/PressableButton";
+import DraggableCard from "./components/DraggableCard";
+import SwipeDecisionCard from "./components/SwipeDecisionCard";
 import ExpandingCard from "./components/ExpandingCard";
 import "./App.css";
 
 export default function App() {
   return (
-    <main className="stage">
-      <ExpandingCard />
+    <main className="gallery">
+      <section className="comparison">
+        <StaticPracticeCard />
+        <MotionIntroCard />
+        <RevealDetailsCard />
+        <SpringTransitionCard />
+        <PressableButton />
+        <DraggableCard />
+        <SwipeDecisionCard />
+        <ExpandingCard />
+      </section>
     </main>
   );
 }
 ```
 
-Save the files and check the browser. Click the button and watch the card resize.
+Save the files and check the browser. You should now see eight saved examples. In the layout card, click the button and watch the card resize.
 
 Before you tweak it, compare the example with the official docs:
 
@@ -1138,9 +1207,17 @@ export default function ScrollProgress() {
 }
 ```
 
-Show both scroll components in `src/App.jsx`:
+Add the scroll components to the gallery in `src/App.jsx`:
 
 ```jsx
+import StaticPracticeCard from "./components/StaticPracticeCard";
+import MotionIntroCard from "./components/MotionIntroCard";
+import RevealDetailsCard from "./components/RevealDetailsCard";
+import SpringTransitionCard from "./components/SpringTransitionCard";
+import PressableButton from "./components/PressableButton";
+import DraggableCard from "./components/DraggableCard";
+import SwipeDecisionCard from "./components/SwipeDecisionCard";
+import ExpandingCard from "./components/ExpandingCard";
 import ScrollProgress from "./components/ScrollProgress";
 import ScrollRevealCard from "./components/ScrollRevealCard";
 import "./App.css";
@@ -1150,25 +1227,38 @@ export default function App() {
     <>
       <ScrollProgress />
 
-      <main className="scroll-page">
-        <ScrollRevealCard title="Plan">
-          Motion can pace longer content.
-        </ScrollRevealCard>
+      <main className="gallery">
+        <section className="comparison">
+          <StaticPracticeCard />
+          <MotionIntroCard />
+          <RevealDetailsCard />
+          <SpringTransitionCard />
+          <PressableButton />
+          <DraggableCard />
+          <SwipeDecisionCard />
+          <ExpandingCard />
+        </section>
 
-        <ScrollRevealCard title="Reveal">
-          Each card appears when it enters the viewport.
-        </ScrollRevealCard>
+        <section className="scroll-page">
+          <ScrollRevealCard title="Plan">
+            Motion can pace longer content.
+          </ScrollRevealCard>
 
-        <ScrollRevealCard title="Progress">
-          The bar at the top follows the scroll position.
-        </ScrollRevealCard>
+          <ScrollRevealCard title="Reveal">
+            Each card appears when it enters the viewport.
+          </ScrollRevealCard>
+
+          <ScrollRevealCard title="Progress">
+            The bar at the top follows the scroll position.
+          </ScrollRevealCard>
+        </section>
       </main>
     </>
   );
 }
 ```
 
-Save the files and check the browser. Scroll the page and watch the cards appear. The progress bar should move as you scroll.
+Save the files and check the browser. You should now see the saved example gallery and a scroll section underneath it. Scroll the page and watch the cards appear. The progress bar should move as you scroll.
 
 Before you tweak it, compare the example with the official docs:
 
@@ -1210,36 +1300,43 @@ ScrollRevealCard.jsx
 ScrollProgress.jsx
 ```
 
-You can switch between them by changing the import and rendered component in `src/App.jsx`.
+At this point, `src/App.jsx` works as a small gallery of your saved examples.
 
-Most examples use this wrapper:
-
-```jsx
-<main className="stage">
-  <ComponentName />
-</main>
-```
-
-To compare two saved examples, put them inside the comparison layout:
+The card-sized examples live inside the comparison layout:
 
 ```jsx
-<main className="stage">
+<main className="gallery">
   <section className="comparison">
     <StaticPracticeCard />
     <MotionIntroCard />
+    <RevealDetailsCard />
+    <SpringTransitionCard />
+    <PressableButton />
+    <DraggableCard />
+    <SwipeDecisionCard />
+    <ExpandingCard />
   </section>
 </main>
 ```
 
-The scroll example is different because it needs a longer page:
+The scroll example is different because it needs a longer section. It can sit underneath the card gallery:
 
 ```jsx
-<main className="scroll-page">
-  <ScrollRevealCard title="Plan">
-    Motion can pace longer content.
-  </ScrollRevealCard>
+<main className="gallery">
+  <section className="comparison">
+    <StaticPracticeCard />
+    <MotionIntroCard />
+  </section>
+
+  <section className="scroll-page">
+    <ScrollRevealCard title="Plan">
+      Motion can pace longer content.
+    </ScrollRevealCard>
+  </section>
 </main>
 ```
+
+If the gallery becomes distracting while you work on one experiment, temporarily remove the other components from `App.jsx` and add them back afterwards.
 
 Note about `touch-action`:
 
