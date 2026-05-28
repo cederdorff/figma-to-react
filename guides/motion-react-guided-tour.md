@@ -189,7 +189,7 @@ body {
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  width: min(760px, 100%);
+  width: min(1120px, 100%);
 }
 
 .card {
@@ -467,22 +467,28 @@ export default function RevealDetailsCard() {
 }
 ```
 
-Show this component in `src/App.jsx`:
+Add this component to the gallery in `src/App.jsx`:
 
 ```jsx
+import StaticPracticeCard from "./components/StaticPracticeCard";
+import MotionIntroCard from "./components/MotionIntroCard";
 import RevealDetailsCard from "./components/RevealDetailsCard";
 import "./App.css";
 
 export default function App() {
   return (
     <main className="stage">
-      <RevealDetailsCard />
+      <section className="comparison">
+        <StaticPracticeCard />
+        <MotionIntroCard />
+        <RevealDetailsCard />
+      </section>
     </main>
   );
 }
 ```
 
-Save the files and check the browser. Click the button and make sure the details animate in and out.
+Save the files and check the browser. You should now see three cards. Click the button in the React state card and make sure the details animate in and out.
 
 Before you tweak it, compare the example with the official docs:
 
@@ -502,11 +508,67 @@ Good places to use this:
 
 Required experiment:
 
-Do at least two of these changes. After each change, save the file, click the button in the browser, and notice what changed.
+Do at least two of these experiments. After each one, save the file, click the button in the browser, and notice what changed.
 
-- Add a second animated value, such as `scale`.
-- Make the details slide from the side instead.
-- Add different text or colors for open and closed states.
+You may need to refresh the browser between experiments to make sure you are seeing the newest version.
+
+### Experiment A - Add Scale
+
+In the `animate` prop, add `scale`:
+
+```jsx
+animate={{
+  opacity: isOpen ? 1 : 0,
+  height: isOpen ? "auto" : 0,
+  y: isOpen ? 0 : -8,
+  scale: isOpen ? 1 : 0.85
+}}
+```
+
+Question:
+
+> Does the scale make the state change clearer, or does it feel too dramatic?
+
+### Experiment B - Slide From the Side
+
+Change `y` to `x`:
+
+```jsx
+animate={{
+  opacity: isOpen ? 1 : 0,
+  height: isOpen ? "auto" : 0,
+  x: isOpen ? 0 : -16
+}}
+```
+
+Question:
+
+> Does sideways movement fit this interaction better than vertical movement?
+
+### Experiment C - Change the Message
+
+Change the text inside the details section:
+
+```jsx
+<h2>More information</h2>
+<p>This content is only visible when the card is open.</p>
+```
+
+Question:
+
+> Does the text make it obvious what changed when you clicked the button?
+
+### Experiment D - Make the Timing Slower
+
+Change the transition:
+
+```jsx
+transition={{ duration: 0.6 }}
+```
+
+Question:
+
+> Does the slower animation help, or does it make the interface feel delayed?
 
 When you are done experimenting, choose the version that makes the state change easiest to understand.
 
