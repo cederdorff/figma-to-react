@@ -815,19 +815,3 @@ If swiping scrolls instead of drags:
 2. Keep `drag="x"` and `dragConstraints`.
 
 ---
-
-## Deliverables
-
-Submit:
-
-1. A screenshot or short recording of your final lab.
-2. Three final haptic mappings (success, warning, error).
-3. One Motion + haptics interaction you are most happy with.
-4. One thing you would improve next.
-
----
-
-## Wrap-Up
-
-You now have a clean starter/test project for web haptics,
-plus a combined Motion + haptics interaction in the same app.
