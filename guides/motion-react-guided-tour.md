@@ -2152,7 +2152,128 @@ Question:
 
 > Does this make the image feel interactive? If the image does not do anything when clicked, should it have hover feedback?
 
-### 6. Decide What to Keep
+### 6. Discuss Drag and Gestures in Codeagram
+
+Codeagram is a feed, so gestures can be useful, but they need to be obvious.
+
+Good places for gestures:
+
+- tap feedback on like and bookmark
+- hover feedback on real buttons
+- drag or swipe on a post if it has a clear result
+- drag to reveal an action such as save, hide or share
+
+Risky places for gestures:
+
+- dragging the image if the image does not do anything
+- swipe-to-delete without confirmation
+- gestures that fight normal page scrolling
+- hover effects on elements that are not clickable
+
+Before adding drag, answer:
+
+1. What does the drag mean?
+2. How far does the user need to drag?
+3. What feedback appears after release?
+4. Is there a button fallback for users who do not discover the gesture?
+
+Optional drag challenge:
+
+Use `PostCard.jsx` to make a horizontal swipe set the post as bookmarked.
+
+Open:
+
+```text
+src/components/PostCard.jsx
+```
+
+Find the existing `toggleBookmark` function:
+
+```jsx
+function toggleBookmark() {
+  setBookmarked(!bookmarked);
+}
+```
+
+Add this new function below it:
+
+```jsx
+function handleDragEnd(_event, info) {
+  if (info.offset.x > 120) {
+    setBookmarked(true);
+  } else if (info.offset.x < -120) {
+    setBookmarked(false);
+  }
+}
+```
+
+This means:
+
+- if the post is dragged more than `120` pixels to the right, it becomes bookmarked
+- if the post is dragged more than `120` pixels to the left, the bookmark is removed
+- if the post is not dragged far enough, nothing changes
+- the bookmark button still works as before
+
+Find the opening `<motion.article>`:
+
+```jsx
+<motion.article
+  className="post-card"
+  initial={{ opacity: 0, y: 24 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.35, ease: "easeOut" }}
+>
+```
+
+Add the drag props to it:
+
+```jsx
+<motion.article
+  className="post-card"
+  initial={{ opacity: 0, y: 24 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.35, ease: "easeOut" }}
+  drag="x"
+  dragConstraints={{ left: -140, right: 140 }}
+  dragMomentum={false}
+  whileDrag={{ scale: 1.02 }}
+  onDragEnd={handleDragEnd}
+>
+```
+
+If you already changed the `initial` or `transition` values in an earlier experiment, keep your own values. Just add these lines:
+
+```jsx
+drag="x"
+dragConstraints={{ left: -140, right: 140 }}
+dragMomentum={false}
+whileDrag={{ scale: 1.02 }}
+onDragEnd={handleDragEnd}
+```
+
+Save and test.
+
+Drag a post to the right. When you drag far enough and release, the bookmark icon should become active.
+
+Drag the same post to the left. When you drag far enough and release, the bookmark should be removed.
+
+Keep the bookmark button. The drag is an extra shortcut, not the only way to bookmark.
+
+Test:
+
+- drag a post slightly
+- drag a post far to the right
+- drag a bookmarked post far to the left
+- use the bookmark button instead
+- try scrolling normally through the feed
+
+Question:
+
+> Does swipe-to-bookmark feel natural in Codeagram, or does it get in the way of scrolling?
+
+### 7. Decide What to Keep
 
 After experimenting, remove any motion that does not help.
 
