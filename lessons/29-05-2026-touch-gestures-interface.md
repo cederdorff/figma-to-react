@@ -47,11 +47,16 @@ By the end of the session, you should see that digital experiences can be shaped
 2. **Demo**
    - Build one simple swipe example together.
    - Show drag distance, threshold, snap-back, and feedback during movement.
-3. **Workshop**
+3. **Haptics focus: from visual to tactile feedback**
+   - Use [Haptics by Lochie](https://haptics.lochie.me/) to review simple mobile haptic patterns.
+   - Map gesture outcomes (success, cancel, warning) to different haptic intent levels.
+   - Discuss where haptics improves clarity and where it becomes noise.
+4. **Workshop**
    - **Track A (more coding experience):** you get a full Codeagram app and work with Motion to add richer gesture interactions.
    - **Track B (less coding experience):** we first recap and implement parts of the Codeagram app together, then add simple gestures with Motion.
-4. **Share and wrap up**
+5. **Share and wrap up**
    - Quick test and discussion: does the gesture make the interaction clearer, better, or more fun?
+   - Optional reflection: where could subtle haptic feedback improve the experience?
 
 ---
 
@@ -61,6 +66,7 @@ By the end of the session, you should see that digital experiences can be shaped
 - `drag` / `dragConstraints` — control movement and interaction boundaries
 - `onDragEnd` + threshold — decide success state vs snap-back behavior
 - `whileTap` / `animate` — give feedback during and after interaction
+- **Haptic feedback** — when a tiny vibration cue can support gesture confirmation
 - **Affordance** — how does the UI communicate that something can be dragged or swiped?
 - **Fallback interaction** — when should a simple tap/button alternative be available?
 
@@ -80,6 +86,7 @@ By the end of the session, you should see that digital experiences can be shaped
 - **Other links**
   - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md)
   - [Motion docs](https://motion.dev/)
+  - [Haptics by Lochie](https://haptics.lochie.me/)
   - [React.dev Learn](https://react.dev/learn)
   - [React.dev - Describing the UI](https://react.dev/learn/describing-the-ui)
   - [CodeDex React course](https://www.codedex.io/react)
