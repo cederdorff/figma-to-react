@@ -10,7 +10,9 @@ race@eaaa.dk
 
 This guide introduces **Motion for React** as a way to make interaction clearer in a React prototype.
 
-You have already worked with React components, props, state, events, lists, layout and Figma-to-React prototypes. Motion builds on that work. React decides what the interface is. Motion helps the user understand what is happening when the interface changes.
+This guide builds on the early React work from **Getting started with React** and **Codeagram**, but you will use a new React project as a blank canvas. That way you can focus on Motion without changing an existing project too early.
+
+React decides what the interface is. Motion helps the user understand what is happening when the interface changes.
 
 The goal is not to add animation everywhere. The goal is to use motion as feedback:
 
@@ -38,53 +40,135 @@ Official Motion docs used in this guide:
 
 ## How This Fits With Your Current Work
 
-You can use Motion in any of the projects or exercises from the course.
+Use this guide as a small practice project before you add motion to your own work.
 
-| Your current work | Good place to add Motion |
-| --- | --- |
-| Codeagram | Like button feedback, card hover, image reveal, swipe between posts |
-| React User List App | Selected user, expanded details, animated filtering, hover feedback on rows |
-| React User CRUD App | Form focus, save success, delete warning, edit mode transition |
-| React Router SPA | Active navigation, page entry, scroll progress, route-like transitions |
-| Figma-to-React prototype | Make static screens feel interactive with state changes and feedback |
-| Gesture prototype | Drag, swipe, snap-back, accept/reject, reveal or dismiss interaction |
-
-Before adding Motion, choose one interaction that actually needs feedback. If you cannot explain what the motion communicates, keep the interface still.
-
----
-
-## Suggested Teaching Flow
-
-Use this structure if we introduce Motion together in class.
-
-| Time | Focus | What to show |
-| --- | --- | --- |
-| 5 min | Why Motion? | Motion as feedback, not decoration |
-| 10 min | Install and import | `npm install motion`, `import { motion } from "motion/react"` |
-| 15 min | First animation | `initial`, `animate`, `transition` |
-| 15 min | React state animation | Animate when state changes |
-| 20 min | Gesture animation | `whileHover`, `whileTap`, `drag`, `whileDrag`, `onDragEnd` |
-| 10 min | Layout and scroll | `layout`, `whileInView`, `useScroll` |
-| 30+ min | Student work | Add one useful animation or gesture to an exercise/prototype |
+The examples are not meant to replace Codeagram or your prototype. They are a safe place to learn the pattern first. After that, you can transfer the same ideas to a post card, image, like button, comment area or swipe interaction in Codeagram.
 
 ---
 
 ## Before You Start
 
-You need:
+This guide uses a new React project so everyone starts from the same blank canvas.
 
-- A React project
-- Node.js and npm installed
-- A component you can edit
-- Basic understanding of JSX, components, props, state and events
+### 1. Create a New React Project
 
-If you do not have a React project yet, create one with Vite:
+Create a new project folder on your machine.
+
+Open that folder in VS Code, and only that folder.
+
+Open the terminal in VS Code.
+
+Run:
 
 ```bash
 npm create vite@latest . -- --template react
+```
+
+Then run:
+
+```bash
 npm install
+```
+
+Start the project:
+
+```bash
 npm run dev
 ```
+
+Open the local URL in the browser and make sure the blank React app works before you continue.
+
+### 2. Create a Component to Practise With
+
+Keep the dev server running while you work.
+
+Create a folder:
+
+```bash
+mkdir src/components
+```
+
+Create `src/components/PracticeCard.jsx`:
+
+```jsx
+export default function PracticeCard() {
+  return (
+    <article className="card">
+      <p className="eyebrow">Motion practice</p>
+      <h1>Practice card</h1>
+      <p>
+        Use this card to practise animation before adding Motion to your own
+        project.
+      </p>
+      <button className="button">Like</button>
+    </article>
+  );
+}
+```
+
+Replace the content of `src/App.jsx`:
+
+```jsx
+import PracticeCard from "./components/PracticeCard";
+import "./App.css";
+
+export default function App() {
+  return (
+    <main className="stage">
+      <PracticeCard />
+    </main>
+  );
+}
+```
+
+Replace the content of `src/App.css`:
+
+```css
+body {
+  background: #08111f;
+  color: #f8fafc;
+  font-family: Inter, system-ui, sans-serif;
+  margin: 0;
+}
+
+.stage {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+  max-width: 360px;
+  padding: 24px;
+}
+
+.eyebrow {
+  color: #7dd3fc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.button {
+  background: #7dd3fc;
+  border: 0;
+  border-radius: 8px;
+  color: #08111f;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  margin-top: 12px;
+  padding: 12px 18px;
+}
+```
+
+The rest of this guide uses `PracticeCard.jsx`.
 
 ---
 
@@ -117,24 +201,24 @@ The element still behaves like the normal HTML element. It just gets extra anima
 
 ## Step 2 - Create Your First Motion Component
 
-Start with a simple card.
+Start with the practice card. Replace the content of `src/components/PracticeCard.jsx`:
 
 ```jsx
 import { motion } from "motion/react";
 
-export default function App() {
+export default function PracticeCard() {
   return (
-    <main>
-      <motion.article
-        className="card"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-      >
-        <h1>Motion card</h1>
-        <p>This card fades in and moves slightly into place.</p>
-      </motion.article>
-    </main>
+    <motion.article
+      className="card"
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: "easeOut" }}
+    >
+      <p className="eyebrow">Motion practice</p>
+      <h1>Motion card</h1>
+      <p>This card fades in and moves slightly into place.</p>
+      <button className="button">Like</button>
+    </motion.article>
   );
 }
 ```
@@ -163,11 +247,14 @@ Motion becomes more useful when it reacts to state changes.
 import { useState } from "react";
 import { motion } from "motion/react";
 
-export default function App() {
+export default function PracticeCard() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <main>
+    <article className="card">
+      <p className="eyebrow">Motion practice</p>
+      <h1>React state</h1>
+
       <motion.button
         className="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -187,7 +274,7 @@ export default function App() {
         <h2>Details</h2>
         <p>The animation now follows React state.</p>
       </motion.section>
-    </main>
+    </article>
   );
 }
 ```
@@ -198,9 +285,9 @@ Important idea:
 
 Good places to use this:
 
-- show/hide user details
+- show/hide post details
 - open/close a menu
-- reveal form feedback
+- reveal a comment area
 - show selected or active state
 - communicate success or error
 
@@ -289,29 +376,25 @@ Hover and tap are the easiest gestures to add.
 ```jsx
 import { motion } from "motion/react";
 
-export default function App() {
+export default function PracticeCard() {
   return (
-    <main>
-      <motion.button
-        className="button"
-        whileHover={{ scale: 1.06 }}
-        whileTap={{ scale: 0.94 }}
-        transition={{ type: "spring", stiffness: 420, damping: 18 }}
-      >
-        Press me
-      </motion.button>
-    </main>
+    <motion.button
+      className="button"
+      whileHover={{ scale: 1.06 }}
+      whileTap={{ scale: 0.94 }}
+      transition={{ type: "spring", stiffness: 420, damping: 18 }}
+    >
+      Press me
+    </motion.button>
   );
 }
 ```
 
 Where this makes sense:
 
-- Codeagram like button
-- User List row action
-- CRUD form submit button
-- navigation links in a SPA
+- a comment button
 - a card that opens details
+- a button in your practice project
 
 Important:
 
@@ -321,7 +404,7 @@ Important:
 
 Try this:
 
-- Add `whileHover` to a Codeagram post card.
+- Add `whileHover` to the practice card.
 - Add `whileTap` to a like button.
 - Make the effect smaller until it feels calm.
 
@@ -334,18 +417,16 @@ Drag is useful when movement is part of the interaction itself.
 ```jsx
 import { motion } from "motion/react";
 
-export default function App() {
+export default function PracticeCard() {
   return (
-    <main className="stage">
-      <motion.div
-        className="drag-card"
-        drag
-        dragConstraints={{ left: -120, right: 120, top: -40, bottom: 40 }}
-        whileDrag={{ scale: 1.06, rotate: 2 }}
-      >
-        Drag me
-      </motion.div>
-    </main>
+    <motion.div
+      className="drag-card"
+      drag
+      dragConstraints={{ left: -120, right: 120, top: -40, bottom: 40 }}
+      whileDrag={{ scale: 1.06, rotate: 2 }}
+    >
+      Drag me
+    </motion.div>
   );
 }
 ```
@@ -392,7 +473,7 @@ A gesture should usually have a result. Did the user drag far enough? Should the
 import { useState } from "react";
 import { motion } from "motion/react";
 
-export default function App() {
+export default function PracticeCard() {
   const [status, setStatus] = useState("Drag the card");
 
   function handleDragEnd(event, info) {
@@ -406,7 +487,7 @@ export default function App() {
   }
 
   return (
-    <main className="stage">
+    <section className="practice-stack">
       <p>{status}</p>
 
       <motion.div
@@ -419,7 +500,7 @@ export default function App() {
       >
         Swipe me
       </motion.div>
-    </main>
+    </section>
   );
 }
 ```
@@ -469,7 +550,7 @@ The simplest version is the `layout` prop.
 import { useState } from "react";
 import { motion } from "motion/react";
 
-export default function App() {
+export default function PracticeCard() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -495,12 +576,11 @@ Important idea:
 
 > Use `layout` when the layout changes. Use `animate` when a visual value changes.
 
-Good course examples:
+Good examples from your current work:
 
-- User List App: expand a user row.
-- CRUD App: open edit mode inside a card.
-- Router SPA: animate an active navigation underline.
-- Figma prototype: expand a product or museum object card.
+- Practice project: expand the `PracticeCard` details.
+- Codeagram later: expand a post, image caption or comment area.
+- Your own prototype: expand one card, panel or content section.
 
 ---
 
@@ -587,10 +667,10 @@ main,
   display: grid;
   min-height: 100vh;
   place-items: center;
+  padding: 24px;
 }
 
 .card,
-.details,
 .drag-card {
   background: #0f172a;
   border: 1px solid #334155;
@@ -598,6 +678,14 @@ main,
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
   max-width: 360px;
   padding: 24px;
+}
+
+.eyebrow {
+  color: #7dd3fc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  text-transform: uppercase;
 }
 
 .button {
@@ -608,7 +696,22 @@ main,
   cursor: pointer;
   font: inherit;
   font-weight: 700;
+  margin-top: 12px;
   padding: 12px 18px;
+}
+
+.details {
+  border-top: 1px solid #334155;
+  margin-top: 18px;
+  overflow: hidden;
+  padding-top: 18px;
+}
+
+.practice-stack {
+  display: grid;
+  gap: 16px;
+  place-items: center;
+  text-align: center;
 }
 
 .drag-card {
@@ -643,7 +746,7 @@ Note about `touch-action`:
 
 ## Step 12 - Apply Motion to Your Own Work
 
-Choose one place in your own prototype where motion could help.
+First, choose one place in the practice project where motion could help. Later, you can use the same idea in Codeagram or your own prototype.
 
 Good places to start:
 
@@ -836,4 +939,3 @@ Try:
 - [Scroll animation](https://motion.dev/docs/react-scroll-animations)
 - [Layout animation](https://motion.dev/docs/react-layout-animations)
 - [Transitions](https://motion.dev/docs/react-transitions)
-
