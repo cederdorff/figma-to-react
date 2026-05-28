@@ -42,19 +42,17 @@ By the end of the session, you should see that digital experiences can be shaped
 
 1. **Intro and framing the day**
    - What is Motion, and why use gestures at all?
+   - What is haptic feedback, and when does it improve interaction clarity?
    - Show the core props: `motion.div`, `drag`, `whileTap`, `whileHover`, `onDragEnd`.
-   - Connect the day to your recent React/Figma work and to gesture/motion thinking.
-2. **Demo**
-   - Build one simple swipe example together.
-   - Show drag distance, threshold, snap-back, and feedback during movement.
-3. **Haptics focus: from visual to tactile feedback**
-   - Use [Haptics by Lochie](https://haptics.lochie.me/) to review simple mobile haptic patterns.
-   - Map gesture outcomes (success, cancel, warning) to different haptic intent levels.
-   - Discuss where haptics improves clarity and where it becomes noise.
-4. **Workshop**
-   - **Track A (more coding experience):** you get a full Codeagram app and work with Motion to add richer gesture interactions.
-   - **Track B (less coding experience):** we first recap and implement parts of the Codeagram app together, then add simple gestures with Motion.
-5. **Share and wrap up**
+2. **Short demos**
+   - Demo 1: simple swipe with threshold and snap-back.
+   - Demo 2: add haptic feedback to interaction outcomes.
+3. **Workshop**
+   - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md).
+   - [Web Haptics + Motion Lab](../guides/haptics-gesture-exercise.md).
+   - [Figma -> Motion -> MCP Experiment Guide](../guides/figma-motion-mcp-experiment-guide.md).
+   - [Lottie in React: Figma to Code Guide](../guides/lottie-figma-to-react-guide.md).
+4. **Share and wrap up**
    - Quick test and discussion: does the gesture make the interaction clearer, better, or more fun?
    - Optional reflection: where could subtle haptic feedback improve the experience?
 
@@ -78,6 +76,9 @@ By the end of the session, you should see that digital experiences can be shaped
   - Will be available here
 - **Exercises**
   - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md)
+  - [Web Haptics + Motion Lab](../guides/haptics-gesture-exercise.md)
+  - [Figma -> Motion -> MCP Experiment Guide](../guides/figma-motion-mcp-experiment-guide.md)
+  - [Lottie in React: Figma to Code Guide](../guides/lottie-figma-to-react-guide.md)
 - **Previous workday**
   - [`26-05-2026-guided-workday-gesture-motion.md`](26-05-2026-guided-workday-gesture-motion.md)
 - **Original lesson references**
@@ -86,6 +87,7 @@ By the end of the session, you should see that digital experiences can be shaped
 - **Other links**
   - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md)
   - [Motion docs](https://motion.dev/)
+  - [LottieFiles](https://lottiefiles.com/)
   - [Haptics by Lochie](https://haptics.lochie.me/)
   - [React.dev Learn](https://react.dev/learn)
   - [React.dev - Describing the UI](https://react.dev/learn/describing-the-ui)
