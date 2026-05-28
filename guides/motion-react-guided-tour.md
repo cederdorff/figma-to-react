@@ -1418,26 +1418,22 @@ Question:
 Find this block in `ExpandingCard.jsx`:
 
 ```jsx
-{isOpen && (
-  <motion.p layout>
-    Extra information appears here. The card smoothly changes size.
-  </motion.p>
-)}
+{
+  isOpen && <motion.p layout>Extra information appears here. The card smoothly changes size.</motion.p>;
+}
 ```
 
 Replace it with this:
 
 ```jsx
-{isOpen && (
-  <motion.div layout>
-    <p>
-      Extra information appears here. The card smoothly changes size.
-    </p>
-    <p>
-      Layout animation helps the new content feel connected to the card.
-    </p>
-  </motion.div>
-)}
+{
+  isOpen && (
+    <motion.div layout>
+      <p>Extra information appears here. The card smoothly changes size.</p>
+      <p>Layout animation helps the new content feel connected to the card.</p>
+    </motion.div>
+  );
+}
 ```
 
 Question:
@@ -1599,12 +1595,7 @@ import { motion, useScroll } from "motion/react";
 export default function ScrollProgress() {
   const { scrollYProgress } = useScroll();
 
-  return (
-    <motion.div
-      className="progress"
-      style={{ scaleX: scrollYProgress, originX: 0 }}
-    />
-  );
+  return <motion.div className="progress" style={{ scaleX: scrollYProgress, originX: 0 }} />;
 }
 ```
 
@@ -1641,17 +1632,11 @@ export default function App() {
         </section>
 
         <section className="scroll-page">
-          <ScrollRevealCard title="Plan">
-            Motion can pace longer content.
-          </ScrollRevealCard>
+          <ScrollRevealCard title="Plan">Motion can pace longer content.</ScrollRevealCard>
 
-          <ScrollRevealCard title="Reveal">
-            Each card appears when it enters the viewport.
-          </ScrollRevealCard>
+          <ScrollRevealCard title="Reveal">Each card appears when it enters the viewport.</ScrollRevealCard>
 
-          <ScrollRevealCard title="Progress">
-            The bar at the top follows the scroll position.
-          </ScrollRevealCard>
+          <ScrollRevealCard title="Progress">The bar at the top follows the scroll position.</ScrollRevealCard>
         </section>
       </main>
     </>
@@ -1809,9 +1794,7 @@ The scroll example is different because it needs a longer section. It can sit un
   </section>
 
   <section className="scroll-page">
-    <ScrollRevealCard title="Plan">
-      Motion can pace longer content.
-    </ScrollRevealCard>
+    <ScrollRevealCard title="Plan">Motion can pace longer content.</ScrollRevealCard>
   </section>
 </main>
 ```
@@ -2115,12 +2098,7 @@ Change one header button from:
 to:
 
 ```jsx
-<motion.button
-  className="icon-button"
-  type="button"
-  whileHover={{ scale: 1.08 }}
-  whileTap={{ scale: 0.92 }}
->
+<motion.button className="icon-button" type="button" whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.92 }}>
   <Search />
 </motion.button>
 ```
@@ -2140,12 +2118,7 @@ In `PostCard.jsx`, change the post image from:
 to:
 
 ```jsx
-<motion.img
-  className="post-image"
-  src={post.image}
-  whileHover={{ scale: 1.02 }}
-  transition={{ duration: 0.2 }}
-/>
+<motion.img className="post-image" src={post.image} whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }} />
 ```
 
 Question:
@@ -2181,11 +2154,41 @@ Optional drag challenge:
 
 Use `PostCard.jsx` to make a horizontal swipe set the post as bookmarked.
 
+This version uses a small Motion Value so the post can move while dragging and then spring back into place after release.
+
 Open:
 
 ```text
 src/components/PostCard.jsx
 ```
+
+Find the Motion import:
+
+```jsx
+import { motion } from "motion/react";
+```
+
+Replace it with these imports:
+
+```jsx
+import { animate } from "motion";
+import { motion, useMotionValue } from "motion/react";
+```
+
+Find the state values:
+
+```jsx
+const [liked, setLiked] = useState(false);
+const [bookmarked, setBookmarked] = useState(false);
+```
+
+Add this line below them:
+
+```jsx
+const x = useMotionValue(0);
+```
+
+This `x` value stores the horizontal drag position of the post.
 
 Find the existing `toggleBookmark` function:
 
@@ -2204,6 +2207,8 @@ function handleDragEnd(_event, info) {
   } else if (info.offset.x < -120) {
     setBookmarked(false);
   }
+
+  animate(x, 0, { type: "spring", stiffness: 500, damping: 30 });
 }
 ```
 
@@ -2212,6 +2217,7 @@ This means:
 - if the post is dragged more than `120` pixels to the right, it becomes bookmarked
 - if the post is dragged more than `120` pixels to the left, the bookmark is removed
 - if the post is not dragged far enough, nothing changes
+- `animate(x, 0, ...)` moves the post back to its normal position after release
 - the bookmark button still works as before
 
 Find the opening `<motion.article>`:
@@ -2231,6 +2237,7 @@ Add the drag props to it:
 ```jsx
 <motion.article
   className="post-card"
+  style={{ x }}
   initial={{ opacity: 0, y: 24 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, amount: 0.2 }}
@@ -2246,12 +2253,19 @@ Add the drag props to it:
 If you already changed the `initial` or `transition` values in an earlier experiment, keep your own values. Just add these lines:
 
 ```jsx
+style={{ x }}
 drag="x"
 dragConstraints={{ left: -140, right: 140 }}
 dragMomentum={false}
 whileDrag={{ scale: 1.02 }}
 onDragEnd={handleDragEnd}
 ```
+
+The important parts are:
+
+- `style={{ x }}` connects the post position to the Motion Value
+- `drag="x"` only allows horizontal dragging
+- `onDragEnd={handleDragEnd}` runs the decision when the user lets go
 
 Save and test.
 
@@ -2320,119 +2334,6 @@ Motion can do more than this. These are good next concepts when you are ready:
 - [SVG animation](https://motion.dev/docs/react-svg-animation): animate SVG shapes, paths and drawing effects.
 
 You do not need all of these for every project. Start with the motion that helps the user understand what changed.
-
----
-
-## Mini Exercises
-
-Choose one:
-
-### Level 1 - Button Feedback
-
-Add `whileHover` and `whileTap` to one button.
-
-Goal:
-
-- The button should feel interactive.
-- The effect should be clear but not distracting.
-
-### Level 2 - Animated Card
-
-Make a card animate in when the page loads.
-
-Use:
-
-- `initial`
-- `animate`
-- `transition`
-
-Goal:
-
-- The card should enter smoothly.
-
-### Level 3 - State Change
-
-Create a show/hide details interaction.
-
-Use:
-
-- `useState`
-- `animate`
-- a button click
-
-Goal:
-
-- The user should clearly understand when the details are shown or hidden.
-
-### Level 4 - Drag Interaction
-
-Create a draggable card.
-
-Use:
-
-- `drag`
-- `dragConstraints`
-- `whileDrag`
-
-Goal:
-
-- The user should understand that the card can be moved.
-
-### Level 5 - Swipe Decision
-
-Create a swipe interaction with a threshold.
-
-Use:
-
-- `drag="x"`
-- `onDragEnd`
-- `info.offset.x`
-- state feedback
-
-Goal:
-
-- Swiping right and left should produce different feedback.
-
-### Level 6 - Layout Change
-
-Create a card that expands when clicked.
-
-Use:
-
-- `layout`
-- `useState`
-- conditional content
-
-Goal:
-
-- The size change should feel connected instead of sudden.
-
-### Level 7 - Scroll Feedback
-
-Create one scroll-triggered reveal or a scroll progress bar.
-
-Use:
-
-- `whileInView` or `useScroll`
-- `viewport={{ once: true }}` for one-time reveals
-
-Goal:
-
-- The motion should help the user follow the page, not distract from it.
-
----
-
-## Reflection Questions
-
-Use these questions when testing your animation:
-
-1. Does the motion communicate what changed?
-2. Does the motion make the interaction easier to understand?
-3. Is the animation fast enough to keep the interface responsive?
-4. Is the animation calm enough that it does not distract?
-5. Would the interaction still work without motion?
-6. Is there a fallback for users who do not discover the gesture?
-7. Does the gesture match the user's mental model of the interface?
 
 ---
 
