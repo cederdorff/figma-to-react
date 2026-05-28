@@ -115,7 +115,7 @@ export default function App() {
   return (
     <main className="page">
       <h1 className="title">Web Haptics + Motion Lab</h1>
-      <p className="subtitle">Starter app is running. Ready for Step 2.</p>
+      <p className="subtitle">Starter app is running. Ready for Step 3.</p>
     </main>
   );
 }
@@ -258,6 +258,11 @@ npm run dev -- --host
 
 3. In the terminal output, find the network URL (for example `http://192.168.1.24:5173`).
 4. Open that URL on your phone browser.
+
+Important support note:
+
+1. Android Chrome usually gives the best haptics support.
+2. iOS Safari may not provide real vibration even when your code is correct.
 
 If it does not open:
 
@@ -492,12 +497,6 @@ export default function HapticListCard() {
 }
 ```
 
-Test now:
-
-1. Click all four actions and notice which ones share the same haptic meaning.
-2. Change one mapping (for example make `Reminder` use `error`) and evaluate if it still makes sense.
-3. Keep the mapping that best matches the action intent.
-
 Now update `src/App.jsx` and render all three components:
 
 ```jsx
@@ -521,6 +520,12 @@ export default function App() {
   );
 }
 ```
+
+Test now:
+
+1. Click all four actions and notice which ones share the same haptic meaning.
+2. Change one mapping (for example make `Reminder` use `error`) and evaluate if it still makes sense.
+3. Keep the mapping that best matches the action intent.
 
 Final checkpoint for Step 3:
 
@@ -572,6 +577,8 @@ Done means:
 
 1. You can clearly tell the 3 states apart.
 2. None of them feel annoying after repeated testing.
+
+Keep these final patterns ready for Step 5. You can use them in swipe outcomes by replacing presets like `trigger("success")` with your custom arrays.
 
 ---
 
