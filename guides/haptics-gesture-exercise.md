@@ -685,17 +685,22 @@ import { useWebHaptics } from "web-haptics/react";
 export default function HapticMotionSwipeCard() {
   const { trigger } = useWebHaptics({ debug: true });
   const [state, setState] = useState("idle");
+  const SWIPE_OFFSET = 70;
+  const SWIPE_VELOCITY = 500;
 
   function handleDragEnd(_, info) {
-    const x = info.offset.x;
+    const offsetX = info.offset.x;
+    const velocityX = info.velocity.x;
+    const passedRight = offsetX > SWIPE_OFFSET || velocityX > SWIPE_VELOCITY;
+    const passedLeft = offsetX < -SWIPE_OFFSET || velocityX < -SWIPE_VELOCITY;
 
-    if (x > 70) {
+    if (passedRight) {
       setState("accepted");
       trigger("success");
       return;
     }
 
-    if (x < -70) {
+    if (passedLeft) {
       setState("rejected");
       trigger("error");
       return;
@@ -718,9 +723,12 @@ export default function HapticMotionSwipeCard() {
       <motion.div
         className="swipe-zone"
         drag="x"
+        dragMomentum={false}
+        dragElastic={0.12}
         dragConstraints={{ left: -120, right: 120 }}
         style={{ touchAction: "none" }}
         whileTap={{ scale: 0.98 }}
+        whileDrag={{ scale: 1.01 }}
         onDragEnd={handleDragEnd}
         animate={{ x: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 22 }}
@@ -738,19 +746,22 @@ How this component works:
 
 1. `handleDragEnd` runs when you release the swipe.
 2. `info.offset.x` tells how far you dragged on the x-axis.
-3. Thresholds decide meaning:
+3. `info.velocity.x` tells how fast you released the swipe.
+4. Swipe outcome uses both distance and speed (this feels better on mobile):
 
-- `x > 70`: accepted -> `success`
-- `x < -70`: rejected -> `error`
+- right pass: `offsetX > 70` or `velocityX > 500` -> `success`
+- left pass: `offsetX < -70` or `velocityX < -500` -> `error`
 - otherwise: not far enough -> `nudge`
 
-4. Keeping this logic in `handleDragEnd` (instead of inline JSX) makes the code easier to read and easier to adjust.
+5. `dragMomentum={false}` reduces accidental long throws after release.
+6. Keeping this logic in `handleDragEnd` (instead of inline JSX) makes the code easier to read and easier to adjust.
 
 What to tweak if needed:
 
 1. Lower thresholds (for example 55) if swipes feel too hard.
 2. Raise thresholds (for example 90) if accidental swipes happen too often.
-3. Swap haptic presets if the feedback meaning feels wrong.
+3. Lower velocity threshold (for example 420) if quick flicks are not detected.
+4. Swap haptic presets if the feedback meaning feels wrong.
 
 Update `src/App.jsx` by adding the new card:
 
