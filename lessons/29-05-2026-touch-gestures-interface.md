@@ -73,7 +73,7 @@ By the end of the session, you should see that digital experiences can be shaped
 ### Materials
 
 - **Slides**
-  - Will be available here
+  - [29-05-2026 Touch Gestures Slide Deck](../slides/29-05-2026-touch-gestures-interface.html)
 - **Exercises**
   - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md)
   - [Web Haptics + Motion Lab](../guides/haptics-gesture-exercise.md)

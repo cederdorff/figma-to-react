@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>29-05-2026: Touch Gestures, Motion and Haptics</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" />
+
+    <style>
+      :root {
+        --r-main-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --r-heading-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --r-heading-text-transform: none;
+        --r-heading-letter-spacing: 0;
+        --r-main-color: #dbe7f3;
+        --r-heading-color: #f8fafc;
+        --r-link-color: #7dd3fc;
+        --r-link-color-hover: #a7f3d0;
+        --r-background-color: #08111f;
+      }
+
+      body {
+        background: linear-gradient(145deg, #070b14 0%, #111827 48%, #06151f 100%);
+      }
+
+      .reveal {
+        color: #dbe7f3;
+        font-size: 30px;
+      }
+
+      .reveal .slides section {
+        text-align: left;
+      }
+
+      .reveal h1,
+      .reveal h2 {
+        font-weight: 780;
+        line-height: 1.06;
+      }
+
+      .reveal h1 {
+        font-size: 2.1em;
+      }
+
+      .reveal h2 {
+        font-size: 1.45em;
+      }
+
+      .reveal p,
+      .reveal li {
+        color: #cbd5e1;
+        line-height: 1.3;
+      }
+
+      .reveal strong {
+        color: #f8fafc;
+      }
+
+      .reveal ul,
+      .reveal ol {
+        display: block;
+        margin-left: 1em;
+        max-width: 35ch;
+      }
+
+      .reveal li + li {
+        margin-top: 0.24em;
+      }
+
+      .eyebrow {
+        color: #7dd3fc;
+        font-size: 0.62em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin: 0 0 0.5em;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        color: #94a3b8;
+        font-size: 0.78em;
+      }
+
+      .tag {
+        display: inline-block;
+        margin-top: 0.5em;
+        padding: 0.26em 0.68em;
+        border-radius: 999px;
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        background: rgba(56, 189, 248, 0.12);
+        color: #bae6fd;
+        font-size: 0.45em;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .workshop-bg {
+        min-height: 520px;
+      }
+
+      .workshop-bg ul {
+        max-width: none;
+      }
+
+      .workshop-bg li {
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <p class="eyebrow">29 May 2026</p>
+          <h1>Touch Gestures as Interface</h1>
+          <p class="subtitle">Motion, haptics, demos and workshop</p>
+          <span class="tag">Framing the day</span>
+        </section>
+
+        <section>
+          <h2>Intro and Agenda</h2>
+          <ul>
+            <li><strong>Framing:</strong> interaction is more than clicks and buttons.</li>
+            <li><strong>Motion:</strong> what it is and why it matters for UX clarity.</li>
+            <li><strong>Haptic feedback:</strong> what it is and when it helps.</li>
+            <li><strong>Short demos</strong> before workshop.</li>
+            <li><strong>Workshop</strong> with 4 tasks/guides.</li>
+            <li><strong>Wrap-up</strong> and key takeaways.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Exam Note</h2>
+          <p class="subtitle">Please read this carefully</p>
+          <ul>
+            <li>The exam description is now <strong>published</strong>.</li>
+            <li>We will go through it together on <strong>Monday</strong>.</li>
+            <li>Please read it before Monday and note your questions.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What is Motion?</h2>
+          <ul>
+            <li>Motion is a React animation and interaction library.</li>
+            <li>It helps you make state changes visible and understandable.</li>
+            <li>It supports gestures such as drag, swipe, tap and hover.</li>
+          </ul>
+          <p><strong>Why learn it?</strong> Better feedback, clearer interaction flow, more expressive prototypes.</p>
+        </section>
+
+        <section>
+          <h2>What is Haptic Feedback?</h2>
+          <ul>
+            <li>Haptics are tactile signals (small vibration feedback).</li>
+            <li>They can confirm success, warning, or error states.</li>
+            <li>Good haptics support meaning, not just effect.</li>
+          </ul>
+          <p><strong>Why learn it?</strong> It adds a second feedback channel alongside visuals and motion.</p>
+        </section>
+
+        <section>
+          <h2>Short Demos</h2>
+          <ol>
+            <li>Simple swipe with threshold and snap-back.</li>
+            <li>Add haptic feedback to interaction outcomes.</li>
+            <li>Quick tuning: when motion/haptics feel too much or too little.</li>
+          </ol>
+        </section>
+
+        <section class="workshop-bg">
+          <h2>Workshop (Background Slide)</h2>
+          <p class="subtitle">Task-based work time</p>
+          <ul>
+            <li>Task 1: Motion for React Guided Tour</li>
+            <li>Task 2: Web Haptics + Motion Lab</li>
+            <li>Task 3: Figma -> Motion -> MCP Experiment Guide</li>
+            <li>Task 4: Lottie in React: Figma to Code Guide</li>
+          </ul>
+          <p><strong>Goal:</strong> complete at least one task with a working result.</p>
+        </section>
+
+        <section>
+          <h2>Wrap Up</h2>
+          <ul>
+            <li>What did your interaction communicate clearly?</li>
+            <li>Where did motion or haptics create confusion?</li>
+            <li>What is one improvement you will make next?</li>
+          </ul>
+          <p class="subtitle">Focus on clarity, intent and user feedback.</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: "slide",
+        controls: true,
+        progress: true,
+        center: true
+      });
+    </script>
+  </body>
+</html>
