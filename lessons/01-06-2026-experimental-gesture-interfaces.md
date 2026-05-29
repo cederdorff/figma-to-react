@@ -6,58 +6,85 @@
 
 ### Purpose of The Day
 
-You will explore experimental gesture interfaces, including camera-based hand gestures and other non-standard input methods. The focus is on how physical movement can control a digital interface, and how React state and motion feedback can make the interaction understandable.
+We explore experimental gesture interfaces with a focus on camera input and hand gestures.
+
+Today we prototype a **Webcam Controlled Game** using **TensorFlow.js** and browser camera APIs.
+
+The focus is on how physical movement can control a digital interface, and how React state plus motion feedback can make interaction understandable.
 
 Focus question:
 
 > How can physical movement become meaningful input for an interactive digital experience?
 
-By the end of the day, you should have tested or prototyped an alternative gesture interaction, such as hand tracking, camera input or another non-standard input method.
+By the end of the day, you should have tested or prototyped a camera-based interaction where hand movement drives game state, UI state or motion behavior.
+
+---
 
 ### Preparation
 
-- Bring your prototype.
-- Think about one interaction that could be controlled without a mouse, keyboard or touch.
-- Make sure your laptop camera works if you want to test hand gestures.
-- Be ready to test with camera input or a fallback interaction.
-- Be ready to reflect on reliability, privacy, discoverability and accessibility.
+1. **Work with the 4 tasks from 29-05-2026**
+   - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md)
+   - [Web Haptics + Motion Lab](../guides/haptics-gesture-exercise.md)
+   - [Figma -> Motion -> MCP Experiment Guide](../guides/figma-motion-mcp-experiment-guide.md)
+   - [Lottie in React: Figma to Code Guide](../guides/lottie-figma-to-react-guide.md)
+2. **Skim the core docs**
+   - [TensorFlow.js Documentation](https://www.tensorflow.org/js)
+   - [MediaPipe Hands Guide](https://mediapipe.readthedocs.io/en/latest/solutions/hands.html)
+   - [Hand Pose Detection API](https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection)
+   - [WebRTC getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
+
+---
 
 ### Agenda
 
-- Intro: experimental gesture interfaces
-  - Explore hand gestures, camera input, embodied interaction and alternative controls.
-  - Discuss why non-standard input can be useful, risky or conceptually interesting.
-- Camera input in the browser
-  - Understand how browser camera access works through `getUserMedia()`.
-  - Discuss permissions, privacy, lighting, performance and fallback interaction.
-- Hand tracking concept
-  - Map the flow: camera input → hand landmarks → gesture interpretation → React state → motion feedback.
-  - Discuss the difference between detecting a hand and designing a usable gesture interaction.
-- Simple hand gesture vocabulary
-  - Explore gestures such as open palm, fist, pinch, pointing, hand left/right and two-hand expand/collapse.
-  - Connect each gesture to possible interface meanings: stop, grab, select, navigate, reveal, zoom or confirm.
-- Technical demo or guided experiment
-  - Use a simple camera or hand-tracking example to change interface state.
-  - Add visible feedback so the user knows the gesture has been recognized.
-- Concept mapping
-  - Choose one interaction from your concept that could use experimental input.
-  - Decide why the gesture is meaningful and what fallback interaction is needed.
-- Prototype or sketch exercise
-  - Build, test or storyboard one alternative gesture interaction.
-  - You can use camera-based hand tracking, simulated hand gesture state, keyboard fallback or another experimental input method.
-- Test and reflect
-  - Test whether the gesture is understandable, reliable and connected to the concept.
-  - Reflect on what works, what fails and whether the technology adds real value.
+1. **Intro and framing**
+   - What makes an interface "experimental"?
+   - Why use camera input and hand gestures in interactive experiences?
+2. **Camera input in the browser**
+   - Set up `getUserMedia()` safely.
+   - Discuss permissions, privacy, lighting, performance and fallback interaction.
+3. **Hand tracking pipeline**
+   - Map the flow: camera feed -> hand landmarks -> gesture classification -> React state -> feedback.
+   - Clarify the difference between raw detection and usable interaction design.
+4. **Guided demo: webcam-controlled interaction**
+   - Use TensorFlow.js hand-pose detection to map one gesture to one game action.
+   - Add visual state feedback (recognized/not recognized).
+5. **Workshop: make a webcam-controlled game**
+   - Track A: implement a small game mechanic controlled by hand position or gesture state.
+   - Track B: build a simplified prototype with mocked gesture states, then connect real camera input.
+6. **Test, share and reflect**
+   - Evaluate reliability, fatigue, discoverability, accessibility and conceptual value.
+   - Decide what should stay experimental and what should become product behavior.
+
+---
+
+### Key Concepts
+
+- `navigator.mediaDevices.getUserMedia()` - browser camera access and permission flow
+- Hand landmarks vs gesture labels - raw model output vs interaction meaning
+- Gesture-to-action mapping - turning recognition into understandable UX behavior
+- React state loop - camera input -> model output -> UI state -> motion feedback
+- Confidence thresholds and smoothing - reducing noisy gesture triggers
+- Fallback interaction - keyboard/pointer alternative for robustness and accessibility
+- Privacy and consent - being explicit about camera use and data handling
 
 ### Materials
 
-- MediaPipe Hand Landmarker example or starter
-- `getUserMedia()` camera example
-- React starter component for camera or gesture state
-- Motion feedback example
-- Your prototype
-- Laptop camera
-- Fallback interaction checklist
-- Experimental gesture reflection questions
+- **Slides**
+  - Will be available here
+- **Exercises**
+  - Build a webcam-controlled mini interaction in React
+  - Map at least one gesture to one clear game/UI action
+  - Add one fallback interaction (keyboard or pointer)
+- **Core resources**
+  - [TensorFlow.js Documentation](https://www.tensorflow.org/js)
+  - [MediaPipe Hands Guide](https://mediapipe.readthedocs.io/en/latest/solutions/hands.html)
+  - [Hand Pose Detection API](https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection)
+  - [WebRTC getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
+- **Project resources**
+  - Your prototype
+  - Laptop camera
+  - React starter component for gesture state
+  - Reflection checklist (reliability, privacy, discoverability, accessibility)
 
 ---
