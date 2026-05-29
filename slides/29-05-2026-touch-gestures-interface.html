@@ -101,12 +101,870 @@
         min-height: 520px;
       }
 
+      .workshop-bg .workshop-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
+        gap: 0.95em;
+        align-items: center;
+      }
+
       .workshop-bg ul {
-        max-width: none;
+        max-width: 35ch;
       }
 
       .workshop-bg li {
-        font-size: 0.9em;
+        font-size: 0.72em;
+        line-height: 1.24;
+      }
+
+      .workshop-bg p:not(.subtitle) {
+        font-size: 0.82em;
+      }
+
+      .workshop-bg .motion-demo {
+        min-height: 360px;
+      }
+
+      .tech-overview p {
+        color: #cbd5e1;
+        font-size: 0.72em;
+        line-height: 1.24;
+        max-width: 54ch;
+      }
+
+      .tech-grid {
+        display: grid;
+        gap: 0.85em;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 0.8em;
+      }
+
+      .tech-card {
+        min-height: 9.2em;
+        padding: 0.85em;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        background: rgba(15, 23, 42, 0.62);
+      }
+
+      .tech-card h3 {
+        color: #f8fafc;
+        font-size: 0.68em;
+        line-height: 1.15;
+        margin: 0 0 0.45em;
+      }
+
+      .tech-card ul {
+        margin-left: 0.5em;
+        max-width: none;
+      }
+
+      .tech-card li {
+        font-size: 0.56em;
+        line-height: 1.24;
+      }
+
+      .tech-card.is-highlighted {
+        border-color: rgba(125, 211, 252, 0.9);
+        background:
+          linear-gradient(135deg, rgba(125, 211, 252, 0.22), rgba(240, 171, 252, 0.16)), rgba(15, 23, 42, 0.82);
+        box-shadow:
+          0 0 0 2px rgba(125, 211, 252, 0.16),
+          0 24px 68px rgba(56, 189, 248, 0.2);
+      }
+
+      .tech-card.is-highlighted h3 {
+        color: #bae6fd;
+      }
+
+      .tech-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em 1.4em;
+        margin-top: 0.85em;
+      }
+
+      .tech-links a {
+        color: #7dd3fc;
+        font-size: 0.6em;
+        font-weight: 700;
+      }
+
+      .motion-resources .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85em;
+        margin-top: 0.8em;
+      }
+
+      .motion-resources .resource-card {
+        padding: 0.8em;
+        border: 1px solid rgba(125, 211, 252, 0.24);
+        border-radius: 8px;
+        background: rgba(15, 23, 42, 0.62);
+      }
+
+      .motion-resources .resource-card.is-primary {
+        border-color: rgba(167, 243, 208, 0.72);
+        background:
+          linear-gradient(135deg, rgba(125, 211, 252, 0.16), rgba(167, 243, 208, 0.12)), rgba(15, 23, 42, 0.78);
+        box-shadow: 0 20px 58px rgba(56, 189, 248, 0.16);
+      }
+
+      .motion-resources h3 {
+        color: #f8fafc;
+        font-size: 0.68em;
+        margin: 0 0 0.45em;
+      }
+
+      .motion-resources ul {
+        margin-left: 0.75em;
+        max-width: none;
+      }
+
+      .motion-resources li {
+        font-size: 0.56em;
+        line-height: 1.22;
+      }
+
+      .motion-resources li + li {
+        margin-top: 0.34em;
+      }
+
+      .motion-intro .motion-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.18fr) minmax(340px, 0.72fr);
+        gap: 0.85em;
+        align-items: center;
+      }
+
+      .motion-intro ul {
+        max-width: 34ch;
+      }
+
+      .motion-intro li {
+        font-size: 0.78em;
+      }
+
+      .motion-demo {
+        position: relative;
+        min-height: 390px;
+        padding: 0.75em;
+        border: 1px solid rgba(125, 211, 252, 0.28);
+        border-radius: 8px;
+        overflow: hidden;
+        background:
+          linear-gradient(135deg, rgba(167, 243, 208, 0.14), transparent 38%),
+          linear-gradient(315deg, rgba(240, 171, 252, 0.16), transparent 42%), rgba(15, 23, 42, 0.72);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+      }
+
+      .motion-wordmark {
+        display: inline-flex;
+        gap: 0.42em;
+        align-items: center;
+        color: #f8fafc;
+        font-size: 0.78em;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .motion-logo {
+        position: relative;
+        width: 1.55em;
+        height: 1.55em;
+        border-radius: 0.42em;
+        background: linear-gradient(135deg, #a7f3d0 0%, #7dd3fc 47%, #f0abfc 100%);
+        animation: logo-float 3.4s ease-in-out infinite;
+      }
+
+      .motion-logo::before,
+      .motion-logo::after {
+        position: absolute;
+        content: "";
+        width: 35%;
+        height: 35%;
+        border-radius: 999px;
+        background: #08111f;
+      }
+
+      .motion-logo::before {
+        left: 20%;
+        top: 22%;
+      }
+
+      .motion-logo::after {
+        right: 18%;
+        bottom: 20%;
+      }
+
+      .motion-track {
+        position: absolute;
+        left: 12%;
+        right: 12%;
+        top: 49%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          rgba(125, 211, 252, 0.22),
+          rgba(167, 243, 208, 0.92),
+          rgba(240, 171, 252, 0.5)
+        );
+      }
+
+      .motion-step {
+        position: absolute;
+        top: -0.55em;
+        width: 1.1em;
+        height: 1.1em;
+        border-radius: 999px;
+        background: #a7f3d0;
+        box-shadow: 0 0 0 0 rgba(167, 243, 208, 0.42);
+      }
+
+      .motion-step:nth-child(1) {
+        left: 0;
+        animation: step-pulse 2.8s ease-out infinite;
+      }
+
+      .motion-step:nth-child(2) {
+        left: 48%;
+        background: #7dd3fc;
+        animation: step-pulse 2.8s ease-out 0.8s infinite;
+      }
+
+      .motion-step:nth-child(3) {
+        right: 0;
+        background: #f0abfc;
+        animation: step-pulse 2.8s ease-out 1.6s infinite;
+      }
+
+      .motion-labels {
+        position: absolute;
+        left: 8%;
+        right: 8%;
+        bottom: 0.82em;
+        display: flex;
+        justify-content: space-between;
+        color: #94a3b8;
+        font-size: 0.44em;
+        font-weight: 700;
+      }
+
+      .motion-card {
+        position: absolute;
+        left: 12%;
+        top: 31%;
+        width: 5.35em;
+        height: 6.7em;
+        padding: 0.58em;
+        border-radius: 8px;
+        background: #f8fafc;
+        box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+        animation: card-motion 4.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      }
+
+      .motion-card::before {
+        display: block;
+        width: 1.9em;
+        height: 1.9em;
+        margin-bottom: 0.55em;
+        border-radius: 0.65em;
+        background: linear-gradient(135deg, #38bdf8, #a7f3d0);
+        content: "";
+      }
+
+      .motion-card span {
+        display: block;
+        width: 100%;
+        height: 0.34em;
+        margin-top: 0.38em;
+        border-radius: 999px;
+        background: #cbd5e1;
+      }
+
+      .motion-card span:nth-child(2) {
+        width: 70%;
+      }
+
+      .motion-card span:nth-child(3) {
+        width: 46%;
+        background: #bae6fd;
+      }
+
+      .motion-shadow-card {
+        position: absolute;
+        left: 26%;
+        top: 38%;
+        width: 5.35em;
+        height: 6.7em;
+        border: 1px solid rgba(203, 213, 225, 0.14);
+        border-radius: 8px;
+        transform: rotate(8deg);
+      }
+
+      .motion-code {
+        position: absolute;
+        right: 0.9em;
+        top: 5.2em;
+        max-width: 15ch;
+        color: #c4b5fd;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.38em;
+        line-height: 1.38;
+      }
+
+      .why-motion .why-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+        gap: 1em;
+        align-items: center;
+      }
+
+      .why-motion ul {
+        max-width: 32ch;
+      }
+
+      .why-motion li {
+        font-size: 0.72em;
+        line-height: 1.24;
+      }
+
+      .why-motion-demo {
+        position: relative;
+        min-height: 390px;
+        padding: 0.8em;
+        border: 1px solid rgba(167, 243, 208, 0.26);
+        border-radius: 8px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 24% 24%, rgba(125, 211, 252, 0.2), transparent 34%),
+          radial-gradient(circle at 82% 78%, rgba(240, 171, 252, 0.18), transparent 38%), rgba(15, 23, 42, 0.76);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+      }
+
+      .why-state-row {
+        position: absolute;
+        top: 1.1em;
+        left: 0.9em;
+        right: 0.9em;
+        display: grid;
+        grid-template-columns: 1fr 2.5em 1fr;
+        gap: 0.35em;
+        align-items: center;
+      }
+
+      .why-state-card {
+        min-height: 4.6em;
+        padding: 0.45em;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        background: rgba(2, 6, 23, 0.42);
+      }
+
+      .why-state-card::before {
+        display: block;
+        width: 1.35em;
+        height: 1.35em;
+        margin-bottom: 0.5em;
+        border-radius: 0.42em;
+        background: #475569;
+        content: "";
+      }
+
+      .why-state-card span {
+        display: block;
+        height: 0.28em;
+        margin-top: 0.28em;
+        border-radius: 999px;
+        background: rgba(203, 213, 225, 0.38);
+      }
+
+      .why-state-card span:last-child {
+        width: 68%;
+      }
+
+      .why-state-card.is-active {
+        border-color: rgba(167, 243, 208, 0.72);
+        background: rgba(14, 165, 233, 0.12);
+        animation: active-card 3.6s ease-in-out infinite;
+      }
+
+      .why-state-card.is-active::before {
+        background: linear-gradient(135deg, #7dd3fc, #a7f3d0);
+      }
+
+      .why-state-card.is-active span {
+        background: rgba(186, 230, 253, 0.78);
+      }
+
+      .why-connector {
+        position: relative;
+        height: 2px;
+        border-radius: 999px;
+        background: rgba(148, 163, 184, 0.24);
+      }
+
+      .why-connector::after {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #7dd3fc, #a7f3d0);
+        content: "";
+        transform-origin: left center;
+        animation: connector-grow 3.6s ease-in-out infinite;
+      }
+
+      .why-tap-target {
+        position: absolute;
+        top: 43%;
+        left: 50%;
+        width: 4.8em;
+        height: 4.8em;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #f8fafc, #bae6fd);
+        color: #0f172a;
+        font-size: 0.58em;
+        font-weight: 800;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28);
+        animation: tap-pop 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      }
+
+      .why-tap-target::before,
+      .why-tap-target::after {
+        position: absolute;
+        inset: -0.55em;
+        border: 2px solid rgba(125, 211, 252, 0.45);
+        border-radius: inherit;
+        content: "";
+        animation: tap-ring 2.4s ease-out infinite;
+      }
+
+      .why-tap-target::after {
+        animation-delay: 0.55s;
+      }
+
+      .why-flow {
+        position: absolute;
+        left: 12%;
+        right: 12%;
+        bottom: 3.35em;
+        height: 3.2em;
+      }
+
+      .why-flow::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          rgba(125, 211, 252, 0.28),
+          rgba(167, 243, 208, 0.82),
+          rgba(240, 171, 252, 0.64)
+        );
+        content: "";
+      }
+
+      .why-flow span,
+      .why-flow i {
+        position: absolute;
+        top: calc(50% - 0.48em);
+        width: 0.96em;
+        height: 0.96em;
+        border-radius: 999px;
+      }
+
+      .why-flow span:nth-child(1) {
+        left: 0;
+        background: #7dd3fc;
+      }
+
+      .why-flow span:nth-child(2) {
+        left: calc(50% - 0.48em);
+        background: #a7f3d0;
+      }
+
+      .why-flow span:nth-child(3) {
+        right: 0;
+        background: #f0abfc;
+      }
+
+      .why-flow i {
+        left: 0;
+        background: #f8fafc;
+        box-shadow: 0 0 28px rgba(248, 250, 252, 0.72);
+        animation: flow-dot 3.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      }
+
+      .why-labels {
+        position: absolute;
+        left: 0.9em;
+        right: 0.9em;
+        bottom: 0.9em;
+        display: flex;
+        justify-content: space-between;
+        color: #94a3b8;
+        font-size: 0.44em;
+        font-weight: 800;
+      }
+
+      .haptics-intro .haptic-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+        gap: 1em;
+        align-items: center;
+      }
+
+      .haptics-intro ul {
+        max-width: 32ch;
+      }
+
+      .haptics-intro li {
+        font-size: 0.78em;
+      }
+
+      .haptics-intro p:not(.subtitle) {
+        max-width: 32ch;
+        font-size: 0.78em;
+      }
+
+      .haptic-demo {
+        position: relative;
+        min-height: 390px;
+        padding: 0.8em;
+        border: 1px solid rgba(240, 171, 252, 0.26);
+        border-radius: 8px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 24% 20%, rgba(240, 171, 252, 0.18), transparent 34%),
+          radial-gradient(circle at 78% 70%, rgba(167, 243, 208, 0.16), transparent 38%),
+          rgba(15, 23, 42, 0.76);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+      }
+
+      .haptic-phone {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 8.2em;
+        height: 13.4em;
+        border: 1px solid rgba(203, 213, 225, 0.28);
+        border-radius: 1.3em;
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(30, 41, 59, 0.88));
+        box-shadow:
+          inset 0 0 0 0.28em rgba(2, 6, 23, 0.82),
+          0 26px 60px rgba(0, 0, 0, 0.34);
+        transform: translate(-50%, -50%);
+        animation: haptic-phone-buzz 2.8s ease-in-out infinite;
+      }
+
+      .haptic-speaker {
+        position: absolute;
+        left: 50%;
+        top: 0.72em;
+        width: 2em;
+        height: 0.22em;
+        border-radius: 999px;
+        background: rgba(148, 163, 184, 0.5);
+        transform: translateX(-50%);
+      }
+
+      .haptic-screen {
+        position: absolute;
+        inset: 1.35em 0.72em 0.95em;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 0.8em;
+        border-radius: 0.86em;
+        background:
+          linear-gradient(160deg, rgba(125, 211, 252, 0.14), transparent 46%),
+          rgba(2, 6, 23, 0.54);
+      }
+
+      .haptic-success {
+        display: grid;
+        place-items: center;
+        width: 3.1em;
+        height: 3.1em;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #a7f3d0, #7dd3fc);
+        color: #0f172a;
+        font-size: 0.72em;
+        font-weight: 900;
+        box-shadow: 0 0 36px rgba(167, 243, 208, 0.28);
+      }
+
+      .haptic-button {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 5.8em;
+        height: 2.15em;
+        border-radius: 999px;
+        background: #f8fafc;
+        color: #0f172a;
+        font-size: 0.54em;
+        font-weight: 900;
+        animation: haptic-tap 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      }
+
+      .haptic-button::before,
+      .haptic-button::after {
+        position: absolute;
+        inset: -0.5em;
+        border: 2px solid rgba(125, 211, 252, 0.38);
+        border-radius: inherit;
+        content: "";
+        animation: haptic-ring 2.8s ease-out infinite;
+      }
+
+      .haptic-button::after {
+        animation-delay: 0.55s;
+      }
+
+      .haptic-wave {
+        position: absolute;
+        top: 50%;
+        width: 2.4em;
+        height: 5.8em;
+        border-top: 2px solid rgba(240, 171, 252, 0.62);
+        border-bottom: 2px solid rgba(240, 171, 252, 0.62);
+        opacity: 0;
+        animation: haptic-wave 2.8s ease-out infinite;
+      }
+
+      .haptic-wave.left {
+        left: 3.3em;
+        border-left: 2px solid rgba(240, 171, 252, 0.62);
+        border-radius: 2.4em 0 0 2.4em;
+        transform: translateY(-50%);
+      }
+
+      .haptic-wave.right {
+        right: 3.3em;
+        border-right: 2px solid rgba(240, 171, 252, 0.62);
+        border-radius: 0 2.4em 2.4em 0;
+        transform: translateY(-50%);
+      }
+
+      .haptic-wave.delay {
+        animation-delay: 0.45s;
+      }
+
+      .haptic-feedback-labels {
+        position: absolute;
+        left: 0.9em;
+        right: 0.9em;
+        bottom: 0.9em;
+        display: flex;
+        justify-content: space-between;
+        color: #94a3b8;
+        font-size: 0.44em;
+        font-weight: 800;
+      }
+
+      @keyframes card-motion {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(-5deg) scale(1);
+        }
+
+        34% {
+          transform: translate(3.4em, -0.8em) rotate(5deg) scale(1.04);
+        }
+
+        62% {
+          transform: translate(5.85em, 2.05em) rotate(0deg) scale(0.98);
+        }
+      }
+
+      @keyframes step-pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(167, 243, 208, 0.46);
+        }
+
+        70% {
+          box-shadow: 0 0 0 0.74em rgba(167, 243, 208, 0);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(167, 243, 208, 0);
+        }
+      }
+
+      @keyframes logo-float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+
+        50% {
+          transform: translateY(-0.18em) rotate(3deg);
+        }
+      }
+
+      @keyframes active-card {
+        0%,
+        100% {
+          transform: translateY(0);
+          box-shadow: 0 0 0 rgba(167, 243, 208, 0);
+        }
+
+        48% {
+          transform: translateY(-0.24em);
+          box-shadow: 0 18px 36px rgba(125, 211, 252, 0.18);
+        }
+      }
+
+      @keyframes connector-grow {
+        0%,
+        18% {
+          transform: scaleX(0);
+        }
+
+        54%,
+        100% {
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes tap-pop {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        42% {
+          transform: translate(-50%, -50%) scale(0.9);
+        }
+
+        58% {
+          transform: translate(-50%, -50%) scale(1.08);
+        }
+      }
+
+      @keyframes tap-ring {
+        0% {
+          opacity: 0.76;
+          transform: scale(0.75);
+        }
+
+        100% {
+          opacity: 0;
+          transform: scale(1.5);
+        }
+      }
+
+      @keyframes flow-dot {
+        0%,
+        16% {
+          left: 0;
+        }
+
+        52% {
+          left: calc(50% - 0.48em);
+        }
+
+        86%,
+        100% {
+          left: calc(100% - 0.96em);
+        }
+      }
+
+      @keyframes haptic-phone-buzz {
+        0%,
+        34%,
+        58%,
+        100% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        38% {
+          transform: translate(calc(-50% - 0.08em), -50%) rotate(-1deg);
+        }
+
+        42% {
+          transform: translate(calc(-50% + 0.08em), -50%) rotate(1deg);
+        }
+
+        46% {
+          transform: translate(calc(-50% - 0.06em), -50%) rotate(-0.8deg);
+        }
+
+        50% {
+          transform: translate(calc(-50% + 0.06em), -50%) rotate(0.8deg);
+        }
+      }
+
+      @keyframes haptic-tap {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        38% {
+          transform: scale(0.92);
+        }
+
+        52% {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes haptic-ring {
+        0% {
+          opacity: 0.7;
+          transform: scale(0.82);
+        }
+
+        100% {
+          opacity: 0;
+          transform: scale(1.45);
+        }
+      }
+
+      @keyframes haptic-wave {
+        0%,
+        28% {
+          opacity: 0;
+          scale: 0.8;
+        }
+
+        44% {
+          opacity: 0.82;
+        }
+
+        76%,
+        100% {
+          opacity: 0;
+          scale: 1.26;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .motion-logo,
+        .motion-step,
+        .motion-card,
+        .why-state-card.is-active,
+        .why-connector::after,
+        .why-tap-target,
+        .why-tap-target::before,
+        .why-tap-target::after,
+        .why-flow i,
+        .haptic-phone,
+        .haptic-button,
+        .haptic-button::before,
+        .haptic-button::after,
+        .haptic-wave {
+          animation: none;
+        }
       }
     </style>
   </head>
@@ -132,51 +990,160 @@
           </ul>
         </section>
 
+        <section class="tech-overview">
+          <h2>Technologies We Will Explore</h2>
+          <p>
+            We will not master all of these at the same depth, but they give us different ways to build, animate and
+            rethink interaction.
+          </p>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <h3>Build and structure</h3>
+              <ul>
+                <li>React</li>
+                <li>Figma MCP</li>
+                <li>Firebase or Supabase as backend possibilities</li>
+              </ul>
+            </div>
+            <div class="tech-card is-highlighted">
+              <h3>Motion and interface behaviour</h3>
+              <ul>
+                <li>Framer Motion / Motion</li>
+                <li>Scroll, hover and interaction patterns</li>
+                <li>CSS animations and transitions</li>
+                <li>Haptic feedback concepts</li>
+              </ul>
+            </div>
+            <div class="tech-card">
+              <h3>Sensors, input and experimentation</h3>
+              <ul>
+                <li>TensorFlow.js</li>
+                <li>Webcam and microphone APIs</li>
+                <li>Device APIs such as touch and gyroscope</li>
+                <li>Three.js / WebGL as a teaser</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tech-links">
+            <a href="https://haptics.lochie.me/" target="_blank" rel="noreferrer">Haptics reference</a>
+            <a
+              href="https://www.codedex.io/projects/make-a-webcam-controlled-game-with-tensorflowjs"
+              target="_blank"
+              rel="noreferrer"
+              >Webcam game with TensorFlow.js</a
+            >
+          </div>
+        </section>
+
         <section>
-          <h2>Exam Note</h2>
+          <h2>Exam Description</h2>
           <p class="subtitle">Please read before Monday</p>
           <ul>
-            <li>Exam description is <strong>published</strong>.</li>
+            <li>
+              Exam description is
+              <a
+                href="https://eaaa.instructure.com/courses/31377/pages/interactive-design-and-development-exam-assignment"
+                target="_blank"
+                rel="noreferrer"
+                >published</a
+              >.
+            </li>
             <li>We review it together on <strong>Monday</strong>.</li>
+            <li>
+              You can form groups yourselves:
+              <a
+                href="https://eaaa.instructure.com/courses/31377/pages/state-your-groups-here"
+                target="_blank"
+                rel="noreferrer"
+                >state your groups here</a
+              >.
+            </li>
+            <li>Groups should be <strong>3-4 students</strong>.</li>
             <li>Prepare questions in advance.</li>
           </ul>
         </section>
 
-        <section>
+        <section class="motion-intro">
           <h2>What is Motion?</h2>
           <p class="subtitle">React animation library (formerly Framer Motion)</p>
-          <ul>
-            <li><strong>Production-grade UI animation</strong> for React apps.</li>
-            <li>Start simple: prop-based animation. Scale to layout, gestures and scroll.</li>
-            <li>Hybrid engine: native browser animations first, JavaScript fallback for advanced behavior.</li>
-            <li>
-              Trusted in products from
-              <a href="https://framer.com/" target="_blank" rel="noreferrer">Framer</a>
-              and
-              <a href="https://figma.com/" target="_blank" rel="noreferrer">Figma</a>
-              with 30M+ monthly downloads on
-              <a href="https://www.npmjs.com/package/framer-motion" target="_blank" rel="noreferrer">npm</a>.
-            </li>
-          </ul>
+          <div class="motion-layout">
+            <ul>
+              <li><strong>Production-grade UI animation</strong> for React apps.</li>
+              <li>Start simple: prop-based animation. Scale to layout, gestures and scroll.</li>
+              <li>Hybrid engine: native browser animations first, JavaScript fallback for advanced behavior.</li>
+              <li>Trusted in products from Framer and Figma with 30M+ monthly downloads on npm.</li>
+            </ul>
+            <div class="motion-demo" aria-label="Animated Motion interaction example">
+              <div class="motion-wordmark">
+                <span class="motion-logo" aria-hidden="true"></span>
+                <span>motion.dev</span>
+              </div>
+              <div class="motion-code" aria-hidden="true">
+                whileTap scale<br />
+                drag x<br />
+                spring back
+              </div>
+              <div class="motion-shadow-card" aria-hidden="true"></div>
+              <div class="motion-card" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="motion-track" aria-hidden="true">
+                <span class="motion-step"></span>
+                <span class="motion-step"></span>
+                <span class="motion-step"></span>
+              </div>
+              <div class="motion-labels" aria-hidden="true">
+                <span>tap</span>
+                <span>drag</span>
+                <span>settle</span>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2>Why Motion for React?</h2>
-          <p class="subtitle">Why use it in this course?</p>
-          <ul>
-            <li>State changes become visible and clear.</li>
-            <li>Interactions feel more responsive (tap, hover, drag, scroll).</li>
-            <li>Faster prototyping directly in React code.</li>
-            <li>Fits Figma workflows: Figma Sites and Figma Make can produce Motion-based animation/code.</li>
-            <li>One approach from micro-feedback to complex flows.</li>
-          </ul>
+        <section class="why-motion">
+          <h2>Why Motion?</h2>
+          <p class="subtitle">Why use it for interactive interfaces?</p>
+          <div class="why-layout">
+            <ul>
+              <li>State changes become visible and easier to understand.</li>
+              <li>Interactions feel more responsive: tap, hover, drag and scroll.</li>
+              <li>Micro-feedback can make an interface feel more alive and intentional.</li>
+              <li>Ready for React projects: works naturally with components, props and state.</li>
+              <li>Scales from small UI feedback to richer transitions and flows.</li>
+            </ul>
+            <div class="why-motion-demo" aria-label="Animated reasons to use Motion">
+              <div class="why-state-row" aria-hidden="true">
+                <div class="why-state-card">
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="why-connector"></div>
+                <div class="why-state-card is-active">
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="why-tap-target" aria-hidden="true">tap</div>
+              <div class="why-flow" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <i></i>
+              </div>
+              <div class="why-labels" aria-hidden="true">
+                <span>clear state</span>
+                <span>fast feedback</span>
+                <span>smooth flow</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section>
           <h2>Motion Key Advantages</h2>
-          <p>
-            <a href="https://motion.dev/docs/react#key-advantages" target="_blank" rel="noreferrer">Key advantages</a>
-          </p>
           <p class="subtitle">When it is the right choice</p>
           <ul>
             <li><strong>React-first:</strong> state + props drive animation directly.</li>
@@ -185,72 +1152,170 @@
             <li><strong>Cross-device gestures:</strong> reliable tap, drag and hover.</li>
             <li><strong>Production-ready:</strong> typed, tested, tree-shakable.</li>
           </ul>
-          <p class="subtitle">Source: motion.dev/docs/react</p>
+          <p class="subtitle">Source: Motion React docs</p>
         </section>
 
-        <section>
-          <h2>Motion React Example Inspiration</h2>
-          <p class="subtitle">Use these as reference before workshop implementation</p>
-          <ul>
-            <li>
-              <a href="https://examples.motion.dev/react/app-store" target="_blank" rel="noreferrer"> App Store </a>
-            </li>
-            <li>
-              <a href="https://examples.motion.dev/react/carousel-coverflow" target="_blank" rel="noreferrer">
-                Carousel Coverflow
-              </a>
-            </li>
-            <li>
-              <a href="https://examples.motion.dev/react/card-stack" target="_blank" rel="noreferrer"> Card Stack </a>
-            </li>
-          </ul>
+        <section class="motion-resources">
+          <h2>Motion Resources</h2>
+          <p class="subtitle">One slide for the Motion links</p>
+          <div class="resource-grid">
+            <div class="resource-card is-primary">
+              <h3>Learn and build</h3>
+              <ul>
+                <li>
+                  <a href="https://motion.dev/" target="_blank" rel="noreferrer">Motion homepage</a>
+                </li>
+                <li>
+                  <a href="https://motion.dev/docs/react" target="_blank" rel="noreferrer">React docs</a>
+                </li>
+                <li>
+                  <a href="https://motion.dev/tutorials?framework=react" target="_blank" rel="noreferrer"
+                    >React tutorials</a
+                  >
+                </li>
+                <li>
+                  <a href="https://motion.dev/examples?platform=react" target="_blank" rel="noreferrer"
+                    >All React examples</a
+                  >
+                </li>
+                <li>
+                  <a href="https://motion.dev/docs/react#key-advantages" target="_blank" rel="noreferrer"
+                    >Key advantages</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <h3>Example inspiration</h3>
+              <ul>
+                <li>
+                  <a href="https://examples.motion.dev/react/app-store" target="_blank" rel="noreferrer">App Store</a>
+                </li>
+                <li>
+                  <a href="https://examples.motion.dev/react/carousel-coverflow" target="_blank" rel="noreferrer"
+                    >Carousel Coverflow</a
+                  >
+                </li>
+                <li>
+                  <a href="https://examples.motion.dev/react/card-stack" target="_blank" rel="noreferrer">Card Stack</a>
+                </li>
+                <li>
+                  <a href="https://www.npmjs.com/package/framer-motion" target="_blank" rel="noreferrer">npm package</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
 
-        <section>
-          <h2>Motion Learning Links</h2>
-          <ul>
-            <li>
-              <strong>All React examples:</strong>
-              <a href="https://motion.dev/examples?platform=react" target="_blank" rel="noreferrer">
-                motion.dev/examples?platform=react
-              </a>
-            </li>
-            <li>
-              <strong>React docs:</strong>
-              <a href="https://motion.dev/docs/react" target="_blank" rel="noreferrer">motion.dev/docs/react</a>
-            </li>
-          </ul>
-        </section>
-
-        <section>
+        <section class="haptics-intro">
           <h2>What is Haptic Feedback?</h2>
-          <ul>
-            <li>Haptics = tactile feedback (small vibrations).</li>
-            <li>Useful for success, warning and error feedback.</li>
-            <li>Best when it supports meaning, not decoration.</li>
-          </ul>
-          <p><strong>Why use it?</strong> A second feedback channel next to visuals and motion.</p>
-        </section>
-
-        <section>
-          <h2>Short Demos</h2>
-          <ol>
-            <li>Swipe + threshold + snap-back.</li>
-            <li>Add haptics to outcomes.</li>
-            <li>Tune intensity: too much vs too little.</li>
-          </ol>
+          <div class="haptic-layout">
+            <div>
+              <ul>
+                <li>Haptics = tactile feedback (small vibrations).</li>
+                <li>Useful for success, warning and error feedback.</li>
+                <li>Best when it supports meaning, not decoration.</li>
+              </ul>
+              <p><strong>Why use it?</strong> A second feedback channel next to visuals and motion.</p>
+              <p>
+                <strong>Try it:</strong>
+                <a href="https://haptics.lochie.me/" target="_blank" rel="noreferrer">Haptics by Lochie</a>
+              </p>
+            </div>
+            <div class="haptic-demo" aria-label="Animated haptic feedback example">
+              <span class="haptic-wave left" aria-hidden="true"></span>
+              <span class="haptic-wave left delay" aria-hidden="true"></span>
+              <span class="haptic-wave right" aria-hidden="true"></span>
+              <span class="haptic-wave right delay" aria-hidden="true"></span>
+              <div class="haptic-phone" aria-hidden="true">
+                <div class="haptic-speaker"></div>
+                <div class="haptic-screen">
+                  <div class="haptic-success">OK</div>
+                  <div class="haptic-button">press</div>
+                </div>
+              </div>
+              <div class="haptic-feedback-labels" aria-hidden="true">
+                <span>touch</span>
+                <span>vibration</span>
+                <span>meaning</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section class="workshop-bg">
-          <h2>Workshop (Background Slide)</h2>
+          <h2>Workshop</h2>
           <p class="subtitle">Task-based work time</p>
-          <ul>
-            <li>Task 1: Motion for React Guided Tour</li>
-            <li>Task 2: Web Haptics + Motion Lab</li>
-            <li>Task 3: Figma -> Motion -> MCP Experiment Guide</li>
-            <li>Task 4: Lottie in React: Figma to Code Guide</li>
-          </ul>
-          <p><strong>Goal:</strong> finish at least one task with a working result.</p>
+          <div class="workshop-layout">
+            <div>
+              <ul>
+                <li>
+                  Task 1:
+                  <a
+                    href="https://github.com/cederdorff/figma-to-react/blob/main/guides/motion-react-guided-tour.md"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Motion for React Guided Tour</a
+                  >
+                </li>
+                <li>
+                  Task 2:
+                  <a
+                    href="https://github.com/cederdorff/figma-to-react/blob/main/guides/haptics-gesture-exercise.md"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Web Haptics + Motion Lab</a
+                  >
+                </li>
+                <li>
+                  Task 3:
+                  <a
+                    href="https://github.com/cederdorff/figma-to-react/blob/main/guides/figma-motion-mcp-experiment-guide.md"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Figma -> Motion -> MCP Experiment Guide</a
+                  >
+                </li>
+                <li>
+                  Task 4:
+                  <a
+                    href="https://github.com/cederdorff/figma-to-react/blob/main/guides/lottie-figma-to-react-guide.md"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Lottie in React: Figma to Code Guide</a
+                  >
+                </li>
+              </ul>
+              <p><strong>Goal:</strong> have fun and learn!</p>
+            </div>
+            <div class="motion-demo" aria-label="Animated Motion workshop example">
+              <div class="motion-wordmark">
+                <span class="motion-logo" aria-hidden="true"></span>
+                <span>motion.dev</span>
+              </div>
+              <div class="motion-code" aria-hidden="true">
+                whileTap scale<br />
+                drag x<br />
+                spring back
+              </div>
+              <div class="motion-shadow-card" aria-hidden="true"></div>
+              <div class="motion-card" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="motion-track" aria-hidden="true">
+                <span class="motion-step"></span>
+                <span class="motion-step"></span>
+                <span class="motion-step"></span>
+              </div>
+              <div class="motion-labels" aria-hidden="true">
+                <span>tap</span>
+                <span>drag</span>
+                <span>settle</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section>

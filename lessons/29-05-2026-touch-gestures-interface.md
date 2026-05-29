@@ -73,19 +73,19 @@ By the end of the session, you should see that digital experiences can be shaped
 ### Materials
 
 - **Slides**
-  - [29-05-2026 Touch Gestures Slide Deck](../slides/29-05-2026-touch-gestures-interface.html)
+  - [29-05-2026 Touch Gestures Slide Deck](https://cederdorff.com/figma-to-react/slides/29-05-2026-touch-gestures-interface.html)
 - **Exercises**
-  - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md)
-  - [Web Haptics + Motion Lab](../guides/haptics-gesture-exercise.md)
-  - [Figma -> Motion -> MCP Experiment Guide](../guides/figma-motion-mcp-experiment-guide.md)
-  - [Lottie in React: Figma to Code Guide](../guides/lottie-figma-to-react-guide.md)
+  - [Motion for React Guided Tour](https://github.com/cederdorff/figma-to-react/blob/main/guides/motion-react-guided-tour.md)
+  - [Web Haptics + Motion Lab](https://github.com/cederdorff/figma-to-react/blob/main/guides/haptics-gesture-exercise.md)
+  - [Figma -> Motion -> MCP Experiment Guide](https://github.com/cederdorff/figma-to-react/blob/main/guides/figma-motion-mcp-experiment-guide.md)
+  - [Lottie in React: Figma to Code Guide](https://github.com/cederdorff/figma-to-react/blob/main/guides/lottie-figma-to-react-guide.md)
 - **Previous workday**
-  - [`26-05-2026-guided-workday-gesture-motion.md`](26-05-2026-guided-workday-gesture-motion.md)
+  - [`26-05-2026-guided-workday-gesture-motion.md`](https://github.com/cederdorff/figma-to-react/blob/main/lessons/26-05-2026-guided-workday-gesture-motion.md)
 - **Original lesson references**
-  - [`26-05-2026-touch-gestures-interface.md`](26-05-2026-touch-gestures-interface.md)
-  - [`29-05-2026-motion-ux-feedback.md`](29-05-2026-motion-ux-feedback.md)
+  - [`26-05-2026-touch-gestures-interface.md`](https://github.com/cederdorff/figma-to-react/blob/main/lessons/26-05-2026-touch-gestures-interface.md)
+  - [`29-05-2026-motion-ux-feedback.md`](https://github.com/cederdorff/figma-to-react/blob/main/lessons/29-05-2026-motion-ux-feedback.md)
 - **Other links**
-  - [Motion for React Guided Tour](../guides/motion-react-guided-tour.md)
+  - [Motion for React Guided Tour](https://github.com/cederdorff/figma-to-react/blob/main/guides/motion-react-guided-tour.md)
   - [Motion docs](https://motion.dev/)
   - [LottieFiles](https://lottiefiles.com/)
   - [Haptics by Lochie](https://haptics.lochie.me/)
