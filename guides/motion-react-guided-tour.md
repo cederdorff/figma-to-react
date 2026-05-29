@@ -1531,7 +1531,239 @@ Good examples from your current work:
 
 ---
 
-## Step 10 - Add Scroll Animation
+## Step 10 - Fold Card to Fullscreen
+
+If you want one simple but expressive pattern, try this: click a card, and let it fold out to fill the screen.
+
+This pattern is useful when the user needs a focused view without leaving the current page.
+
+Typical use cases:
+
+- open a post preview into a detail view
+- open a product card into a quick-detail panel
+- open a project tile into a fullscreen case view
+
+Important idea:
+
+> The element should feel like it transforms, not like a new page suddenly appears.
+
+This example uses:
+
+- `layoutId` to morph the small card into a fullscreen card
+- `AnimatePresence` for enter/exit of the overlay
+- a small backdrop click target to close
+
+Before you tweak it, compare with the docs:
+
+- [Layout animations](https://motion.dev/docs/react-layout-animations)
+- [AnimatePresence](https://motion.dev/docs/react-animate-presence)
+
+Create a new file:
+
+```text
+src/components/FoldToFullscreenCard.jsx
+```
+
+Paste this into `FoldToFullscreenCard.jsx`:
+
+```jsx
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+
+export default function FoldToFullscreenCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <motion.article
+        className="card"
+        layoutId="fold-card"
+        onClick={() => setIsOpen(true)}
+        style={{ cursor: "pointer" }}
+      >
+        <p className="eyebrow">Motion practice</p>
+        <h1>Fold to fullscreen</h1>
+        <p>Click to open.</p>
+      </motion.article>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="fullscreen-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+          >
+            <motion.article
+              className="card fullscreen-card"
+              layoutId="fold-card"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <p className="eyebrow">Motion practice</p>
+              <h1>Now fullscreen</h1>
+              <p>This card expands from the small version and fills the screen area.</p>
+              <button className="button" onClick={() => setIsOpen(false)}>
+                Close
+              </button>
+            </motion.article>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
+```
+
+Add this component to `src/App.jsx`:
+
+```jsx
+import StaticPracticeCard from "./components/StaticPracticeCard";
+import MotionIntroCard from "./components/MotionIntroCard";
+import RevealDetailsCard from "./components/RevealDetailsCard";
+import SpringTransitionCard from "./components/SpringTransitionCard";
+import PressableButton from "./components/PressableButton";
+import DraggableCard from "./components/DraggableCard";
+import SwipeDecisionCard from "./components/SwipeDecisionCard";
+import ExpandingCard from "./components/ExpandingCard";
+import FoldToFullscreenCard from "./components/FoldToFullscreenCard";
+import "./App.css";
+
+export default function App() {
+  return (
+    <main className="gallery">
+      <section className="comparison">
+        <StaticPracticeCard />
+        <MotionIntroCard />
+        <RevealDetailsCard />
+        <SpringTransitionCard />
+        <PressableButton />
+        <DraggableCard />
+        <SwipeDecisionCard />
+        <ExpandingCard />
+        <FoldToFullscreenCard />
+      </section>
+    </main>
+  );
+}
+```
+
+Add this CSS in `src/App.css`:
+
+```css
+.fullscreen-backdrop {
+  align-items: center;
+  backdrop-filter: blur(2px);
+  background: rgba(2, 6, 23, 0.72);
+  display: grid;
+  inset: 0;
+  padding: 24px;
+  position: fixed;
+  z-index: 20;
+}
+
+.fullscreen-card {
+  margin: 0 auto;
+  max-width: min(900px, 100%);
+  min-height: min(70vh, 760px);
+  width: 100%;
+}
+```
+
+Save the files and check the browser.
+
+You should see the new card in the gallery. Click it and make sure it expands into the fullscreen state.
+
+How the key parts work:
+
+- `layoutId="fold-card"` appears on both the small card and the fullscreen card. This tells Motion they are the same element in two states.
+- `AnimatePresence` allows the overlay to animate out when `isOpen` becomes `false`.
+- `onClick={(event) => event.stopPropagation()}` prevents inside clicks from closing the overlay accidentally.
+
+Test checklist:
+
+1. Click the card to open fullscreen.
+2. Click the dark backdrop to close.
+3. Click **Close** to close.
+4. Notice whether the expansion feels connected (one card becoming another).
+
+If the transition feels too fast or too stiff, add a transition on both `motion.article` elements:
+
+```jsx
+transition={{ type: "spring", stiffness: 220, damping: 24 }}
+```
+
+Required experiment:
+
+Do at least two of these experiments. After each change, save and test open/close again.
+
+### Experiment A - Change the Spring Feel
+
+Try a softer spring:
+
+```jsx
+transition={{ type: "spring", stiffness: 140, damping: 26 }}
+```
+
+Then a snappier spring:
+
+```jsx
+transition={{ type: "spring", stiffness: 300, damping: 22 }}
+```
+
+Question:
+
+> Which spring feels clearer for this interaction?
+
+### Experiment B - Adjust Fullscreen Size
+
+In `src/App.css`, adjust `.fullscreen-card`:
+
+```css
+min-height: min(82vh, 860px);
+```
+
+Then try:
+
+```css
+min-height: min(58vh, 620px);
+```
+
+Question:
+
+> Does a larger fullscreen state improve focus, or feel too heavy?
+
+### Experiment C - Add Entry Offset
+
+Add a subtle Y offset to the backdrop animation:
+
+```jsx
+initial={{ opacity: 0, y: 12 }}
+animate={{ opacity: 1, y: 0 }}
+exit={{ opacity: 0, y: 8 }}
+```
+
+Question:
+
+> Does the extra movement help orientation, or distract from the card morph?
+
+### Experiment D - Add a Secondary Close Hint
+
+Add one short line above the button in the fullscreen card:
+
+```jsx
+<p>Tip: click outside the card to close.</p>
+```
+
+Question:
+
+> Does this improve usability for first-time users?
+
+When you are done experimenting, keep the version where the transition feels connected, fast, and easy to understand.
+
+---
+
+## Step 11 - Add Scroll Animation
 
 Scroll animation can be useful when the interface has a longer page or a story-like flow.
 
@@ -1748,7 +1980,7 @@ Where this makes sense:
 
 ---
 
-## Step 11 - Review the Saved Examples
+## Step 12 - Review the Saved Examples
 
 At this point, your `src/components` folder contains several saved implementations:
 
@@ -1809,7 +2041,7 @@ Note about `touch-action`:
 
 ---
 
-## Step 12 - Improve Codeagram With Motion
+## Step 13 - Improve Codeagram With Motion
 
 Now move from the practice project into **Codeagram**.
 
