@@ -123,51 +123,121 @@
         <section>
           <h2>Intro and Agenda</h2>
           <ul>
-            <li><strong>Framing:</strong> interaction is more than clicks and buttons.</li>
-            <li><strong>Motion:</strong> what it is and why it matters for UX clarity.</li>
-            <li><strong>Haptic feedback:</strong> what it is and when it helps.</li>
+            <li><strong>Framing:</strong> interaction is more than clicks.</li>
+            <li><strong>Motion:</strong> what it is, why it matters.</li>
+            <li><strong>Haptics:</strong> when tactile feedback helps.</li>
             <li><strong>Short demos</strong> before workshop.</li>
-            <li><strong>Workshop</strong> with 4 tasks/guides.</li>
-            <li><strong>Wrap-up</strong> and key takeaways.</li>
+            <li><strong>Workshop:</strong> 4 task tracks.</li>
+            <li><strong>Wrap-up:</strong> key takeaways.</li>
           </ul>
         </section>
 
         <section>
           <h2>Exam Note</h2>
-          <p class="subtitle">Please read this carefully</p>
+          <p class="subtitle">Please read before Monday</p>
           <ul>
-            <li>The exam description is now <strong>published</strong>.</li>
-            <li>We will go through it together on <strong>Monday</strong>.</li>
-            <li>Please read it before Monday and note your questions.</li>
+            <li>Exam description is <strong>published</strong>.</li>
+            <li>We review it together on <strong>Monday</strong>.</li>
+            <li>Prepare questions in advance.</li>
           </ul>
         </section>
 
         <section>
           <h2>What is Motion?</h2>
+          <p class="subtitle">React animation library (formerly Framer Motion)</p>
           <ul>
-            <li>Motion is a React animation and interaction library.</li>
-            <li>It helps you make state changes visible and understandable.</li>
-            <li>It supports gestures such as drag, swipe, tap and hover.</li>
+            <li><strong>Production-grade UI animation</strong> for React apps.</li>
+            <li>Start simple: prop-based animation. Scale to layout, gestures and scroll.</li>
+            <li>Hybrid engine: native browser animations first, JavaScript fallback for advanced behavior.</li>
+            <li>
+              Trusted in products from
+              <a href="https://framer.com/" target="_blank" rel="noreferrer">Framer</a>
+              and
+              <a href="https://figma.com/" target="_blank" rel="noreferrer">Figma</a>
+              with 30M+ monthly downloads on
+              <a href="https://www.npmjs.com/package/framer-motion" target="_blank" rel="noreferrer">npm</a>.
+            </li>
           </ul>
-          <p><strong>Why learn it?</strong> Better feedback, clearer interaction flow, more expressive prototypes.</p>
+        </section>
+
+        <section>
+          <h2>Why Motion for React?</h2>
+          <p class="subtitle">Why use it in this course?</p>
+          <ul>
+            <li>State changes become visible and clear.</li>
+            <li>Interactions feel more responsive (tap, hover, drag, scroll).</li>
+            <li>Faster prototyping directly in React code.</li>
+            <li>Fits Figma workflows: Figma Sites and Figma Make can produce Motion-based animation/code.</li>
+            <li>One approach from micro-feedback to complex flows.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Motion Key Advantages</h2>
+          <p>
+            <a href="https://motion.dev/docs/react#key-advantages" target="_blank" rel="noreferrer">Key advantages</a>
+          </p>
+          <p class="subtitle">When it is the right choice</p>
+          <ul>
+            <li><strong>React-first:</strong> state + props drive animation directly.</li>
+            <li><strong>Fast:</strong> smooth performance by default.</li>
+            <li><strong>Flexible:</strong> one API for simple and advanced cases.</li>
+            <li><strong>Cross-device gestures:</strong> reliable tap, drag and hover.</li>
+            <li><strong>Production-ready:</strong> typed, tested, tree-shakable.</li>
+          </ul>
+          <p class="subtitle">Source: motion.dev/docs/react</p>
+        </section>
+
+        <section>
+          <h2>Motion React Example Inspiration</h2>
+          <p class="subtitle">Use these as reference before workshop implementation</p>
+          <ul>
+            <li>
+              <a href="https://examples.motion.dev/react/app-store" target="_blank" rel="noreferrer"> App Store </a>
+            </li>
+            <li>
+              <a href="https://examples.motion.dev/react/carousel-coverflow" target="_blank" rel="noreferrer">
+                Carousel Coverflow
+              </a>
+            </li>
+            <li>
+              <a href="https://examples.motion.dev/react/card-stack" target="_blank" rel="noreferrer"> Card Stack </a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Motion Learning Links</h2>
+          <ul>
+            <li>
+              <strong>All React examples:</strong>
+              <a href="https://motion.dev/examples?platform=react" target="_blank" rel="noreferrer">
+                motion.dev/examples?platform=react
+              </a>
+            </li>
+            <li>
+              <strong>React docs:</strong>
+              <a href="https://motion.dev/docs/react" target="_blank" rel="noreferrer">motion.dev/docs/react</a>
+            </li>
+          </ul>
         </section>
 
         <section>
           <h2>What is Haptic Feedback?</h2>
           <ul>
-            <li>Haptics are tactile signals (small vibration feedback).</li>
-            <li>They can confirm success, warning, or error states.</li>
-            <li>Good haptics support meaning, not just effect.</li>
+            <li>Haptics = tactile feedback (small vibrations).</li>
+            <li>Useful for success, warning and error feedback.</li>
+            <li>Best when it supports meaning, not decoration.</li>
           </ul>
-          <p><strong>Why learn it?</strong> It adds a second feedback channel alongside visuals and motion.</p>
+          <p><strong>Why use it?</strong> A second feedback channel next to visuals and motion.</p>
         </section>
 
         <section>
           <h2>Short Demos</h2>
           <ol>
-            <li>Simple swipe with threshold and snap-back.</li>
-            <li>Add haptic feedback to interaction outcomes.</li>
-            <li>Quick tuning: when motion/haptics feel too much or too little.</li>
+            <li>Swipe + threshold + snap-back.</li>
+            <li>Add haptics to outcomes.</li>
+            <li>Tune intensity: too much vs too little.</li>
           </ol>
         </section>
 
@@ -180,15 +250,15 @@
             <li>Task 3: Figma -> Motion -> MCP Experiment Guide</li>
             <li>Task 4: Lottie in React: Figma to Code Guide</li>
           </ul>
-          <p><strong>Goal:</strong> complete at least one task with a working result.</p>
+          <p><strong>Goal:</strong> finish at least one task with a working result.</p>
         </section>
 
         <section>
           <h2>Wrap Up</h2>
           <ul>
-            <li>What did your interaction communicate clearly?</li>
-            <li>Where did motion or haptics create confusion?</li>
-            <li>What is one improvement you will make next?</li>
+            <li>What was communicated clearly?</li>
+            <li>Where did motion or haptics confuse?</li>
+            <li>What is your next improvement?</li>
           </ul>
           <p class="subtitle">Focus on clarity, intent and user feedback.</p>
         </section>
