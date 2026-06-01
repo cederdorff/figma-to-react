@@ -4,11 +4,13 @@
 
 ## Workday - Webcam Gesture Game Exercises
 
-**Schedule note:** This workday also serves as a substitute for today's lesson.
+**Schedule note:** This workday also serves as a substitute for Experimental Gesture Interfaces.
 
 ### Purpose of The Day
 
 This day is a guided workday built around webcam and hand-gesture interaction.
+
+If you need help during the workday, you can contact me by email or on Teams: race@eaaa.dk.
 
 You will choose one exercise and work step by step from setup to interaction feedback.
 
