@@ -6,6 +6,8 @@
 
 ### Purpose of The Day
 
+**_This session has been cancelled. As a substitute, please follow the steps under Exercises._**
+
 We explore experimental gesture interfaces with a focus on camera input and hand gestures.
 
 Today we prototype a **Webcam Controlled Game** using **TensorFlow.js** and browser camera APIs.
@@ -73,18 +75,15 @@ By the end of the day, you should have tested or prototyped a camera-based inter
 - **Slides**
   - Will be available here
 - **Exercises**
-  - Build a webcam-controlled mini interaction in React
-  - Map at least one gesture to one clear game/UI action
-  - Add one fallback interaction (keyboard or pointer)
+  1.  [Hand Puck - Introduction to webcam hand gestures](https://github.com/cederdorff/webcam-ui/blob/main/README.md)
+  2.  [Hand Catch Game - Try out the game and make minor customisations](https://github.com/cederdorff/hand-catch-game/blob/main/README.md)
+  3.  [Air Juggler Game - Version 1 (Advanced)](https://github.com/cederdorff/air-juggler-game/blob/main/IMPLEMENTATION_GUIDE.md)
+      - Optional advanced challenge. If you get stuck, you can view the full solution here: [Air Juggler Game Repository](https://github.com/cederdorff/air-juggler-game)
+  4.  [Air Juggler (React + TensorFlow.js) - Version 2](https://github.com/cederdorff/webcam-controlled-game/blob/main/README.md)
 - **Core resources**
   - [TensorFlow.js Documentation](https://www.tensorflow.org/js)
   - [MediaPipe Hands Guide](https://mediapipe.readthedocs.io/en/latest/solutions/hands.html)
   - [Hand Pose Detection API](https://github.com/tensorflow/tfjs-models/tree/master/hand-pose-detection)
   - [WebRTC getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
-- **Project resources**
-  - Your prototype
-  - Laptop camera
-  - React starter component for gesture state
-  - Reflection checklist (reliability, privacy, discoverability, accessibility)
 
 ---
