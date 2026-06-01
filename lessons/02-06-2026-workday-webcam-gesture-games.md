@@ -24,23 +24,20 @@ Focus question:
 
 ### Exercises
 
-Try and work with the exercises below. If you finish early, continue with another one.
+Try and work with the exercises below. If you finish early, continue with another one and try out the showcases.
 
-1. **Exercise 1 - Hand Puck (Intro)**
+1. **Exercise 1 - [Hand Puck - Introduction to webcam hand gestures](https://github.com/cederdorff/webcam-ui/blob/main/README.md)**
    - Best for getting started with webcam hand gestures.
    - Goal: get webcam input working and connect one basic hand action to one game reaction.
-   - [Hand Puck - Introduction to webcam hand gestures](https://github.com/cederdorff/webcam-ui/blob/main/README.md)
 
-2. **Exercise 2 - Hand Catch Game (Core Build)**
+2. **Exercise 2 - [Hand Catch Game (Core Build)](https://github.com/cederdorff/hand-catch-game/blob/main/README.md)**
    - Best for practising by modifying an existing game.
    - Goal: run the project, understand the interaction loop, and make small customisations.
-   - [Hand Catch Game - Try out the game and make minor customisations](https://github.com/cederdorff/hand-catch-game/blob/main/README.md)
 
-3. **Exercise 3 - Air Juggler V1 (Advanced)**
+3. **Exercise 3 - [Air Juggler V1 (Advanced)](https://github.com/cederdorff/air-juggler-game/blob/main/IMPLEMENTATION_GUIDE.md)**
    - Optional advanced challenge.
    - This starts from the Hand Puck template repository.
    - Goal: follow the implementation guide and build a more complete gesture-controlled game loop.
-   - [Air Juggler Game - Version 1 (Advanced)](https://github.com/cederdorff/air-juggler-game/blob/main/IMPLEMENTATION_GUIDE.md)
    - If you get stuck, review the full solution: [Air Juggler Game Repository](https://github.com/cederdorff/air-juggler-game)
 
 4. **Showcase - Air Juggler V2 (React + TensorFlow.js)**
