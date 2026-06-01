@@ -40,16 +40,14 @@ Try and work with the exercises below. If you finish early, continue with anothe
    - Goal: follow the implementation guide and build a more complete gesture-controlled game loop.
    - If you get stuck, review the full solution: [Air Juggler Game Repository](https://github.com/cederdorff/air-juggler-game)
 
-4. **Showcase - Air Juggler V2 (React + TensorFlow.js)**
+4. **Showcase - [Air Juggler V2 (React + TensorFlow.js)](https://github.com/cederdorff/webcam-controlled-game/blob/main/README.md)**
    - Not an exercise. This is a showcase of that implementation.
    - Best for students who want a newer React + TensorFlow.js version.
    - Goal: explore how gesture detection and React state work together in a full project.
-   - [Air Juggler (React + TensorFlow.js) - Version 2](https://github.com/cederdorff/webcam-controlled-game/blob/main/README.md)
 
-5. **Showcase - Dandelion Experiment**
+5. **Showcase - [Dandelion Experiment](https://github.com/cederdorff/dandelion-experiment)**
    - Not an exercise. This is a showcase you can explore with minor customisations.
    - Goal: try small changes to interaction, visuals or motion feedback and observe the effect.
-   - [Dandelion Experiment](https://github.com/cederdorff/dandelion-experiment)
 
 ---
 
