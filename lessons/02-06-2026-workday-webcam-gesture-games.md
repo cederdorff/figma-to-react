@@ -24,7 +24,7 @@ Focus question:
 
 ### Exercises
 
-Choose one exercise based on your current level. You can move to another exercise if you finish early.
+Try and work with the exercises below. If you finish early, continue with another one.
 
 1. **Exercise 1 - Hand Puck (Intro)**
    - Best for getting started with webcam hand gestures.
@@ -48,6 +48,11 @@ Choose one exercise based on your current level. You can move to another exercis
    - Best for students who want a newer React + TensorFlow.js version.
    - Goal: explore how gesture detection and React state work together in a full project.
    - [Air Juggler (React + TensorFlow.js) - Version 2](https://github.com/cederdorff/webcam-controlled-game/blob/main/README.md)
+
+5. **Showcase - Dandelion Experiment**
+   - Not an exercise. This is a showcase you can explore with minor customisations.
+   - Goal: try small changes to interaction, visuals or motion feedback and observe the effect.
+   - [Dandelion Experiment](https://github.com/cederdorff/dandelion-experiment)
 
 ---
 
