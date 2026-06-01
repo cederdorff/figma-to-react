@@ -43,7 +43,7 @@ Choose one exercise based on your current level. You can move to another exercis
    - [Air Juggler Game - Version 1 (Advanced)](https://github.com/cederdorff/air-juggler-game/blob/main/IMPLEMENTATION_GUIDE.md)
    - If you get stuck, review the full solution: [Air Juggler Game Repository](https://github.com/cederdorff/air-juggler-game)
 
-4. **Exercise 4 - Air Juggler V2 (React + TensorFlow.js)**
+4. **Showcase - Air Juggler V2 (React + TensorFlow.js)**
    - Not an exercise. This is a showcase of that implementation.
    - Best for students who want a newer React + TensorFlow.js version.
    - Goal: explore how gesture detection and React state work together in a full project.
