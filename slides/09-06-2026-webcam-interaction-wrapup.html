@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
 
     <style>
       :root {
@@ -72,8 +73,22 @@
       }
 
       .reveal code {
-        color: #fcd34d;
-        font-size: 0.9em;
+        font-size: 0.78em;
+      }
+
+      .reveal pre {
+        width: 90%;
+        box-shadow: none;
+        border-radius: 8px;
+      }
+
+      .reveal pre code {
+        background: #020617;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        color: #e2e8f0;
+        font-size: 0.84em;
+        padding: 1em;
       }
 
       .reveal ul,
@@ -253,8 +268,10 @@
         margin-top: 0.7em;
         padding: 0.7em;
         border: 1px solid rgba(252, 211, 77, 0.28);
+        border-left: 4px solid rgba(252, 211, 77, 0.62);
         border-radius: 8px;
-        background: rgba(11, 18, 26, 0.84);
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(11, 18, 26, 0.94));
+        box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.08);
         color: #e5e7eb;
         font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
         font-size: 0.48em;
@@ -311,6 +328,10 @@
         font-size: 0.42em;
         line-height: 1.28;
         white-space: pre-wrap;
+        padding: 0.6em 0.65em;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 6px;
+        background: linear-gradient(180deg, rgba(7, 11, 17, 0.85), rgba(11, 18, 26, 0.92));
       }
 
       .code-card p {
@@ -585,6 +606,7 @@
         <section>
           <p class="eyebrow">Mental model</p>
           <h2>The full pipeline</h2>
+          <p class="subtitle">Understand the pipeline first, you do not need to read every line of code.</p>
           <div class="pipeline">
             <div class="pipe-step">
               <span class="pipe-number">1</span>
@@ -642,6 +664,35 @@
         </section>
 
         <section>
+          <p class="eyebrow">Definition</p>
+          <h2>What is MediaPipe?</h2>
+          <div class="panel-grid two">
+            <div class="panel is-accent">
+              <h3>What it is</h3>
+              <p>
+                MediaPipe is a real-time ML framework. In these projects, we use its hand model to detect and track hand
+                landmarks in each webcam frame.
+              </p>
+            </div>
+            <div class="panel">
+              <h3>What it gives us</h3>
+              <ul>
+                <li>Landmark coordinates for key points on the hand.</li>
+                <li>Per-frame tracking data we can use in interaction logic.</li>
+                <li>Raw numeric output, not interaction meaning.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="code-strip">
+            MediaPipe output -&gt; landmark points (x, y, z) Our gesture rules -&gt; pinch, open hand, pointing, grip,
+            wind
+          </div>
+          <p class="subtitle">
+            Short version: MediaPipe tracks hands. Your code defines what those hand movements mean.
+          </p>
+        </section>
+
+        <section>
           <p class="eyebrow">Interpretation</p>
           <h2>When can we say it interprets?</h2>
           <div class="panel-grid">
@@ -650,8 +701,11 @@
               <p>The webcam gives us video frames. It does not know what a hand, gesture or game action is.</p>
             </div>
             <div class="panel">
-              <h3>Model detects</h3>
-              <p>MediaPipe interprets the image enough to say: these pixels look like a hand with landmarks.</p>
+              <h3>Model tracks hand data</h3>
+              <p>
+                MediaPipe is a hand-tracking model. It outputs landmark coordinates (and confidence), not gesture
+                meaning.
+              </p>
             </div>
             <div class="panel is-accent">
               <h3>Code gives meaning</h3>
@@ -675,11 +729,12 @@
               <h2>Landmarks are not gestures</h2>
               <ul>
                 <li>A landmark is one tracked point on the hand.</li>
+                <li>MediaPipe gives numeric positions for those points on each frame.</li>
                 <li>The projects mostly use index tip, thumb tip, wrist and finger bases.</li>
                 <li>A gesture is a rule you write on top of those points.</li>
               </ul>
               <div class="code-strip">
-                pinchDistance = distance(indexTip, thumbTip) isPinching = grip > 0.6 isPointingUp = indexTip.y &lt;
+                pinchDistance = distance(indexTip, thumbTip) isPinching = grip &gt; 0.6 isPointingUp = indexTip.y &lt;
                 wrist.y
               </div>
             </div>
@@ -1089,23 +1144,33 @@ const push = 0.05 + interaction.force * 0.14</code></pre>
           <ul class="closing-list">
             <li>
               Hand Puck:
-              <a href="https://github.com/cederdorff/webcam-ui">cederdorff/webcam-ui</a>
+              <a href="https://github.com/cederdorff/webcam-ui" target="_blank" rel="noopener noreferrer"
+                >cederdorff/webcam-ui</a
+              >
             </li>
             <li>
               Hand Catch:
-              <a href="https://github.com/cederdorff/hand-catch-game">cederdorff/hand-catch-game</a>
+              <a href="https://github.com/cederdorff/hand-catch-game" target="_blank" rel="noopener noreferrer"
+                >cederdorff/hand-catch-game</a
+              >
             </li>
             <li>
               Air Juggler:
-              <a href="https://github.com/cederdorff/air-juggler-game">cederdorff/air-juggler-game</a>
+              <a href="https://github.com/cederdorff/air-juggler-game" target="_blank" rel="noopener noreferrer"
+                >cederdorff/air-juggler-game</a
+              >
             </li>
             <li>
               Air Juggler with TensorFlow.js:
-              <a href="https://github.com/cederdorff/webcam-controlled-game">cederdorff/webcam-controlled-game</a>
+              <a href="https://github.com/cederdorff/webcam-controlled-game" target="_blank" rel="noopener noreferrer"
+                >cederdorff/webcam-controlled-game</a
+              >
             </li>
             <li>
               Dandelion Field:
-              <a href="https://github.com/cederdorff/dandelion-experiment">cederdorff/dandelion-experiment</a>
+              <a href="https://github.com/cederdorff/dandelion-experiment" target="_blank" rel="noopener noreferrer"
+                >cederdorff/dandelion-experiment</a
+              >
             </li>
           </ul>
         </section>
@@ -1171,6 +1236,7 @@ installation -&gt; motion speed to create force</code></pre>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
     <script>
       Reveal.initialize({
         hash: true,
@@ -1178,7 +1244,8 @@ installation -&gt; motion speed to create force</code></pre>
         controls: true,
         progress: true,
         center: true,
-        slideNumber: true
+        slideNumber: true,
+        plugins: [RevealHighlight]
       });
     </script>
   </body>
