@@ -23,8 +23,7 @@
 
       body {
         background:
-          linear-gradient(145deg, rgba(10, 16, 24, 0.96), rgba(16, 30, 33, 0.94) 46%, rgba(28, 17, 22, 0.95)),
-          #0c1117;
+          linear-gradient(145deg, rgba(10, 16, 24, 0.96), rgba(16, 30, 33, 0.94) 46%, rgba(28, 17, 22, 0.95)), #0c1117;
       }
 
       .reveal {
@@ -161,9 +160,7 @@
 
       .panel.is-accent {
         border-color: rgba(167, 243, 208, 0.64);
-        background:
-          linear-gradient(135deg, rgba(20, 184, 166, 0.16), rgba(251, 113, 133, 0.1)),
-          rgba(10, 17, 25, 0.82);
+        background: linear-gradient(135deg, rgba(20, 184, 166, 0.16), rgba(251, 113, 133, 0.1)), rgba(10, 17, 25, 0.82);
       }
 
       .panel p,
@@ -265,6 +262,93 @@
         white-space: pre-wrap;
       }
 
+      .code-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65em;
+        margin-top: 0.78em;
+      }
+
+      .code-grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .code-card {
+        min-height: 8.4em;
+        padding: 0.72em;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        background: rgba(10, 17, 25, 0.78);
+      }
+
+      .code-card.is-accent {
+        border-color: rgba(167, 243, 208, 0.62);
+        background:
+          linear-gradient(135deg, rgba(20, 184, 166, 0.14), rgba(251, 113, 133, 0.08)), rgba(10, 17, 25, 0.82);
+      }
+
+      .code-card h3 {
+        margin-bottom: 0.22em;
+        font-size: 0.62em;
+      }
+
+      .file-chip {
+        display: inline-block;
+        margin-bottom: 0.56em;
+        padding: 0.22em 0.48em;
+        border: 1px solid rgba(125, 211, 252, 0.32);
+        border-radius: 999px;
+        color: #bae6fd;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.4em;
+        font-weight: 800;
+      }
+
+      .code-card pre {
+        margin: 0.48em 0 0;
+        color: #e5e7eb;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.42em;
+        line-height: 1.28;
+        white-space: pre-wrap;
+      }
+
+      .code-card p {
+        color: #cbd5df;
+        font-size: 0.5em;
+        line-height: 1.25;
+      }
+
+      .code-card strong {
+        color: #fcd34d;
+      }
+
+      .reading-path {
+        display: grid;
+        grid-template-columns: 0.78fr 1fr;
+        gap: 0.6em;
+        margin-top: 0.85em;
+      }
+
+      .reading-row {
+        display: contents;
+      }
+
+      .reading-row span {
+        padding: 0.44em 0.56em;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        background: rgba(15, 23, 31, 0.7);
+        color: #cbd5df;
+        font-size: 0.54em;
+        line-height: 1.25;
+      }
+
+      .reading-row span:first-child {
+        color: #fcd34d;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-weight: 800;
+      }
+
       .landmark-layout {
         display: grid;
         grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.05fr);
@@ -276,9 +360,7 @@
         padding: 0.8em;
         border: 1px solid rgba(167, 243, 208, 0.22);
         border-radius: 8px;
-        background:
-          linear-gradient(135deg, rgba(125, 211, 252, 0.1), rgba(249, 115, 22, 0.12)),
-          rgba(15, 23, 31, 0.72);
+        background: linear-gradient(135deg, rgba(125, 211, 252, 0.1), rgba(249, 115, 22, 0.12)), rgba(15, 23, 31, 0.72);
       }
 
       .landmark-visual img {
@@ -440,7 +522,10 @@
         .panel-grid,
         .panel-grid.two,
         .comparison,
-        .pipeline {
+        .pipeline,
+        .code-grid,
+        .code-grid.three,
+        .reading-path {
           grid-template-columns: 1fr;
         }
 
@@ -469,8 +554,8 @@
             <span class="tag">Game loops</span>
           </div>
           <aside class="notes">
-            This is meant as a clarifying wrap-up, not a full new lecture. The goal is to help students understand
-            what the exercises are doing and where to look when they want to customize them.
+            This is meant as a clarifying wrap-up, not a full new lecture. The goal is to help students understand what
+            the exercises are doing and where to look when they want to customize them.
           </aside>
         </section>
 
@@ -530,6 +615,33 @@
         </section>
 
         <section>
+          <p class="eyebrow">Code reading path</p>
+          <h2>Open the projects through the same pipeline</h2>
+          <p class="subtitle">When the code feels big, read it by responsibility instead of from top to bottom.</p>
+          <div class="reading-path">
+            <div class="reading-row">
+              <span>src/hooks/useHandTracking.js</span>
+              <span>Starts/stops the camera, loads the model, runs the frame loop and passes data onward.</span>
+            </div>
+            <div class="reading-row">
+              <span>src/handTracking.js</span>
+              <span>Creates the detector/landmarker and draws or converts hand landmarks.</span>
+            </div>
+            <div class="reading-row">
+              <span>src/gestures.js</span>
+              <span>Interprets landmarks as gestures, positions, grip, wind or action states.</span>
+            </div>
+            <div class="reading-row">
+              <span>game logic files</span>
+              <span
+                ><code>useCatchGame.js</code> or <code>game.js</code> turns interaction values into rules and
+                feedback.</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <section>
           <p class="eyebrow">Interpretation</p>
           <h2>When can we say it interprets?</h2>
           <div class="panel-grid">
@@ -546,11 +658,10 @@
               <p>Our gesture logic turns tracked points into interaction states the prototype can act on.</p>
             </div>
           </div>
-          <div class="code-strip">tracked points -&gt; gesture rules -&gt; interaction meaning
-
-indexTip + thumbTip close together -&gt; Pinch
-open fingers -&gt; Open hand
-palm position -&gt; Paddle</div>
+          <div class="code-strip">
+            tracked points -&gt; gesture rules -&gt; interaction meaning indexTip + thumbTip close together -&gt; Pinch
+            open fingers -&gt; Open hand palm position -&gt; Paddle
+          </div>
           <p class="subtitle">Interpretation happens when tracked points become meaningful interaction states.</p>
         </section>
 
@@ -567,11 +678,40 @@ palm position -&gt; Paddle</div>
                 <li>The projects mostly use index tip, thumb tip, wrist and finger bases.</li>
                 <li>A gesture is a rule you write on top of those points.</li>
               </ul>
-              <div class="code-strip">pinchDistance = distance(indexTip, thumbTip)
-isPinching = grip > 0.6
-isPointingUp = indexTip.y &lt; wrist.y</div>
+              <div class="code-strip">
+                pinchDistance = distance(indexTip, thumbTip) isPinching = grip > 0.6 isPointingUp = indexTip.y &lt;
+                wrist.y
+              </div>
             </div>
           </div>
+        </section>
+
+        <section>
+          <p class="eyebrow">In code</p>
+          <h2>Interpretation happens in <code>gestures.js</code></h2>
+          <div class="code-grid">
+            <div class="code-card is-accent">
+              <h3>From landmarks to gesture values</h3>
+              <span class="file-chip">webcam-ui/src/gestures.js</span>
+              <pre><code>const pinchDistance = getDistance(indexTip, thumbTip)
+const grip = clamp(1 - (pinchDistance - 0.035) / 0.11, 0, 1)
+const isPinching = grip &gt; 0.6
+const isPointingUp = indexTip.y &lt; wrist.y
+const openFingerCount = countOpenFingers(landmarks)</code></pre>
+            </div>
+            <div class="code-card">
+              <h3>From values to a label</h3>
+              <span class="file-chip">getGestureName(...)</span>
+              <pre><code>if (isPinching) return "Pinch"
+if (openFingerCount &gt;= 4) return "Open hand"
+if (isPointingUp) return "Pointing up"
+
+return "Tracking"</code></pre>
+            </div>
+          </div>
+          <p class="subtitle">
+            This is the pattern students can reuse: choose a few points, write a small rule, show feedback.
+          </p>
         </section>
 
         <section>
@@ -614,6 +754,31 @@ isPointingUp = indexTip.y &lt; wrist.y</div>
         </section>
 
         <section>
+          <p class="eyebrow">Hand Puck in code</p>
+          <h2>The fingertip becomes CSS position</h2>
+          <div class="code-grid">
+            <div class="code-card is-accent">
+              <h3>Map fingertip to stage coordinates</h3>
+              <span class="file-chip">webcam-ui/src/gestures.js</span>
+              <pre><code>const targetX = 1 - clamp(gesture.indexTip.x, 0.03, 0.97)
+const targetY = clamp(gesture.indexTip.y, 0.06, 0.94)
+
+const nextX = currentX + (targetX - currentX) * 0.26
+const nextY = currentY + (targetY - currentY) * 0.26</code></pre>
+            </div>
+            <div class="code-card">
+              <h3>Show the interpretation on screen</h3>
+              <span class="file-chip">movePuckWithGesture(...)</span>
+              <pre><code>puck.style.setProperty("--x", `${nextX * 100}%`)
+puck.style.setProperty("--y", `${nextY * 100}%`)
+puck.style.setProperty("--scale", String(0.96 + gesture.grip * 0.42))
+puck.toggleAttribute("data-gripped", gesture.isPinching)</code></pre>
+            </div>
+          </div>
+          <p class="subtitle">Pedagogic point: start by making the invisible model output visible and testable.</p>
+        </section>
+
+        <section>
           <p class="eyebrow">Exercise 2</p>
           <div class="two-col wide-right">
             <div>
@@ -630,6 +795,38 @@ isPointingUp = indexTip.y &lt; wrist.y</div>
               <div class="image-caption">Hand Catch: hand position becomes a collision object.</div>
             </div>
           </div>
+        </section>
+
+        <section>
+          <p class="eyebrow">Hand Catch in code</p>
+          <h2>Hand tracking and game rules are separate</h2>
+          <div class="code-grid">
+            <div class="code-card">
+              <h3>React wires the systems together</h3>
+              <span class="file-chip">hand-catch-game/src/App.jsx</span>
+              <pre><code>const stageRef = useRef(null)
+const { isRunning, puckRef, tracking } = useHandTracking()
+const { game, startRound } = useCatchGame({
+  isRunning,
+  puckRef,
+  stageRef
+})</code></pre>
+            </div>
+            <div class="code-card is-accent">
+              <h3>Pointer fallback uses the same puck</h3>
+              <span class="file-chip">handlePointerAim(...)</span>
+              <pre><code>function handlePointerAim(point) {
+  movePuckToPoint(
+    { ...point, scale: 1.02 },
+    puckRef.current
+  )
+}</code></pre>
+            </div>
+          </div>
+          <p class="subtitle">
+            Good exam-project pattern: keep the input system replaceable, so camera and pointer can test the same
+            behavior.
+          </p>
         </section>
 
         <section>
@@ -653,9 +850,37 @@ isPointingUp = indexTip.y &lt; wrist.y</div>
               </ul>
             </div>
           </div>
-          <div class="code-strip">if (distance &lt;= puck.radius + itemRadius) {
-  score += 10 + streakBonus
-}</div>
+          <div class="code-strip">if (distance &lt;= puck.radius + itemRadius) { score += 10 + streakBonus }</div>
+        </section>
+
+        <section>
+          <p class="eyebrow">Hand Catch game loop</p>
+          <h2>The game reads the puck position</h2>
+          <div class="code-grid">
+            <div class="code-card">
+              <h3>Read the current puck as a circle</h3>
+              <span class="file-chip">useCatchGame.js</span>
+              <pre><code>const x = Number(puck?.dataset.x)
+const y = Number(puck?.dataset.y)
+const size = (puck?.offsetWidth || 72) * scale
+
+return {
+  radius: size * 0.48,
+  x: x * stageSize.width,
+  y: y * stageSize.height
+}</code></pre>
+            </div>
+            <div class="code-card is-accent">
+              <h3>Catch is a distance check</h3>
+              <span class="file-chip">isItemCaught(...)</span>
+              <pre><code>const distance = Math.hypot(itemX - puck.x, itemY - puck.y)
+
+return distance &lt;= puck.radius + itemRadius</code></pre>
+            </div>
+          </div>
+          <p class="subtitle">
+            This is why the visual puck matters: the same position becomes both feedback and game data.
+          </p>
         </section>
 
         <section>
@@ -676,6 +901,37 @@ isPointingUp = indexTip.y &lt; wrist.y</div>
             </div>
           </div>
           <p class="subtitle">This is the shift from moving an interface element to controlling a real-time system.</p>
+        </section>
+
+        <section>
+          <p class="eyebrow">Air Juggler V1 in code</p>
+          <h2>The gesture output feeds physics</h2>
+          <div class="code-grid">
+            <div class="code-card is-accent">
+              <h3>The frame loop connects both systems</h3>
+              <span class="file-chip">air-juggler-game/src/hooks/useHandTracking.js</span>
+              <pre><code>const gesture = getHandGesture(landmarks)
+const puckPosition = movePuckWithGesture(gesture, puck)
+
+const didUpdateScore = tickGame(
+  gameRef.current,
+  ball,
+  puckPosition,
+  gesture
+)</code></pre>
+            </div>
+            <div class="code-card">
+              <h3>Pinch near the ball becomes a hit</h3>
+              <span class="file-chip">tickGame(...)</span>
+              <pre><code>const distance = Math.hypot(game.x - puck.x, game.y - puck.y)
+const canHit = now - game.lastHitTime &gt; 140
+
+if (gesture.isPinching &amp;&amp; distance &lt; 0.12 &amp;&amp; canHit) {
+  game.score += 1
+  game.vy = -Math.max(0.013, Math.abs(game.vy) * 0.9 + 0.005)
+}</code></pre>
+            </div>
+          </div>
         </section>
 
         <section>
@@ -702,6 +958,37 @@ isPointingUp = indexTip.y &lt; wrist.y</div>
         </section>
 
         <section>
+          <p class="eyebrow">Air Juggler V2 in code</p>
+          <h2>Same idea, cleaner modules</h2>
+          <div class="code-grid">
+            <div class="code-card is-accent">
+              <h3>Runtime loop</h3>
+              <span class="file-chip">webcam-controlled-game/src/hooks/useHandTracking.js</span>
+              <pre><code>const hands = await estimateHands(detector, video)
+const palmPositions = getPalmPositions(hands, canvas.width)
+const game = updateGame(gameRef.current, deltaSeconds, palmPositions)
+
+drawGame(context, game)</code></pre>
+            </div>
+            <div class="code-card">
+              <h3>Hand landmarks become paddle positions</h3>
+              <span class="file-chip">handTracking.js</span>
+              <pre><code>const palm = PALM_INDICES.map((index) =&gt; hand.keypoints[index])
+const avgX = palm.reduce((sum, keypoint) =&gt; sum + keypoint.x, 0) / palm.length
+const avgY = palm.reduce((sum, keypoint) =&gt; sum + keypoint.y, 0) / palm.length
+
+return {
+  x: frameWidth - avgX,
+  y: avgY
+}</code></pre>
+            </div>
+          </div>
+          <p class="subtitle">
+            Exam-project lesson: isolate ML utility code from interaction rules and visual rendering.
+          </p>
+        </section>
+
+        <section>
           <p class="eyebrow">Same pipeline, different meaning</p>
           <div class="two-col wide-right">
             <div>
@@ -718,6 +1005,33 @@ isPointingUp = indexTip.y &lt; wrist.y</div>
               <div class="image-caption">Dandelion: physical movement becomes atmosphere and response.</div>
             </div>
           </div>
+        </section>
+
+        <section>
+          <p class="eyebrow">Dandelion in code</p>
+          <h2>Gesture values become interaction qualities</h2>
+          <div class="code-grid">
+            <div class="code-card is-accent">
+              <h3>Convert gesture into force</h3>
+              <span class="file-chip">dandelion-experiment/src/gestures.js</span>
+              <pre><code>interaction.force = clamp(
+  0.16 + gesture.grip * 0.36 + gesture.wind * 0.44 + motionWind,
+  0,
+  1
+)
+
+interaction.isOpenHand = gesture.isOpenHand
+interaction.isPinching = gesture.isPinching</code></pre>
+            </div>
+            <div class="code-card">
+              <h3>The visual scene reads that force</h3>
+              <span class="file-chip">DandelionField.jsx</span>
+              <pre><code>const pressure = influence.amount * (interaction.force + speed * 0.09)
+const radius = minSize * (0.1 + interaction.force * 0.24)
+const push = 0.05 + interaction.force * 0.14</code></pre>
+            </div>
+          </div>
+          <p class="subtitle">Exam-project lesson: decide what the hand should mean before tuning the numbers.</p>
         </section>
 
         <section>
@@ -742,7 +1056,10 @@ isPointingUp = indexTip.y &lt; wrist.y</div>
             </div>
             <div class="debug-row">
               <strong>User is confused</strong>
-              <span>Add feedback: detected/not detected, active gesture, score change, hit effect or fallback controls.</span>
+              <span
+                >Add feedback: detected/not detected, active gesture, score change, hit effect or fallback
+                controls.</span
+              >
             </div>
           </div>
         </section>
@@ -764,6 +1081,59 @@ isPointingUp = indexTip.y &lt; wrist.y</div>
               <p>Can the prototype still be tested with pointer or keyboard input when tracking fails?</p>
             </div>
           </div>
+        </section>
+
+        <section>
+          <p class="eyebrow">Project links</p>
+          <h2>All project repositories</h2>
+          <ul class="closing-list">
+            <li>
+              Hand Puck:
+              <a href="https://github.com/cederdorff/webcam-ui">cederdorff/webcam-ui</a>
+            </li>
+            <li>
+              Hand Catch:
+              <a href="https://github.com/cederdorff/hand-catch-game">cederdorff/hand-catch-game</a>
+            </li>
+            <li>
+              Air Juggler:
+              <a href="https://github.com/cederdorff/air-juggler-game">cederdorff/air-juggler-game</a>
+            </li>
+            <li>
+              Air Juggler with TensorFlow.js:
+              <a href="https://github.com/cederdorff/webcam-controlled-game">cederdorff/webcam-controlled-game</a>
+            </li>
+            <li>
+              Dandelion Field:
+              <a href="https://github.com/cederdorff/dandelion-experiment">cederdorff/dandelion-experiment</a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <p class="eyebrow">Exam project pattern</p>
+          <h2>Borrow the structure, not the whole game</h2>
+          <div class="code-grid">
+            <div class="code-card is-accent">
+              <h3>Make one interaction object</h3>
+              <span class="file-chip">your-project/src/interaction.js</span>
+              <pre><code>const interaction = {
+  position: gesture.indexTip,
+  action: gesture.isPinching ? "select" : "hover",
+  intensity: gesture.grip,
+  confidence: tracking.confidence
+}</code></pre>
+            </div>
+            <div class="code-card">
+              <h3>Then connect it to your concept</h3>
+              <span class="file-chip">examples</span>
+              <pre><code>museum object -&gt; pinch to inspect
+festival schedule -&gt; open hand to reveal
+product finder -&gt; hand position to filter
+installation -&gt; motion speed to create force</code></pre>
+            </div>
+          </div>
+          <p class="subtitle">The exam question is not only “does it work?” but “why is this input meaningful here?”</p>
         </section>
 
         <section>
