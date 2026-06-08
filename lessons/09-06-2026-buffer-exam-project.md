@@ -46,6 +46,7 @@ Nothing to prepare.
 
 ### Materials
 
+- [Webcam-Controlled Interaction Wrap-up Slides](../slides/09-06-2026-webcam-interaction-wrapup.html)
 - [RACE - Gesture & Motion design: Experimental Gesture Interfaces - 01-06-2026](01-06-2026-experimental-gesture-interfaces.md)
 
 ---
