@@ -117,6 +117,15 @@
         line-height: 1.3;
       }
 
+      .deck-meta {
+        color: #fcd34d;
+        font-size: 0.54em;
+        font-weight: 800;
+        letter-spacing: 0.03em;
+        margin-top: 1.6em;
+        text-transform: uppercase;
+      }
+
       .small {
         color: #9caebd;
         font-size: 0.55em;
@@ -141,6 +150,106 @@
         font-weight: 800;
         letter-spacing: 0.04em;
         text-transform: uppercase;
+      }
+
+      .handout-note,
+      .takeaway {
+        margin-top: 0.82em;
+        padding: 0.62em 0.74em;
+        border: 1px solid rgba(252, 211, 77, 0.32);
+        border-left: 4px solid rgba(252, 211, 77, 0.78);
+        border-radius: 8px;
+        background: rgba(252, 211, 77, 0.08);
+        color: #fef3c7;
+        font-size: 0.56em;
+        line-height: 1.28;
+      }
+
+      .handout-note strong,
+      .takeaway strong {
+        color: #fef9c3;
+      }
+
+      .route-map {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.64em;
+        margin-top: 0.9em;
+      }
+
+      .route-item {
+        min-height: 8.4em;
+        padding: 0.75em;
+        border: 1px solid rgba(125, 211, 252, 0.24);
+        border-radius: 8px;
+        background: rgba(10, 17, 25, 0.72);
+      }
+
+      .route-item strong {
+        display: block;
+        margin-bottom: 0.5em;
+        color: #fcd34d;
+        font-size: 0.56em;
+      }
+
+      .route-item span {
+        display: block;
+        color: #cbd5df;
+        font-size: 0.5em;
+        line-height: 1.24;
+      }
+
+      .project-scene-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.42em;
+        margin-top: 0.86em;
+      }
+
+      .project-scene-card {
+        min-height: 10.7em;
+        padding: 0.48em;
+        border: 1px solid rgba(125, 211, 252, 0.24);
+        border-radius: 8px;
+        background: rgba(10, 17, 25, 0.72);
+      }
+
+      .project-shot {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        margin-bottom: 0.42em;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 6px;
+        background: #020617;
+      }
+
+      .project-shot img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.02);
+      }
+
+      .project-scene-card h3 {
+        margin-bottom: 0.24em;
+        color: #fffaf3;
+        font-size: 0.48em;
+      }
+
+      .project-scene-card p,
+      .project-scene-card a {
+        font-size: 0.36em;
+        line-height: 1.18;
+      }
+
+      .project-scene-card p {
+        margin: 0 0 0.5em;
+      }
+
+      .project-scene-card a {
+        display: block;
+        overflow-wrap: anywhere;
       }
 
       .two-col {
@@ -277,6 +386,14 @@
         font-size: 0.48em;
         line-height: 1.35;
         white-space: pre-wrap;
+      }
+
+      .code-strip .line {
+        display: block;
+      }
+
+      .code-strip .line + .line {
+        margin-top: 0.2em;
       }
 
       .code-grid {
@@ -430,6 +547,51 @@
         line-height: 1.25;
       }
 
+      .reference-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.45em;
+        margin-top: 0.85em;
+      }
+
+      .reference-card {
+        min-height: 4.1em;
+        padding: 0.58em;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 8px;
+        background: rgba(15, 23, 31, 0.72);
+      }
+
+      .reference-card h3 {
+        margin-bottom: 0.28em;
+        font-size: 0.54em;
+      }
+
+      .reference-card p,
+      .reference-card a {
+        font-size: 0.48em;
+        line-height: 1.24;
+      }
+
+      .reference-card a {
+        display: block;
+        overflow-wrap: anywhere;
+      }
+
+      .link-grid {
+        gap: 0.34em;
+      }
+
+      .link-grid .reference-card {
+        display: grid;
+        align-content: center;
+        min-height: 2.9em;
+      }
+
+      .reference-card p {
+        margin: 0.2em 0 0.45em;
+      }
+
       .big-idea {
         color: #fffaf3;
         font-size: 1.28em;
@@ -500,6 +662,41 @@
         font-size: 0.78em;
       }
 
+      @media print {
+        body {
+          background: #0c1117;
+        }
+
+        .reveal {
+          font-size: 24px;
+        }
+
+        .reveal .slides section {
+          text-align: left;
+        }
+
+        .reveal a::after {
+          content: " (" attr(href) ")";
+          color: #9caebd;
+          font-size: 0.72em;
+          word-break: break-all;
+        }
+
+        .loop-object {
+          animation: none !important;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
       @keyframes hand-sweep {
         0%,
         100% {
@@ -546,6 +743,9 @@
         .pipeline,
         .code-grid,
         .code-grid.three,
+        .route-map,
+        .project-scene-grid,
+        .reference-grid,
         .reading-path {
           grid-template-columns: 1fr;
         }
@@ -567,27 +767,120 @@
         <section>
           <p class="eyebrow">RACE - Gesture &amp; Motion Design</p>
           <h1>Webcam-Controlled Interaction</h1>
-          <p class="subtitle">Short wrap-up for Hand Puck, Hand Catch, Air Juggler and related experiments.</p>
+          <p class="subtitle">
+            A handout-friendly wrap-up for Hand Puck, Hand Catch, Air Juggler and related experiments.
+          </p>
           <div class="tag-row">
             <span class="tag">React</span>
             <span class="tag">MediaPipe</span>
             <span class="tag">TensorFlow.js</span>
             <span class="tag">Game loops</span>
           </div>
+          <p class="deck-meta">09 June 2026 - Interactive Design &amp; Development</p>
           <aside class="notes">
-            This is meant as a clarifying wrap-up, not a full new lecture. The goal is to help students understand what
-            the exercises are doing and where to look when they want to customize them.
+            This is meant as a clarifying wrap-up, not a full new lecture. The goal is to help you understand what the
+            exercises are doing and where to look when you want to customize them.
           </aside>
+        </section>
+
+        <section>
+          <p class="eyebrow">Project landscape</p>
+          <h2>The projects you are looking at</h2>
+          <p class="subtitle">
+            Each project uses webcam tracking differently: first as a visible input, then as game control, then as an
+            expressive interaction material.
+          </p>
+          <div class="project-scene-grid">
+            <div class="project-scene-card">
+              <div class="project-shot">
+                <img src="assets/webcam-wrapup/hand-puck-tracking.png" alt="Hand Puck tracking screenshot" />
+              </div>
+              <h3>Hand Puck</h3>
+              <p>Start here to see how hand landmarks become a puck position and pinch feedback.</p>
+              <a href="https://github.com/cederdorff/webcam-ui" target="_blank" rel="noopener noreferrer"
+                >cederdorff/webcam-ui</a
+              >
+            </div>
+            <div class="project-scene-card">
+              <div class="project-shot">
+                <img src="assets/webcam-wrapup/hand-catch-playing.png" alt="Hand Catch game screenshot" />
+              </div>
+              <h3>Hand Catch</h3>
+              <p>Adds falling targets, score, collision checks and pointer fallback on top of the puck.</p>
+              <a href="https://github.com/cederdorff/hand-catch-game" target="_blank" rel="noopener noreferrer"
+                >cederdorff/hand-catch-game</a
+              >
+            </div>
+            <div class="project-scene-card">
+              <div class="project-shot">
+                <img src="assets/webcam-wrapup/air-juggler-v1-start.png" alt="Air Juggler start screen screenshot" />
+              </div>
+              <h3>Air Juggler</h3>
+              <p>Turns pinch and position into hits, physics and a real-time game loop.</p>
+              <a href="https://github.com/cederdorff/air-juggler-game" target="_blank" rel="noopener noreferrer"
+                >cederdorff/air-juggler-game</a
+              >
+            </div>
+            <div class="project-scene-card">
+              <div class="project-shot">
+                <img src="assets/webcam-wrapup/air-juggler-v2-start.png" alt="Air Juggler V2 start screen screenshot" />
+              </div>
+              <h3>Air Juggler V2</h3>
+              <p>Uses TensorFlow.js, two-hand tracking and cleaner modules for tracking, physics and drawing.</p>
+              <a href="https://github.com/cederdorff/webcam-controlled-game" target="_blank" rel="noopener noreferrer"
+                >cederdorff/webcam-controlled-game</a
+              >
+            </div>
+            <div class="project-scene-card">
+              <div class="project-shot">
+                <img src="assets/webcam-wrapup/dandelion.png" alt="Dandelion field interaction screenshot" />
+              </div>
+              <h3>Dandelion</h3>
+              <p>Shows how hand movement can become wind, force and atmosphere instead of score.</p>
+              <a href="https://github.com/cederdorff/dandelion-experiment" target="_blank" rel="noopener noreferrer"
+                >cederdorff/dandelion-experiment</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="eyebrow">How to use this handout</p>
+          <h2>Read it as a map, not a script</h2>
+          <p class="subtitle">
+            Start with the pipeline, then jump to the project that is closest to what you want to build or explain.
+          </p>
+          <div class="route-map">
+            <div class="route-item">
+              <strong>1. Understand the pipeline</strong>
+              <span>Camera frames become landmarks, landmarks become gesture values, and gesture values drive UI.</span>
+            </div>
+            <div class="route-item">
+              <strong>2. Find the right file</strong>
+              <span>Look for tracking setup, gesture interpretation, then game or interaction rules.</span>
+            </div>
+            <div class="route-item">
+              <strong>3. Compare examples</strong>
+              <span>Hand Puck, Hand Catch, Air Juggler and Dandelion use the same input in different ways.</span>
+            </div>
+            <div class="route-item">
+              <strong>4. Explain your choice</strong>
+              <span>For the exam project, describe why webcam input fits the concept better than ordinary controls.</span>
+            </div>
+          </div>
         </section>
 
         <section>
           <p class="eyebrow">Core idea</p>
           <div class="two-col">
             <div>
-              <p class="big-idea">The webcam is only input after we interpret it.</p>
+              <p class="big-idea">The webcam is only input after you interpret it.</p>
               <p class="subtitle">
-                The camera gives us images. The model gives us hand points. The interaction design decides what those
+                The camera gives you images. The model gives you hand points. The interaction design decides what those
                 points should mean.
+              </p>
+              <p class="takeaway">
+                <strong>Keep:</strong> tracking is technical; interpretation is a design decision.
               </p>
             </div>
             <div class="live-loop" aria-label="Abstract animated webcam interaction loop">
@@ -634,6 +927,9 @@
               <p>The screen shows what the system understood, and what changed because of it.</p>
             </div>
           </div>
+          <p class="takeaway">
+            <strong>Debug in this order:</strong> camera, landmarks, gesture values, interaction state, feedback.
+          </p>
         </section>
 
         <section>
@@ -661,6 +957,10 @@
               >
             </div>
           </div>
+          <p class="handout-note">
+            <strong>If you only have ten minutes:</strong> open <code>gestures.js</code> first, then find where its
+            return values are used by the UI or game.
+          </p>
         </section>
 
         <section>
@@ -670,22 +970,22 @@
             <div class="panel is-accent">
               <h3>What it is</h3>
               <p>
-                MediaPipe is a real-time ML framework. In these projects, we use its hand model to detect and track hand
-                landmarks in each webcam frame.
+                MediaPipe is a real-time ML framework. In these projects, you use its hand model to detect and track
+                hand landmarks in each webcam frame.
               </p>
             </div>
             <div class="panel">
-              <h3>What it gives us</h3>
+              <h3>What it gives you</h3>
               <ul>
                 <li>Landmark coordinates for key points on the hand.</li>
-                <li>Per-frame tracking data we can use in interaction logic.</li>
+                <li>Per-frame tracking data you can use in interaction logic.</li>
                 <li>Raw numeric output, not interaction meaning.</li>
               </ul>
             </div>
           </div>
           <div class="code-strip">
-            MediaPipe output -&gt; landmark points (x, y, z) Our gesture rules -&gt; pinch, open hand, pointing, grip,
-            wind
+            <span class="line">MediaPipe output -&gt; landmark points (x, y, z)</span>
+            <span class="line">Your gesture rules -&gt; pinch, open hand, pointing, grip, wind</span>
           </div>
           <p class="subtitle">
             Short version: MediaPipe tracks hands. Your code defines what those hand movements mean.
@@ -694,11 +994,11 @@
 
         <section>
           <p class="eyebrow">Interpretation</p>
-          <h2>When can we say it interprets?</h2>
+          <h2>When can you say it interprets?</h2>
           <div class="panel-grid">
             <div class="panel">
               <h3>Camera captures</h3>
-              <p>The webcam gives us video frames. It does not know what a hand, gesture or game action is.</p>
+              <p>The webcam gives you video frames. It does not know what a hand, gesture or game action is.</p>
             </div>
             <div class="panel">
               <h3>Model tracks hand data</h3>
@@ -709,12 +1009,14 @@
             </div>
             <div class="panel is-accent">
               <h3>Code gives meaning</h3>
-              <p>Our gesture logic turns tracked points into interaction states the prototype can act on.</p>
+              <p>Your gesture logic turns tracked points into interaction states the prototype can act on.</p>
             </div>
           </div>
           <div class="code-strip">
-            tracked points -&gt; gesture rules -&gt; interaction meaning indexTip + thumbTip close together -&gt; Pinch
-            open fingers -&gt; Open hand palm position -&gt; Paddle
+            <span class="line">tracked points -&gt; gesture rules -&gt; interaction meaning</span>
+            <span class="line">indexTip + thumbTip close together -&gt; Pinch</span>
+            <span class="line">open fingers -&gt; Open hand</span>
+            <span class="line">palm position -&gt; Paddle</span>
           </div>
           <p class="subtitle">Interpretation happens when tracked points become meaningful interaction states.</p>
         </section>
@@ -734,8 +1036,9 @@
                 <li>A gesture is a rule you write on top of those points.</li>
               </ul>
               <div class="code-strip">
-                pinchDistance = distance(indexTip, thumbTip) isPinching = grip &gt; 0.6 isPointingUp = indexTip.y &lt;
-                wrist.y
+                <span class="line">pinchDistance = distance(indexTip, thumbTip)</span>
+                <span class="line">isPinching = grip &gt; 0.6</span>
+                <span class="line">isPointingUp = indexTip.y &lt; wrist.y</span>
               </div>
             </div>
           </div>
@@ -765,7 +1068,11 @@ return "Tracking"</code></pre>
             </div>
           </div>
           <p class="subtitle">
-            This is the pattern students can reuse: choose a few points, write a small rule, show feedback.
+            This is a pattern you can reuse: choose a few points, write a small rule, show feedback.
+          </p>
+          <p class="takeaway">
+            <strong>Reusable pattern:</strong> do not start by inventing a whole interface. Start by naming one gesture
+            value clearly.
           </p>
         </section>
 
@@ -800,6 +1107,9 @@ return "Tracking"</code></pre>
                 <li>Pinch changes the puck scale and state.</li>
                 <li>The control panel is a debugging tool.</li>
               </ul>
+              <p class="takeaway">
+                <strong>Use this project when:</strong> you need to understand the basic tracking-to-position mapping.
+              </p>
             </div>
             <div class="image-frame">
               <img src="assets/webcam-wrapup/hand-puck-tracking.png" alt="Hand Puck tracking screenshot" />
@@ -830,7 +1140,7 @@ puck.style.setProperty("--scale", String(0.96 + gesture.grip * 0.42))
 puck.toggleAttribute("data-gripped", gesture.isPinching)</code></pre>
             </div>
           </div>
-          <p class="subtitle">Pedagogic point: start by making the invisible model output visible and testable.</p>
+          <p class="subtitle">Good habit: start by making the invisible model output visible and testable.</p>
         </section>
 
         <section>
@@ -844,6 +1154,9 @@ puck.toggleAttribute("data-gripped", gesture.isPinching)</code></pre>
                 <li>Includes pointer fallback for testing without the camera.</li>
                 <li>Main game rules live in <code>useCatchGame.js</code>.</li>
               </ul>
+              <p class="takeaway">
+                <strong>Use this project when:</strong> you want score, collisions, timers and a camera fallback.
+              </p>
             </div>
             <div class="image-frame">
               <img src="assets/webcam-wrapup/hand-catch-playing.png" alt="Hand Catch game in progress" />
@@ -879,7 +1192,7 @@ const { game, startRound } = useCatchGame({
             </div>
           </div>
           <p class="subtitle">
-            Good exam-project pattern: keep the input system replaceable, so camera and pointer can test the same
+            For your exam project: keep the input system replaceable, so camera and pointer can test the same
             behavior.
           </p>
         </section>
@@ -944,7 +1257,7 @@ return distance &lt;= puck.radius + itemRadius</code></pre>
           <div class="comparison">
             <div class="panel">
               <h3>Starts from Hand Puck</h3>
-              <p>The implementation guide adds one layer at a time, so students can see where each concept enters.</p>
+              <p>The implementation guide adds one layer at a time, so you can see where each concept enters.</p>
             </div>
             <div class="panel is-accent">
               <h3>Gesture returns position</h3>
@@ -1010,6 +1323,10 @@ if (gesture.isPinching &amp;&amp; distance &lt; 0.12 &amp;&amp; canHit) {
               </ul>
             </div>
           </div>
+          <p class="takeaway">
+            <strong>Compare V1 and V2:</strong> same interaction idea, different libraries and a cleaner separation of
+            tracking, rules and drawing.
+          </p>
         </section>
 
         <section>
@@ -1054,6 +1371,9 @@ return {
                 <li>Open hand and pinch create different interaction qualities.</li>
                 <li>Useful reminder: interaction can be poetic, not only functional.</li>
               </ul>
+              <p class="takeaway">
+                <strong>Use this project when:</strong> the webcam should shape mood, motion or atmosphere.
+              </p>
             </div>
             <div class="image-frame">
               <img src="assets/webcam-wrapup/dandelion.png" alt="Dandelion field webcam interaction screenshot" />
@@ -1136,43 +1456,70 @@ const push = 0.05 + interaction.force * 0.14</code></pre>
               <p>Can the prototype still be tested with pointer or keyboard input when tracking fails?</p>
             </div>
           </div>
+          <p class="handout-note">
+            A webcam interaction can feel impressive and still be hard to use. Good feedback is what makes the system
+            legible.
+          </p>
+        </section>
+
+        <section>
+          <p class="eyebrow">Choosing an example</p>
+          <h2>Which repository should you open first?</h2>
+          <div class="reference-grid">
+            <div class="reference-card">
+              <h3>Hand Puck</h3>
+              <p>Best for learning the basic pipeline: hand position, pinch, visible puck and debug feedback.</p>
+            </div>
+            <div class="reference-card">
+              <h3>Hand Catch</h3>
+              <p>Best for connecting tracked position to game state: score, targets, collision and fallback input.</p>
+            </div>
+            <div class="reference-card">
+              <h3>Air Juggler</h3>
+              <p>Best for physics and real-time loops: gesture values become hits, paddles and ball motion.</p>
+            </div>
+            <div class="reference-card">
+              <h3>Dandelion</h3>
+              <p>Best for expressive interaction: movement becomes wind, force and visual behavior.</p>
+            </div>
+          </div>
         </section>
 
         <section>
           <p class="eyebrow">Project links</p>
           <h2>All project repositories</h2>
-          <ul class="closing-list">
-            <li>
-              Hand Puck:
+          <div class="reference-grid link-grid">
+            <div class="reference-card">
+              <h3>Hand Puck</h3>
               <a href="https://github.com/cederdorff/webcam-ui" target="_blank" rel="noopener noreferrer"
                 >cederdorff/webcam-ui</a
               >
-            </li>
-            <li>
-              Hand Catch:
+            </div>
+            <div class="reference-card">
+              <h3>Hand Catch</h3>
               <a href="https://github.com/cederdorff/hand-catch-game" target="_blank" rel="noopener noreferrer"
                 >cederdorff/hand-catch-game</a
               >
-            </li>
-            <li>
-              Air Juggler:
+            </div>
+            <div class="reference-card">
+              <h3>Air Juggler</h3>
               <a href="https://github.com/cederdorff/air-juggler-game" target="_blank" rel="noopener noreferrer"
                 >cederdorff/air-juggler-game</a
               >
-            </li>
-            <li>
-              Air Juggler with TensorFlow.js:
+            </div>
+            <div class="reference-card">
+              <h3>Air Juggler with TensorFlow.js</h3>
               <a href="https://github.com/cederdorff/webcam-controlled-game" target="_blank" rel="noopener noreferrer"
                 >cederdorff/webcam-controlled-game</a
               >
-            </li>
-            <li>
-              Dandelion Field:
+            </div>
+            <div class="reference-card">
+              <h3>Dandelion Field</h3>
               <a href="https://github.com/cederdorff/dandelion-experiment" target="_blank" rel="noopener noreferrer"
                 >cederdorff/dandelion-experiment</a
               >
-            </li>
-          </ul>
+            </div>
+          </div>
         </section>
 
         <section>
@@ -1231,6 +1578,29 @@ installation -&gt; motion speed to create force</code></pre>
             </div>
           </div>
           <p class="subtitle">Keep the experiment small enough that you understand what changed.</p>
+        </section>
+
+        <section>
+          <p class="eyebrow">Final recap</p>
+          <h2>What you should remember</h2>
+          <div class="panel-grid">
+            <div class="panel is-accent">
+              <h3>Track</h3>
+              <p>The model detects landmark points. Those points are raw material, not the interaction yet.</p>
+            </div>
+            <div class="panel">
+              <h3>Interpret</h3>
+              <p>Your gesture rules decide what position, distance, grip or motion should mean.</p>
+            </div>
+            <div class="panel">
+              <h3>Feedback</h3>
+              <p>The interface must show what it recognized, what changed and what the user can try next.</p>
+            </div>
+          </div>
+          <p class="takeaway">
+            <strong>Exam framing:</strong> explain the relationship between input, interpretation, feedback and the
+            concept you are designing for.
+          </p>
         </section>
       </div>
     </div>
