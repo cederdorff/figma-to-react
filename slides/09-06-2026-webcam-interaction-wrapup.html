@@ -215,20 +215,21 @@
       }
 
       .project-shot {
-        aspect-ratio: 4 / 3;
         overflow: hidden;
-        margin-bottom: 0.42em;
-        border: 1px solid rgba(148, 163, 184, 0.2);
-        border-radius: 6px;
-        background: #020617;
+        margin: 0 0 0.42em;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
       }
 
       .project-shot img {
         display: block;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: scale(1.02);
+        height: auto;
+        object-fit: contain;
+        transform: none;
+        border-radius: 6px;
+        max-width: 100%;
       }
 
       .project-scene-card h3 {
@@ -865,7 +866,9 @@
             </div>
             <div class="route-item">
               <strong>4. Explain your choice</strong>
-              <span>For the exam project, describe why webcam input fits the concept better than ordinary controls.</span>
+              <span
+                >For the exam project, describe why webcam input fits the concept better than ordinary controls.</span
+              >
             </div>
           </div>
         </section>
@@ -879,9 +882,7 @@
                 The camera gives you images. The model gives you hand points. The interaction design decides what those
                 points should mean.
               </p>
-              <p class="takeaway">
-                <strong>Keep:</strong> tracking is technical; interpretation is a design decision.
-              </p>
+              <p class="takeaway"><strong>Keep:</strong> tracking is technical; interpretation is a design decision.</p>
             </div>
             <div class="live-loop" aria-label="Abstract animated webcam interaction loop">
               <span class="loop-object loop-hand" aria-hidden="true"></span>
@@ -1192,8 +1193,7 @@ const { game, startRound } = useCatchGame({
             </div>
           </div>
           <p class="subtitle">
-            For your exam project: keep the input system replaceable, so camera and pointer can test the same
-            behavior.
+            For your exam project: keep the input system replaceable, so camera and pointer can test the same behavior.
           </p>
         </section>
 
